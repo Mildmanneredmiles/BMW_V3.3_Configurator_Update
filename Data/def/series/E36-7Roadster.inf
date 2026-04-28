@@ -1,0 +1,104 @@
+
+      <class type="Z3 Roadster">
+
+        <ecode>E36</ecode>
+        <body>ROADSTER</body>
+        <path>Z3-roadster</path>
+
+        <:MOTORS>
+
+          <class type="1.8i">
+            <tireinfo>e36_roa_cou-1</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlZ3">
+            </class>
+            <*class type="DEF" ref="Z3 roadster">
+            <:KEYS>
+              <CJ11>
+            </>
+          </>
+
+          <class type="1.9i">
+            <tireinfo>e36_roa_cou-2</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlZ3">
+            </class>
+            <*class type="DEF" ref="Z3 roadster">
+            <:KEYS>
+              <CM11>
+              <CM12>
+            </>
+          </>
+
+          <class type="2.0i">
+            <tireinfo>e36_roa_cou-3</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlZ3">
+            </class>
+            <*class type="DEF" ref="Z3 roadster">
+            <:KEYS>
+              <CL31>
+              <CL32>
+            </>
+          </>
+
+          <class type="2.2i">
+            <tireinfo>e36_roa_cou-3</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge55">
+              <HIDE    "KEYFelgeStahlZ3">
+            </class>
+            <*class type="DEF" ref="Z3 roadster">
+            <:KEYS>
+              <CN11>
+              <CN12>
+            </>
+          </>
+
+          <class type="2.8i">
+            <tireinfo>e36_roa_cou-4</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2-c.jpg' +I>
+            </>
+            <*class type="DEF" ref="Z3 roadster">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge55">
+              <HIDE    "KEYFelgeStahlZ3">
+            </class>
+            <:KEYS>
+              <CH31>
+              <CJ31>
+              <CJ32>
+            </>
+          </>
+
+          <class type="3.0i">
+            <tireinfo>e36_roa_cou-4</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2-c.jpg' +I>
+            </>
+            <*class type="DEF" ref="Z3 roadster">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge64">
+              <HIDE    "KEYFelgeStahlZ3">
+            </class>
+
+            <:KEYS>
+              <CN51>
+              <CN52>
+            </>
+          </>
+        </MOTORS>
+      </>

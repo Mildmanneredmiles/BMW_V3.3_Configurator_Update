@@ -1,0 +1,222 @@
+
+      <class type="E46 limousine">
+
+        <ecode>E46</ecode>
+        <body>LIMOUSINE</body>
+        <date>from="20020301"</date>
+        <path>E46LimousineFaceLift</path>
+
+        <:MOTORS>
+
+          <:316i>
+            <tireinfo>e46_lim_cou-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+              <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+            <:KEYS>
+              <AY11>
+              <EY11>
+              <EY12>
+              <AY31>
+              <AY32>
+              <ER11>
+              <ER12>
+            </>
+          </>
+
+          <:318i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+              <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+            <:KEYS>
+              <AY71>
+              <AY72>
+              <AZ71>
+              <AZ72>
+            </>
+          </>
+
+          <:320i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EV11>
+              <EV12>
+              <ET15>
+              <ET16>
+            </>
+          </>
+
+          <:325i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EV31>
+              <EV32>
+              <ET35>
+              <ET36>
+            </>
+          </>
+
+          <:325xi>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EU31>
+              <EU32>
+            </>
+          </>
+
+          <:330i>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <tireminsize>17</tireminsize>
+           <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I $L 'options\titanblende.jpg' +I  $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-330.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+           </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EV51>
+              <EV52>
+              <ET55>
+              <ET56>
+            </>
+          </>
+
+          <:330xi>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <tireminsize>17</tireminsize>
+           <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I $L 'options\titanblende.jpg' +I  $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-330.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+           </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EW51>
+            </>
+          </>
+
+          <:318d>
+            <tireinfo>e46_lim_cou-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+              <$L 'options\auspuff-1-d.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <EU51>
+              <EU71>
+              <EU72>
+            </>
+          </>
+
+          <:320d>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+              <$L 'options\auspuff-1-d.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <AS71>
+              <AS72>
+              <AZ12>
+            </>
+          </>
+
+          <:330d>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I  $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-2-d.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <ER91>
+              <ER92>
+              <ES92>
+              <ED91>
+              <ED92>
+              <EJ92>
+            </>
+          </>
+
+          <:330xd>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I  $L 'options\chromleiste.jpg' +I>
+              <$L 'options\auspuff-2-d.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <EV91>
+              <ED71>
+            </>
+          </>
+
+        </MOTORS>
+      </>

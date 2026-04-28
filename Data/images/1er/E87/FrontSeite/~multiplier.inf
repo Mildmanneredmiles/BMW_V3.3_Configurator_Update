@@ -1,0 +1,10 @@
+
+<:MULTIPLIER>
+  <:COMBINE>
+    <KEYParkDistanceControlBlack> KEYParkDistanceControl AND !KEYTeileWagenfarbe AND !KEYAerodynamikpaket AND !KEYMAerodynamikpaket </KEYParkDistanceControlBlack>
+    <KEYParkDistanceControl> KEYParkDistanceControl AND KEYTeileWagenfarbe AND !KEYAerodynamikpaket AND !KEYMAerodynamikpaket </KEYParkDistanceControl>
+    <KEYParkDistanceControlAero> KEYParkDistanceControl AND KEYTeileWagenfarbe AND KEYAerodynamikpaket  </KEYParkDistanceControlAero>
+    <KEYParkDistanceControlMAero> KEYParkDistanceControl AND KEYTeileWagenfarbe AND KEYMAerodynamikpaket  </KEYParkDistanceControlMAero>
+  </>
+</>
+

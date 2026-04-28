@@ -1,0 +1,233 @@
+
+    <class type="E46 coupe Facelift">
+      <name>Coupe</name>
+
+      <:VIEWS>
+?A        <:front>
+?A          <angle>0</angle>
+?A          <pov>FRONT</pov>
+?A          <bodyframe>x=275 y=129 w=415 h=312</bodyframe>
+?A        </>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=98 y=133 w=791 h=320</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=26 y=144 w=927 h=298</bodyframe>
+        </>
+        <:heckseite>
+          <angle>135</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=76 y=139 w=793 h=316</bodyframe>
+        </>
+?A        <:heck>
+?A          <angle>180</angle>
+?A          <pov>REAR</pov>
+?A          <bodyframe>x=278 y=128 w=400 h=314</bodyframe>
+?A        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0354>
+        <P0317>
+        <P0335>
+        <P0372>
+        <P0376>
+        <P0379>
+        <P0416>
+        <P0430>
+        <P0475>
+        <P0442>
+        <P0897>
+        <P0A07>
+        <P0A08>
+        <P0A18>
+        <P0A23>
+        <P0A35>
+        <P0A43>
+        <P0300>
+        <P0405>
+        <P0668>
+        <P0438>
+
+        <CATInterieurfarben>
+
+        <KEYE46FxxSW>
+	<KEYE46FxxHC>
+        <KEYE46FxxTT>
+        <KEYE46FxxAT>
+        <KEYE46FxxNG>
+        <KEYE46FxxBB>
+        <KEYE46FxxLT>
+        <KEYE46FxxTL>
+        <KEYE46FxxTF>
+
+        <KEYWeisseBlinker>
+        <KEYMAerodynamikpaket>
+
+        <CATDachsysteme>
+        <KEYGrundtraeger>
+        <KEYUniversalhalterung>
+	<KEYGepaeckkorb>
+;	  <KEYSkitraeger>
+	<KEYSnowboardhalterung>
+	<KEYSurfboardhalterung>
+        <KEYRennradhalterung>
+;	 <KEYDachbox>
+	<KEYDachboxLackiert>
+	<KEYDachboxLackiertLang>
+        KEYFahrradlift
+
+        <CATInterieurleisten>
+        <KEYInterieurleistenMattchrom>
+        <KEYInterieurleistenAhorn>
+        <KEYInterieurleistenTitan>
+        <KEYInterieurleistenMyrte>
+        <KEYInterieurleistenBirke>
+        <KEYInterieurleistenEukalyptus>
+        <KEYInterieurleistenPappelRauchgrau>
+        <KEYInterieurleistenAluSaeulen>
+        <KEYInterieurleistenAluCubesSilver>
+        <KEYInterieurleistenAluBlackCubes>
+        <KEYInterieurleistenAluShadowGebuerstet>
+        <KEYInterieurleistenSieblackDunkelgrau>
+
+        <CATLenkraeder>
+        <KEYLenkradHolzSportDekorblendeAhornHell>
+        <KEYLenkradHolzSportDekorblendeMyrte>
+        <KEYLenkradLederSportDekorblendeBirke>
+        <KEYLenkradLederSportDekorblendeChrom>
+        <KEYLenkradLederSportDekorblendeSchwarz>
+        <KEYLenkradLederSportDekorblendeMyrte>
+        <KEYLenkradLederSport>
+        <KEYLenkradLederSportDekorblendeM>
+        <KEYSerienlenkradE46CouCa>
+
+        <CATLenkraederMultifunktion>
+        <KEYLenkradHolzLederAhornHellMF>
+        <KEYLenkradHolzLederMyrteMF>
+        <KEYLenkradLederBicolorSchwarzGrauMF>
+        <KEYLenkradLederBicolorSchwarzTaninrotMF>
+        <KEYLenkradLederSportDekorblendeBirkeMF>
+        <KEYLenkradLederSportDekorblendeChromMF>
+        <KEYLenkradLederSportDekorblendeSchwarzMF>
+        <KEYLenkradLederSportDekorblendeMyrteMF>
+        <KEYLenkradLederSportDekorblendeMMF>
+        <KEYLenkradLederSportMF>
+
+        <CATSchaltknauf>
+        <KEYSchaltknaufHolzAhornHellChromring>
+        <KEYSchaltknaufHolzAhornChromring>
+        <KEYSchaltknaufLederSchwarzChromring>
+        <KEYSchaltknaufAluPoliertRingSchwarz>
+        <KEYSchaltknaufAluMattchromRingSchwarz>
+        <KEYSchaltknaufLederSpangeChromMatt>
+	<KEYSchaltknaufLederSpangeChromGlaenzend>
+        <KEYSchaltknaufLederSpangeNussbaum>
+        <KEYSchaltknaufLederSpangeHolzAhorn>
+        <KEYSchaltknaufHolzAhornEmblem>
+        <KEYSchaltknaufHolzNussbaumHellEmblem>
+        <KEYSchaltknaufHolzNussbaumDunkelEmblem>
+        <KEYSchaltknaufHolzMyrteEmblem>
+        <KEYSchaltknaufLederSchwarzM>
+        <KEYSchaltknaufHolzNussbaumHell>
+        <KEYSchaltknaufHolzBirke>
+
+        <CATWaehlhebel>
+        <KEYWaehlhebelMattchrom>
+        <KEYWaehlhebelLederSpangeChromMatt>
+	<KEYWaehlhebelLederSpangeChromGlaenzend>
+        <KEYWaehlhebelLederSpangeHolzAhorn>
+        <KEYWaehlhebelHolzAhorn>
+        <KEYWaehlhebelHolzMyrte>
+        <KEYWaehlhebelHolzBirke>
+        <KEYWaehlhebelLeder>
+
+        <CATHandbremsgriffe>
+        <KEYHandbremsgriffMyrte>
+        <KEYHandbremsgriffChromMatt>
+        <KEYHandbremsgriffAhornHell>
+
+	<CATFussstuetzen>
+	<KEYMFussstuetzeSchwarz>
+	<KEYMFussstuetzeGrau>
+	<KEYMFussstuetzeBeige>
+        <KEYAluFussstuetze>
+
+        <CATFussmatten>
+        <KEYFussmattenVelours>
+        <KEYFussmattenCity>
+        <KEYFussmattenCountry>
+	<KEYFussmattenAluLine>
+        <KEYGummiFussmattenE46>
+
+	<KEYAlupedale>
+	<KEYAlupedaleSchaltgetriebe>
+	<KEYAlupedaleAutomatik>
+	<KEYPedaleSchaltgetriebe>
+	<KEYPedaleAutomatik>
+
+        <KEYArmauflageVorn>
+        <KEYMTuerEinstiegsleisten>
+        <KEYKlimaautomatik>
+        <KEYHandlampe>
+        <KEYLeseleuchteDetailOnly>
+        <KEYKleiderbuegel>
+
+  	<CATAutotelefone>
+  	<KEYAutotelefonCordless>
+  	<KEYAutotelefonProfessional>
+  	<KEYFreisprecheinrichtungBluetooth>
+  	<CATFreisprechSeitenkonsole>
+  	<KEYTelefonkonsole>
+	<KEYTelefonkonsoleSchwarz>
+	<KEYTelefonkonsoleGrau>
+	<KEYTelefonkonsoleHellbeige>
+
+        <KEYBordmonitor>
+        <KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYTVFunktion>
+        <KEYRadionavigationIndianapolis>
+	<KEYRadioProfessionalCD>
+	<KEYRadioBusinessCD>
+	<KEYRadioBusinessKassette>
+	<KEYSoundsystem>
+	<KEYSubwoofer>
+        <KEYCDAufbewahrungstasche>
+
+        <KEYKuehltasche>
+
+        <CATGepaeckraum>
+        <KEYAntirutschmatte>
+        <KEYGepaeckraumBodennetz>
+        <KEYGepaeckraumFaltbox>
+        <KEYGepaeckraumFormmatte>
+        <KEYGepaeckraumSpanngurte>
+        <KEYGepaeckraumWanne>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+        <KEYFeuerloescher>
+
+	<KEYFelge46>
+	<KEYFelge45>
+	<KEYFelge119>
+
+      </COMPONENTS>
+
+    </>

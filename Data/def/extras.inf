@@ -1,0 +1,24 @@
+
+$macro EXTRAMACRO [ NAME, ACTION, FILE, ACTIVE ]
+
+      <class type="EXTRA">
+        <group>EXTRAS</group>
+        <btn>type=clickandrelease</btn>
+        <iconfile>&FILE</iconfile>
+        <name>&NAME</name>
+        <action>&ACTION</action>
+        <active>&ACTIVE</active>
+        <style>border=0</style>
+      </EXTRA>
+
+$endmacro
+
+    <class type="EXTRAS">
+
+      %EXTRAMACRO [ "Layout drucken", "PRINTOUT", "PRINTER", "from='LACKE'" ]
+      %EXTRAMACRO [ "Konfiguration speichern", "SAVECONFIG", "SAVECONFIG", "from='LACKE'" ]
+      %EXTRAMACRO [ "Konfiguration laden", "LOADCONFIG", "LOADCONFIG", "from='MODELS'" ]
+      %EXTRAMACRO [ "Bild speichern", "SAVEIMAGE", "DISK", "from='LACKE'" ]
+
+    </EXTRAS>
+

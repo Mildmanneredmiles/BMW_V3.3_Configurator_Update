@@ -1,0 +1,207 @@
+
+      <class type="E46 limousine alt">
+
+        <ecode>E46</ecode>
+        <body>LIMOUSINE</body>
+        <date>to="20020228"</date>
+
+        <path>E46Limousine</path>
+
+        <:MOTORS>
+
+          <:316i>
+            <tireinfo>e46_lim_cou-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg'>
+      	      <$L 'options\basemodels.jpg' +I -M>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <AL11>
+              <AL12>
+            </>
+          </>
+
+          <:318i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg'>
+	      <$L 'options\basemodels.jpg' +I -M>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <AL31>
+              <AL32>
+            </>
+          </>
+
+          <:320i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <AM11>
+              <AN11>
+              <AN12>
+              <AV11>
+              <AV12>
+            </>
+          </>
+
+          <:323i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <AM31>
+              <AM32>
+            </>
+          </>
+
+          <:325i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+           <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <AN31>
+              <AN32>
+              <AV31>
+              <AV32>
+              <AN35>
+              <AN36>
+            </>
+          </>
+
+          <:328i>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+           <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <AM51>
+              <AM52>
+            </>
+          </>
+
+          <:330i>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+           <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-330.jpg' +I>
+	      <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge44">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <AV51>
+              <AV52>
+              <AN55>
+              <AN56>
+            </>
+          </>
+
+          <:330xi>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+           <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-330.jpg' +I>
+	      <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge44">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <EW51>
+            </>
+          </>
+
+          <:320d>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+           <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' $L 'options\basemodels.jpg' +I -M>
+	      <$L 'options\auspuff-1-D.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+
+           <:KEYS>
+              <AL71>
+              <AL72>
+              <AV72>
+            </>
+          </>
+
+          <:330d>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromleiste.jpg' +I>
+	      <$L 'options\auspuff-2-D.jpg' +I>
+	      <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 limousine alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge44">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <AL91>
+              <AL92>
+            </>
+          </>
+        </MOTORS>
+      </>

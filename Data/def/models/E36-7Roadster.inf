@@ -1,0 +1,63 @@
+
+    <class type="Z3 roadster">
+
+      <name>Z3 roadster</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=236 y=96 w=507 h=355</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=49 y=182 w=887 h=279</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=241 y=125 w=498 h=335</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0300>
+	<P0306>
+	<P0337>
+	<P0354>
+	<P0362>
+	<P0364>
+	<P0372>
+	<P0400>
+        <P0415>
+	<P0418>
+	<P0430>
+	<P0468>
+	<P0472>
+	<P0475>
+	<P0668>
+
+        <KEYFelgeStahlZ3>
+
+        <KEYWeisseBlinker>
+      	<KEYNebelscheinwerfer>
+        <KEYChromLineExterieur>
+        <KEYChromLineZiergitter>
+        <KEYAerodynamikpaket>
+        <KEYSpeedsterabdeckung>
+        <KEYHeckklappentraeger>
+        <KEYHeckklappentraegerChrom>
+        <KEYHartschalenkoffer>
+        <:KEYSkitraeger>
+          <parent></parent>
+        </>
+        <KEYUeberrollbuegel>
+
+        <KEYFelge55>
+        <KEYFelge64>
+
+      </COMPONENTS>
+
+    </>

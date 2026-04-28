@@ -1,0 +1,56 @@
+      <class type="E53SAVII">
+
+        <ecode>E53</ecode>
+        <body>SAV</body>
+        <date>from="20031001" to="99999999"</date>
+        <path>E53Facelift</path>
+        <interiorpath>E53Interior</interiorpath>
+        <shortid>sav</shortid>
+        <defaultpaint>P0471</defaultpaint>
+
+        <class type="MOTORS">
+
+          <class type="3.0i">
+            <tireinfo>E53-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge130", "KEYSerienlenkradE53", "KEYSchaltknaufLederSchwarz">
+              <HIDE    "KEYSerienlenkradE53MF">
+            </>
+            <*class type="DEF" ref="E53Facelift">
+            <:KEYS>
+              <FA11>
+              <FA12>
+            </>
+          </>
+
+          <class type="4.4i">
+            <tireinfo>E53-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L "options\MDChromniere" +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge57", "KEYSerienlenkradE53", "KEYSchaltknaufLederSchwarz">
+              <HIDE    "KEYSerienlenkradE53MF">
+            </>
+            <*class type="DEF" ref="E53Facelift">
+            <:KEYS>
+              <FB51>
+              <FB52>
+            </>
+          </>
+
+          <class type="3.0d">
+            <tireinfo>E53-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge130", "KEYSerienlenkradE53", "KEYSchaltknaufLederSchwarz">
+              <HIDE    "KEYSerienlenkradE53MF">
+            </>
+            <*class type="DEF" ref="E53Facelift">
+            <:KEYS>
+              <FB71>
+              <FB72>
+            </>
+          </>
+
+        </>
+      </>

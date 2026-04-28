@@ -1,0 +1,172 @@
+  <body>2.0d,2.5i,3.0i,3.0d</body>
+  <:KEYFelge109>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>7J x 17</rim>
+      <tire>215/60 R 17</tire>
+    </>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>235/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge110>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>7J x 17</rim>
+      <tire>215/60 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge111>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>235/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge112>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>235/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge148>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>235/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge113>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge143>
+    <:WHEEL>
+      <type>All-Season</type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge114>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 18</rim>
+      <tire>255/45 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge128>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>235/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge145>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>235/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge146>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>235/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge147>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>235/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge150>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>235/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>

@@ -1,0 +1,127 @@
+
+      <class type="E46 coupe Facelift">
+
+        <ecode>E46</ecode>
+        <body>COUPE</body>
+        <date>from="20030301"</date>
+
+        <path>E46CoupeFacelift</path>
+
+        <:COSYSCRIPT>
+          <$L 'options\keytachokursiv.bmp' +I>
+        </>
+
+        <:MOTORS>
+
+          <:316Ci>
+            <tireinfo>e46_lim_cou-1</tireinfo>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:COSYSCRIPT>
+	      <$L 'options\auspuffeinzelrohr.bmp' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+	    <:KEYS>
+              <BD71>
+            </>
+          </>
+
+          <:318Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:COSYSCRIPT>
+	      <$L 'options\auspuffeinzelrohr.bmp' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+            <:KEYS>
+              <BD91>
+              <BD92>
+            </>
+          </>
+
+          <:320Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BD11>
+              <BD12>
+            </>
+          </>
+
+          <:325Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:COSYSCRIPT>
+	      <$L 'options\chromteile.bmp' +U>
+	      <$L 'options\auspuffdoppelrohr.bmp' +I>
+	    </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge45", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BD31>
+              <BD32>
+           </>
+          </>
+
+          <:330Ci>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\modif-330ci.bmp' +I>
+              <$L 'options\chromteile.bmp' +U>
+            </>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge119", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+            <:KEYS>
+              <BD51>
+              <BD52>
+            </>
+          </>
+
+          <:320Cd>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <tireminsize>16</tireminsize>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BV51>
+              <BV52>
+            </>
+          </>
+
+	  <:330Cd>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\modif-330ci.bmp' +I>
+              <$L 'options\chromteile.bmp' +U>
+            </>
+            <*class type="DEF" ref="E46 coupe Facelift">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge119", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <BV91>
+              <BV92>
+            </>
+          </>
+        </MOTORS>
+      </>

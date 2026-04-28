@@ -1,0 +1,144 @@
+
+    <:X5>
+
+      <name>X5</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=244 y=53 w=491 h=404</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=55 y=124 w=867 h=336</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=251 y=35 w=469 h=424</bodyframe>
+        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0354>
+        <P0300>
+        <P0362>
+        <P0364>
+        <P0372>
+        <P0400>
+        <P0411>
+        <P0418>
+        <P0430>
+        <P0436>
+        <P0442>
+        <P0443>
+        <P0475>
+        <P0668>
+
+        <CATInterieurfarben>
+
+        <:KEYE53FxxSW>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxTT>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxAT>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxHC>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenBeige' +U>
+	  </>
+	</>
+        <:KEYE53FxxSK>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+
+        <KEYWeisseBlinker>
+        <KEYAerodynamikpaket>
+        <KEYTitanLineExterieur-GriffLeisteHinten>
+        <KEYTitanLineExterieur-niere>
+        <KEYTitanLineExterieur-spiegel>
+        <KEYUnterfahrschutz>
+        <KEYSeitenbeplankung>
+        <KEYZusatzscheinwerfer>
+        <KEYSeitenchwellerOhneSportpaket>
+        <KEYScheinwerferreinigungsanlage>
+
+        <CATInterieurleisten>
+        <KEYInterieurleistenPappelDunkel>
+        <KEYInterieurleistenPappelHell>
+        <KEYInterieurleistenTitan>
+        <KEYInterieurleistenSchwarz>
+	<KEYInterieurleistenBeige>
+
+
+        <CATLenkraeder>
+        <KEYLenkradLederSportDekorblendeTitan>
+        <KEYSerienlenkradE53>
+
+        <CATLenkraederMultifunktion>
+        <KEYLenkradLederMF>
+        <KEYLenkradLederSportDekorblendeTitanMF>
+        <KEYLenkradLederSportDekorblendePappelDunkelMF>
+        <KEYLenkradLederSportDekorblendePappelHellMF>
+        <KEYSerienlenkradE53MF>
+
+        <CATSchaltknauf>
+        <KEYSchaltknaufLederSchwarz>
+        <KEYSchaltknaufLederSpangeTitan>
+        <KEYSchaltknaufLederSpangeHolzPappelDunkel>
+        <KEYSchaltknaufLederSpangeHolzPappelHell>
+
+
+        <CATWaehlhebel>
+        <KEYWaehlhebelLeder>
+        <KEYWaehlhebelTitan>
+        <KEYWaehlhebelLederSpangeHolzPappelDunkel>
+        <KEYWaehlhebelLederSpangeHolzPappelHell>
+
+
+        <CATFussmatten>
+        <KEYFussmattenVelours>
+        <KEYFussmattenCity>
+        <KEYFussmattenCountry>
+        <KEYGummiFussmattenE53>
+        <KEYLeseleuchteDetailonly>
+
+  	<CATFreisprechSeitenkonsole>
+        <KEYTelefonkonsole>
+        <KEYTelefonkonsoleSchwarz>
+
+        <KEYBordmonitor>
+        <KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYTVFunktion>
+        <KEYRadioProfessional>
+        ;<KEYSoundsystemDetailOnly>
+        ;<KEYSubwoofer>
+        <KEYDVDSystem>
+
+        <KEYFelge56>
+        <KEYFelge57>
+
+      </COMPONENTS>
+
+    </>

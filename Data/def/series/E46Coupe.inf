@@ -1,0 +1,113 @@
+
+      <class type="E46 coupe">
+
+        <ecode>E46</ecode>
+        <body>COUPE</body>
+        <date>to="20030228"</date>
+
+        <path>E46Coupe</path>
+
+        <:COSYSCRIPT>
+          <$L 'options\keytachokursiv.bmp' +I>
+        </>
+
+        <:MOTORS>
+
+          <:316Ci>
+            <tireinfo>e46_lim_cou-1</tireinfo>
+            <*class type="DEF" ref="E46 coupe">
+	    <:AUTOSCRIPT>
+	      <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </>
+            <:KEYS>
+              <BL51>
+              <BM71>
+            </>
+          </>
+
+          <:318Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <*class type="DEF" ref="E46 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <BL31>
+              <BV71>
+              <BV72>
+            </>
+          </>
+
+          <:320Ci>
+            <tireinfo>E46_Lim-2</tireinfo>
+            <*class type="DEF" ref="E46 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+
+            <:KEYS>
+              <BM11>
+              <BN11>
+              <BN12>
+            </>
+          </>
+
+          <:323Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <*class type="DEF" ref="E46 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <BM31>
+              <BM32>
+            </>
+          </>
+
+          <:325Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <*class type="DEF" ref="E46 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge54", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <BN31>
+              <BN32>
+           </>
+          </>
+
+          <:328Ci>
+            <tireinfo>e46_lim_cou-2</tireinfo>
+            <*class type="DEF" ref="E46 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge54", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <BM51>
+              <BM52>
+            </>
+          </>
+
+          <:330Ci>
+            <tireinfo>e46_lim_cou-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYFelgeStahlE46">
+            </class>
+            <:KEYS>
+              <BN51>
+              <BN52>
+            </>
+          </>
+        </MOTORS>
+      </>

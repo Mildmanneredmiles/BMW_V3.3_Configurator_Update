@@ -1,0 +1,46 @@
+
+      <class type="Z3 Coupé">
+
+        <ecode>E36</ecode>
+        <body>COUPE</body>
+
+        <path>Z3-coupe</path>
+
+        <:MOTORS>
+
+          <class type="2.8i">
+            <tireinfo>e36_roa_cou-4</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-2-c.jpg' +I>
+              <$L 'options\lack28.bmp' %M>
+              <$L 'options\griff28.jpg' +I>
+            </>
+            <*class type="DEF" ref="Z3 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge47">
+            </class>
+
+            <:KEYS>
+              <CK51>
+            </>
+          </>
+
+          <class type="3.0i">
+            <tireinfo>e36_roa_cou-4</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2-c.jpg' +I>
+            </>
+            <*class type="DEF" ref="Z3 coupe">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge47">
+              <HIDE    "KEYHeckklappengriffChrom">
+            </class>
+
+            <:KEYS>
+              <CK71>
+            </>
+          </>
+
+        </MOTORS>
+
+      </>

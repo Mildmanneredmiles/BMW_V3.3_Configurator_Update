@@ -1,0 +1,142 @@
+
+<:SERIES>
+
+
+  <:1er>
+    <menu>x=38 y=205 w=154 h=280</menu>
+    <motorlayer>motor1</motorlayer>
+    <:MODELS>
+      $include 'series\E87.inf'
+    </>
+  </>
+
+  <:3er>
+
+    <menu>x=188 y=205 w=154 h=280</menu>
+    <motorlayer>motor1</motorlayer>
+
+    <:MODELS>
+
+      $include 'series\E90Limousine.inf'
+      $include 'series\E91Touring.inf'
+      $include 'series\E46LimousineFacelift.inf'
+      $include 'series\E46TouringFacelift.inf'
+      $include 'series\E46CoupeFacelift.inf'
+      $include 'series\E46CabrioFacelift.inf'
+      $include 'series\E46CompactFacelift.inf'
+?A      $include 'series\E46Compact.inf'
+?A      $include 'series\E36Compact.inf'
+?A      $include 'series\E46Limousine.inf'
+?A      $include 'series\E46Touring.inf'
+?A      $include 'series\E46Coupe.inf'
+?A      $include 'series\E46Cabrio.inf'
+
+    </MODELS>
+
+  </3er>
+
+  <:5er>
+
+    <menu>x=338 y=205 w=154 h=280</menu>
+    <motorlayer>motor1</motorlayer>
+
+    <:MODELS>
+
+      $include 'series\E60Limousine.inf'
+      $include 'series\E61Touring.inf'
+      $include 'series\E39Limousine.inf'
+      $include 'series\E39Touring.inf'
+
+    </MODELS>
+
+  </5er>
+
+  <:6er>
+
+    <menu>x=488 y=205 w=154 h=280</menu>
+    <motorlayer>motor2</motorlayer>
+
+    <:MODELS>
+
+      $include 'series\E63Coupe.inf'
+      $include 'series\E64Cabrio.inf'
+
+    </MODELS>
+
+  </6er>
+
+  <:7er>
+
+    <menu>x=488 y=390 w=154 h=80</menu>
+    <motorlayer>motor3</motorlayer>
+
+    <:MODELS>
+
+      $include 'series\E65LimousineFacelift.inf'
+      $include 'series\E65Limousine.inf'
+      $include 'series\E38Limousine.inf'
+
+    </MODELS>
+
+  </7er>
+
+  <:X3>
+
+    <menu>x=638 y=205 w=154 h=280</menu>
+    <motorlayer>motor2</motorlayer>
+    <path>X</path>
+
+    <:MODELS>
+
+      $include 'series\E83SAV.inf'
+
+    </MODELS>
+
+  </X3>
+
+  <:X5>
+
+    <menu>x=638 y=390 w=154 h=100</menu>
+    <motorlayer>motor3</motorlayer>
+    <path>X</path>
+
+    <:MODELS>
+
+      $include 'series\E53SAVFacelift.inf'
+      $include 'series\E53SAV.inf'
+
+    </MODELS>
+
+  </X5>
+
+  <:Z3>
+
+    <menu>x=788 y=205 w=154 h=280</menu>
+    <motorlayer>motor2</motorlayer>
+    <path>Z</path>
+
+    <:MODELS>
+
+      $include 'series\E36-7Roadster.inf'
+      $include 'series\E36-7Coupe.inf'
+
+    </MODELS>
+
+  </Z3>
+
+  <:Z4>
+
+    <menu>x=788 y=390 w=154 h=100</menu>
+    <motorlayer>motor3</motorlayer>
+    <path>Z</path>
+
+    <:MODELS>
+
+      $include 'series\E85Roadster.inf'
+
+    </MODELS>
+
+  </Z4>
+
+</SERIES>
+

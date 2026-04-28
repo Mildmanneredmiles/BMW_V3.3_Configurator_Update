@@ -1,0 +1,38 @@
+
+<:VEHICLES>
+
+$include "MODELS\E87.inf"
+$include "MODELS\E90Limousine.inf"
+$include "MODELS\E91Touring.inf"
+$include "MODELS\E46Compact.inf"
+$include "MODELS\E46LimousineFacelift.inf"
+$include "MODELS\E46TouringFacelift.inf"
+$include "MODELS\E46CoupeFacelift.inf"
+$include "MODELS\E46CabrioFacelift.inf"
+?A $include "MODELS\E36Compact.inf"
+?A $include "MODELS\E46Limousine.inf"
+?A $include "MODELS\E46Touring.inf"
+?A $include "MODELS\E46Coupe.inf"
+?A $include "MODELS\E46Cabrio.inf"
+
+$include "MODELS\E60Limousine.inf"
+$include "MODELS\E39Limousine.inf"
+$include "MODELS\E61Touring.inf"
+$include "MODELS\E39Touring.inf"
+
+$include "MODELS\E83Sav.inf"
+$include "MODELS\E53SavFacelift.inf"
+$include "MODELS\E53Sav.inf"
+
+$include "MODELS\E38Limousine.inf"
+$include "MODELS\E65Limousine.inf"
+$include "MODELS\E65LimousineFacelift.inf"
+
+$include "MODELS\E36-7Roadster.inf"
+$include "MODELS\E36-7Coupe.inf"
+$include "MODELS\E85Roadster.inf"
+
+$include "MODELS\E63Coupe.inf"
+$include "MODELS\E64Cabrio.inf"
+
+</>

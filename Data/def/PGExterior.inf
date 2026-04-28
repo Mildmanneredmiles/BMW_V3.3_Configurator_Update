@@ -1,0 +1,600 @@
+//====================================================================
+// Makros
+//====================================================================
+
+$macro EXTERIEUR_STATIC[ NAME, KEY ]
+
+  <:OPTION>
+    <group>EXTERIEUR</group>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+      <:OPTION>
+        <group>EXTERIEUR</group>
+        <name>Exterieurumfänge in Wagenfarbe</name>
+        <file>KEYTeileWagenfarbe</file>
+        <:KEYS>
+          <KEYTeileWagenfarbe>
+          <S0321>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+	<prio>990</prio>
+      </>
+
+     %EXTERIEUR_STATIC [ "Hardtop-Transportwagen", KEYHardtopTransportwagen ]
+
+     <:OPTION>
+      <file>KEYE65V12Modifications</file>
+       <:KEYS>
+         <KEYE65V12Modifications>
+       </KEYS>
+     </>
+
+     <class type="OPTION" NAME="WeisseBlinker">
+       <group>EXTERIEUR</group>
+       <name>Weisse Blinkleuchten</name>
+       <file>KEYWeisseBlinker</file>
+       <:KEYS>
+         <KEYWeisseBlinker>
+         <S0785>
+       </class>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </class>
+
+     <class type="OPTION" name="AERODYNAMIK">
+       <group>EXTERIEUR</group>
+       <name>Aerodynamikpaket</name>
+       <file>KEYAerodynamikpaket</file>
+       <btn>type=radio deselect=true</btn>
+       <:KEYS>
+         <KEYAerodynamikpaket>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+       <:SCRIPTS>
+         <:SELECT>
+           <ON   "KEYNebelscheinwerfer">
+           <OFF  "KEYTrittbrett">
+           <lineif ecode = "E83" do ON "KEYAuspuffrohrblendeChrom">
+           <OFF "KEYSchmutzfaenger", "KEYSchmutzfaengerVorne", "KEYSchmutzfaengerHinten">
+         </>
+         <:OFF>
+           <lineif ecode = "E83" do OFF "KEYAuspuffrohrblendeChrom">
+         </>
+       </>
+     </>
+
+     <class type="OPTION" name="AERODYNAMIK">
+       <group>EXTERIEUR</group>
+       <name>$T[Aerodynamikpaket] II</name>
+       <file>KEYAerodynamikpaketII</file>
+       <btn>type=radio deselect=true</btn>
+       <:KEYS>
+         <KEYAerodynamikpaketII>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+       <:SCRIPTS>
+         <:ON>
+           <ON  "KEYNebelscheinwerfer">
+           <lineif ecode = "E83" do ON "KEYAuspuffrohrblendeChrom">
+           <OFF "KEYSchmutzfaenger", "KEYSchmutzfaengerVorne", "KEYSchmutzfaengerHinten">
+         </>
+         <:OFF>
+           <lineif ecode = "E83" do OFF "KEYAuspuffrohrblendeChrom">
+         </>
+       </>
+     </>
+
+     <class type="OPTION" name="AERODYNAMIK">
+       <group>EXTERIEUR</group>
+       <name>M Aerodynamikpaket</name>
+       <file>KEYMAerodynamikpaket</file>
+       <btn>type=radio deselect=true</btn>
+       <:KEYS>
+         <KEYMAerodynamikpaket>
+       </>
+       <:SCRIPTS>
+         <:SELECT>
+           <ON  "KEYNebelscheinwerfer">
+           <OFF "KEYTrittbrett">
+           <OFF "KEYTitanLineExterieur">
+           <OFF "KEYStossleisten">
+           <OFF "KEYSchmutzfaenger", "KEYSchmutzfaengerVorne", "KEYSchmutzfaengerHinten">
+         </>
+         <:DESELECT>
+          <OFF "KEYAufsatzteileMAerodynamikpaket">
+          <OFF "KEYDiffusor">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Aufsatzteile Frontschürze</name>
+       <file>KEYAufsatzteileMAerodynamikpaket</file>
+       <:KEYS>
+         <KEYAufsatzteileMAerodynamikpaket>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NEEDS [ "KEYMAerodynamikpaket", "KEYHeckspoiler" ] ?ON "%AUTOINSERT">
+         </>
+       </>
+       <:VIEWS>
+	 <frontseite>2</frontseite>
+         <seite>1</seite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Diffusor</name>
+       <file>KEYDiffusor</file>
+       <:KEYS>
+         <KEYDiffusor>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NEEDS [ "KEYMAerodynamikpaket" ] ?ON "%AUTOINSERT">
+         </>
+       </>
+       <:VIEWS>
+	 <heckseite>2</heckseite>
+       </>
+     </>
+
+     <:OPTION name="AERODYNAMIK">
+       <group>EXTERIEUR</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Aerodynamik-Komponenten</name>
+       <file>KEYAerodynamikKomponenten</file>
+       <:KEYS>
+         <KEYAerodynamikKomponenten>
+       </>
+       <:SCRIPTS>
+         <:SELECT>
+           <OFF "KEYSchmutzfaenger", "KEYSchmutzfaengerVorne", "KEYSchmutzfaengerHinten">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Stoßleisten</name>
+       <file>KEYStossleisten</file>
+       <:KEYS>
+         <KEYStossleisten>
+       </>
+       ; nicht in Radio mit Aeropaket wegen Aerodynamik-Komponenten
+       <:SCRIPTS>
+         <:SELECT>
+           <case selected KEYMAerodynamikpaket OFF "KEYMAerodynamikpaket">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Stoßleisten (Türen)</name>
+       <file>KEYStossleistenSeitlich</file>
+       <:KEYS>
+         <KEYStossleistenSeitlich>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>M Heckspoiler</name>
+       <file>KEYMHeckspoiler</file>
+       <:KEYS>
+         <KEYMHeckspoiler>
+       </>
+       <:VIEWS>
+	 <heck>2</heck>
+	 <heckseite>1</heckseite>
+         <seite>1</seite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Heckspoiler</name>
+       <file>KEYHeckspoiler</file>
+       <:KEYS>
+         <KEYHeckspoiler>
+       </>
+       <:SCRIPTS>
+         <:OFF>
+           <lineif ecode = "E90" OFF "KEYAufsatzteileMAerodynamikpaket">
+         </>
+       </>
+       <:VIEWS>
+	 <heckseite>2</heckseite>
+         <seite>1</seite>
+         <heck>1</heck>
+         <frontseite>1</frontseite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>M Leiste</name>
+       <file>KEYMLeiste</file>
+       <:KEYS>
+         <KEYMLeiste>
+       </>
+       <:VIEWS>
+	 <seite>2</seite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>M Spiegel</name>
+       <file>KEYMSpiegel</file>
+       <:KEYS>
+         <KEYMSpiegel>
+       </>
+       <:VIEWS>
+	 <front>2</front>
+         <seite>1</seite>
+       </>
+     </>
+
+     <:OPTION name="RADIOAuspuffblenden">
+       <group>EXTERIEUR</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Auspuffrohrblende in Chrom</name>
+       <file>KEYAuspuffrohrblendeChrom</file>
+       <:KEYS>
+         <KEYAuspuffrohrblendeChrom>
+       </>
+       <:SCRIPTS>
+         <:ON>
+
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_REAR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOAuspuffblenden">
+       <group>EXTERIEUR</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Auspuffrohrblende in Chrom</name>
+       <file>KEYDoppelAuspuffrohrblendeChrom</file>
+       <:KEYS>
+         <KEYDoppelAuspuffrohrblendeChrom>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_REAR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOAuspuffblenden">
+       <group>EXTERIEUR</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Sportnachschalldämpfer</name>
+       <file>KEYSportnachschalldaempfer</file>
+       <:KEYS>
+         <KEYSportnachschalldaempfer>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_REAR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Schmutzfänger vorne</name>
+       <file>KEYSchmutzfaengerVorne</file>
+       <:KEYS>
+         <KEYSchmutzfaengerVorne>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NOT [ "KEYAerodynamikpaket", "KEYAerodynamikpaketII", "KEYMAerodynamikpaket", "KEYAerodynamikKomponenten" ] ?MSG "%NICHTINVERBINDUNGMIT">
+         </>
+       </>
+       <:VIEWS>
+	 <frontseite>1</frontseite>
+	 <seite>2</seite>
+	 <heckseite>1</heckseite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Schmutzfänger hinten</name>
+       <file>KEYSchmutzfaengerHinten</file>
+       <:KEYS>
+         <KEYSchmutzfaengerHinten>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NOT [ "KEYAerodynamikpaket", "KEYAerodynamikpaketII", "KEYMAerodynamikpaket", "KEYAerodynamikKomponenten" ] ?MSG "%NICHTINVERBINDUNGMIT">
+         </>
+       </>
+       <:VIEWS>
+         <frontseite>1</frontseite>
+         <seite>2</seite>
+         <heckseite>1</heckseite>
+         <heck>1</heck>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Design Ziergitter</name>
+       <file>KEYDesignZiergitter</file>
+       <:KEYS>
+         <KEYDesignZiergitter>
+       </>
+       <:VIEWS>
+	 <seite>2</seite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Chrom-Line Frontziergitter</name>
+       <file>KEYChromLineZiergitter</file>
+       <:KEYS>
+         <KEYChromLineZiergitter>
+       </>
+       <:VIEWS>
+	 <seite>2</seite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Chrom-Line Exterieur</name>
+       <file>KEYChromLineExterieur</file>
+       <:KEYS>
+         <KEYChromLineExterieur>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Individual Hochglanz Shadowline</name>
+       <name2>#ABWERK</name2>
+       <file>KEYIndividualHochglanzShadowline</file>
+       <:KEYS>
+         <KEYIndividualHochglanzShadowline>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Speedster-Abdeckung</name>
+       <file>KEYSpeedsterabdeckung</file>
+       <:KEYS>
+         <KEYSpeedsterabdeckung>
+       </>
+       <:VIEWS>
+	 <heck>1</heck>
+         <seite>2</seite>
+       </>
+     </>
+
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Heckklappengriff in Chrom</name>
+       <file>KEYHeckklappengriffChrom</file>
+       <:KEYS>
+         <KEYHeckklappengriffChrom>
+       </>
+       <:VIEWS>
+	 <heck>2</heck>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Blink- und Heckleuchten in Chrom</name>
+       <file>KEYHeckleuchtenChrom</file>
+       <:KEYS>
+         <KEYHeckleuchtenChrom>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Titan-Line Exterieur</name>
+       <file>KEYTitanLineExterieur</file>
+       <:KEYS>
+         <KEYTitanLineExterieur>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NOT [ "KEYMAerodynamikpaket" ] ?MSG "%NICHTINVERBINDUNGMIT">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Heckscheibenwischer</name>
+       <file>KEYHeckwischer</file>
+       <:KEYS>
+         <KEYHeckwischer>
+       </>
+       <:VIEWS>
+	 <heck>2</heck>
+         <seite>1</seite>
+       </>
+     </>
+
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Weisse Heckleuchten</name>
+       <file>KEYWeisseHeckleuchten</file>
+       <:KEYS>
+         <KEYWeisseHeckleuchten>
+       </>
+       <:VIEWS>
+	 <heck>2</heck>
+         <seite>1</seite>
+	 <heckseite>1</heckseite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Griffleiste Chrom</name>
+       <file>KEYGriffleisteChrom</file>
+       <:KEYS>
+         <KEYGriffleisteChrom>
+       </>
+       <:VIEWS>
+	 <heck>2</heck>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Hardtop</name>
+       <file>KEYHardtop</file>
+       <:KEYS>
+         <KEYHardtop>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Unterfahrschutz</name>
+       <file>KEYUnterfahrschutz</file>
+       <:KEYS>
+         <KEYUnterfahrschutz>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_FRONT_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Schmutzfänger</name>
+       <file>KEYSchmutzfaenger</file>
+       <:KEYS>
+         <KEYSchmutzfaenger>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NOT [ "KEYAerodynamikpaket", "KEYAerodynamikpaketII", "KEYMAerodynamikpaket", "KEYAerodynamikKomponenten" ] ?MSG "%NICHTINVERBINDUNGMIT">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Seitenbeplankung</name>
+       <file>KEYSeitenbeplankung</file>
+       <:KEYS>
+         <KEYSeitenbeplankung>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NEEDS [ "KEYAerodynamikpaket" ] ?ON "%AUTOINSERT">
+         </>
+       </>
+       <:VIEWS>
+	 <seite>2</seite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Zusatzscheinwerfer</name>
+       <file>KEYZusatzscheinwerfer</file>
+       <:KEYS>
+         <KEYZusatzscheinwerfer>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NEEDS [ "KEYDachreling" ] ?ON "%AUTOINSERT">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_FRONT_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Verdeckabdeckungen</name>
+       <file>KEYVerdeckabdeckung</file>
+       <visibility>detail</visibility>
+       <:KEYS>
+         <KEYVerdeckabdeckung>
+       </>
+     </>
+
+     <:OPTION name="RADIOWindschutz">
+       <group>EXTERIEUR</group>
+       <name>Windschutz</name>
+       <btn>type=radio deselect=true</btn>
+       <file>KEYWindschutz</file>
+       <visibility>detail</visibility>
+       <:KEYS>
+         <KEYWindschutz>
+       </>
+     </>
+
+     <:OPTION name="RADIOWindschutz">
+       <group>EXTERIEUR</group>
+       <name>Windschutz mit Schiene</name>
+       <btn>type=radio deselect=true</btn>
+       <file>KEYWindschutzmitSchiene</file>
+       <visibility>detail</visibility>
+       <:KEYS>
+         <KEYWindschutzmitSchiene>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Aluminium Trittbrett</name>
+       <file>KEYTrittbrett</file>
+       <:KEYS>
+         <KEYTrittbrett>
+       </>
+       <:SCRIPTS>
+         <:ON>
+           <NOT [ "KEYAerodynamikpaket", "KEYMAerodynamikpaket" ] ?MSG "%NICHTINVERBINDUNGMIT">
+         </>
+       </>
+       <:VIEWS>
+         <seite>1</seite>
+	 <frontseite>1</frontseite>
+	 <heckseite>1</heckseite>
+       </>
+     </>
+
+     <:OPTION>
+       <group>EXTERIEUR</group>
+       <name>Heckleuchten Blackline</name>
+       <file>KEYHeckleuchtenBlackline</file>
+       <:KEYS>
+         <KEYHeckleuchtenBlackline>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+
+
+

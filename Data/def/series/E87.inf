@@ -1,0 +1,156 @@
+
+      <class type="Sports Hatch">
+
+        <path>E87</path>
+	<ecode>E87</ecode>
+	<body>LIM</body>
+        <defaultpaint>P0A18</defaultpaint>
+
+        <:AUTOSCRIPT>
+          <ON   "GASchaltknauf">
+          <HIDE "KEYSchaltknaufSportE87">
+          <HIDE "KEYInterieurleistenSilber">
+          <:ONCHANGE>
+            <layeroff "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0475" )^.Status = "2"   layeron "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0668" )^.Status = "2"   layeron "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0A17" )^.Status = "2"   layeron "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0A19" )^.Status = "2"   layeron "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0A21" )^.Status = "2"   layeron "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0A22" )^.Status = "2"   layeron "Sensoren-Schwarz">
+            <lineif FindClassByKey( "KEYParkDistanceControl" )^.Status = "2"   lineif FindClassByKey( "KEYTeileWagenfarbe" )^.Status = "2"   lineif FindClassByKey( "P0A35" )^.Status = "2"   layeron "Sensoren-Schwarz">
+          </>
+        </>
+
+        <:COSYSCRIPTLINEAFTER>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe.bmp' #M $C" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0475' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0668' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0A17' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0A19' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0A21' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0A22' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $I+ 'PAINT=P0A35' $L 'options\KEYParkDistanceControl--KEYTeileWagenfarbe' #M $C  $L 'options\Sensoren-Schwarz' +U  $S-150 'KEYParkDistanceControl'" ]>
+	  <"*" "KEYParkDistanceControl" [ "$I+ 'SA=KEYTeileWagenfarbe' $S-150 'KEYParkDistanceControl'" ]>
+        </>
+
+        <:MOTORS>
+
+          <class type="116i">
+            <tireinfo>E87-1</tireinfo>
+            <:COSYSCRIPT>
+   	      <$L 'options\KEYInterieurleistenSilber' +U>
+	    </>
+            <:AUTOSCRIPT>
+              <ON      "KEYRadvollblendeE87">
+              <ON      "GASchaltgetriebe">
+            </>
+            <*class type="DEF" ref="E87">
+            <:KEYS>
+              <UF11>
+              <UF12>
+            </>
+          </>
+
+          <class type="118i">
+            <tireinfo>E87-1</tireinfo>
+            <:COSYSCRIPT>
+   	      <$L 'options\KEYInterieurleistenTitanMattSerie' +U>
+	    </>
+            <:AUTOSCRIPT>
+              <ON      "KEYRadvollblendeE87">
+              <SA100   "KEYTeileWagenfarbe">
+              <ON      "GASchaltgetriebe">
+            </>
+            <*class type="DEF" ref="E87">
+            <:KEYS>
+              <UF31>
+              <UF32>
+            </>
+          </>
+
+          <class type="120i">
+            <tireinfo>E87-2</tireinfo>
+            <:COSYSCRIPT>
+   	      <$L 'options\KEYInterieurleistenTitanMattSerie' +U>
+	    </>
+            <:AUTOSCRIPT>
+              <ON      "KEYRadvollblendeE87">
+              <SA100   "KEYTeileWagenfarbe">
+              <ON      "GASchaltgetriebe">
+            </>
+            <*class type="DEF" ref="E87">
+            <:KEYS>
+              <UF51>
+              <UF52>
+            </>
+          </>
+
+          <class type="130i">
+            <tireinfo>E87-3</tireinfo>
+            <:COSYSCRIPT>
+   	      <$L 'options\KEYInterieurleistenTitanMattSerie' +U>
+   	      <$L 'options\MDChromniere' +u>
+   	      <$L 'options\MDChromAuspuffZweirohr' +u>
+   	      <$L 'options\KEYHandbremsgriffLederSchwarz' +u>
+   	      <$L 'options\MDKlimaanlage' +u>
+	    </>
+            <:AUTOSCRIPT>
+              <HIDE   "KEYE87FAFA6", "KEYE87FAFAT">
+              <ON     "KEYE87FAUA6">
+              <ON      "KEYFelge141">
+              <SA100   "KEYTeileWagenfarbe", "KEYNebelscheinwerfer">
+              <HIDE    "GASchaltgetriebe", "GASchaltknauf">
+              <HIDE    "KEYHandbremsgriffLederSchwarz">
+              <SHOW    "KEYSchaltknaufSportE87">
+              <ON      "KEYSchaltknaufSportE87">
+              <HIDE    "CATWaehlhebel">
+              <HIDE    "KEYPedaleAutomatik">
+              <OFF     "GASchaltknauf">
+
+            </>
+            <*class type="DEF" ref="E87">
+            <:KEYS>
+              <UF91>
+              <UF92>
+            </>
+          </>
+
+
+          <class type="118d">
+            <tireinfo>E87-1</tireinfo>
+            <:COSYSCRIPT>
+   	      <$L 'options\KEYInterieurleistenSilber' +U>
+   	      <$L 'options\Auspuff-D-1' +U>
+	    </>
+            <:AUTOSCRIPT>
+              <ON "KEYRadvollblendeE87">
+              <ON "GASchaltgetriebe">
+            </>
+            <*class type="DEF" ref="E87">
+            <:KEYS>
+              <UG31>
+              <UG32>
+            </>
+          </>
+
+          <class type="120d">
+            <tireinfo>E87-2</tireinfo>
+            <:COSYSCRIPT>
+   	      <$L 'options\KEYInterieurleistenTitanMattSerie' +U>
+   	      <$L 'options\Auspuff-D-1' +I>
+	    </>
+            <:AUTOSCRIPT>
+              <ON      "KEYRadvollblendeE87">
+              <SA100   "KEYTeileWagenfarbe">
+              <ON      "GASchaltgetriebe">
+            </>
+            <*class type="DEF" ref="E87">
+            <:KEYS>
+              <UG51>
+              <UG52>
+            </>
+          </>
+
+        </>
+      </>

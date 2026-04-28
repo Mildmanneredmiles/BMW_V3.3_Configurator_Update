@@ -1,0 +1,182 @@
+
+    <class type="E87">
+
+      <name>E87</name>
+
+      <:VIEWS>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=159 y=106 w=669 h=322</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=92 y=125 w=814 h=290</bodyframe>
+        </>
+        <:heckseite>
+          <angle>225</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=46 y=73 w=915 h=458</bodyframe>
+        </>
+        <:interior>
+          <angle>0</angle>
+          <pov>DRIVERDOOR</pov>
+          <bodyframe>x=0 y=0 w=1000 h=600</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0354>
+        <P0A18>
+        <P0A23>
+        <P0A19>
+        <P0A17>
+        <P0A22>
+        <P0A35>
+        <P0475>
+        <P0668>
+        <P0438>
+        <P0A21>
+        <P0300>
+
+        CATDachsysteme
+        KEYGrundtraeger
+	KEYGepaeckkorb
+;	  KEYSkitraeger
+	KEYSnowboardhalterung
+	KEYSurfboardhalterung
+        KEYRennradhalterung
+;	KEYDachbox
+	KEYDachboxLackiert
+;	<KEYDachboxLackiertLang>
+        <KEYFahrradlift>
+
+        <CATInterieurfarben>
+
+        <KEYE87FAFA6>
+        <KEYE87FAFAT>
+
+        <KEYE87FAUA6>
+        <KEYE87FAUAT>
+        <KEYE87FAUD9>
+
+        <KEYE87FAGA1>
+        <KEYE87FAGA2>
+        <KEYE87FAGA3>
+        <KEYE87FAGA4>
+
+        <KEYE87FLHSW>
+        <KEYE87FLHA1>
+        <KEYE87FLHA5>
+        <KEYE87FLHBK>
+        <KEYE87FLHC2>
+
+        <GASchaltgetriebe>
+        <KEYAutomatikgetriebe>
+
+        <KEYRadvollblendeE87>
+
+        <KEYAerodynamikpaket>
+        <KEYMAerodynamikpaket>
+        <KEYXenonscheinwerfer>
+        <KEYNebelscheinwerfer>
+        <KEYScheinwerferreinigungsanlage>
+        <KEYParkDistanceControl>
+        <KEYParkDistanceControlLow>
+        <KEYTeileWagenfarbe>
+        <KEYGlasschiebedach>
+
+        <:CATSchaltknauf>
+          <iconfile>GASchaltknauf</iconfile>
+        </>
+        <KEYSchaltknaufSportE87>
+        <GASchaltknauf>
+;        <GAWaehlhebel>
+        <KEYSchaltknaufLederSchwarz>
+        <KEYSchaltknaufLederSpangeSennesche>
+
+        <:CATWaehlhebel>
+          <iconfile>KEYWaehlhebelTitan</iconfile>
+        </>
+        <KEYWaehlhebelTitan>
+        <KEYWaehlhebelLederSpangeSennesche>
+
+        <KEYPedaleSchaltgetriebe>
+        <KEYPedaleAutomatik>
+        <KEYAlupedaleSchaltgetriebe>
+        <KEYAlupedaleAutomatik>
+        <KEYAlupedale>
+
+        <:KEYAluFussstuetze>
+          <parent></parent>
+        </>
+
+        <:CATHandbremsgriffe>
+          <iconfile>KEYHandbremsgriffLederSchwarz</iconfile>
+        </>
+        <KEYHandbremsgriffLederSchwarz>
+        <KEYHandbremsgriffSennEsche>
+
+        <:CATInterieurleisten>
+          <iconfile>KEYInterieurleistenSilber</iconfile>
+        </>
+        <KEYInterieurleistenSilber>
+
+        <:KEYInterieurleistenKodiakSilber>
+          <btn>type=radio deselect=true</btn>
+        </>
+        <:KEYInterieurleistenTitanMatt>
+          <btn>type=radio deselect=true</btn>
+        </>
+        <:KEYInterieurleistenGomeraschwarz>
+          <btn>type=radio deselect=true</btn>
+        </>
+        <:KEYInterieurleistenSennesche>
+          <btn>type=radio deselect=true</btn>
+        </>
+
+        <KEYSitzheizung>
+        <:KEYMultifunktionslenkrad>
+          <name>Multifunktion für Sportlenkrad</name>
+        </>
+        <KEYKlimaautomatik>
+        <KEYRadionavigationIndianapolis>
+	<KEYCDAufbewahrungstasche>
+
+        <KEYKleiderbuegel>
+        <KEYLeseleuchte>
+        <KEYHandlampe>
+
+	<:KEYFreisprecheinrichtungBluetooth>
+	  <parent></parent>
+	</>
+
+        <KEYBordmonitor>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYFrontkameraNoNavi>
+        <KEYRueckfahrkameraNoNavi>
+
+	<KEYKuehltasche>
+	<CATGepaeckraum>
+	<KEYAntirutschmatte>
+	<KEYGepaeckraumBodennetz>
+	<KEYGepaeckraumFaltbox>
+	<KEYGepaeckraumFormmatte>
+	<KEYGepaeckraumWanne>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+        <KEYFeuerloescher>
+
+
+      </>
+
+    </>
+

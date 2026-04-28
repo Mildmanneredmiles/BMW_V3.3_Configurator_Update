@@ -1,0 +1,174 @@
+
+$macro SICHERHEIT_STATIC[ NAME, KEY ]
+
+  <:OPTION>
+    <group>SICHERHEIT</group>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+$macro KINDERSITZ[ NAME, KEY ]
+
+   <class type="OPTION" name="KINDERSITZ">
+     <group>SICHERHEIT</group>
+     <parent>CATKindersitze</parent>
+     <btn>type=radio deselect=true</btn>
+     <visibility>detail</visibility>
+     <name>&NAME</name>
+     <file>&KEY</file>
+     <:KEYS>
+       <&KEY>
+     </>
+   </>
+
+$endmacro
+
+
+$macro KAMERA[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOBordmonitorsysteme">
+    <group>SICHERHEIT</group>
+    <btn>type=radio deselect=true</btn>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+    <:SCRIPTS>
+      <:AFTERSELECT>
+      	<ON "KEYBordmonitor">
+      </>
+$ifndef BORDMONITOR_VISIBLE
+      <:AFTERDESELECT>
+        <case selected KEYBordmonitor OFF "KEYBordmonitor">
+      </>
+$endif
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro KAMERANONAVI[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOBordmonitorsysteme">
+    <group>SICHERHEIT</group>
+    <btn>type=radio deselect=true</btn>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+    <:SCRIPTS>
+      <:SELECT>
+      	<case selected KEYBordmonitor OFF "KEYBordmonitor">
+      </>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+
+    %SICHERHEIT_STATIC [ "Pulverfeuerlöscher", KEYFeuerloescher ]
+    %SICHERHEIT_STATIC [ "Car Cover Indoor", KEYCarCoverIndoor ]
+    %SICHERHEIT_STATIC [ "Car Cover Outdoor", KEYCarCoverOutdoor ]
+    %SICHERHEIT_STATIC [ "Car Cover Outdoor Frontscheibe", KEYCarCoverOutdoorFrontscheibe ]
+
+// --- Front- und Rückfahrkamera ----------------------------------------------
+
+  %KAMERA[ "Frontkamera", 			   KEYFrontkamera ]
+  %KAMERA[ "Rückfahrkamera", 		   KEYRueckfahrkamera ]
+  %KAMERANONAVI[ "Frontkamera", KEYFrontkameraNoNavi ]
+  %KAMERANONAVI[ "Rückfahrkamera", KEYRueckfahrkameraNoNavi ]
+
+
+
+// ---- Kindersitze -----------------------------------------------------------
+
+    <class type="OPTION">
+      <group>SICHERHEIT</group>
+      <category>CATKindersitze</category>
+      <name>Kindersitze</name>
+      <file>CATKindersitze</file>
+      <:KEYS>
+        <CATKindersitze>
+      </>
+    </>
+
+    %KINDERSITZ [ "BMW Baby-Seat 0+", KEYBabyseat ]
+    %KINDERSITZ [ "BMW Junior Seat I-II", KEYJuniorseat ]
+    %KINDERSITZ [ "BMW Junior Seat II",   KEYJuniorseatII ]
+    %KINDERSITZ [ "BMW Junior Seat III", KEYJuniorseatIII ]
+;      %KINDERSITZ [ "Buggy für Baby Seat", KEYBuggy ]
+
+; ---------------------------- Scheinwerfer --------------------------------
+
+     <:OPTION>
+       <group>SICHERHEIT</group>
+       <name>Nebelscheinwerfer</name>
+       <file>KEYNebelscheinwerfer</file>
+       <:KEYS>
+         <KEYNebelscheinwerfer>
+       </>
+       <:SCRIPTS>
+         <:OFF>
+           <NOT [ "KEYAerodynamikpaket" ] ?OFF "%AUTODELETE">
+           <NOT [ "KEYMAerodynamikpaket" ] ?OFF "%AUTODELETE">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_FRONT_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>SICHERHEIT</group>
+       <name>Xenonscheinwerfer</name>
+       <file>KEYXenonscheinwerfer</file>
+       <:KEYS>
+         <KEYXenonscheinwerfer>
+       </>
+     <*class type="VIEWS" ref="DEFAULT_FRONT_VIEWS">
+     </>
+
+     <:OPTION>
+       <group>SICHERHEIT</group>
+       <name>Scheinwerfer-Reinigungsanlage</name>
+       <file>KEYScheinwerferreinigungsanlage</file>
+       <:KEYS>
+         <KEYScheinwerferreinigungsanlage>
+       </>
+     <*class type="VIEWS" ref="DEFAULT_FRONT_VIEWS">
+     </>
+
+
+     <:OPTION name="RADIOParkDistanceControl">
+       <group>SICHERHEIT</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Park Distance Control</name>
+       <file>KEYParkDistanceControl</file>
+       <:KEYS>
+         <KEYParkDistanceControl>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOParkDistanceControl">
+       <group>SICHERHEIT</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Park Distance Control Low</name>
+       <file>KEYParkDistanceControlLow</file>
+       <:KEYS>
+         <KEYParkDistanceControlLow>
+       </>
+       <:VIEWS>
+         <frontseite>2</frontseite>
+         <heckseite>1</heckseite>
+       </>
+     </>
+

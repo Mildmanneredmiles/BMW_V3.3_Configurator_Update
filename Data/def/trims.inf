@@ -1,0 +1,576 @@
+
+
+$macro TRIM_E90 [ TYP, NAME, KEY, C1, C2, C3 ,C4, layer ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+        <group>INTERIEUR</group>
+        <parent>CATInterieurfarben</parent>
+        <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <name>&NAME</name>
+        <name2>&TYP</name2>
+        <btn>type=radio</btn>
+        <file>&KEY</file>
+        <code>&KEY</code>
+        <:SCRIPTS>
+          <:SELECT>
+            <OFF "KEYSportsitz">
+            <LAYERON  "&layer">
+          </>
+        </SCRIPTS>
+        <:color>
+          <trim["polster"]>&KEY</trim["polster"]>
+          <trim["interieur"]>&C1</trim["interieur"]>
+          <trim["teppich"]>&C2</trim["teppich"]>
+          <trim["asaeulen"]>&C3</trim["asaeulen"]>
+          <trim["rest"]>&C4</trim["rest"]>
+        </>
+        <class type="KEYS">
+          <KEYE90&KEY>
+          <&KEY>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+
+$endmacro
+
+$macro TRIM_E90Sport [ TYP, NAME, KEY, C1, C2, C3 ,C4, layer ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+        <group>INTERIEUR</group>
+        <parent>CATInterieurfarben</parent>
+        <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <name>&NAME</name>
+        <name2>$T[Sportsitz] &TYP</name2>
+        <btn>type=radio</btn>
+        <file>&KEY</file>
+        <code>&KEY</code>
+        <:SCRIPTS>
+          <:SELECT>
+            <ON  "KEYSportsitz">
+            <LAYERON  "&layer-sport">
+          </>
+        </SCRIPTS>
+        <:color>
+          <trim["polster"]>&KEY</trim["polster"]>
+          <trim["interieur"]>&C1</trim["interieur"]>
+          <trim["teppich"]>&C2</trim["teppich"]>
+          <trim["asaeulen"]>&C3</trim["asaeulen"]>
+          <trim["rest"]>&C4</trim["rest"]>
+        </>
+        <class type="KEYS">
+          <KEYE90&KEY-Sport>
+          <&KEY>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+
+$endmacro
+
+$macro TRIM_E65_LCI [ TYP, NAME, KEY, AS, BS, IT ,TE, TU, MI, IU, TV, LE, layer ]
+      <:OPTION name"RADIOPolsterE65_LCI">
+        <group>INTERIEUR</group>
+        <parent>CATInterieurfarben</parent>
+        <name>&NAME</name>
+        <name2>&TYP</name2>
+        <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <btn>type=radio</btn>
+        <:SCRIPTS>
+          <:SELECT>
+            <LAYERON  "&layer">
+            <OFF  "KEYKomfortsitz", "KEYKlimasitz">
+            <HIDE "KEYKomfortsitz", "KEYKlimasitz">
+          </>
+        </SCRIPTS>
+        <:color>
+          <trim["polster"]>&KEY</trim["polster"]>
+          <trim["asaeulen"]>&AS</trim["asaeulen"]>
+          <trim["bsaeulen"]>&BS</trim["bsaeulen"]>
+          <trim["itafeloben"]>&IT</trim["itafeloben"]>
+          <trim["teppich"]>&TE</trim["teppich"]>
+          <trim["tuer"]>&TU</trim["tuer"]>
+          <trim["mittelkonsole"]>&MI</trim["mittelkonsole"]>
+          <trim["itafelunten"]>&IU</trim["itafelunten"]>
+          <trim["tuerunten"]>&TV</trim["tuerunten"]>
+          <trim["lenkrad"]>&LE</trim["lenkrad"]>
+        </>
+        <class type="KEYS">
+          <&KEY>
+          <KEYE65LCI&KEY>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+$endmacro
+
+$macro TRIM_E65_LCI_SPORT [ TYP, NAME, KEY, AS, BS, IT ,TE, TU, MI, IU, TV, LE, layer ]
+      <:OPTION name"RADIOPolsterE65_LCI">
+        <group>INTERIEUR</group>
+        <parent>CATSportsitze</parent>
+        <name>&NAME</name>
+        <name2>&TYP</name2>
+        <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <btn>type=radio</btn>
+        <:SCRIPTS>
+          <:SELECT>
+            <LAYERON  "&layer">
+            <OFF  "KEYKomfortsitz", "KEYKlimasitz">
+            <HIDE "KEYKomfortsitz", "KEYKlimasitz">
+          </>
+        </SCRIPTS>
+        <:color>
+          <trim["polster"]>&KEY</trim["polster"]>
+          <trim["asaeulen"]>&AS</trim["asaeulen"]>
+          <trim["bsaeulen"]>&BS</trim["bsaeulen"]>
+          <trim["itafeloben"]>&IT</trim["itafeloben"]>
+          <trim["teppich"]>&TE</trim["teppich"]>
+          <trim["tuer"]>&TU</trim["tuer"]>
+          <trim["mittelkonsole"]>&MI</trim["mittelkonsole"]>
+          <trim["itafelunten"]>&IU</trim["itafelunten"]>
+          <trim["tuerunten"]>&TV</trim["tuerunten"]>
+          <trim["lenkrad"]>&LE</trim["lenkrad"]>
+        </>
+        <class type="KEYS">
+          <&KEY>
+          <KEYE65LCI&KEY>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+$endmacro
+
+$macro TRIM_E65_LCI_U6 [ TYP, NAME, KEY, AS, BS, IT ,TE, TU, MI, IU, TV, LE, layer ]
+      <:OPTION name"RADIOPolsterE65_LCI">
+        <group>INTERIEUR</group>
+        <parent>CATInterieurfarben</parent>
+        <name>&NAME</name>
+        <name2>&TYP</name2>
+        <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <btn>type=radio</btn>
+        <:SCRIPTS>
+          <:SELECT>
+            <LAYERON  "&layer">
+            <SHOW "KEYKomfortsitz", "KEYKlimasitz">
+          </>
+        </SCRIPTS>
+        <:color>
+          <trim["polster"]>&KEY</trim["polster"]>
+          <trim["asaeulen"]>&AS</trim["asaeulen"]>
+          <trim["bsaeulen"]>&BS</trim["bsaeulen"]>
+          <trim["itafeloben"]>&IT</trim["itafeloben"]>
+          <trim["teppich"]>&TE</trim["teppich"]>
+          <trim["tuer"]>&TU</trim["tuer"]>
+          <trim["mittelkonsole"]>&MI</trim["mittelkonsole"]>
+          <trim["itafelunten"]>&IU</trim["itafelunten"]>
+          <trim["tuerunten"]>&TV</trim["tuerunten"]>
+          <trim["lenkrad"]>&LE</trim["lenkrad"]>
+        </>
+        <class type="KEYS">
+          <&KEY>
+          <KEYE65LCI&KEY>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+$endmacro
+
+$macro E87_POLSTER [ TYP, NAME, LAYER, KEY, C1, C2, C3, C4, C5 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <name>&NAME</name>
+        <name2>&TYP</name2>
+        <btn>type=radio</btn>
+        <file>&KEY</file>
+        <iconfile>&KEY</iconfile>
+        <:color>
+          <trim["polster"]>&KEY</trim["polster"]>
+          <trim["welt1"]>&C1</trim["welt1"]>
+          <trim["welt2"]>&C2</trim["welt2"]>
+          <trim["teppich"]>&C3</trim["teppich"]>
+          <trim["asaeulen"]>&C4</trim["asaeulen"]>
+          <trim["itafel"]>&C5</trim["itafel"]>
+        </>
+        <:SCRIPTS>
+          <:SELECT>
+            <LAYEROFF "layermotiongrau">
+            <LAYEROFF "layermotiongsonora">
+            <LAYEROFF "layermotionsydneyblau">
+            <LAYEROFF "layermotiongraphit">
+            <LAYERON  "&LAYER">
+          </>
+        </SCRIPTS>
+        <class type="KEYS">
+          <KEYE87&KEY>
+          <&KEY>
+        </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </>
+
+$endmacro
+
+
+$macro E46_POLSTER [ NAME, KEYCODE, C1, C2, C3, C4, ILeiste = "" ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <name>&NAME</name>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+      <btn>type=radio</btn>
+      <iconfile>&KEYCODE</iconfile>
+      <:color>
+        <trim["polster"]>&C1</trim["polster"]>
+        <trim["itafelunten"]>&C2</trim["itafelunten"]>
+        <trim["itafeloben"]>&C3</trim["itafeloben"]>
+        <trim["asaeulen"]>&C4</trim["asaeulen"]>
+      </color>
+      <:KEYS>
+        <KEYE46&KEYCODE>
+        <&KEYCODE>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </OPTION>
+
+$endmacro
+
+
+$macro E39_POLSTER [ NAME, KEYCODE, C1, C2, C3, C4, C5 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <name>&NAME</name>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+      <btn>type=radio</btn>
+      <iconfile>&KEYCODE</iconfile>
+      <:color>
+        <trim["polster"]>&C1</trim["polster"]>
+        <trim["itafelunten"]>&C2</trim["itafelunten"]>
+        <trim["itafeloben"]>&C3</trim["itafeloben"]>
+        <trim["asaeulen"]>&C4</trim["asaeulen"]>
+        <trim["armauflage"]>&C5</trim["armauflage"]>
+      </color>
+      <:KEYS>
+        <KEYE39&KEYCODE>
+        <&KEYCODE>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </OPTION>
+
+$endmacro
+
+
+$macro E53_POLSTER [ NAME, KEYCODE, C1, C2, C3, C4 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <name>&NAME</name>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+      <btn>type=radio</btn>
+      <iconfile>&KEYCODE</iconfile>
+      <:color>
+        <trim["polster"]>&C1</trim["polster"]>
+        <trim["itafelunten"]>&C2</trim["itafelunten"]>
+        <trim["itafeloben"]>&C3</trim["itafeloben"]>
+        <trim["tuerverkleidungen"]>&C4</trim["tuerverkleidungen"]>
+      </color>
+      <:KEYS>
+        <KEYE53&KEYCODE>
+        <&KEYCODE>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </OPTION>
+
+$endmacro
+
+
+$macro E63_POLSTER [ NAME, KEY, C1 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+        <name>&NAME</name>
+        <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <btn>type=radio</btn>
+        <iconfile>&KEY</iconfile>
+        <:color>
+          <trim["leder"]>&KEY</trim["leder"]>
+          <trim["asaeulen"]>&C1</trim["asaeulen"]>
+        </>
+        <class type="KEYS">
+          <KEYE63&KEY>
+          <&KEY>
+        </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+$endmacro
+
+
+$macro E83_POLSTER [ NAME, KEY, C1, C2, C3 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+        <name>&NAME</name>
+        <btn>type=radio</btn>
+        <iconfile>&KEY</iconfile>
+        <:color>
+          <trim["leder"]>&KEY</trim["leder"]>
+          <trim["welt"]>&C1</trim["welt"]>
+          <trim["teppich"]>&C2</trim["teppich"]>
+          <trim["asaeulen"]>&C3</trim["asaeulen"]>
+        </>
+        <class type="KEYS">
+          <KEYE83&KEY>
+          <&KEY>
+        </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+$endmacro
+
+$macro E85_POLSTER [ NAME, KEYCODE, C1, C2, C3, C4, C5, C6 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <name>&NAME</name>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+      <btn>type=radio</btn>
+      <iconfile>&KEYCODE</iconfile>
+      <:color>
+        <trim["polster"]>&C1</trim["polster"]>
+        <trim["itafel"]>&C2</trim["itafel"]>
+        <trim["tuerverkleidungen"]>&C3</trim["tuerverkleidungen"]>
+        <trim["innenraum"]>&C4</trim["innenraum"]>
+        <trim["itafelunten"]>&C5</trim["itafelunten"]>
+        <trim["schalthebelbalg"]>&C6</trim["schalthebelbalg"]>
+      </color>
+      <:KEYS>
+        <KEYE85&KEYCODE>
+        <&KEYCODE>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </OPTION>
+
+$endmacro
+
+
+$macro E65_POLSTER [ NAME, KEYCODE, C1, C2, C3, C4, C5, C6, C7 ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+      <name>&NAME</name>
+      <btn>type=radio</btn>
+      <iconfile>&KEYCODE</iconfile>
+      <:color>
+        <trim["polster"]>&C1</trim["polster"]>
+        <trim["itafelunten"]>&C2</trim["itafelunten"]>
+        <trim["itafeloben"]>&C3</trim["itafeloben"]>
+        <trim["asaeulen"]>&C4</trim["asaeulen"]>
+        <trim["tuerverkleidungen"]>&C5</trim["tuerverkleidungen"]>
+        <trim["wiepolster"]>&C6</trim["wiepolster"]>
+        <trim["lenkrad"]>&C7</trim["lenkrad"]>
+      </color>
+      <:KEYS>
+        <KEYE65&KEYCODE>
+        <&KEYCODE>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </OPTION>
+
+$endmacro
+
+$macro E60_POLSTER [ NAME, KEYCODE, POLSTER, ZWEITFARBE, ITAFELOBEN, ASAEULEN ]
+
+    <class type="OPTION" name="RADIOPolsterung">
+      <group>INTERIEUR</group>
+      <parent>CATInterieurfarben</parent>
+      <UINameIdentifier>UIUpholstery</UINameIdentifier>
+      <name>&NAME</name>
+      <btn>type=radio</btn>
+      <iconfile>&KEYCODE</iconfile>
+      <:color>
+        <trim["polster"]>&POLSTER</trim["polster"]>
+        <trim["asaeulen"]>&ASAEULEN</trim["asaeulen"]>
+        <trim["itafeloben"]>&ITAFELOBEN</trim["itafeloben"]>
+        <trim["konsole"]>&ZWEITFARBE</trim["konsole"]>
+        <trim["teppich"]>&ZWEITFARBE</trim["teppich"]>
+      </color>
+      <:KEYS>
+        <KEYE60&KEYCODE>
+        <&KEYCODE>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </OPTION>
+
+$endmacro
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <category>CATInterieurfarben</category>
+    <name>Interieurfarben</name>
+    <file>CATInterieurfarben</file>
+    <:KEYS>
+      <CATInterieurfarben>
+    </>
+  </>
+
+<:TRIMS>
+
+    %E60_POLSTER [ "Schwarz",        FxxSW, Schwarz, SchwarzII, ITafelObenSchwarz, Grau ]
+    %E60_POLSTER [ "Grau",           FxxAD, Grau, Grau, ITafelObenBasaltgrau, Grau ]
+    %E60_POLSTER [ "Beige",          FxxBA, Beige, Beige, ITafelObenSchwarz, Beige ]
+    %E60_POLSTER [ "Amethyst",       FxxRH, Amethyst, SchwarzII, ITafelObenSchwarz, Grau ]
+    %E60_POLSTER [ "Trüffelbraun",   FxxTE, Trueffelbraun, Trueffelbraun, ITafelObenSchwarz, Grau ]
+    %E60_POLSTER [ "Kastanienbraun", FxxRK, Kastanienbraun, SchwarzII, ITafelObenSchwarz, Grau ]
+    %E60_POLSTER [ "Anthrazit",      FxxAT, Anthrazit, SchwarzII, ITafelObenSchwarz, Grau ]
+
+    %E46_POLSTER [ "Schwarz", FxxSW, PolsterSchwarz, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Grau", FxxTT, PolsterGrau, ITafelUntenGrau, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Anthrazit", FxxAT, PolsterAnthrazit, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Hellbeige", FxxHC, PolsterHellbeige, ITafelUntenHellbeige, ITafelObenSchwarz, ASaeulenHellbeige, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Naturbraun", FxxNG, PolsterNaturbraun, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenHellbeige, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Brombeer", FxxBB, PolsterBrombeer, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Lightgelb", FxxLT, PolsterLightgelb, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Lavanda", FxxSE, PolsterLavenda, ITafelUntenSchwarz, ITafelObenLavenda, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Orange", FxxPP, PolsterOrange, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Poeticblue", FxxAU, PolsterPoeticblue, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Taninrot", FxxTD, PolsterTaninrot, ITafelUntenSchwarz, ITafelObenTaninrot, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Traumrot", FxxTL, PolsterTraumrot, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Topasblau", FxxTO, PolsterTopasblau, ITafelUntenSchwarz, ITafelObenTopasblau, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Pistazie", FxxPI, PolsterPistazie, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Technograu", FxxTF, PolsterTechnograu, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Mysticblau", FxxMF, PolsterMysticblau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Schwarzgrau", FxxTM, PolsterSchwarzgrau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    %E46_POLSTER [ "Kieselgrau", FxxKA, PolsterKieselgrau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteTitan ]
+    ;%E46_POLSTER [ "Blau/Schwarz", FxxBL, PolsterAnthrazit, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteVelvetblau ]
+    ;%E46_POLSTER [ "Rot/Schwarz", FxxRE, PolsterAnthrazit, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, KEYInterieurLeisteImolarot ]
+
+
+    %E39_POLSTER [ "Schwarz", FxxSW, PolsterSchwarz, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, ArmlehneSchwarz ]
+    %E39_POLSTER [ "Grau", FxxTT, PolsterGrau, ITafelUntenGrau, ITafelObenSchwarz, ASaeulenGrau, ArmlehneGrau ]
+    %E39_POLSTER [ "Anthrazit", FxxAT, PolsterAnthrazit, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, ArmlehneSchwarz]
+    %E39_POLSTER [ "Marineblau", FxxDL, PolsterMarineblau, ITafelUntenMarineblau, ITafelObenMarineblau, ASaeulenGrau, ArmlehneMarineblau]
+    %E39_POLSTER [ "Englischgrün", FxxEG, PolsterEnglischgruen, ITafelUntenEnglischgruen, ITafelObenEnglischgruen, ASaeulenGrau, ArmlehneEnglischgruen]
+    %E39_POLSTER [ "Steingruen", FxxGN, PolsterSteingruen, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, ArmlehneSchwarz]
+    %E39_POLSTER [ "Lightgelb", FxxLG, PolsterLightgelb, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, ArmlehneSchwarz ]
+    %E39_POLSTER [ "Burgund", FxxBG, PolsterBurgund, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau, ArmlehneBurgund ]
+    %E39_POLSTER [ "Flanellgrau", FxxFA, PolsterFlanellgrau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, ArmlehneSchwarz ]
+    %E39_POLSTER [ "Graublau", FxxGC, PolsterGraublau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenAnthrazit, ArmlehneSchwarz ]
+    %E39_POLSTER [ "Sandbeige", FxxSN, PolsterSandbeige, ITafelUntenSandbeige, ITafelObenDunkelbeige, ASaeulenHellbeige, ArmlehneSandbeige]
+    %E39_POLSTER [ "Sandbeige/Schwarz", FxxSN, PolsterSandbeige, ITafelUntenSandbeige, ITafelObenSchwarz, ASaeulenHellbeige, ArmlehneSandbeige]
+
+    %E53_POLSTER [ "Schwarz", FxxSW, PolsterSchwarz, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau ]
+    %E53_POLSTER [ "Grau", FxxTT, PolsterGrau, ITafelUntenHellgrau, ITafelObenSchwarz, ASaeulenGrau ]
+    %E53_POLSTER [ "Anthrazit", FxxAT, PolsterAnthrazit, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau ]
+    %E53_POLSTER [ "Hellbeige", FxxHC, PolsterHellbeige, ITafelUntenHellbeige, ITafelObenSchwarz, ASaeulenHellbeige ]
+    %E53_POLSTER [ "Pastellgrün", FxxSK, PolsterPastellgruen, ITafelUntenPastellgruen, ITafelObenSchwarz, ASaeulenPastellgruen ]
+    %E53_POLSTER [ "Lavagrau", FxxKW, PolsterLavagrau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau ]
+    %E53_POLSTER [ "Trüffelbraun", FxxTE, PolsterTrueffelbraun, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenGrau ]
+    %E53_POLSTER [ "Dunkelgrau", FxxDG, PolsterDunkelgrau, ITafelUntenHellgrau, ITafelObenSchwarz, ASaeulenGrau ]
+
+    %E63_POLSTER [ "Creambeige", FxxGE, "asaeulen-creambeige" ]
+    %E63_POLSTER [ "Chateau",    FxxCH, "asaeulen-himmelgrau" ]
+    %E63_POLSTER [ "Schwarz",    FxxSW, "asaeulen-himmelgrau" ]
+    %E63_POLSTER [ "Schilf",     FxxLF, "asaeulen-himmelgrau" ]
+
+    %E83_POLSTER [ "Anthrazit", FxxAT, "welt-anthrazit", "teppich-schwarz", "asaeulen-basaltgrau" ]
+    %E83_POLSTER [ "Grau", FxxAD, "welt-grau", "teppich-basaltgrau", "asaeulen-basaltgrau" ]
+    %E83_POLSTER [ "Schwarz", FxxSW, "welt-schwarz", "teppich-schwarz", "asaeulen-schwarz" ]
+    %E83_POLSTER [ "Terracotta", FxxAZ, "welt-schwarz", "teppich-schwarz", "asaeulen-schwarz" ]
+    %E83_POLSTER [ "Graublau", FxxGC, "welt-grau", "teppich-basaltgrau", "asaeulen-basaltgrau" ]
+    %E83_POLSTER [ "Sandbeige hell", FxxBZ, "welt-sandbeige", "teppich-basaltgrau", "asaeulen-basaltgrau" ]
+    %E83_POLSTER [ "Schilfgrün", FxxSZ, "welt-schwarz", "teppich-schwarz", "asaeulen-schwarz"]
+
+    %E85_POLSTER [ "Anthrazit", FxxAT, PolsterAnthrazit, ITafelSchwarz, TuerverkleidungenAnthrazit, InnenraumSchwarz, ITafelUntenAnthrazit, InnenraumSchwarz ]
+    %E85_POLSTER [ "Messing", FxxAC, PolsterMessing, ITafelGrau, TuerverkleidungenMessing, InnenraumGrau, ITafelUntenGrau, InnenraumSchwarz ]
+    %E85_POLSTER [ "Maledivenblau", FxxMD, PolsterMaledivenblau, ITafelGrau, TuerverkleidungenMaledivenblau, InnenraumGrau, ITafelUntenGrau, InnenraumSchwarz ]
+    %E85_POLSTER [ "Perlgrau", FxxPF, PolsterPerlgrau, ITafelSchwarz, TuerverkleidungenPerlgrau, InnenraumSchwarz, ITafelUntenAnthrazit, InnenraumSchwarz ]
+    %E85_POLSTER [ "Schwarz", FxxSW, PolsterSchwarz, ITafelSchwarz, TuerverkleidungenSchwarz, InnenraumSchwarz, ITafelUntenAnthrazit, InnenraumSchwarz ]
+    %E85_POLSTER [ "Traumrot", FxxTL, PolsterTraumrot, ITafelGrau, TuerverkleidungenTraumrot, InnenraumGrau, ITafelUntenGrau, InnenraumGrau ]
+    %E85_POLSTER [ "Traumrot", FxxT5, PolsterTraumrot, ITafelSchwarz, TuerverkleidungenTraumrot, InnenraumSchwarz, ITafelUntenSchwarz, InnenraumSchwarz ]
+    %E85_POLSTER [ "Beige", FxxAB, PolsterBeige, ITafelSchwarz, TuerverkleidungenBeige, InnenraumBeige, ITafelUntenDunkelbeige, InnenraumBeige ]
+
+    %E65_POLSTER [ "Schwarz", FxxSW, PolsterSchwarz, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenSteingrau, TuerverkleidungenSchwarz, WiePolsterSchwarz, LenkradSchwarz ]
+    %E65_POLSTER [ "Flanellgrau", FxxFA, PolsterFlanellgrau, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenSteingrau, TuerverkleidungenFlanellgrau, WiePolsterFlanellgrau, LenkradBasaltgrau ]
+    %E65_POLSTER [ "Flanellgrau/Basaltgrau", FxxFA1, PolsterFlanellgrau, ITafelUntenBasaltgrau, ITafelObenBasaltgrau, ASaeulenFlanellgrau, TuerverkleidungenFlanellgrau, WiePolsterFlanellgrau, LenkradBasaltgrau ]
+    %E65_POLSTER [ "Beige/Basaltgrau", FxxBA, PolsterBeige, ITafelUntenBasaltgrau, ITafelObenBasaltgrau, ASaeulenBeige, TuerverkleidungenBasaltgrau, WiePolsterBeige, LenkradBasaltgrau ]
+    %E65_POLSTER [ "Beige/Dunkelbeige", FxxBT, PolsterBeige, ITafelUntenDunkelbeige, ITafelObenDunkelbeige, ASaeulenBeige, TuerverkleidungenBeige, WiePolsterBeige,  LenkradDunkelbeige ]
+    %E65_POLSTER [ "Steingrün", FxxGN, PolsterSteingruen, ITafelUntenSteingruen, ITafelObenBasaltgrau, ASaeulenSteingruen, TuerverkleidungenBasaltgrau, WiePolsterSteingruen, LenkradBasaltgrau ]
+    %E65_POLSTER [ "Naturbraun/Nachtblau", FxxNG, PolsterNaturbraun, ITafelUntenNachtblau, ITafelObenNachtblau, ASaeulenBeige, TuerverkleidungenNachtblau, WiePolsterNaturbraun, LenkradNachtblau ]
+    %E65_POLSTER [ "Naturbraun/Nachtblau/Schwarz", FxxNG1, PolsterNaturbraun, ITafelUntenNachtblau, ITafelObenNachtblau, ASaeulenBeige, TuerverkleidungenNachtblau, WiePolsterNaturbraun,  LenkradSchwarz ]
+    %E65_POLSTER [ "Naturbraun/Schwarz", FxxNB, PolsterNaturbraun, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenBeige, TuerverkleidungenSchwarz, WiePolsterNaturbraun,  LenkradSchwarz ]
+    %E65_POLSTER [ "Anthrazit", FxxAT, PolsterAnthrazit, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenSchwarz, TuerverkleidungenSchwarz, WiePolsterAnthrazit, LenkradSchwarz ]
+    %E65_POLSTER [ "Kaschmirbraun", FxxKB, PolsterKaschmirbraun, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenSchwarz, TuerverkleidungenSchwarz, WiePolsterKaschmirbraun,  LenkradSchwarz ]
+    %E65_POLSTER [ "Creambeige", FxxGE, PolsterCreambeige, ITafelUntenSchwarz, ITafelObenSchwarz, ASaeulenSchwarz, TuerverkleidungenSchwarz, WiePolsterCreambeige,  LenkradSchwarz ]
+
+
+    %E87_POLSTER [ "Stoff Moiré", "Alaskagrau",            LayerStoff,            FAFA6, Welt1Grau,    Welt2Grau,    TeppichGrau,    ABCGrau,  ITafelGrau ]
+    %E87_POLSTER [ "Stoff Moiré", "Anthrazit",             LayerStoff,            FAFAT, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCGrau,  ITafelSchwarz ]
+    %E87_POLSTER [ "Stoff Network", "Anthrazit",           LayerNetwork,          FAUAT, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCGrau,  ITafelSchwarz ]
+    %E87_POLSTER [ "Stoff Network", "Alaskagrau",          LayerNetwork,          FAUA6, Welt1Grau,    Welt2Grau,    TeppichGrau,    ABCGrau,  ITafelGrau ]
+    %E87_POLSTER [ "Stoff Network", "Sydneyblau",          LayerNetwork,          FAUD9, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCGrau,  ITafelSchwarz ]
+    %E87_POLSTER [ "Stoff Motion/Sensatec", "Alaskagrau",  LayerMotionGrau,       FAGA1, Welt1Schwarz, Welt2Grau,    TeppichSchwarz, ABCGrau,  ITafelGrau ]
+    %E87_POLSTER [ "Stoff Motion/Sensatec", "Sydneyblau",  LayerMotionSydneyblau, FAGA2, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCGrau,  ITafelSchwarz ]
+    %E87_POLSTER [ "Stoff Motion/Sensatec", "Sonora",      LayerMotionSonora,     FAGA3, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCBeige, ITafelSchwarz ]
+    %E87_POLSTER [ "Stoff Motion/Sensatec", "Graphit",     LayerMotionGraphit,    FAGA4, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCGrau,  ITafelSchwarz ]
+    %E87_POLSTER [ "Leder Boston", "Alaskagrau",           LayerLeder,            FLHA1, Welt1Grau,    Welt2Grau,    TeppichGrau,    ABCGrau,  ITafelGrau ]
+    %E87_POLSTER [ "Leder Boston", "Beige/Havanna",        LayerLeder,            FLHA5, Welt1Havanna, Welt2Beige,   TeppichBeige,   ABCBeige, ITafelHavanna ]
+    %E87_POLSTER [ "Leder Boston", "Beige/Beige",          LayerLeder,            FLHC2, Welt1Beige,   Welt2Beige,   TeppichBeige,   ABCBeige, ITafelSchwarz ]
+    %E87_POLSTER [ "Leder Boston", "Havanna",              LayerLeder,            FLHBK, Welt1Havanna, Welt2Schwarz, TeppichSchwarz, ABCBeige, ITafelHavanna ]
+    %E87_POLSTER [ "Leder Boston", "Schwarz",              LayerLeder,            FLHSW, Welt1Schwarz, Welt2Schwarz, TeppichSchwarz, ABCGrau,  ITafelSchwarz ]
+
+      %TRIM_E90 [ "$T[Stoff] Fluid", "Anthrazit", FALAT, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fal" ]
+      %TRIM_E90 [ "$T[Stoff] Fluid", "Grau",      FALAD, "interieur-grau",    "teppich-grau",    "asaeulen-himmelgrau", "interieur-grau",    "mask-fal" ]
+      %TRIM_E90 [ "$T[Stoff] Fluid", "Beige",     FALB4, "interieur-beige",   "teppich-beige",   "asaeulen-beige",      "interieur-beige",   "mask-fal" ]
+
+      %TRIM_E90 [ "$T[Stoff-/Lederkombination]", "Anthrazit", FFFAT, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fff" ]
+      %TRIM_E90 [ "$T[Stoff-/Lederkombination]", "Blau",      FFFB5, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fff" ]
+      %TRIM_E90 [ "$T[Stoff-/Lederkombination]", "Quarzgrau", FFFB6, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fff" ]
+
+      %TRIM_E90 [ "$T[Leder] Dakota", "Schwarz", FLCSW, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-flc" ]
+      %TRIM_E90 [ "$T[Leder] Dakota", "Grau",    FLCAD, "interieur-grau",    "teppich-grau",    "asaeulen-himmelgrau", "interieur-grau", "mask-flc" ]
+      %TRIM_E90 [ "$T[Leder] Dakota", "Beige",   FLCB4, "interieur-beige",   "teppich-beige",   "asaeulen-beige",      "interieur-beige", "mask-flc" ]
+      %TRIM_E90 [ "$T[Leder] Dakota", "Lemon",   FLCB7, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-flc" ]
+      %TRIM_E90 [ "$T[Leder] Dakota", "Terra",   FLCB8, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-flc" ]
+
+      %TRIM_E90Sport [ "$T[Stoff] Fluid", "Anthrazit", FALAT, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fal" ]
+      %TRIM_E90Sport [ "$T[Stoff] Fluid", "Grau",      FALAD, "interieur-grau",    "teppich-grau",    "asaeulen-himmelgrau", "interieur-grau", "mask-fal" ]
+      %TRIM_E90Sport [ "$T[Stoff] Fluid", "Beige",     FALB4, "interieur-beige",   "teppich-beige",   "asaeulen-beige",      "interieur-beige", "mask-fal" ]
+
+      %TRIM_E90Sport [ "$T[Stoff-/Lederkombination]", "Anthrazit", FFFAT, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fff" ]
+      %TRIM_E90Sport [ "$T[Stoff-/Lederkombination]", "Blau",      FFFB5, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fff" ]
+      %TRIM_E90Sport [ "$T[Stoff-/Lederkombination]", "Quarzgrau", FFFB6, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-fff" ]
+
+      %TRIM_E90Sport [ "$T[Leder] Dakota", "Schwarz", FLCSW, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-flc" ]
+      %TRIM_E90Sport [ "$T[Leder] Dakota", "Grau",    FLCAD, "interieur-grau",    "teppich-grau",    "asaeulen-himmelgrau", "interieur-grau", "mask-flc" ]
+      %TRIM_E90Sport [ "$T[Leder] Dakota", "Beige",   FLCB4, "interieur-beige",   "teppich-beige",   "asaeulen-beige",      "interieur-beige", "mask-flc" ]
+      %TRIM_E90Sport [ "$T[Leder] Dakota", "Lemon",   FLCB7, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-flc" ]
+      %TRIM_E90Sport [ "$T[Leder] Dakota", "Terra",   FLCB8, "interieur-schwarz", "teppich-schwarz", "asaeulen-himmelgrau", "interieur-schwarz", "mask-flc" ]
+
+      %TRIM_E65_LCI [ "Stoff",          "Anthrazit/Schwarz",       FH5AT, "as-schwarz",     "bs-schwarz",     "it-schwarz",    "te-schwarz",     "tu-schwarz",     "mi-schwarz",     "iu-schwarz",     "tv-schwarz",     "le-schwarz",    "mask-fh5" ]
+      %TRIM_E65_LCI [ "Stoff",          "Flanellgrau/Flanellgrau", FH5FA, "as-flanellgrau", "bs-flanellgrau", "it-basaltgrau", "te-flanellgrau", "tu-flanellgrau", "mi-flanellgrau", "iu-flanellgrau", "tv-flanellgrau", "le-basaltgrau", "mask-fh5" ]
+
+      %TRIM_E65_LCI_U6 [ "Leder Nasca",    "Schwarz/Schwarz",         FU6SW, "as-steingrau", "bs-schwarz",     "it-schwarz",     "te-schwarz",     "tu-schwarz",     "mi-schwarz",     "iu-schwarz",     "tv-schwarz",     "le-schwarz",     "mask-fu6" ]
+      %TRIM_E65_LCI_U6 [ "Leder Nasca",    "Flanellgrau/Basaltgrau",  FU6FA, "as-steingrau", "bs-flanellgrau", "it-basaltgrau",  "te-flanellgrau", "tu-flanellgrau", "mi-flanellgrau", "iu-flanellgrau", "tv-flanellgrau", "le-basaltgrau",  "mask-fu6" ]
+      %TRIM_E65_LCI_U6 [ "Leder Nasca",    "Beige/Dunkelbeige",       FU6BA, "as-beige",     "bs-beige",       "it-dunkelbeige", "te-beige",       "tu-beige",       "mi-beige",       "iu-dunkelbeige", "tv-beige",       "le-dunkelbeige", "mask-fu6" ]
+      %TRIM_E65_LCI_U6 [ "Leder Nasca",    "Naturbraun/Schwarz",      FU6NB, "as-beige",     "bs-naturbraun",  "it-schwarz",     "te-naturbraun",  "tu-naturbraun",  "mi-naturbraun",  "iu-schwarz",     "tv-naturbraun",  "le-schwarz",     "mask-fu6" ]
+      %TRIM_E65_LCI_U6 [ "Leder Nasca",    "Lavablau/Schwarz",        FU6MC, "as-anthrazit", "bs-lavablau",    "it-schwarz",     "te-schwarz",     "tu-lavablau",    "mi-schwarz",     "iu-schwarz",     "tv-lavablau",    "le-schwarz",     "mask-fu6" ]
+      %TRIM_E65_LCI_U6 [ "Leder Nasca",    "Creambeige/Schwarz",      FU6GE, "as-anthrazit", "bs-creambeige",  "it-schwarz",     "te-schwarz",     "tu-creambeige",  "mi-schwarz",     "iu-schwarz",     "tv-creambeige",  "le-schwarz",     "mask-fu6" ]
+
+      %TRIM_E65_LCI [ "Vollleder Club", "Schwarz/Schwarz",         FU7SW, "as-steingrau", "bs-schwarz",     "it-schwarz",    "te-schwarz",     "tu-schwarz",     "mi-schwarz",     "iu-schwarz",     "tv-schwarz",     "le-schwarz",    "mask-fu7" ]
+      %TRIM_E65_LCI [ "Vollleder Club", "Creambeige/Schwarz",      FU7GE, "as-anthrazit", "bs-creambeige",  "it-schwarz",    "te-schwarz",     "tu-creambeige",  "mi-schwarz",     "iu-schwarz",     "tv-creambeige",  "le-schwarz",    "mask-fu7" ]
+      %TRIM_E65_LCI [ "Vollleder Club", "Flanellgrau/Basaltgrau",  FU7FA, "as-steingrau", "bs-flanellgrau", "it-basaltgrau", "te-flanellgrau", "tu-flanellgrau", "mi-flanellgrau", "iu-flanellgrau", "tv-flanellgrau", "le-basaltgrau", "mask-fu7" ]
+      %TRIM_E65_LCI [ "Vollleder Club", "Naturbraun/Schwarz",      FU7NB, "as-beige",     "bs-naturbraun",  "it-schwarz",    "te-naturbraun",  "tu-naturbraun",  "mi-naturbraun",  "iu-schwarz",     "tv-naturbraun",  "le-schwarz",    "mask-fu7" ]
+
+      %TRIM_E65_LCI_SPORT [ "",    "$T[Sportsitze] $T[Schwarz/Schwarz]",         FV7SW, "as-schwarz",     "bs-schwarz",     "it-schwarz",    "te-schwarz",     "tu-schwarz",     "mi-schwarz",     "iu-schwarz",     "tv-schwarz",     "le-schwarz",    "mask-fv7" ]
+      %TRIM_E65_LCI_SPORT [ "",    "$T[Sportsitze] $T[Flanellgrau/Basaltgrau]",  FV7FA, "as-flanellgrau", "bs-flanellgrau", "it-basaltgrau", "te-flanellgrau", "tu-flanellgrau", "mi-flanellgrau", "iu-flanellgrau", "tv-flanellgrau", "le-basaltgrau", "mask-fv7" ]
+      %TRIM_E65_LCI_SPORT [ "",    "$T[Sportsitze] $T[Creambeige/Schwarz]",      FV7GE, "as-creambeige",  "bs-creambeige",  "it-schwarz",    "te-schwarz",     "tu-creambeige",  "mi-schwarz",     "iu-schwarz",     "tv-schwarz",     "le-schwarz",    "mask-fv7" ]
+      %TRIM_E65_LCI_SPORT [ "",    "$T[Sportsitze] $T[Lavablau/Schwarz]",        FV7MC, "as-anthrazit",   "bs-lavablau",    "it-schwarz",    "te-schwarz",     "tu-schwarz",     "mi-schwarz",     "iu-schwarz",     "tv-schwarz",     "le-schwarz",    "mask-fv7" ]
+      %TRIM_E65_LCI_SPORT [ "",    "$T[Sportsitze] $T[Naturbraun/Schwarz]",      FV7NB, "as-beige",       "bs-naturbraun",  "it-schwarz",    "te-naturbraun",  "tu-naturbraun",  "mi-naturbraun",  "iu-schwarz",     "tv-naturbraun",  "le-schwarz",    "mask-fv7" ]
+
+</>
+

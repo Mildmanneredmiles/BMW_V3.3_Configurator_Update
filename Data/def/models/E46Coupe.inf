@@ -1,0 +1,187 @@
+
+    <class type="E46 coupe">
+      <name>Coupe</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=236 y=77 w=510 h=376</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=40 y=175 w=895 h=285</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=240 y=71 w=501 h=387</bodyframe>
+        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0263>
+        <P0300>
+        <P0303>
+        <P0314>
+        <P0317>
+        <P0354>
+        <P0362>
+        <P0364>
+        <P0365>
+        <P0372>
+        <P0376>
+        <P0386>
+        <P0393>
+        <P0400>
+        <P0430>
+        <P0438>
+        <P0442>
+        <P0443>
+        <P0475>
+        <P0668>
+        <P0897>
+
+        <CATInterieurfarben>
+
+        <KEYE46FxxSW>
+	<KEYE46FxxHC>
+        <KEYE46FxxTT>
+        <KEYE46FxxAT>
+        <KEYE46FxxNG>
+        <KEYE46FxxBB>
+        <KEYE46FxxLT>
+        <KEYE46FxxTL>
+        <KEYE46FxxTF>
+
+
+        <KEYWeisseBlinker>
+        <KEYAerodynamikpaket>
+        <KEYMAerodynamikpaket>
+        <KEYHeckspoiler>
+
+        <CATInterieurleisten>
+        <KEYInterieurleistenMattchrom>
+        <KEYInterieurleistenAhorn>
+        <KEYInterieurleistenTitan>
+        <KEYInterieurleistenMyrte>
+        <KEYInterieurleistenBirke>
+        <KEYInterieurleistenEukalyptus>
+        <KEYInterieurleistenAluSaeulen>
+        <KEYInterieurleistenAluCubesSilver>
+        <KEYInterieurleistenAluBlackCubes>
+        <KEYInterieurleistenSieblackDunkelgrau>
+
+        <CATLenkraeder>
+        <KEYLenkradHolzSportDekorblendeAhornHell>
+        <KEYLenkradHolzSportDekorblendeMyrte>
+        <KEYLenkradLederSportDekorblendeBirke>
+        <KEYLenkradLederSportDekorblendeChrom>
+        <KEYLenkradLederSportDekorblendeSchwarz>
+        <KEYLenkradLederSportDekorblendeMyrte>
+        <KEYLenkradLederSport>
+        <KEYLenkradLederSportDekorblendeM>
+        <KEYSerienlenkradE46CouCa>
+
+        <CATLenkraederMultifunktion>
+        <KEYLenkradHolzLederAhornHellMF>
+        <KEYLenkradHolzLederMyrteMF>
+        <KEYLenkradLederBicolorSchwarzGrauMF>
+        <KEYLenkradLederBicolorSchwarzTaninrotMF>
+        <KEYLenkradLederSportDekorblendeBirkeMF>
+        <KEYLenkradLederSportDekorblendeChromMF>
+        <KEYLenkradLederSportDekorblendeSchwarzMF>
+        <KEYLenkradLederSportDekorblendeMyrteMF>
+        <KEYLenkradLederSportDekorblendeMMF>
+        <KEYLenkradLederSportMF>
+
+        <CATSchaltknauf>
+        <KEYSchaltknaufHolzAhornHellChromring>
+        <KEYSchaltknaufHolzAhornChromring>
+        <KEYSchaltknaufLederSchwarzChromring>
+        <KEYSchaltknaufAluPoliertRingSchwarz>
+        <KEYSchaltknaufAluMattchromRingSchwarz>
+        <KEYSchaltknaufLederSpangeChromMatt>
+	<KEYSchaltknaufLederSpangeChromGlaenzend>
+        <KEYSchaltknaufLederSpangeNussbaum>
+        <KEYSchaltknaufLederSpangeHolzAhorn>
+        <KEYSchaltknaufHolzAhornEmblem>
+        <KEYSchaltknaufHolzNussbaumHellEmblem>
+        <KEYSchaltknaufHolzNussbaumDunkelEmblem>
+        <KEYSchaltknaufHolzMyrteEmblem>
+        <KEYSchaltknaufLederSchwarzM>
+        <KEYSchaltknaufHolzNussbaumHell>
+        <KEYSchaltknaufHolzBirke>
+
+        <CATWaehlhebel>
+        <KEYWaehlhebelMattchrom>
+        <KEYWaehlhebelLederSpangeChromMatt>
+	<KEYWaehlhebelLederSpangeChromGlaenzend>
+        <KEYWaehlhebelLederSpangeHolzAhorn>
+        <KEYWaehlhebelHolzAhorn>
+        <KEYWaehlhebelHolzMyrte>
+        <KEYWaehlhebelHolzBirke>
+        <KEYWaehlhebelLeder>
+
+        <CATHandbremsgriffe>
+        <KEYHandbremsgriffMyrte>
+        <KEYHandbremsgriffChromMatt>
+        <KEYHandbremsgriffAhornHell>
+
+	<CATFussstuetzen>
+        <KEYMFussstuetzeSchwarz>
+	<KEYMFussstuetzeGrau>
+	<KEYMFussstuetzeBeige>
+        <KEYAluFussstuetze>
+
+        <CATFussmatten>
+        <KEYFussmattenVelours>
+        <KEYFussmattenCity>
+        <KEYFussmattenCountry>
+	<KEYFussmattenAluLine>
+        <KEYGummiFussmattenE46>
+
+	<KEYAlupedale>
+        <KEYAlupedaleSchaltgetriebe>
+	<KEYAlupedaleAutomatik>
+	<KEYPedaleSchaltgetriebe>
+	<KEYPedaleAutomatik>
+
+        <KEYArmauflageVorn>
+        <KEYMTuerEinstiegsleisten>
+        <KEYKlimaautomatik>
+
+  	<CATAutotelefone>
+  	<KEYAutotelefonCordless>
+  	<CATFreisprechSeitenkonsole>
+  	<KEYTelefonkonsole>
+        <KEYTelefonkonsoleSchwarz>
+        <KEYTelefonkonsoleGrau>
+        <KEYTelefonkonsoleHellbeige>
+
+        <KEYBordmonitor>
+        <KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYTVFunktion>
+        <KEYRadionavigationIndianapolis>
+        <KEYRadioProfessionalCD>
+        <KEYRadioBusinessCD>
+        <KEYRadioBusinessKassette>
+        <KEYSoundsystem>
+        <KEYSubwoofer>
+
+        <KEYFelge46>
+        <KEYFelge54>
+        <KEYFelge89>
+
+      </COMPONENTS>
+
+    </>

@@ -1,0 +1,103 @@
+
+    <:DEFAULT_EXTERIOR_VIEWS_3>
+      <front>1</front>
+      <seite>2</seite>
+      <heck>1</heck>
+    </>
+
+    <:DEFAULT_EXTERIOR_VIEWS>
+      <front>1</front>
+      <seite>2</seite>
+      <heck>1</heck>
+      <frontseite>1</frontseite>
+      <heckseite>1</heckseite>
+    </>
+
+    <:DEFAULT_FRONT_VIEWS>
+      <frontseite>2</frontseite>
+      <front>1</front>
+    </>
+
+    <:DEFAULT_REAR_VIEWS>
+      <heckseite>2</heckseite>
+      <heck>1</heck>
+    </>
+
+    <:DEFAULT_INTERIOR_VIEWS>
+      <interior>1</interior>
+      <centerpano>1</centerpano>
+    </>
+
+    <:DEFAULT_PAINT_VIEWS>
+      <front>1</front>
+      <seite>2</seite>
+      <heck>1</heck>
+      <frontseite>1</frontseite>
+      <heckseite>1</heckseite>
+    </>
+
+    <:DEFAULT_TRIM_VIEWS>
+      <interior>1</interior>
+    </>
+
+    <:DEFAULT_OPTION_VIEWS>
+      <front>1</front>
+      <seite>2</seite>
+      <heck>1</heck>
+      <frontseite>1</frontseite>
+      <heckseite>1</heckseite>
+    </>
+
+    <:DEFAULT_WHEEL_VIEWS>
+      <frontseite>1</frontseite>
+      <seite>2</seite>
+      <heckseite>1</heckseite>
+    </>
+
+    <:DEFAULT_VIEWTOGGLES_3>
+      <:front>
+        <angle>0</angle>
+        <pov>FRONT</pov>
+      </>
+      <:seite>
+        <angle>90</angle>
+        <pov>SIDE</pov>
+      </>
+      <:heck>
+        <angle>180</angle>
+        <pov>REAR</pov>
+      </>
+    </>
+
+    <:DEFAULT_VIEWTOGGLES>
+      <:front>
+        <angle>0</angle>
+        <pov>FRONT</pov>
+      </>
+      <:frontseite>
+        <angle>45</angle>
+        <pov>FRONTSIDE</pov>
+      </>
+      <:seite>
+        <angle>90</angle>
+        <pov>SIDE</pov>
+      </>
+      <:heckseite>
+        <angle>135</angle>
+        <pov>REARSIDE</pov>
+      </>
+      <:heck>
+        <angle>180</angle>
+        <pov>REAR</pov>
+      </>
+      <:interior>
+        <angle>0</angle>
+        <pov>DASHBOARD</pov>
+      </>      
+      <:centerpano>
+        <angle>0</angle>
+        <pov>CENTERPANO</pov>
+      </>
+    </>
+
+

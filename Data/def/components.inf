@@ -1,0 +1,10 @@
+
+<:COMPONENTS>
+
+$include "PGExterior.inf"
+$include "PGInterior.inf"
+$include "PGKommunikation.inf"
+$include "PGTransport.inf"
+$include "PGSicherheit.inf"
+
+</COMPONENTS>

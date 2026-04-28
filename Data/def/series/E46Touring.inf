@@ -1,0 +1,117 @@
+
+      <class type="E46 touring alt">
+
+        <ecode>E46</ecode>
+        <body>TOURING</body>
+        <date>to="20020228"</date>
+
+        <path>E46touring</path>
+
+        <:MOTORS>
+
+          <:318i>
+            <tireinfo>e46_tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 touring alt">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46">
+            </class>
+
+            <:KEYS>
+              <AP31>
+              <AP32>
+            </>
+          </>
+
+          <:320i>
+            <tireinfo>e46_tou-2</tireinfo>
+            <*class type="DEF" ref="E46 touring alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+            </class>
+
+            <:KEYS>
+              <AR11>
+              <AW11>
+              <AW12>
+            </>
+          </>
+
+          <:325i>
+            <tireinfo>e46_tou-2</tireinfo>
+            <*class type="DEF" ref="E46 touring alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+            </class>
+            <:KEYS>
+              <AW31>
+              <AW32>
+            </>
+          </>
+
+          <:328i>
+            <tireinfo>e46_tou-2</tireinfo>
+            <*class type="DEF" ref="E46 touring alt">
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge46">
+            </class>
+            <:KEYS>
+              <AR51>
+              <AR52>
+            </>
+          </>
+
+          <:330i>
+            <tireinfo>e46_tou-4</tireinfo>
+            <*class type="DEF" ref="E46 touring alt">
+            <:COSYSCRIPT>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge44">
+            </class>
+            <:KEYS>
+              <AW51>
+              <AW52>
+            </>
+          </>
+
+          <:320d>
+            <tireinfo>e46_tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 touring alt">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46">
+            </class>
+            <:KEYS>
+              <AX71>
+              <AX72>
+            </>
+          </>
+
+          <:330d>
+            <tireinfo>e46_tou-4</tireinfo>
+            <*class type="DEF" ref="E46 touring alt">
+            <:COSYSCRIPT>
+	      <$L 'options\modif-330ci.bmp' +I>
+	    </>
+
+            <:AUTOSCRIPT>
+              <SERIE   "KEYNebelscheinwerfer">
+              <DEFAULT "KEYFelge44">
+            </class>
+            <:KEYS>
+              <AP91>
+              <AP92>
+            </>
+          </>
+        </MOTORS>
+     </>

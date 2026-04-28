@@ -1,0 +1,77 @@
+
+      <class type="Z4 Roadster">
+
+        <ecode>E85</ecode>
+        <body>ROADSTER</body>
+        <path>Z4-roadster</path>
+        <defaultpaint>P0472</defaultpaint>
+
+        <:COSYSCRIPTLINE>
+    	  <"front"      "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"frontseite" "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"seite"      "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"heckseite"  "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"heck"       "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"front"      "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"frontseite" "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"seite"      "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"heckseite"  "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"heck"       "close" [ "$S25 'KEYHardtop'" ]>
+        </>
+
+        <:MOTORS>
+
+          <class type="2.0i">
+            <tireinfo>E85-1</tireinfo>
+            <*class type="DEF" ref="Z4 roadster">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge104", "KEYLenkradChrom", "KEYSchaltknaufSchwarzE85", "KEYInterieurleistenAlu">
+            </>
+            <:KEYS>
+              <BZ11>
+              <BZ12>
+            </>
+          </>
+
+
+          <class type="2.2i">
+            <tireinfo>E85-1</tireinfo>
+            <*class type="DEF" ref="Z4 roadster">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge104", "KEYLenkradChrom", "KEYSchaltknaufSchwarzE85", "KEYInterieurleistenAlu">
+            </class>
+            <:KEYS>
+               <BT11>
+               <BT12>
+            </>
+          </>
+
+          <class type="2.5i">
+            <tireinfo>E85-2</tireinfo>
+            <*class type="DEF" ref="Z4 roadster">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge104", "KEYLenkradChrom", "KEYSchaltknaufSchwarzE85", "KEYInterieurleistenAlu">
+            </class>
+            <:KEYS>
+               <BT31>
+               <BT32>
+            </>
+          </>
+
+          <class type="3.0i">
+            <:COSYSCRIPT>
+	      <$L 'options\6ZYLINDER.bmp' +I>
+            </>
+            <tireinfo>E85-3</tireinfo>
+            <*class type="DEF" ref="Z4 roadster">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge104", "KEYLenkradChrom", "KEYSchaltknaufChrom", "KEYInterieurleistenAlu">
+            </class>
+            <:KEYS>
+               <BT51>
+               <BT52>
+            </>
+          </>
+
+        </MOTORS>
+      </class>

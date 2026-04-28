@@ -1,0 +1,139 @@
+  <body>116i,118d,118i</body>
+  <:KEYFelge139>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>6½J x 16</rim>
+      <tire>195/55 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge140>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>205/55 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge151>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>205/55 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge141>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 17</rim>
+      <tire>205/50 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge142>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 17</rim>
+      <tire>205/50 R 17</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>7J x 17</rim>
+      <tire>205/50 R 17</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>7½J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge178>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 17</rim>
+      <tire>205/50 R 17</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>7J x 17</rim>
+      <tire>205/50 R 17</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>7½J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge179>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>7½J x 18</rim>
+      <tire>205/45 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge180>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>7½J x 18</rim>
+      <tire>205/45 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge181>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>7½J x 18</rim>
+      <tire>205/45 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge182>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>7½J x 18</rim>
+      <tire>205/45 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>

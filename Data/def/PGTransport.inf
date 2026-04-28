@@ -1,0 +1,392 @@
+
+//====================================================================
+//
+// Produktgruppe Transport
+//
+//====================================================================
+
+//====================================================================
+// Makros
+//====================================================================
+
+$macro TRANSPORT_STATIC[ NAME, KEY ]
+
+  <:OPTION>
+    <group>TRANSPORT</group>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+$macro GEPAECKRAUM_STATIC[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOGepaeckraumsysteme">
+    <parent>CATGepaeckraum</parent>
+    <group>TRANSPORT</group>
+    <btn>type=radio deselect=true</btn>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+
+$macro TRANSPORT_RADIO_STATIC[ NAME, KEY, RADIOGROUP = "" ]
+
+  <class type="OPTION" name="&RADIOGROUP">
+    <group>TRANSPORT</group>
+    <btn>type=radio deselect=true</btn>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+$macro TRANSPORT_RADIO[ NAME, KEY, RADIOGROUP = "" ]
+
+  <class type="OPTION" name="&RADIOGROUP">
+    <group>TRANSPORT</group>
+    <btn>type=radio deselect=true</btn>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+//====================================================================
+// Kategorien
+//====================================================================
+
+  <:OPTION>
+    <group>TRANSPORT</group>
+    <category>CATDachsysteme</category>
+    <name>Dachträgersysteme</name>
+    <file>CATDachsysteme</file>
+    <:KEYS>
+      <CATDachsysteme>
+    </>
+  </>
+
+  <:OPTION>
+    <group>TRANSPORT</group>
+    <category>CATGepaeckraum</category>
+    <name>Gepäckraumsysteme</name>
+    <file>CATGepaeckraum</file>
+    <:KEYS>
+      <CATGepaeckraum>
+    </>
+  </>
+
+
+//====================================================================
+// Optionen
+//====================================================================
+
+     <:OPTION>
+       <group>TRANSPORT</group>
+       <name>Dachreling</name>
+       <file>KEYDachreling</file>
+       <:KEYS>
+         <KEYDachreling>
+       </>
+       <:SCRIPTS>
+         <:OFF>
+           <lineif ecode = "E83" OFF "KEYGrundtraeger", "KEYGepaeckkorb", "KEYSkitraeger", "KEYSnowboardhalterung", "KEYSurfboardhalterung", "KEYRennradhalterung", "KEYDachboxLackiert", "KEYDachboxLackiertLang", "KEYDachboxWeiss">
+           <OFF "KEYZusatzscheinwerfer">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     %GEPAECKRAUM_STATIC [ "Antirutschmatte", KEYAntirutschmatte ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Faltbox", KEYGepaeckraumFaltbox ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Spanngurte", KEYGepaeckraumSpanngurte ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Trenngitter", KEYGepaeckraumTrenngitter ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Verzurrschienen", KEYGepaeckraumVerzurrschienen ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Wanne", KEYGepaeckraumWanne ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Bodennetz",     KEYGepaeckraumBodennetz ]
+     %GEPAECKRAUM_STATIC [ "Gepäckraum-Formmatte",     KEYGepaeckraumFormmatte ]
+     %GEPAECKRAUM_STATIC [ "Wendeboden", KEYWendeboden ]
+     %GEPAECKRAUM_STATIC [ "Universal Gepäckraum-Wanne", KEYUniversalGepaeckraumWanne ]
+     %GEPAECKRAUM_STATIC [ "Ladeboden, ausziehbar", KEYLadebodenAusziehbar ]
+     %GEPAECKRAUM_STATIC [ "Laderaum-Schutzdecke", KEYLaderaumSchutzdecke ]
+     %GEPAECKRAUM_STATIC [ "Multifix-System", KEYMultifixSystem ]
+
+     %TRANSPORT_STATIC [ "Ablagenetz im Fußraum",    KEYAblagenetzFussraum ]
+     %TRANSPORT_STATIC [ "Kühltasche",               KEYKuehltasche ]
+     %TRANSPORT_STATIC [ "Netz für Sitzrückenlehne", KEYNetzSitzrueckenlehne ]
+     %TRANSPORT_STATIC [ "Staufach-Modul", KEYStaufachModul ]
+     %TRANSPORT_STATIC [ "Innentasche für Hartschalenkoffer", KEYInnentasche ]
+
+     <:OPTION>
+       <group>TRANSPORT</group>
+       <name>Hartschalenkoffer</name>
+       <file>KEYHartschalenkofferE85</file>
+       <:KEYS>
+         <KEYHartschalenkofferE85>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+       <:SCRIPTS>
+          <:ON>
+            <ON "KEYHeckklappentraeger">
+            <ON "KEYGepaeckkorb">
+          </>
+       </>
+     </>
+
+     <:OPTION name="RADIOHecktraeger">
+       <group>TRANSPORT</group>
+       <name>Heckklappenträger Chrom</name>
+       <btn>type=radio deselect=true</btn>
+       <file>KEYHeckklappentraegerChrom</file>
+       <:KEYS>
+         <KEYHeckklappentraegerChrom>
+       </>
+      <:SCRIPTS>
+         <:DESELECT>
+           <OFF "KEYHartschalenkoffer">
+           <OFF "KEYSkitraeger">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOHecktraeger">
+       <group>TRANSPORT</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Heckklappenträger</name>
+       <file>KEYHeckklappentraeger</file>
+       <:KEYS>
+         <KEYHeckklappentraeger>
+       </>
+      <:SCRIPTS>
+         <:DESELECT>
+           <OFF "KEYHartschalenkoffer">
+           <OFF "KEYHartschalenkofferE85">
+           <OFF "KEYSkitraeger">
+           <OFF "KEYGepaeckkorb">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <btn>type=radio deselect=true</btn>
+       <name>Hartschalenkoffer</name>
+       <file>KEYHartschalenkoffer</file>
+       <:KEYS>
+         <KEYHartschalenkoffer>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+       <:SCRIPTS>
+          <:SELECT>
+            <ON "KEYHeckklappentraeger">
+          </>
+       </>
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Grundträger</name>
+       <file>KEYGrundtraeger</file>
+       <:KEYS>
+         <KEYGrundtraeger>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Universal-Halterung</name>
+       <file>KEYUniversalhalterung</file>
+       <:KEYS>
+         <KEYUniversalhalterung>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Tourenradhalterung, abschließbar</name>
+       <file>KEYRennradhalterung</file>
+       <:KEYS>
+         <KEYRennradhalterung>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Surfboard-Halterung</name>
+       <file>KEYSurfboardhalterung</file>
+       <:KEYS>
+         <KEYSurfboardhalterung>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Ski- und Snowboard-Set, abschließbar</name>
+       <file>KEYSnowboardhalterung</file>
+       <:KEYS>
+         <KEYSnowboardhalterung>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Skihalterungen, abschließbar</name>
+       <file>KEYSkitraeger</file>
+       <:KEYS>
+         <KEYSkitraeger>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>BMW Gepäckbox weiß, abschließbar</name>
+       <file>KEYDachbox</file>
+       <:KEYS>
+         <KEYDachbox>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>BMW Gepäckbox in Wagenfarbe</name>
+       <file>KEYDachboxLackiert</file>
+       <:KEYS>
+         <KEYDachboxLackiert>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>BMW Ski- und Gepäckbox in Wagenfarbe</name>
+       <file>KEYDachboxLackiertLang</file>
+       <:KEYS>
+         <KEYDachboxLackiertLang>
+       </>
+       <:SCRIPTS>
+         <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION name="RADIOTraegersysteme">
+       <group>TRANSPORT</group>
+       <parent>CATDachsysteme</parent>
+       <btn>type=radio deselect=true</btn>
+       <name>Gepäckkorb</name>
+       <file>KEYGepaeckkorb</file>
+       <:KEYS>
+         <KEYGepaeckkorb>
+       </>
+       <:SCRIPTS>
+          <:SELECT>
+           <lineif ecode = "E83" ON "KEYDachreling">
+         </>
+       </>
+       <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+     </>
+
+     <:OPTION>
+       <parent>CATDachsysteme</parent>
+       <group>TRANSPORT</group>
+       <name>Fahrradlift</name>
+       <file>KEYFahrradlift</file>
+       <:KEYS>
+         <KEYFahrradlift>
+       </>
+      <visibility>detail</visibility>
+     </>
+
+
+
+
+
+
+
+

@@ -1,0 +1,148 @@
+  <body>3.0i,3.0d</body>
+  <:KEYFelge56>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>71/2J x 17</rim>
+      <tire>235/65 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge57>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>71/2J x 17</rim>
+      <tire>235/65 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge130>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>71/2J x 17</rim>
+      <tire>235/65 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge131>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>81/2J x 18</rim>
+      <tire>255/55 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge58>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>81/2J x 18</rim>
+      <tire>255/55 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge69>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>81/2J x 18</rim>
+      <tire>255/55 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge74>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>81/2J x 18</rim>
+      <tire>255/55 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge153>
+    <:WHEEL>
+      <type>All Season</type>
+      <axle></axle>
+      <rim>81/2J x 18</rim>
+      <tire>255/55 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge63>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/50 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>285/45 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge75>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/50 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>285/45 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge132>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/50 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>285/45 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge87>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>91/2J x 20</rim>
+      <tire>275/40 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>101/2J x 20</rim>
+      <tire>315/35 R 20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>
+  <:KEYFelge168>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>91/2J x 20</rim>
+      <tire>275/44 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>101/2 x 20</rim>
+      <tire>315/35 R20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>

@@ -1,0 +1,219 @@
+    <:E53Facelift>
+
+      <name>X5</name>
+
+      <:VIEWS>
+?A        <:front>
+?A          <angle>0</angle>
+?A          <pov>FRONT</pov>
+?A          <bodyframe>x=275 y=87 w=442 h=352</bodyframe>
+?A        </>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=112 y=84 w=757 h=363</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=28 y=93 w=927 h=354</bodyframe>
+        </>
+        <:heckseite>
+          <angle>135</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=152 y=85 w=679 h=364</bodyframe>
+        </>
+?A        <:heck>
+?A          <angle>180</angle>
+?A          <pov>REAR</pov>
+?A          <bodyframe>x=289 y=78 w=405 h=364</bodyframe>
+?A        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0354>
+        <P0430>
+        <P0475>
+        <P0481>
+        <P0472>
+        <P0349>
+        <P0482>
+        <P0381>
+        <P0A11>
+        <P0300>
+        <P0668>
+
+        <CATInterieurfarben>
+
+        <:KEYE53FxxSW>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxTT>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxAT>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxHC>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenBeige' +U>
+	  </>
+	</>
+        <:KEYE53FxxSK>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxKW>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxTE>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+        <:KEYE53FxxDG>
+	  <:COSYSCRIPT>
+	    <$L 'options\KEYInterieurleistenSchwarz' +U>
+	  </>
+	</>
+
+        <KEYWeisseBlinker>
+        <KEYScheinwerferreinigungsanlage>
+        <KEYAerodynamikpaket>
+        <KEYDachreling>
+        <KEYTrittbrett>
+        <KEYUnterfahrschutz>
+        <KEYZusatzscheinwerfer>
+        <KEYSportnachschalldaempfer>
+        <KEYCarCoverOutdoor>
+
+        <CATDachsysteme>
+        <KEYGrundtraeger>
+        <KEYUniversalhalterung>
+	<KEYGepaeckkorb>
+;	  <KEYSkitraeger>
+	<KEYSnowboardhalterung>
+	<KEYSurfboardhalterung>
+        <KEYRennradhalterung>
+;	<KEYDachbox>
+	<KEYDachboxLackiert>
+	<KEYDachboxLackiertLang>
+        KEYFahrradlift
+
+        <CATInterieurleisten>
+        <KEYInterieurleistenPappelDunkel>
+        <KEYInterieurleistenPappelHell>
+        <KEYInterieurleistenPappelRauchgrau>
+        <KEYInterieurleistenTitan>
+        <KEYInterieurleistenGraphit>
+        <KEYInterieurleistenSchwarz>
+	<KEYInterieurleistenBeige>
+
+
+        <CATLenkraeder>
+        <KEYLenkradLederSportDekorblendeTitan>
+        <KEYSerienlenkradE53>
+
+        <CATLenkraederMultifunktion>
+        <KEYLenkradLederMF>
+        <KEYLenkradLederSportDekorblendeTitanMF>
+        <KEYLenkradLederSportDekorblendePappelDunkelMF>
+        <KEYLenkradLederSportDekorblendePappelHellMF>
+        <KEYLenkradLederSportDekorblendeSchwarzMF>
+        <KEYSerienlenkradE53MF>
+
+        <CATSchaltknauf>
+        <KEYSchaltknaufLederSchwarz>
+        <KEYSchaltknaufLederSpangeTitan>
+        <KEYSchaltknaufLederSpangeHolzPappelDunkel>
+        <KEYSchaltknaufLederSpangeHolzPappelHell>
+        <KEYSchaltknaufLederSpangeHolzPappelRauchgrau>
+
+        <CATWaehlhebel>
+        <KEYWaehlhebelLeder>
+        <KEYWaehlhebelTitan>
+        <KEYWaehlhebelLederSpangeHolzPappelDunkel>
+        <KEYWaehlhebelLederSpangeHolzPappelHell>
+        <KEYWaehlhebelLederSpangeHolzPappelRauchgrau>
+
+        <CATFussmatten>
+        <KEYFussmattenVelours>
+        <KEYFussmattenCity>
+        <KEYFussmattenCountry>
+        <KEYGummiFussmattenE53>
+        <KEYLeseleuchteDetailonly>
+        <KEYHandlampe>
+        <KEYSolarius>
+        <:KEYAlupedale>
+          <visibility>detail</visibility>
+        </>
+
+  	<CATAutotelefone>
+  	<KEYAutotelefonProfessional>
+  	<KEYFreisprecheinrichtungBluetooth>
+
+        <CATFreisprechSeitenkonsole>
+        <KEYTelefonkonsole>
+        <KEYTelefonkonsoleSchwarz>
+
+        <KEYBordmonitor>
+        <KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYTVFunktion>
+        <KEYRadioProfessional>
+        ;<KEYSoundsystemDetailOnly>
+        ;<KEYSubwoofer>
+        <KEYCDAufbewahrungstasche>
+        <KEYDVDSystem>
+
+        <KEYFondschutzdecke>
+
+        <KEYKleiderbuegel>
+	<KEYKuehltasche>
+	<KEYSonnenschutzFaltbar>
+
+        <CATGepaeckraum>
+        <Antirutschmatte>
+        <KEYGepaeckraumBodennetz>
+        <KEYGepaeckraumFaltbox>
+        <KEYGepaeckraumFormmatte>
+        <KEYGepaeckraumSpanngurte>
+        <KEYGepaeckraumTrenngitter>
+        <KEYGepaeckraumWanne>
+        <KEYLadebodenAusziehbar>
+        <KEYLaderaumSchutzdecke>
+        <KEYMultifixSystem>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+	<KEYFeuerloescher>
+
+        <KEYFelge130>
+        <KEYFelge57>
+
+
+
+      </>
+
+    </>
+

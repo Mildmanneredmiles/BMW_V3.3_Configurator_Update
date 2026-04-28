@@ -1,0 +1,37 @@
+
+$define BORDMONITOR_VISIBLE = 0
+
+<resolution>width=980 height=460</resolution>
+
+
+<:designer>
+  <:design_msgbox>
+    <textpos>x=40 y=30</textpos>
+    <fontheight>12</fontheight>
+    <lineinc>18</lineinc>
+    <fontcolor>$202020</fontcolor>
+    <btntop>-90</btntop>
+    <btnwidth>100</btnwidth>
+    <btnheight>40</btnheight>
+    <btnspacing>20</btnspacing>
+  </design_msgbox>
+</designer>
+
+$include "filter.inf"
+$include "messages.inf"
+$include "views.inf"
+
+$ifdef TERMINALMODE
+ $include "terminal-gui.inf"
+$else
+  $include "standard-gui.inf"
+$endif
+
+$include "brands.inf"
+$include "extras.inf"
+
+</CLASSES>
+
+
+
+

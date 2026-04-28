@@ -1,0 +1,135 @@
+
+      <class type="E38 limousine">
+
+        <ecode>E38</ecode>
+        <body>LIMOUSINE</body>
+
+        <path>E38Limousine</path>
+
+        <:MOTORS>
+
+          <:728i>
+            <tireinfo>E38-1</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GE11>
+              <GE21>
+              <GE22>
+              <GE31>
+              <GE41>
+              <GE42>
+              <GH41>
+              <GH42>
+              <GF11>
+            </>
+          </>
+
+          <:730i>
+            <tireinfo>E38-1</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GJ41>
+              <GJ42>
+            </>
+          </>
+
+          <:735i>
+            <tireinfo>E38-2</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GG41>
+              <GG42>
+              <GH61>
+              <GH62>
+              <GF31>
+              <GF41>
+              <GF42>
+              <GL41>
+              <GL42>
+            </>
+          </>
+
+          <:740i>
+            <tireinfo>E38-2</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GF51>
+              <GF71>
+              <GF81>
+              <GF82>
+              <GG81>
+              <GG82>
+              <GH81>
+              <GH82>
+              <GJ82>
+            </>
+          </>
+
+          <:750i>
+            <tireinfo>E38-2</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GG01>
+              <GG02>
+              <GJ01>
+              <GJ02>
+              <GG21>
+              <GG22>
+            </>
+          </>
+
+          <:725tds>
+            <tireinfo>E38-1</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GE01>
+              <GE02>
+              <GE91>
+              <GE92>
+            </>
+          </>
+
+          <:730d>
+            <tireinfo>E38-1</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GE61>
+              <GM21>
+              <GM22>
+            </>
+          </>
+
+          <:740d>
+            <tireinfo>E38-2</tireinfo>
+            <*class type="DEF" ref="E38 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge61">
+            </>
+            <:KEYS>
+              <GE81>
+              <GM41>
+            </>
+          </>
+        </>
+      </>

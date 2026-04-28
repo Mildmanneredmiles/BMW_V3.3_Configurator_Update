@@ -1,0 +1,73 @@
+
+// -----------------------------------------------------------------------------
+// FILTER
+// -----------------------------------------------------------------------------
+
+<class type="FILTER">
+
+  <:FILTER name="
+
+  <class type="FILTER" name="DE">
+    <state>1</state>
+    <class type="AND">
+      <language>DE</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="UK">
+    <state>1</state>
+    <class type="AND">
+      <language>UK</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="FR">
+    <state>1</state>
+    <class type="AND">
+      <language>FR</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="IT">
+    <state>1</state>
+    <class type="AND">
+      <language>IT</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="ES">
+    <state>1</state>
+    <class type="AND">
+      <language>ES</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="NL">
+    <state>1</state>
+    <class type="AND">
+      <language>NL</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="SE">
+    <state>1</state>
+    <class type="AND">
+      <language>SE</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="PT">
+    <state>1</state>
+    <class type="AND">
+      <language>PT</language>
+    </class>
+  </class>
+
+  <class type="FILTER" name="JP">
+    <state>1</state>
+    <class type="AND">
+      <language>JP</language>
+    </class>
+  </class>
+
+</class>

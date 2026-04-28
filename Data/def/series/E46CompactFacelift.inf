@@ -1,0 +1,97 @@
+
+  <class type="E46 compact Facelift">
+
+        <ecode>E46</ecode>
+        <body>COMPACT</body>
+        <date>from="20030301"</date>
+
+        <path>E46CompactFacelift</path>
+
+        <:MOTORS>
+
+          <:316ti>
+            <tireinfo>E46_Com-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-1.jpg' +I>
+              <$L 'options\griffe-schwarz.jpg' +I -M>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenAluBlackCubes">
+            </>
+            <*class type="DEF" ref="E46 compact">
+            <:KEYS>
+              <AT11>
+              <AT51>
+              <AT52>
+            </>
+          </>
+
+          <:318ti>
+            <tireinfo>E46_Com-2</tireinfo>
+            <*class type="DEF" ref="E46 compact">
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-1.jpg' +I>
+	      <$L 'options\griffe-schwarz.jpg' +I -M>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenAluBlackCubes">
+            </>
+            <:KEYS>
+              <AU51>
+              <AU52>
+            </>
+          </>
+
+          <:325ti>
+            <tireinfo>E46_Com-2</tireinfo>
+            <*class type="DEF" ref="E46 compact">
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2.jpg' +I>
+	      <$L 'options\chromniere.jpg' +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYLenkradLederSportDekorblendeChrom", "KEYFelge88", "KEYSchaltknaufLederSchwarzChromring", "KEYTitanLineExterieur", "KEYInterieurleistenAluBlackCubes">
+              <HIDE    "KEYSerienlenkradE46LTCom", "KEYFelgeStahlE46">
+              <ON   "KEYNebelscheinwerfer">
+            </>
+            <:KEYS>
+              <AT31>
+              <AT32>
+            </>
+          </>
+
+          <:318td>
+            <tireinfo>E46_Com-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-1.jpg' +I>
+              <$L 'options\griffe-schwarz.jpg' +I -M>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenAluBlackCubes">
+              <HIDE "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </>
+            <*class type="DEF" ref="E46 compact">
+            <:KEYS>
+              <AT91>
+            </>
+          </>
+
+          <:320td>
+            <tireinfo>E46_Com-2</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-d-1.jpg' +I>
+	      <$L 'options\griffe-schwarz.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 compact">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenAluBlackCubes">
+              <HIDE "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </>
+            <:KEYS>
+              <AT71>
+              <AT72>
+            </>
+          </>
+
+        </MOTORS>
+      </>

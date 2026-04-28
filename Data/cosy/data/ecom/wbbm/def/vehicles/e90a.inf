@@ -1,0 +1,117 @@
+
+$T [ "19000101", "99999999" ]
+$P [ "3er\E90Limousine\" ]
+$D [ "paint=P0A22" ]
+
+$S [ #001 "*" [ "$D #200" "$D #300" ] ]
+
+$C [
+     "centerpano" $F [ "FKAB4" "FKASW" "FALAD" "FALAT" "FALB4" "FFFAT" "FFFB5" "FFFB6" "FLCSW" "FLCAD" "FLCB4" "FLCB7" "FLCB8" ] $V [ "*3er\E90Centerpano\" ]
+   ]
+
+$S [ #116 "*" [ "$S25 'KEYSerienlenkrad'" ] ]
+$S [ #117 "*" [ "$S25 'KEYSchaltknaufSerie'" ] ]
+
+
+$S [ #210 "*" "FALAD" [ "$L 'interieur' #M $C 'interieur-grau'"    "$L 'teppich' #M $C 'teppich-grau'"    "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #211 "*" "FALAT" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #212 "*" "FALB4" [ "$L 'interieur' #M $C 'interieur-beige'"   "$L 'teppich' #M $C 'teppich-beige'"   "$L 'asaeulen' #M $C 'asaeulen-beige'"       ] ]
+$S [ #213 "*" "FFFAT" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #214 "*" "FFFB5" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #215 "*" "FFFB6" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #216 "*" "FLCSW" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #217 "*" "FLCAD" [ "$L 'interieur' #M $C 'interieur-grau'"    "$L 'teppich' #M $C 'teppich-grau'"    "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #218 "*" "FLCB4" [ "$L 'interieur' #M $C 'interieur-beige'"   "$L 'teppich' #M $C 'teppich-beige'"   "$L 'asaeulen' #M $C 'asaeulen-beige'"       ] ]
+$S [ #219 "*" "FLCB7" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #220 "*" "FLCB8" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #221 "*" "FKASW" [ "$L 'interieur' #M $C 'interieur-schwarz'" "$L 'teppich' #M $C 'teppich-schwarz'" "$L 'asaeulen' #M $C 'asaeulen-himmelgrau'"  ] ]
+$S [ #222 "*" "FKAB4" [ "$L 'interieur' #M $C 'interieur-beige'"   "$L 'teppich' #M $C 'teppich-beige'"   "$L 'asaeulen' #M $C 'asaeulen-beige'"       ] ]
+
+$S [ #226 "*"  "KEYHifiLautsprechersystem"  [ "$L 'options\KEYHifiLautsprechersystem' +u " ] ]
+
+$S [ #229 "*"  "KEYInterieurleistenTitanMatt"              [ "$L 'options\KEYInterieurleistenTitanMatt' +u" ] ]
+$S [ #230 "*"  "KEYInterieurleistenNussbaumwurzel"         [ "$L 'options\KEYInterieurleistenNussbaumwurzel' +u " ] ]
+$S [ #231 "*"  "KEYInterieurleistenPappelMaser"            [ "$L 'options\KEYInterieurleistenPappelMaser' +u " ] ]
+$S [ #232 "*"  "KEYInterieurleistenAluminiumLaengsschliff" [ "$L 'options\KEYInterieurleistenAluminiumLaengsschliff' +u " ] ]
+$S [ #234 "*"  "KEYBordmonitor" [ "" ] ]
+$S [ #235 "*"  "KEYAblagenpaket" [ "" ] ]
+$S [ #236 "*"  [ "$I- 'sa=KEYBordmonitor' $L 'options\GAAblageMittelkonsole' +u" ] ]
+
+$S [ #240 "*" "KEYSportsitz" [ "$L 'options\KEYSportsitz' +u" "$G #255" ] ]
+$S [ #240 "*" "FALAD" [ "$L 'options\mask-fal' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-grau'    $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-grau'    $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #241 "*" "FALAT" [ "$L 'options\mask-fal' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #242 "*" "FALB4" [ "$L 'options\mask-fal' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-beige'   $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-beige'   $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #243 "*" "FFFAT" [ "$L 'options\mask-fff' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #244 "*" "FFFB5" [ "$L 'options\mask-fff' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #245 "*" "FFFB6" [ "$L 'options\mask-fff' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #246 "*" "FLCSW" [ "$L 'options\mask-flc' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #247 "*" "FLCAD" [ "$L 'options\mask-flc' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-grau'    $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-grau'    $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #248 "*" "FLCB4" [ "$L 'options\mask-flc' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-beige'   $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-beige'   $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #249 "*" "FLCB7" [ "$L 'options\mask-flc' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #250 "*" "FLCB8" [ "$L 'options\mask-flc' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #251 "*" "FKASW" [ "$L 'options\mask-fka' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #252 "*" "FKAB4" [ "$L 'options\mask-fka' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-beige'   $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-beige'   $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #253 "*" [ "$G #268" ] ]
+
+$S [ #255 "*" "FALAD" [ "$L 'options\mask-fal-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-grau'    $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-grau'    $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #256 "*" "FALAT" [ "$L 'options\mask-fal-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #257 "*" "FALB4" [ "$L 'options\mask-fal-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-beige'   $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-beige'   $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #258 "*" "FFFAT" [ "$L 'options\mask-fff-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #259 "*" "FFFB5" [ "$L 'options\mask-fff-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #260 "*" "FFFB6" [ "$L 'options\mask-fff-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #261 "*" "FLCSW" [ "$L 'options\mask-flc-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #262 "*" "FLCAD" [ "$L 'options\mask-flc-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-grau'    $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-grau'    $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #263 "*" "FLCB4" [ "$L 'options\mask-flc-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-beige'   $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-beige'   $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #264 "*" "FLCB7" [ "$L 'options\mask-flc-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #265 "*" "FLCB8" [ "$L 'options\mask-flc-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #266 "*" "FKASW" [ "$L 'options\mask-fka-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-schwarz' $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-schwarz' $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+$S [ #267 "*" "FKAB4" [ "$L 'options\mask-fka-sport' #M $C" "$I+ 'sa=KEYAblagenpaket' $L 'options\KEYAblagenpaket' #m $C 'interieur-beige'   $L 'options\KEYAblagenpaket-NoPaint' +u" "$I+ 'sa=KEYBordmonitor' $L 'options\KEYBordmonitor' #m $C 'interieur-beige'   $L 'options\KEYBordmonitor-NoPaint' +u"  ] ]
+
+
+$S [ #270 "*" "KEYSchaltknaufSerie" [ "$L 'options\KEYSchaltknaufSerie' +u" ] ]
+$S [ #271 "*" "KEYSchaltknaufDekorspangeNussbaumwurzel" [ "$L 'options\KEYSchaltknaufDekorspangeNussbaumwurzel' +u" ] ]
+$S [ #272 "*" "KEYSchaltknaufDekorspangePappelMaser" [ "$L 'options\KEYSchaltknaufDekorspangePappelMaser' +u" ] ]
+$S [ #273 "*" "KEYSchaltknaufDekorspangePerlglanzChrom" [ "$L 'options\KEYSchaltknaufDekorspangePerlglanzChrom' +u" ] ]
+$S [ #274 "*" "KEYSchaltknaufDekorspangeTitanMatt" [ "$L 'options\KEYSchaltknaufDekorspangeTitanMatt' +u" ] ]
+$S [ #275 "*" "KEYSchaltknaufLederSchwarz" [ "$L 'options\KEYSchaltknaufLederSchwarz' +u" ] ]
+
+$S [ #276 "*" "KEYWaehlhebelDekorspangeNussbaumwurzel" [ "$L 'options\KEYWaehlhebelDekorspangeNussbaumwurzel' +u" ] ]
+$S [ #277 "*" "KEYWaehlhebelDekorspangePappelMaser" [ "$L 'options\KEYWaehlhebelDekorspangePappelMaser' +u" ] ]
+$S [ #278 "*" "KEYWaehlhebelDekorspangePerlglanzChrom" [ "$L 'options\KEYWaehlhebelDekorspangePerlglanzChrom' +u" ] ]
+$S [ #279 "*" "KEYWaehlhebelDekorspangeTitanMatt" [ "$L 'options\KEYWaehlhebelDekorspangeTitanMatt' +u" ] ]
+$S [ #280 "*" "KEYWaehlhebelLeder" [ "$L 'options\KEYWaehlhebelLeder' +u" ] ]
+
+$S [ #281 "*" "KEYHandbremsgriffLeder" [ "$L 'options\KEYHandbremsgriffLeder' +u" ] ]
+$S [ #282 "*" "KEYHandbremsgriffNussbaumwurzel" [ "$L 'options\KEYHandbremsgriffNussbaumwurzel' +u" ] ]
+$S [ #283 "*" "KEYHandbremsgriffPappelMaser" [ "$L 'options\KEYHandbremsgriffPappelMaser' +u" ] ]
+
+$S [ #285 "*" "KEYAluFussstuetze" [ "$L 'options\KEYAluFussstuetze' +u" ] ]
+$S [ #286 "*" "KEYAlupedaleAutomatik" [ "$L 'options\KEYAlupedaleAutomatik' +u" ] ]
+$S [ #287 "*" "KEYAlupedaleSchaltgetriebe" [ "$L 'options\KEYAlupedaleSchaltgetriebe' +u" ] ]
+
+$S [ #310 "*" "KEYSerienlenkrad"                         [ "$L 'options\KEYSerienlenkrad' +u" "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYSerienlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+$S [ #311 "*" "KEYLederlenkrad"                          [ "$L 'options\KEYLederlenkrad' +u"  "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYLederlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+$S [ #312 "*" "KEYSportlenkrad"                          [ "$L 'options\KEYSportlenkrad' +u"  "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYSportlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+$S [ #313 "*" "KEYSportlenkradDekorblendeNussbaumwurzel" [ "$L 'options\KEYSportlenkradDekorblendeNussbaumwurzel' +u" "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYSportlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+$S [ #314 "*" "KEYSportlenkradDekorblendePappelMaser"    [ "$L 'options\KEYSportlenkradDekorblendePappelMaser' +u"    "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYSportlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+$S [ #315 "*" "KEYSportlenkradDekorblendeSchwarz"        [ "$L 'options\KEYSportlenkradDekorblendeSchwarz' +u"        "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYSportlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+$S [ #316 "*" "KEYSportlenkradDekorblendeTitanMatt"      [ "$L 'options\KEYSportlenkradDekorblendeTitanMatt' +u"      "$I+ 'sa=KEYMultifunktionslenkrad' $L 'options\KEYSportlenkrad--KEYMultifunktionslenkrad' +u" ] ]
+
+$S [ #320 "*" "KEYRadioNavigationIndianapolis" [ "$L 'options\KEYRadioNavigationIndianapolis' +u" ] ]
+$S [ #321 "*" "KEYRadioProfessional"           [ "$L 'options\KEYRadioProfessional' +u" ] ]
+$S [ #322 "*" "KEYTVFunktion"                  [ "$L 'options\KEYTVFunktion' +u" ] ]
+$S [ #323 "*" "KEYRueckfahrkamera"             [ "$L 'options\KEYRueckfahrkamera' +u" ] ]
+$S [ #324 "*" "KEYRueckfahrkameraNoNavi"       [ "$L 'options\KEYRueckfahrkameraNoNavi' +u" ] ]
+$S [ #325 "*" "KEYFrontkamera"                 [ "$L 'options\KEYFrontkamera' +u" ] ]
+$S [ #326 "*" "KEYFrontkameraNoNavi"           [ "$L 'options\KEYFrontkameraNoNavi' +u" ] ]
+$S [ #327 "*" "KEYNavigationssystem"           [ "$L 'options\KEYNavigationssystem' +u" ] ]
+
+$S [ #330 "*"  "KEYSitzheizung" [ "$I- 'sa=KEYBordmonitor' $L 'options\KEYSitzheizung' +u" ] ]
+$S [ #331 "*"  "KEYSitzheizung" [ "$I+ 'sa=KEYBordmonitor' $L 'options\KEYSitzheizung--KEYBordmonitor' +u" ] ]
+
+$O [ "KEYSerienlenkrad" [ 1025 ]  "KEYLederlenkrad" [ 1025 ] "KEYSportlenkrad" [ 1025 ]  "KEYMultifunktionslenkrad" "KEYInterieurleistenTitanMatt"  "KEYInterieurleistenNussbaumwurzel"  "KEYInterieurleistenPappelMaser"  "KEYInterieurleistenAluminiumLaengsschliff"  "KEYBordmonitor" "KEYAblagenpaket" [1] "KEYHifiLautsprechersystem" "KEYSportsitz"
+     "KEYHandbremsgriffLeder" [ 257 ] "KEYHandbremsgriffNussbaumwurzel" [ 257 ] "KEYHandbremsgriffPappelMaser" [ 257 ] "KEYSchaltknaufSerie" [ 513 ] "KEYSchaltknaufDekorspangeNussbaumwurzel" [ 513 ] "KEYSchaltknaufDekorspangePappelMaser" [ 513 ] "KEYSchaltknaufDekorspangePerlglanzChrom" [ 513 ] "KEYSchaltknaufDekorspangeTitanMatt" [ 513 ] "KEYSchaltknaufLederSchwarz" [ 513 ] "KEYWaehlhebelDekorspangeNussbaumwurzel" [ 513 ] "KEYWaehlhebelDekorspangePappelMaser" [ 513 ]
+     "KEYWaehlhebelDekorspangePerlglanzChrom" [ 513 ] "KEYWaehlhebelDekorspangeTitanMatt" [ 513 ] "KEYWaehlhebelLeder" [ 513 ] "KEYSportlenkradDekorblendeNussbaumwurzel" [ 1025 ] "KEYSportlenkradDekorblendePappelMaser" [ 1025 ] "KEYSportlenkradDekorblendeSchwarz" [ 1025 ] "KEYSportlenkradDekorblendeTitanMatt" [ 1025 ] "KEYAluFussstuetze" "KEYAlupedaleAutomatik" [ 16384 ] "KEYAlupedaleSchaltgetriebe" [ 16384 ]
+     "KEYRadioNavigationIndianapolis" [ 1 ] "KEYRadioProfessional" [ 2048 ] "KEYNavigationssystem" [ 4096 ] "KEYTVFunktion" [ 4096 ] "KEYRueckfahrkamera" [ 4096 ] "KEYRueckfahrkameraNoNavi" [ 8192 ] "KEYFrontkamera" [ 4096 ] "KEYFrontkameraNoNavi" [ 8192 ] "KEYSitzheizung" ]
+
+

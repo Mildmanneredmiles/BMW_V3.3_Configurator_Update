@@ -1,0 +1,187 @@
+  <body>LCINur730d,730i/Li</body>
+  <:KEYFelge165>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>225/60 R 17</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>245/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge93>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/50 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge94>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/50 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge175>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/50 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge174>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/50 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge89>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>245/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>275/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge92>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>245/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>275/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge95>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>245/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>275/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge126>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>245/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>275/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge176>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 19</rim>
+      <tire>245/45 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 19</rim>
+      <tire>275/40 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge32>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 20</rim>
+      <tire>245/40 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 20</rim>
+      <tire>275/35 R 20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>
+  <:KEYFelge101>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 20</rim>
+      <tire>245/40 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 20</rim>
+      <tire>275/35 R 20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>
+  <:KEYFelge149>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>9J x 20</rim>
+      <tire>245/40 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>10J x 20</rim>
+      <tire>275/35 R 20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>
+  <:KEYFelge128>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>HA</axle>
+      <rim>9J x 21</rim>
+      <tire>245/35 ZR 21</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>10J x 21</rim>
+      <tire>285/30 ZR 21</tire>
+    </>
+    <maxsize>21</maxsize>
+  </>

@@ -1,0 +1,37 @@
+  <body>525xi,530xi,530xd</body>
+  <:KEYFelge138>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7½J x 17</rim>
+      <tire>225/50 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge122>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>245/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge123>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge124>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>

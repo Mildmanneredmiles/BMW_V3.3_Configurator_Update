@@ -1,0 +1,166 @@
+
+    <class type="Z4 roadster">
+
+      <name>Z4 roadster</name>
+
+      <:VIEWS>
+?A        <:front>
+?A          <angle>0</angle>
+?A          <pov>FRONT</pov>
+?A          <bodyframe>x=268 y=143 w=431 h=312</bodyframe>
+?A        </>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=81 y=151 w=823 h=309</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=36 y=153 w=897 h=288</bodyframe>
+        </>
+        <:heckseite>
+          <angle>135</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=84 y=158 w=805 h=302</bodyframe>
+        </>
+?A        <:heck>
+?A          <angle>180</angle>
+?A          <pov>REAR</pov>
+?A          <bodyframe>x=265 y=141 w=445 h=311</bodyframe>
+?A        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0354>
+        <P0300>
+	<P0314>
+	<P0349>
+	<P0472>
+	<P0482>
+	<P0A02>
+	<P0A04>
+	<P0A15>
+	<P0A35>
+        <P0668>
+	<P0475>
+
+        <CATInterieurfarben>
+
+        <KEYE85FxxAT>
+        <KEYE85FxxAC>
+        <KEYE85FxxMD>
+        <KEYE85FxxPF>
+        <KEYE85FxxSW>
+        <KEYE85FxxTL>
+        <KEYE85FxxT5>
+        <KEYE85FxxAB>
+
+       <KEYAerodynamikpaket>
+       <KEYWeisseBlinker>
+       <KEYHardtop>
+       <KEYAuspuffrohrblendeChrom>
+       <KEYHeckspoiler>
+       <KEYWeisseHeckleuchten>
+       <KEYHeckklappentraeger>
+       <KEYSkitraeger>
+       <KEYGepaeckkorb>
+       <KEYHartschalenkofferE85>
+       <KEYInnentasche>
+       <KEYVerdeckabdeckung>
+       <KEYWindschutz>
+       <KEYWindschutzmitSchiene>
+       <KEYCarCoverIndoor>
+       <KEYCarCoverOutdoor>
+       <KEYCarCoverOutdoorFrontscheibe>
+
+       <KEYLenkradChrom>
+       <KEYLenkradHolzPlatane>
+       <:CATInterieurleisten>
+         <iconfile>CATE85Interieurleisten</iconfile>
+       </>
+       <KEYInterieurleistenAlu>
+       <KEYInterieurleistenCarbon>
+       <KEYInterieurleistenGraphitSeidenmatt>
+       <KEYInterieurleistenPlatane>
+       <KEYInterieurleistenMahagoniMaritim>
+
+       <:CATSchaltknauf>
+         <iconfile>KEYSchaltknaufGrauE85</iconfile>
+       </>
+       <KEYSchaltknaufSchwarzE85>
+       <KEYSchaltknaufBeigeE85>
+       <KEYSchaltknaufGrauE85>
+       <KEYSchaltknaufChrom>
+       <KEYSchaltknaufChromGrau>
+       <KEYSchaltknaufChromBeige>
+       <KEYSchaltknaufPlatane>
+       <KEYSchaltknaufPlataneGrau>
+       <KEYSchaltknaufPlataneBeige>
+       <:CATWaehlhebel>
+         <iconfile>KEYWaehlhebelLederChromMatt</iconfile>
+       </>
+       <KEYWaehlhebelLederChromMatt>
+       <KEYWaehlhebelLederChromMattGrau>
+       <KEYWaehlhebelLederChromMattBeige>
+       <KEYWaehlhebelPlatane>
+       <KEYWaehlhebelPlataneGrau>
+       <KEYWaehlhebelPlataneBeige>
+       <:CATFussmatten>
+         <iconfile>KEYFussmattenVelours</iconfile>
+       </>
+       <KEYFussmattenVelours>
+       <KEYFussmattenCity>
+       <KEYLeseleuchte>
+       <KEYKlimaautomatik>
+       <KEYBeleuchteteEinstiegsleiste>
+
+       <KEYRadioBusinessCD>
+       <KEYRadionavigationIndianapolis>
+       <KEYBordmonitor>
+       <KEYNavigationssystemCD>
+       <KEYNavigationssystemMD>
+       <KEYFrontkamera>
+       <KEYRueckfahrkamera>
+
+       <KEYRadioNavigation>
+       <KEYNavigationsDisplay>
+
+       <:CATAutotelefone>
+         <iconfile>KEYAutotelefonProfessional</iconfile>
+       </>
+       <KEYAutotelefonProfessional>
+       <KEYFreisprecheinrichtungBluetooth>
+
+       <KEYFahrtenbuch>
+
+       <KEYAblagenetzFussraum>
+       <CATGepaeckraum>
+       <KEYGepaeckraumBodennetz>
+       <KEYGepaeckraumFaltbox>
+       <KEYGepaeckraumFormmatte>
+
+       <KEYKleiderbuegel>
+       <KEYKuehltasche>
+       <KEYNetzSitzrueckenlehne>
+       <KEYFeuerloescher>
+       <KEYHandlampe>
+       <KEYHardtopTransportwagen>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+       <KEYFelge104>
+
+     </>
+
+   </>

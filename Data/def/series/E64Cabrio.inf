@@ -1,0 +1,61 @@
+      <class type="Cabrio">
+
+        <path>E64Cabrio</path>
+        <shortid>Cabrio</shortid>
+        <ecode>E64</ecode>
+        <body>CABRIO</body>
+        <defaultpaint>P0475</defaultpaint>
+
+	<:AUTOSCRIPT>
+	  <SA100 "KEYBordmonitor">
+	</>
+
+
+        <class type="MOTORS">
+
+          <class type="630Ci">
+            <tireinfo>E63_E64</tireinfo>
+            <*class type="DEF" ref="E64Cabrio">
+            <:AUTOSCRIPT>
+              <ON      "GASchaltknauf">
+              <DEFAULT "KEYFelge117", "KEYInterieurleistenRutheniumPerlglanz">
+            </>
+            <:COSYSCRIPT>
+              <$L 'options\MDNiereSchwarz' +I>
+            </>
+            <:KEYS>
+              <EK31>
+              <EK32>
+            </>
+          </>
+
+          <class type="645Ci">
+            <tireinfo>E63_E64</tireinfo>
+            <*class type="DEF" ref="E64Cabrio">
+            <:AUTOSCRIPT>
+              <ON      "GASchaltknauf">
+              <DEFAULT "KEYFelge118", "KEYInterieurleistenRutheniumPerlglanz">
+              <HIDE    "KEYFelge117">
+            </>
+            <:KEYS>
+              <EK71>
+              <EK72>
+            </>
+          </>
+
+          <class type="650Ci">
+            <tireinfo>E63_E64</tireinfo>
+            <*class type="DEF" ref="E64Cabrio">
+            <:AUTOSCRIPT>
+              <ON      "GASchaltknauf">
+              <DEFAULT "KEYFelge118", "KEYInterieurleistenRutheniumPerlglanz">
+              <HIDE    "KEYFelge117">
+            </>
+            <:KEYS>
+              <EK11>
+              <EK12>
+            </>
+          </>
+
+        </>
+      </>

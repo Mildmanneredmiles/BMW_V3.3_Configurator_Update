@@ -1,0 +1,194 @@
+
+      <class type="E46 touring">
+
+        <ecode>E46</ecode>
+        <body>TOURING</body>
+        <date>from="20020301"</date>
+        <path>E46TouringFacelift</path>
+
+        <:MOTORS>
+
+          <:316i>
+            <tireinfo>E46_Tou-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <AX31>
+              <AX32>
+            </>
+          </>
+
+          <:318i>
+            <tireinfo>E46_Tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <AX51>
+              <AX52>
+            </>
+          </>
+
+          <:320i>
+            <tireinfo>E46_Tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+
+            <:KEYS>
+              <EN11>
+              <EN12>
+            </>
+          </>
+
+          <:325i>
+            <tireinfo>E46_Tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+
+            <:KEYS>
+              <EN31>
+              <EN32>
+            </>
+          </>
+
+          <:325xi>
+            <tireinfo>E46_Tou-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EP31>
+            </>
+          </>
+
+          <:330i>
+            <tireinfo>E46_Tou-4</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+              <$L 'options\titanblende.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+
+            <:KEYS>
+              <EN51>
+              <EN52>
+            </>
+          </>
+
+          <:330xi>
+            <tireinfo>E46_Tou-4</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+              <$L 'options\titanblende.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom", "KEYNebelscheinwerfer">
+            </class>
+            <:KEYS>
+              <EP51>
+            </>
+          </>
+
+          <:318d>
+            <tireinfo>E46_Tou-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <EL51>
+              <EL71>
+              <EL72>
+            </>
+          </>
+
+          <:320d>
+            <tireinfo>E46_Tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\basemodels.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+            <:KEYS>
+              <AP71>
+              <AP72>
+            </>
+          </>
+
+          <:330d>
+            <tireinfo>E46_Tou-4</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge44", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE    "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+
+            <:KEYS>
+              <EL91>
+              <EL92>
+              <EX91>
+              <EX92>
+            </>
+          </>
+
+	<:330xd>
+            <tireinfo>E46_Tou-4</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\chromniere.jpg' +I>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge44", "KEYSerienlenkradE46LTCom", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSchaltknaufHolzNussbaumDunkelEmblem", "KEYSchaltknaufHolzNussbaumHell", "KEYSchaltknaufHolzNussbaumHellEmblem">
+            </class>
+
+            <:KEYS>
+              <EP71>
+              <EX71>
+            </>
+          </>
+        </MOTORS>
+      </>

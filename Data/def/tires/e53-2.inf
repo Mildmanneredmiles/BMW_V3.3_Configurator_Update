@@ -1,0 +1,31 @@
+  <body>4.6isA,4.8isA</body>
+  <:KEYFelge87>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>91/2J x 20</rim>
+      <tire>275/44 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>101/2 x 20</rim>
+      <tire>315/35 R20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>
+  <:KEYFelge168>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>91/2J x 20</rim>
+      <tire>275/44 R 20</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>101/2 x 20</rim>
+      <tire>315/35 R20</tire>
+    </>
+    <maxsize>20</maxsize>
+  </>

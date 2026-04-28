@@ -1,0 +1,168 @@
+
+      <class type="E39 touring">
+
+        <ecode>E39</ecode>
+        <body>TOURING</body>
+
+        <path>E39touring</path>
+        <interiorpath>E39Interior</interiorpath>
+
+        <:MOTORS>
+
+          <:520i name="touring">
+            <tireinfo>E39_Tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DS11>
+              <DS12>
+              <DR11>
+              <DR12>
+            </>
+          </>
+
+          <:523i name="touring">
+            <tireinfo>E39_Tou-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DH31>
+              <DR31>
+              <DR32>
+            </>
+          </>
+
+          <:525i name="touring">
+            <tireinfo>E39_Tou-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DS31>
+              <DS32>
+            </>
+          </>
+
+          <:528i name="touring">
+            <tireinfo>E39_Tou-5</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DP51>
+              <DP52>
+            </>
+          </>
+
+          <:530i name="touring">
+            <tireinfo>E39_Tou-5</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge48", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DS51>
+              <DS52>
+            </>
+          </>
+
+          <:540i name="touring">
+            <tireinfo>E39_Tou-5</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\nierechrom.jpg' +I>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge82", "KEYSerienlenkradE39MF", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39">
+            </class>
+            <:KEYS>
+              <DR51>
+              <DR52>
+            </>
+          </>
+
+          <:520d name="touring">
+            <tireinfo>E39_Tou-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1-d.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DR71>
+            </>
+          </>
+
+          <:525d name="touring">
+            <tireinfo>E39_Tou-4</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1-d.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DP91>
+              <DP92>
+            </>
+          </>
+
+          <:530d name="touring">
+            <tireinfo>E39_Tou-5</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+	      <$L 'options\auspuff-1-d.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 touring">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge48", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DP71>
+              <DP72>
+            </>
+          </>
+
+        </MOTORS>
+      </>

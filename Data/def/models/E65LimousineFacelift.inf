@@ -1,0 +1,398 @@
+
+    <class type="E65 limousine facelift">
+
+      <name>Limousine 2005</name>
+
+      <:VIEWS>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=77 y=119 w=849 h=378</bodyframe>
+          <:1000x600_980x460>
+            <source>x1=0  y1=35 x2=999 y2=540</source>        // 10% zoom bei 980 x 460 = ... x 506
+            <target>x1=35 y1=0  x2=945 y2=459</target>
+            <sharpen>75</sharpen>
+            <:expand>
+              x1=50  y1=0 x2=100 y2=459 newx=0
+              x1=910 y1=0 x2=945 y2=459 newx=979
+            </>
+          </>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=76 y=167 w=850 h=328</bodyframe>
+        </>
+        <:heckseite>
+          <angle>225</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=76 y=167 w=850 h=328</bodyframe>
+          <:1000x600_980x460>
+            <source>x1=0  y1=35 x2=999 y2=540</source>        // 10% zoom bei 980 x 460 = ... x 506
+            <target>x1=35 y1=0  x2=945 y2=459</target>
+            <sharpen>75</sharpen>
+            <:expand>
+              x1=36  y1=0 x2=100 y2=459 newx=0
+              x1=910 y1=0 x2=945 y2=459 newx=979
+            </>
+          </>
+        </>
+        <:interior>
+          <angle>0</angle>
+          <pov>DRIVERDOOR</pov>
+          <bodyframe>x=0 y=0 w=1000 h=600</bodyframe>
+          <path>E65Dashboard</path>
+          <:1000x600_980x460>
+            <source>x1=10 y1=120 x2=989 y2=579</source>
+            <target>x1=0  y1=0   x2=979 y2=459</target>
+            <sharpen>0</sharpen>
+          </>
+        </>
+        <:centerpano>
+          <angle>0</angle>
+          <pov>CENTERPANO</pov>
+          <bodyframe>x=0 y=0 w=0 h=0</bodyframe>
+          <:params>
+
+          </>
+        </>
+      </>
+
+      <class type="COMPONENTS">
+
+        <P0354>
+        <P0475>
+        <P0482>
+        <P0472>
+        <P0481>
+        <P0A36>
+        <P0A35>
+        <P0A43>
+        <P0A38>
+        <P0A39>
+        <P0300>
+        <P0668>
+
+        <CATInterieurfarben>
+
+        <KEYE65LCIFH5AT>
+        <KEYE65LCIFH5FA>
+
+        <KEYE65LCIFU6SW>
+        <KEYE65LCIFU6FA>
+        <KEYE65LCIFU6BA>
+        <KEYE65LCIFU6NB>
+        <KEYE65LCIFU6MC>
+        <KEYE65LCIFU6GE>
+
+        <KEYE65LCIFU7SW>
+        <KEYE65LCIFU7GE>
+        <KEYE65LCIFU7FA>
+        <KEYE65LCIFU7NB>
+
+        <CATSportsitze>
+        <KEYE65LCIFV7SW>
+        <KEYE65LCIFV7FA>
+        <KEYE65LCIFV7GE>
+        <KEYE65LCIFV7MC>
+        <KEYE65LCIFV7NB>
+
+        <KEYGruenkeilfrontscheibe>
+        <KEYIndividualHochglanzShadowline>
+        <KEYGlasschiebedach>
+        <KEYParkDistanceControl>
+        <KEYAnhaengerkupplung>
+        <KEYCarCoverOutdoor>
+        <:KEYSchmutzfaenger>
+           <visibility>detail</visibility>
+        </>
+
+        <CATDachsysteme>
+        <KEYGrundtraeger>
+        <KEYUniversalhalterung>
+	<KEYGepaeckkorb>
+; 	  <KEYSkitraeger>
+	<KEYSnowboardhalterung>
+	<KEYSurfboardhalterung>
+;        <KEYRennradhalterung>
+;	 <KEYDachbox>
+	<KEYDachboxLackiert>
+	<KEYDachboxLackiertLang>
+        KEYFahrradlift
+
+        <:CATInterieurleisten>
+          <iconfile>KEYEdelholzEscheHell</iconfile>
+        </>
+	<KEYEdelholzVavonaGrauMatt>
+        <KEYEdelholzAmerikanischNussbaum>
+        <KEYEdelholzEscheHell>
+        <KEYEdelholzEscheDunkel>
+	<KEYEdelholzNussbaumwurzelIntarsien>
+
+        <:CATLenkraederMultifunktion>
+          <iconfile>KEYSerienlenkrad</iconfile>
+        </>
+        <:KEYSerienlenkrad>
+          <parent>CATLenkraederMultifunktion</parent>
+        </>
+        <:KEYSportlenkrad>
+          <parent>CATLenkraederMultifunktion</parent>
+        </>
+        <KEYHolzLederLenkradEscheHell>
+        <KEYHolzLederLenkradEscheDunkel>
+
+        <KEYKomfortsitz>
+        <KEYKlimasitz>
+        <KEYIndividualDachhimmelAnthrazit>
+        <KEYIndividualDachhimmelAlcantaraAnthrazit>
+        <KEYGetraenkehalter>
+        <KEYLenkradheizung>
+	<KEYAktivsitz>
+	<KEYAktiveSitzverstellung>
+	<KEYKlimaautomatik>
+	<:KEYLeseleuchte>
+	  <visibility>detail</visibility>
+	</>
+	<KEYHandlampe>
+	<KEYAblagesystem>
+	<KEYKleiderbuegel>
+	<CATFussmatten>
+        <KEYFussmattenVeloursE65>
+        <KEYFussmattenCityE65>
+        <KEYGummiFussmattenE65>
+
+        <:KEYAutotelefonProfessional>
+          <parent></parent>
+        </>
+
+	<KEYBordmonitor>
+	<KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+	<KEYTVFunktion>
+        <KEYBMWDVDSystemAdvanced>
+        <KEYCDWechsler>
+        <:KEYDVDWechsler>
+          <visibility>detail</visibility>
+        </>
+        <KEYCDAufbewahrungstasche>
+
+	<KEYKuehltasche>
+	<CATGepaeckraum>
+	<KEYAntirutschmatte>
+	<KEYGepaeckraumBodennetz>
+	<KEYGepaeckraumFaltbox>
+	<KEYGepaeckraumFormmatte>
+	<KEYGepaeckraumSpanngurte>
+	<KEYGepaeckraumWanne>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+	<KEYFeuerloescher>
+
+      </>
+
+    </>
+
+
+
+    <class type="E66 limousine facelift">
+
+      <name>Limousine 2005</name>
+
+      <:VIEWS>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=77 y=119 w=849 h=378</bodyframe>
+          <:1000x600_980x460>
+            <source>x1=0  y1=35 x2=999 y2=540</source>        // 10% zoom bei 980 x 460 = ... x 506
+            <target>x1=35 y1=0  x2=945 y2=459</target>
+            <sharpen>75</sharpen>
+            <:expand>
+              x1=50  y1=0 x2=100 y2=459 newx=0
+              x1=910 y1=0 x2=945 y2=459 newx=979
+            </>
+          </>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=76 y=167 w=850 h=328</bodyframe>
+        </>
+        <:heckseite>
+          <angle>225</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=76 y=167 w=850 h=328</bodyframe>
+          <:1000x600_980x460>
+            <source>x1=0  y1=35 x2=999 y2=540</source>        // 10% zoom bei 980 x 460 = ... x 506
+            <target>x1=35 y1=0  x2=945 y2=459</target>
+            <sharpen>75</sharpen>
+            <:expand>
+              x1=36  y1=0 x2=100 y2=459 newx=0
+              x1=910 y1=0 x2=945 y2=459 newx=979
+            </>
+          </>
+        </>
+        <:interior>
+          <angle>0</angle>
+          <pov>DRIVERDOOR</pov>
+          <bodyframe>x=0 y=0 w=1000 h=600</bodyframe>
+          <path>E65Dashboard</path>
+          <:1000x600_980x460>
+            <source>x1=10 y1=120 x2=989 y2=579</source>
+            <target>x1=0  y1=0   x2=979 y2=459</target>
+            <sharpen>0</sharpen>
+          </>
+        </>
+        <:centerpano>
+          <angle>0</angle>
+          <pov>CENTERPANO</pov>
+          <bodyframe>x=0 y=0 w=0 h=0</bodyframe>
+        </>
+      </>
+
+      <class type="COMPONENTS">
+
+        <P0354>
+        <P0475>
+        <P0482>
+        <P0472>
+        <P0481>
+        <P0A36>
+        <P0A35>
+        <P0A43>
+        <P0A38>
+        <P0A39>
+        <P0300>
+        <P0668>
+
+        <CATInterieurfarben>
+        <KEYE65LCIFH5AT>
+        <KEYE65LCIFH5FA>
+
+        <KEYE65LCIFU6SW>
+        <KEYE65LCIFU6FA>
+        <KEYE65LCIFU6BA>
+        <KEYE65LCIFU6NB>
+        <KEYE65LCIFU6MC>
+        <KEYE65LCIFU6GE>
+
+        <KEYE65LCIFU7SW>
+        <KEYE65LCIFU7GE>
+        <KEYE65LCIFU7FA>
+        <KEYE65LCIFU7NB>
+
+        <KEYE65LCIFV7SW>
+        <KEYE65LCIFV7FA>
+        <KEYE65LCIFV7GE>
+        <KEYE65LCIFV7MC>
+        <KEYE65LCIFV7NB>
+
+        <KEYSportsitz>
+
+	<KEYGruenkeilfrontscheibe>
+	<KEYIndividualHochglanzShadowline>
+        <KEYGlasschiebedach>
+        <KEYParkDistanceControl>
+        <KEYAnhaengerkupplung>
+        <KEYCarCoverOutdoor>
+        <:KEYSchmutzfaenger>
+           <visibility>detail</visibility>
+        </>
+
+        <CATDachsysteme>
+        <KEYGrundtraeger>
+        <KEYUniversalhalterung>
+	<KEYGepaeckkorb>
+;	 <KEYSkitraeger>
+	<KEYSnowboardhalterung>
+	<KEYSurfboardhalterung>
+;        <KEYRennradhalterung>
+;	 <KEYDachbox>
+	<KEYDachboxLackiert>
+	<KEYDachboxLackiertLang>
+        KEYFahrradlift
+
+        <:CATInterieurleisten>
+          <iconfile>KEYEdelholzEscheHell</iconfile>
+        </>
+	<KEYEdelholzVavonaGrauMatt>
+        <KEYEdelholzAmerikanischNussbaum>
+        <KEYEdelholzEscheHell>
+        <KEYEdelholzEscheDunkel>
+	<KEYEdelholzNussbaumwurzelIntarsien>
+
+        <:CATLenkraeder>
+          <iconfile>KEYSerienlenkrad</iconfile>
+        </>
+        <KEYSerienlenkrad>
+        <:KEYHolzLederLenkradEscheHell>
+          <parent>CATLenkraeder</parent>
+        </>
+        <:KEYHolzLederLenkradEscheDunkel>
+          <parent>CATLenkraeder</parent>
+        </>
+        <KEYSportlenkrad>
+
+        <KEYKomfortsitz>
+        <KEYKlimasitz>
+        <KEYIndividualDachhimmelAnthrazit>
+        <KEYIndividualDachhimmelAlcantaraAnthrazit>
+        <KEYGetraenkehalter>
+        <KEYLenkradheizung>
+	<KEYAktivsitz>
+	<KEYAktiveSitzverstellung>
+	<KEYKlimaautomatik>
+	<:KEYLeseleuchte>
+	  <visibility>detail</visibility>
+	</>
+	<KEYHandlampe>
+	<KEYAblagesystem>
+	<KEYKleiderbuegel>
+
+	<CATFussmatten>
+        <KEYFussmattenVeloursE65>
+        <KEYFussmattenCityE65>
+        <KEYGummiFussmattenE65>
+
+        <:KEYAutotelefonProfessional>
+          <parent></parent>
+        </>
+
+	<KEYBordmonitor>
+	<KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+	<KEYTVFunktion>
+        <KEYBMWDVDSystemAdvanced>
+        <KEYCDWechsler>
+        <:KEYDVDWechsler>
+          <visibility>detail</visibility>
+        </>
+        <KEYCDAufbewahrungstasche>
+
+	<KEYKuehltasche>
+	<CATGepaeckraum>
+	<KEYAntirutschmatte>
+	<KEYGepaeckraumBodennetz>
+	<KEYGepaeckraumFaltbox>
+	<KEYGepaeckraumFormmatte>
+	<KEYGepaeckraumSpanngurte>
+	<KEYGepaeckraumWanne>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+	<KEYFeuerloescher>
+
+      </>
+
+    </>

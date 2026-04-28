@@ -1,0 +1,49 @@
+
+    <class type="Z3 coupe">
+
+      <name>Z3 Coupe</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=241 y=86 w=500 h=366</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=49 y=162 w=886 h=298</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=250 y=109 w=481 h=351</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0300>
+        <P0303>
+	<P0306>
+	<P0337>
+	<P0354>
+	<P0362>
+	<P0364>
+	<P0415>
+        <P0430>
+	<P0468>
+	<P0472>
+	<P0475>
+	<P0668>
+
+        <KEYDesignZiergitter>
+        <KEYHeckklappengriffChrom>
+?A        <KEYAuspuffrohrblendeChrom>
+        <KEYMSpiegel>
+
+        <KEYFelge47>
+
+      </COMPONENTS>
+
+    </>

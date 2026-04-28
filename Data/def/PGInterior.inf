@@ -1,0 +1,1003 @@
+//====================================================================
+// Makros
+//====================================================================
+
+$macro INTERIEUR_STATIC[ NAME, KEY ]
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+
+$macro ILEISTE [ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOInterieurleisten">
+    <parent>CATInterieurleisten</parent>
+    <btn>type=radio</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro ILEISTE_WERK [ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOInterieurleisten">
+    <parent>CATInterieurleisten</parent>
+    <btn>type=radio</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <name2>#ABWERK</name2>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro ILEISTE_DESELECTABLE [ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOInterieurleisten">
+    <parent>CATInterieurleisten</parent>
+    <btn>type=radio deselect=true</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+
+$macro LENKRAEDER [ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOLenkraeder">
+    <parent>CATLenkraeder</parent>
+    <btn>type=radio</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro LENKRAEDERMF [ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOLenkraeder">
+    <parent>CATLenkraederMultifunktion</parent>
+    <btn>type=radio</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro SCHALTKNAUF[ NAME, KEY, PARENT = "CATSchaltknauf" ]
+
+  <class type="OPTION" name="RADIOSchaltknaufWaehlhebel">
+    <parent>&PARENT</parent>
+    <btn>type=radio</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:SCRIPTS>
+      <:SELECT>
+        <OFF "KEYPedaleAutomatik">
+        <OFF "KEYAlupedaleAutomatik">
+        <ON  "KEYPedaleSchaltgetriebe">
+        <lineif FindClassByKey( "KEYAlupedale" )^.Status != "0" do ON "KEYAlupedaleSchaltgetriebe">
+      </>
+    </>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+
+
+
+$macro WAEHLHEBEL[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOSchaltknaufWaehlhebel">
+    <parent>CATWaehlhebel</parent>
+    <btn>type=radio</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:SCRIPTS>
+      <:SELECT>
+        <OFF "KEYPedaleSchaltgetriebe">
+        <OFF "KEYAlupedaleSchaltgetriebe">
+        <ON "KEYPedaleAutomatik">
+        <lineif FindClassByKey( "KEYAlupedale" )^.Status != "0" do ON "KEYAlupedaleAutomatik">
+      </>
+    </>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+
+$macro HANDBREMSGRIFFE[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOHandbremsgriffe">
+    <parent>CATHandbremsgriffe</parent>
+    <btn>type=radio deselect=true</btn>
+    <file>&KEY</file>
+    <name>&NAME</name>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro FUSSMATTEN[ NAME, KEY ]
+
+  <class type="OPTION" name="Radiomatten">
+        <parent>CATFussmatten</parent>
+        <btn>type=radio deselect=true</btn>
+        <visibility>detail</visibility>
+        <name>&NAME</name>
+        <file>&KEY</file>
+        <:KEYS>
+          <&KEY>
+        </>
+      </>
+
+$endmacro
+
+$macro FUSSSTUETZEN[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOFussstuetze">
+        <parent>CATFussstuetzen</parent>
+        <btn>type=radio deselect=true</btn>
+        <name>&NAME</name>
+        <file>&KEY</file>
+        <:KEYS>
+          <&KEY>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+
+
+$endmacro
+
+; ===============================================================================================
+; Optionen
+; ===============================================================================================
+
+  %INTERIEUR_STATIC [ "Handlampe", KEYHandlampe ]
+  ;%INTERIEUR_STATIC [ "Getränkehalter-Modul", KEYGetraenkehalterModul ]
+  ;%INTERIEUR_STATIC [ "Fondschutzdecke", KEYFondschutzdecke ]
+  ;%INTERIEUR_STATIC [ "Schirmköcher", KEYSchirmkoecher ]
+  ;%INTERIEUR_STATIC [ "Solarius", KEYSolarius ]
+  ;%INTERIEUR_STATIC [ "Sonnenschutz, faltbar", KEYSonnenschutzFaltbar ]
+  %INTERIEUR_STATIC [ "Kleiderbügel",             KEYKleiderbuegel ]
+
+
+; ===============================================================================================
+; Category Interieurleisten
+; ===============================================================================================
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <category>CATInterieurleisten</category>
+    <btn>type=radio</btn>
+    <name>Interieurleisten</name>
+    <file>CATInterieurleisten</file>
+    <:KEYS>
+      <CATInterieurleisten>
+    </>
+  </>
+
+  %ILEISTE [ "Innenaustattung, mattchrom", KEYInterieurleistenMattchrom ]
+  %ILEISTE [ "M Interieurleisten Alu Black Cube", KEYInterieurleistenAluBlackCubes ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Ahorn, hell", KEYInterieurleistenAhorn ]
+  %ILEISTE [ "Interieurleisten Alu Cube Silber", KEYInterieurleistenAluCubesSilver ]
+  %ILEISTE [ "Interieurleisten Alu Shadow gebürstet", KEYInterieurleistenAluShadowGebuerstet ]
+  %ILEISTE [ "Interieurleisten Alu Säulen", KEYInterieurleistenAluSaeulen ]
+  %ILEISTE [ "Interieurleisten Alu Techno-dots", KEYInterieurleistenAluTechnoDots ]
+  %ILEISTE [ "Interieurleisten Alu U-Turn", KEYInterieurleistenAluUTurn ]
+  %ILEISTE [ "Interieurleisten Moongray", KEYInterieurleistenMoongrey ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Birke", KEYInterieurleistenBirke ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Myrte", KEYInterieurleistenMyrte ]
+  %ILEISTE [ "Interieurleisten Titan", KEYInterieurleistenTitan ]
+  %ILEISTE [ "Interieurleisten Titan", KEYInterieurleistenTitanIIDunkel ]
+  %ILEISTE [ "Interieurleisten Eukalyptus", KEYInterieurleistenEukalyptus ]
+  %ILEISTE [ "Interieurleisten schwarz", KEYInterieurleistenSchwarz ]
+  %ILEISTE [ "Interieurleisten beige", KEYInterieurleistenBeige ]
+  %ILEISTE [ "Interieurleisten mattlackiert, schwarz", KEYInterieurleistenSchwarzMatt ]
+  %ILEISTE [ "Interieurleisten mattlackiert, graphit", KEYInterieurleistenGraphitMatt ]
+  %ILEISTE [ "Interieurleisten seidenmatt graphit", KEYInterieurleistenGraphitSeidenmatt ]
+  %ILEISTE [ "Interieurleisten Mahagoni Maritim", KEYInterieurleistenMahagoniMaritim ]
+  %ILEISTE [ "Interieurleisten Carbon", KEYInterieurleistenCarbon ]
+  %ILEISTE [ "Interieurleisten Muschelahorn", KEYInterieurleistenMuschelahorn ]
+  %ILEISTE [ "Interieurleisten Sieblack dunkelgrau", KEYInterieurleistenSieblackDunkelgrau ]
+
+; ===============================================================================================
+; Category Lenkräder (ohne Multifunktion)
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATLenkraeder</category>
+    <btn>type=radio</btn>
+    <name>Lenkräder (ohne Multifunktion)</name>
+    <file>CATLenkraeder</file>
+    <:KEYS>
+      <CATLenkraeder>
+    </>
+  </>
+
+
+  %LENKRAEDER  [ "Leder Sportlenkradkranz, schwarz", KEYLenkradLederSport ]
+  %LENKRAEDER  [ "M Leder-Sportlenkradkranz, schwarz", KEYLenkradLederMSport ]
+  %LENKRAEDER  [ "M Leder-Sportlenkradkranz, schwarz", KEYLenkradLederSportDekorblendeM ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende, Birke", KEYLenkradLederSportDekorblendeBirke ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende, mattchrom", KEYLenkradLederSportDekorblendeChrom ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende, Schwarz", KEYLenkradLederSportDekorblendeSchwarz ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende, Myrte", KEYLenkradLederSportDekorblendeMyrte ]
+  %LENKRAEDER  [ "Holz/Leder-Sportlenkradkranz mit Dekorblende, Myrte", KEYLenkradHolzSportDekorblendeMyrte ]
+  %LENKRAEDER  [ "Holz/Leder-Sportlenkradkranz mit Dekorblende, Ahorn hell", KEYLenkradHolzSportDekorblendeAhornHell ]
+  %LENKRAEDER  [ "Holz/Leder-Lenkradkranz, Nussbaum-Wurzel", KEYLenkradHolzLederNussbaum ]
+  %LENKRAEDER  [ "Holz/Leder-Lenkradkranz, Muschelahorn", KEYLenkradHolzLederMuschelahorn ]
+  %LENKRAEDER  [ "Holz/Leder-Lenkradkranz, Vavona", KEYLenkradHolzLederVavona ]
+  %LENKRAEDER  [ "Serienlenkrad", KEYSerienlenkradE46LTCom ]
+  %LENKRAEDER  [ "Serienlenkrad", KEYSerienlenkradE46CouCa ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende M-Sport ", KEYLenkradLederSportDekorblendeM ]
+  %LENKRAEDER  [ "Serienlenkrad ", KEYSerienlenkradE39 ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende schwarz/nussbaum", KEYLenkradLederSportDekorblendeNussbaum ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende schwarz/vavona", KEYLenkradLederSportDekorblendeVavona ]
+  %LENKRAEDER  [ "Leder-Sportlenkradkranz mit Dekorblende Titan", KEYLenkradLederSportDekorblendeTitan ]
+  %LENKRAEDER  [ "Serienlenkrad", KEYSerienlenkradE53 ]
+
+; ===============================================================================================
+; Category Lenkräder (mit Multifunktion)
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATLenkraederMultifunktion</category>
+    <btn>type=radio</btn>
+    <name>Lenkräder (mit Multifunktion)</name>
+    <file>CATLenkraederMultifunktion</file>
+    <:KEYS>
+      <CATLenkraederMultifunktion>
+    </>
+  </>
+
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende Myrte MF", KEYLenkradLederSportDekorblendeMyrteMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz, schwarz MF", KEYLenkradLederSportMF]
+  %LENKRAEDERMF  [ "M Leder-Sportlenkradkranz, schwarz MF", KEYLenkradLederMSportMF ]
+  %LENKRAEDERMF  [ "Leder-Lenkradkranz bicolor, schwarz/grau", KEYLenkradLederBicolorSchwarzGrauMF ]
+  %LENKRAEDERMF  [ "Leder-Lenkradkranz bicolor, schwarz/taninrot", KEYLenkradLederBicolorSchwarzTaninrotMF ]
+  %LENKRAEDERMF  [ "Holz/Leder-Lenkradkranz, Ahorn hell", KEYLenkradHolzLederAhornHellMF ]
+  %LENKRAEDERMF  [ "Holz/Leder-Lenkradkranz, Myrte", KEYLenkradHolzLederMyrteMF ]
+  %LENKRAEDERMF  [ "Holz/Leder-Lenkradkranz, Nussbaum-Wurzel", KEYLenkradHolzLederNussbaumMF ]
+  %LENKRAEDERMF  [ "Holz/Leder-Lenkradkranz, Muschelahorn", KEYLenkradHolzLederMuschelahornMF ]
+  %LENKRAEDERMF  [ "Holz/Leder-Lenkradkranz, Vavona", KEYLenkradHolzLederVavonaMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende, Birke MF", KEYLenkradLederSportDekorblendeBirkeMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende, mattchrom MF", KEYLenkradLederSportDekorblendeChromMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende, Schwarz MF", KEYLenkradLederSportDekorblendeSchwarzMF ]
+  %LENKRAEDERMF  [ "M Leder-Sportlenkradkranz, schwarz MF", KEYLenkradLederSportDekorblendeMMF]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende schwarz/nussbaum mit MF", KEYLenkradLederSportDekorblendeNussbaumMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende schwarz/vavona mit MF", KEYLenkradLederSportDekorblendeVavonaMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende schwarz/muschelahorn mit MF", KEYLenkradLederSportDekorblendeMuschelahornMF ]
+  %LENKRAEDERMF  [ "Serienlenkrad ", KEYSerienlenkradE39MF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende Holz,Pappel dunkel", KEYLenkradLederSportDekorblendePappelDunkelMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende Holz, Pappel hell", KEYLenkradLederSportDekorblendePappelHellMF ]
+  %LENKRAEDERMF  [ "Leder-Lenkradkranz mit Multifunktionstasten", KEYLenkradLederMF ]
+  %LENKRAEDERMF  [ "Leder-Sportlenkradkranz mit Dekorblende Titan", KEYLenkradLederSportDekorblendeTitanMF ]
+  %LENKRAEDERMF  [ "Serienlenkrad", KEYSerienlenkradE53MF ]
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Multifunktion für Lenkräder</name>
+    <file>KEYMultifunktionsLenkrad</file>
+    <:KEYS>
+      <KEYMultifunktionsLenkrad>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+; ===============================================================================================
+; Category Schaltknäufe
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATSchaltknauf</category>
+    <btn>type=radio</btn>
+    <name>Schaltknäufe</name>
+    <file>CATSchaltknauf</file>
+    <:KEYS>
+      <CATSchaltknauf>
+    </>
+  </>
+
+  <class type="OPTION" name="RADIOSchaltknaufWaehlhebel">
+    <group>INTERIEUR</group>
+    <parent>CATSchaltknauf</parent>
+    <btn>type=radio</btn>
+    <file>GASchaltknauf</file>
+    <name>Serien-Schaltknauf</name>
+    <:SCRIPTS>
+      <:SELECT>
+        <OFF "KEYPedaleAutomatik">
+        <ON  "KEYPedaleSchaltgetriebe">
+        <if  FindClassByKey( "KEYAlupedale" )^.Status != "0" do ON "KEYAlupedaleSchaltgetriebe">
+      </>
+    </>
+    <:KEYS>
+      <GASchaltknauf>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <class type="OPTION" name="RADIOSchaltknaufWaehlhebel">
+    <group>INTERIEUR</group>
+    <parent>CATWaehlhebel</parent>
+    <btn>type=radio</btn>
+    <file>GAWaehlhebel</file>
+    <name>Serien-Wählhebel</name>
+    <:SCRIPTS>
+      <:SELECT>
+        <OFF "KEYPedaleSchaltgetriebe">
+        <ON  "KEYPedaleAutomatik">
+        <if  FindClassByKey( "KEYAlupedale" )^.Status != "0" do ON "KEYAlupedaleAutomatik">
+      </>
+    </>
+    <:KEYS>
+      <GAWaehlhebel>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+
+  %SCHALTKNAUF  [ "Leder-Schaltknauf schwarz", KEYSchaltknaufLederSchwarz ]
+  %SCHALTKNAUF  [ "Serien-Schaltknauf", KEYSchaltknaufSerie ]
+  %SCHALTKNAUF  [ "Serien-Schaltknauf", KEYSchaltknaufSportE87 ]
+
+  %SCHALTKNAUF  [ "Holz-Schaltknauf mit Chromring, Ahorn", KEYSchaltknaufHolzAhornChromring ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf, Ahorn", KEYSchaltknaufHolzAhornEmblem ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf mit Chromring, Ahorn hell", KEYSchaltknaufHolzAhornHellChromring ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf, Myrte", KEYSchaltknaufHolzMyrteEmblem ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf, Nußbaum-Wurzel dunkel", KEYSchaltknaufHolzNussbaumDunkelEmblem ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf, Nußbaum-Wurzel hell", KEYSchaltknaufHolzNussbaumHell ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf, Nußbaum-Wurzel hell", KEYSchaltknaufHolzNussbaumHellEmblem ]
+  %SCHALTKNAUF  [ "Holz-Schaltknauf, Birke", KEYSchaltknaufHolzBirke ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf, schwarz, mit Chromring", KEYSchaltknaufLederSchwarzChromring ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf, schwarz", KEYSchaltknaufLederSchwarzM ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Chromspange, glänzend", KEYSchaltknaufLederSpangeChromGlaenzend ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Chromspange, matt", KEYSchaltknaufLederSpangeChromMatt ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Ruthenium-Spange", KEYSchaltknaufLederSpangeRuthenium ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Holzspange, Ahorn glänzend", KEYSchaltknaufLederSpangeHolzAhorn ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Holzspange, Pappel Maser", KEYSchaltknaufLederSpangePappelMaser ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Holzspange Nußbaum-Wurzel dunkel", KEYSchaltknaufLederSpangeNussbaum ]
+  %SCHALTKNAUF  [ "Aluminium-Schaltknauf mit schwarzem Ring, mattchrom", KEYSchaltknaufAluMattchromRingSchwarz ]
+  %SCHALTKNAUF  [ "Aluminium-Schaltknauf mit schwarzem Ring, poliertes Alu", KEYSchaltknaufAluPoliertRingSchwarz ]
+
+
+
+
+; ===============================================================================================
+; Category Wählhebel
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATWaehlhebel</category>
+    <btn>type=radio</btn>
+    <name>Wählhebel</name>
+    <file>CATWaehlhebel</file>
+    <:KEYS>
+      <CATWaehlhebel>
+    </>
+  </>
+
+  %WAEHLHEBEL  [ "Holz-Wählhebelgriff Ahorn", KEYWaehlhebelHolzAhorn ]
+  %WAEHLHEBEL  [ "Holz-Wählhebelgriff Myrte", KEYWaehlhebelHolzMyrte ]
+  %WAEHLHEBEL  [ "Holz-Wählhebelgriff Birke", KEYWaehlhebelHolzBirke ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff, schwarz", KEYWaehlhebelLeder ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Chromspange, glänzend", KEYWaehlhebelLederSpangeChromGlaenzend ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Chromspange, matt", KEYWaehlhebelLederSpangeChromMatt ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Ruthenium-Spange", KEYWaehlhebelLederSpangeRuthenium ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Ahorn", KEYWaehlhebelLederSpangeHolzAhorn ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Pappel Maser", KEYWaehlhebelLederSpangePappelMaser ]
+  %WAEHLHEBEL  [ "Wählhebelgriff in Chrom matt", KEYWaehlhebelMattchrom ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Sennesche", KEYWaehlhebelLederSpangeSennesche ]
+
+; ===============================================================================================
+; Category Handbremsgriffe
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATHandbremsgriffe</category>
+    <btn>type=radio</btn>
+    <name>Handbremsgriffe</name>
+    <file>CATHandbremsgriffe</file>
+    <:KEYS>
+      <CATHandbremsgriffe>
+    </>
+  </>
+
+
+  %HANDBREMSGRIFFE [ "Holz-Handbremsgriff, Ahorn hell", KEYHandbremsgriffAhornHell ]
+  %HANDBREMSGRIFFE [ "Handbremsgriff, mattchrom", KEYHandbremsgriffChromMatt]
+  %HANDBREMSGRIFFE [ "Holz-Handbremsgriff, Myrte", KEYHandbremsgriffMyrte ]
+
+
+; ===============================================================================================
+; Category Fussmatten
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATFussmatten</category>
+    <btn>type=radio</btn>
+    <name>Fußmatten</name>
+    <file>CATFussmatten</file>
+    <:KEYS>
+      <CATFussmatten>
+    </>
+  </>
+
+  %FUSSMATTEN [ "Gummifußmatten", KEYFussmattenGummi ]
+  %FUSSMATTEN [ "Fußmatten Velours", KEYFussmattenVelours ]
+  %FUSSMATTEN [ "Fußmatten City", KEYFussmattenCity ]
+  %FUSSMATTEN [ "Fußmatten Country", KEYFussmattenCountry ]
+  %FUSSMATTEN [ "Fußmatten Alu Line", KEYFussmattenAluLine ]
+  %FUSSMATTEN [ "Gummifußmatten", KEYGummiFussmattenE46 ]
+  %FUSSMATTEN [ "Gummifußmatten", KEYGummiFussmattenE39 ]
+  %FUSSMATTEN [ "Fußmatten Velours", KEYFussmattenVeloursE65 ]
+  %FUSSMATTEN [ "Fußmatten Country", KEYFussmattenCountryE65 ]
+  %FUSSMATTEN [ "Fußmatten City", KEYFussmattenCityE65 ]
+  %FUSSMATTEN [ "Gummifußmatten", KEYGummiFussmattenE65 ]
+  %FUSSMATTEN [ "Gummifußmatten", KEYGummiFussmattenE53 ]
+
+; ===============================================================================================
+; Category FussStuetzen
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <category>CATFussstuetzen</category>
+    <btn>type=radio</btn>
+    <name>Fußstützen</name>
+    <file>CATFussstuetzen</file>
+    <:KEYS>
+      <CATFussstuetzen>
+    </>
+  </>
+
+  %FUSSSTUETZEN [ "Alu-Fußstütze", KEYAluFussstuetze ]
+  %FUSSSTUETZEN [ "M Fußstütze schwarz", KEYMFussstuetzeSchwarz ]
+  %FUSSSTUETZEN [ "M Fußstütze grau", KEYMFussstuetzeGrau ]
+  %FUSSSTUETZEN [ "M Fußstütze beige", KEYMFussstuetzeBeige ]
+  %FUSSSTUETZEN [ "M Fußstütze sandbeige", KEYMFussstuetzeSandbeige ]
+  %FUSSSTUETZEN [ "M Fußstütze marineblau", KEYMFussstuetzeMarineblau ]
+  %FUSSSTUETZEN [ "M Fußstütze englischgrün", KEYMFussstuetzeEnglischgruen ]
+
+
+; ===============================================================================================
+; Pedale
+; ===============================================================================================
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <file>KEYPedaleAutomatik</file>
+    <iconfile></iconfile>
+    <:KEYS>
+      <KEYPedaleAutomatik>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <file>KEYPedaleSchaltgetriebe</file>
+    <iconfile></iconfile>
+    <:KEYS>
+      <KEYPedaleSchaltgetriebe>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <file>KEYAlupedaleAutomatik</file>
+    <iconfile></iconfile>
+    <:KEYS>
+      <KEYAlupedaleAutomatik>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <file>KEYAlupedaleSchaltgetriebe</file>
+    <iconfile></iconfile>
+    <:KEYS>
+      <KEYAlupedaleSchaltgetriebe>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+      <group>INTERIEUR</group>
+      <name>Alu-Pedale</name>
+      <file>KEYAlupedale</file>
+      <:SCRIPTS>
+        <:SELECT>
+          <lineif FindClassByKey( "KEYPedaleSchaltgetriebe" )^.Status != "0" do ON "KEYAlupedaleSchaltgetriebe">
+          <lineif FindClassByKey( "KEYPedaleAutomatik" )^.Status != "0" do ON "KEYAlupedaleAutomatik">
+        </>
+        <:OFF>
+          <OFF "KEYAlupedaleSchaltgetriebe">
+	  <OFF "KEYAlupedaleAutomatik">
+        </>
+      </>
+      <:KEYS>
+        <KEYAlupedale>
+      </>
+      <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+    <:OPTION>
+        <group>INTERIEUR</group>
+        <name>Alu-Pedale</name>
+        <visibilitiy>detail</detail>
+        <file>KEYAlupedaleDetailOnly</file>
+        <:KEYS>
+          <KEYAlupedaleDetailOnly>
+        </>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+    </>
+
+
+; ===============================================================================================
+; Sonstige
+; ===============================================================================================
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Zentrale Armauflage vorne, klappbar</name>
+    <file>KEYArmauflageVorn</file>
+    <:KEYS>
+      <KEYArmauflageVorn>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+      <group>INTERIEUR</group>
+      <name>M-Türeinstiegsleisten</name>
+      <file>KEYMTuerEinstiegsleisten</file>
+      <visibility>detail</visibility>
+      <:KEYS>
+        <KEYMTuerEinstiegsleisten>
+      </>
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Klimaautomatik</name>
+    <file>KEYKlimaautomatik</file>
+    <:KEYS>
+      <KEYKlimaautomatik>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Klimaanlage</name>
+    <file>KEYKlimaanlage</file>
+    <:KEYS>
+      <KEYKlimaanlage>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+
+  <class type="OPTION" name="RADIOSitzbezuege">
+    <group>INTERIEUR</group>
+    <btn>type=radio deselect=true</btn>
+    <name>Sitzbezug Lammfell grau</name>
+    <file>KEYLammfellbezugGrau</file>
+    <:KEYS>
+      <KEYLammfellbezugGrau>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <class type="OPTION" name="RADIOSitzbezuege">
+    <group>INTERIEUR</group>
+    <btn>type=radio deselect=true</btn>
+    <name>Sitzbezug Lammfell anthrazit</name>
+    <file>KEYLammfellbezugAnthrazit</file>
+    <:KEYS>
+      <KEYLammfellbezugAnthrazit>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+
+
+; ===============================================================================================
+; Komponenten E 39
+; ===============================================================================================
+
+  %ILEISTE [ "Edelholz-Innenaustattung, Nussbaum-Wurzel, dunkel", KEYInterieurleistenNussbaumwurzel ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Vavona", KEYInterieurleistenVavona ]
+  %ILEISTE [ "Interieurleisten Gittergalvanik", KEYInterieurleistenGittergalvanik ]
+  %ILEISTE [ "Interieurleisten Alu matt", KEYInterieurleistenAluMatt ]
+  %ILEISTE [ "Interieurleisten cosmosschwarz", KEYInterieurleistenCosmosschwarz ]
+  %ILEISTE [ "Interieurleisten sandbeige", KEYInterieurleistenSandbeige ]
+  %ILEISTE [ "Interieurleisten arktisgrau", KEYInterieurleistenArktisgrau ]
+
+
+  %SCHALTKNAUF  [ "Schaltknauf Gittergalvanik", KEYSchaltknaufGittergalvanik ]
+  %WAEHLHEBEL  [ "Holz-Wählhebelgriff, Nussbaum-Wurzel, dunkel", KEYWaehlhebelHolzNussbaum ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange in Nussbaum-Wurzel, Chrom Line", KEYWaehlhebelLederNussbaumChromline ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange in Nussbaum-Wurzel", KEYWaehlhebelLederNussbaum ]
+
+  %HANDBREMSGRIFFE [ "Handbremsgriff, Nussbaum-Wurzel, dunkel", KEYHandbremsgriffNussbaum ]
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Halogenleseleuchte</name>
+    <file>KEYLeseleuchte</file>
+    <:KEYS>
+      <KEYLeseleuchte>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Halogenleseleuchte</name>
+    <file>KEYLeseleuchteDetailonly</file>
+    <visibility>detail</visibility>
+    <:KEYS>
+      <KEYLeseleuchteDetailonly>
+    </>
+  </>
+
+; ===============================================================================================
+; Komponenten E 53
+; ===============================================================================================
+
+
+  %ILEISTE [ "Edelholz-Innenaustattung, Pappel dunkel", KEYInterieurleistenPappelDunkel ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Pappel hell", KEYInterieurleistenPappelHell ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Pappel rauchgrau", KEYInterieurleistenPappelRauchgrau ]
+  %ILEISTE [ "Interieurleisten graphit", KEYInterieurleistenGraphit ]
+
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Holzspange, Pappel dunkel", KEYSchaltknaufLederSpangeHolzPappelDunkel ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Holzspange, Pappel hell", KEYSchaltknaufLederSpangeHolzPappelHell ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Holzspange, Pappel rauchgrau", KEYSchaltknaufLederSpangeHolzPappelRauchgrau ]
+  %SCHALTKNAUF  [ "Leder-Schaltknauf mit Titanspange", KEYSchaltknaufLederSpangeTitan ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Pappel dunkel", KEYWaehlhebelLederSpangeHolzPappelDunkel]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Pappel hell", KEYWaehlhebelLederSpangeHolzPappelHell ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Pappel rauchgrau", KEYWaehlhebelLederSpangeHolzPappelRauchgrau ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Titanspange", KEYWaehlhebelTitan ]
+
+
+
+; ===============================================================================================
+; Komponenten E 65
+; ===============================================================================================
+
+  %LENKRAEDER    [ "Serienlenkrad", KEYSerienlenkrad ]
+;  %LENKRAEDERMF  [ "Sportlenkrad", KEYSportlenkrad ]
+  %LENKRAEDERMF  [ "$T[Holz/Leder-Lenkrad], $T[Edelholz Esche Maser hell]", KEYHolzLederLenkradEscheHell ]
+  %LENKRAEDERMF  [ "$T[Holz/Leder-Lenkrad], $T[Edelholz Esche Maser dunkel]", KEYHolzLederLenkradEscheDunkel ]
+  %LENKRAEDERMF  [ "Holz/Lederlenkradkranz Kirsche hell", KEYHolzLederLenkradKirscheHell ]
+  %LENKRAEDERMF  [ "Holz/Lederlenkradkranz Kirsche dunkel", KEYHolzLederLenkradKirscheDunkel ]
+
+  %ILEISTE [ "Edelholzausführung Eschenmaser dunkel", KEYInterieurleistenEscheDunkel ]
+  %ILEISTE [ "Edelholzausführung Eschenmaser hell", KEYInterieurleistenEscheHell ]
+  %ILEISTE [ "Edelholzausführung Kirsche dunkel, matt", KEYInterieurleistenKirscheDunkel ]
+  %ILEISTE [ "Edelholzausführung Kirsche hell, matt", KEYInterieurleistenKirscheHell ]
+  %ILEISTE [ "Edelholz-Innenaustattung, Nussbaum-Wurzel", KEYInterieurleistenNussbaumwurzelE65 ]
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Multifunktionsablagesystem</name>
+    <file>KEYAblagesystem</file>
+    <visibility>detail</visibility>
+    <:KEYS>
+      <KEYAblagesystem>
+    </>
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Getränkehalterung</name>
+    <file>KEYGetraenkehalter</file>
+    <:KEYS>
+      <KEYGetraenkehalter>
+    </>
+  </>
+
+
+; ===============================================================================================
+; Komponenten E 85
+; ===============================================================================================
+
+%ILEISTE [ "Interieur Aluminium", KEYInterieurleistenAlu ]
+%ILEISTE [ "Interieur Platane", KEYInterieurleistenPlatane ]
+
+<class type="OPTION" name="RADIOLenkraeder">
+    <group>INTERIEUR</group>
+    <btn>type=radio</btn>
+    <name>Chrome line Lenkradkranz </name>
+    <file>KEYLenkradChrom</file>
+    <:KEYS>
+      <KEYLenkradChrom>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+<class type="OPTION" name="RADIOLenkraeder">
+    <group>INTERIEUR</group>
+    <btn>type=radio</btn>
+    <name>Holz-Lenkradkranz Platane</name>
+    <file>KEYLenkradHolzPlatane</file>
+    <:KEYS>
+      <KEYLenkradHolzPlatane>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+
+%SCHALTKNAUF  [ "Schaltknauf schwarz", KEYSchaltknaufSchwarzE85 ]
+%SCHALTKNAUF  [ "Schaltknauf beige",   KEYSchaltknaufBeigeE85 ]
+%SCHALTKNAUF  [ "Schaltknauf grau",    KEYSchaltknaufGrauE85 ]
+%SCHALTKNAUF  [ "Schaltknauf Chrom schwarz", KEYSchaltknaufChrom ]
+%SCHALTKNAUF  [ "Schaltknauf Platane schwarz", KEYSchaltknaufPlatane ]
+%SCHALTKNAUF  [ "Schaltknauf Chrom grau", KEYSchaltknaufChromGrau ]
+%SCHALTKNAUF  [ "Schaltknauf Platane grau", KEYSchaltknaufPlataneGrau ]
+%SCHALTKNAUF  [ "Schaltknauf Chrom beige", KEYSchaltknaufChromBeige ]
+%SCHALTKNAUF  [ "Schaltknauf Platane beige", KEYSchaltknaufPlataneBeige ]
+
+%WAEHLHEBEL  [ "Wählhebel Chrom schwarz", KEYWaehlhebelLederChromMatt ]
+%WAEHLHEBEL  [ "Wählhebel Platane schwarz", KEYWaehlhebelPlatane ]
+%WAEHLHEBEL  [ "Wählhebel Chrom grau", KEYWaehlhebelLederChromMattGrau ]
+%WAEHLHEBEL  [ "Wählhebel Platane grau", KEYWaehlhebelPlataneGrau ]
+%WAEHLHEBEL  [ "Wählhebel Chrom beige", KEYWaehlhebelLederChromMattBeige ]
+%WAEHLHEBEL  [ "Wählhebel Platane beige", KEYWaehlhebelPlataneBeige ]
+
+<class type="OPTION">
+    <group>INTERIEUR</group>
+    <name>Beleuchtete Einstiegsleiste</name>
+    <file>KEYBeleuchteteEinstiegsleiste</file>
+    <visibility>detail</visibility>
+    <:KEYS>
+      <KEYBeleuchteteEinstiegsleiste>
+    </>
+  </>
+
+; ===============================================================================================
+; Komponenten E60
+; ===============================================================================================
+
+  %ILEISTE_DESELECTABLE [ "Innenaustattung Pappel Maser", KEYInterieurleistenPappelMaser ]
+  %ILEISTE_DESELECTABLE [ "Interieurleisten Riegelahorn Anthrazit", KEYInterieurleistenRiegelAhornAnthrazit ]
+  %ILEISTE_DESELECTABLE [ "Interieurleisten Aluminium Wellenschliff", KEYInterieurleistenAluminiumWellenschliff ]
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <file>KEYLenkradLederSportDekorblendeRutheniumE63MF</file>
+    <name>Leder-Sportlenkrad</name>
+    <:KEYS>
+      <KEYLenkradLederSportDekorblendeRutheniumE63MF>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <file>KEYGeteilteArmauflage</file>
+    <name>Geteilte Armauflage</name>
+    <:KEYS>
+      <KEYGeteilteArmauflage>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <file>KEYArmauflageVerschiebbar</file>
+    <name>Armauflage vorn, verschiebbar</name>
+    <:KEYS>
+      <KEYArmauflageVerschiebbar>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+
+; ===============================================================================================
+; Komponenten E83
+; ===============================================================================================
+
+  %ILEISTE [ "Interieurleisten Aluminium Wolkenschliff", KEYInterieurleistenAluminiumWolkenschliff ]
+  %ILEISTE [ "Interieurleisten Riegelahorn dunkel", KEYInterieurleistenRiegelahornDunkel ]
+  %ILEISTE [ "Interieurleisten Birke Maser hell", KEYInterieurleistenBirkeMaserHell ]
+  %ILEISTE [ "Interieurleisten Schiefergrau dunkel", KEYInterieurleistenSchiefergrauDunkel ]
+
+  %SCHALTKNAUF [ "Leder-Schaltknauf mit Holzspange, Birke Maser hell", KEYSchaltknaufLederSpangeBirkeMaserHell ]
+  %SCHALTKNAUF [ "Leder-Schaltknauf mit Dekorspange, Schiefergrau dunkel", KEYSchaltknaufLederSpangeSchiefergrauDunkel ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Birke Maser hell", KEYWaehlhebelLederSpangeBirkeMaserHell ]
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <file>KEYHandbremsgriffBirkeMaserHell</file>
+    <name>Handbremsgriff Birke Maser hell</name>
+    <:KEYS>
+      <KEYHandbremsgriffBirkeMaserHell>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+; ===============================================================================================
+; Komponenten E63
+; ===============================================================================================
+
+  %ILEISTE [ "Interieurleisten Birke Maser dunkel", KEYInterieurleistenBirkeMaserDunkel ]
+  %ILEISTE [ "Interieurleisten Ruthenium Perlglanz", KEYInterieurleistenRutheniumPerlglanz ]
+
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Holzspange, Birke Maser dunkel", KEYWaehlhebelLederSpangeBirkeMaserDunkel ]
+  %WAEHLHEBEL  [ "Leder-Wählhebelgriff mit Dekorspange, Titan II dunkel", KEYWaehlhebelLederSpangeTitanIIDunkel ]
+  %SCHALTKNAUF [ "Leder-Schaltknauf mit Holzspange, Birke Maser dunkel", KEYSchaltknaufLederSpangeBirkeMaserDunkel ]
+  %SCHALTKNAUF [ "Leder-Schaltknauf mit Dekorspange, Titan II dunkel", KEYSchaltknaufLederSpangeTitanIIDunkel ]
+
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <file>KEYDekorblendenTitanIIDunkel</file>
+    <name>Dekorblenden Titan II, dunkel</name>
+    <:KEYS>
+      <KEYDekorblendenTitanIIDunkel>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <class type="OPTION">
+    <group>INTERIEUR</group>
+    <file>KEYHandbremsgriffBirkeMaserDunkel</file>
+    <name>Handbremsgriff Birke Maser dunkel</name>
+    <:KEYS>
+      <KEYHandbremsgriffBirkeMaserDunkel>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+; ===============================================================================================
+; Komponenten E87
+; ===============================================================================================
+
+  %ILEISTE [ "Interieurleisten Silber", KEYInterieurleistenSilber ]
+  %ILEISTE [ "Interieurleisten Aluminium Kodiaksilber", KEYInterieurleistenKodiakSilber ]
+  %ILEISTE [ "Interieurleisten Gomeraschwarz", KEYInterieurleistenGomeraschwarz ]
+  %ILEISTE [ "Interieurleisten Senn-Esche", KEYInterieurleistenSennesche ]
+
+  %SCHALTKNAUF [ "Leder-Schaltknauf mit Dekorspange, Senn-Esche", KEYSchaltknaufLederSpangeSennEsche ]
+  %HANDBREMSGRIFFE [ "Handbremsgriff, Leder schwarz", KEYHandbremsgriffLederSchwarz ]
+  %HANDBREMSGRIFFE [ "Handbremsgriff, Senn-Esche", KEYHandbremsgriffSennEsche ]
+
+; ===============================================================================================
+; Komponenten E90
+; ===============================================================================================
+
+  %LENKRAEDER [ "Leder-Lenkrad", KEYLederlenkrad ]
+  %LENKRAEDER [ "$T[Leder-Sportlenkrad mit Dekorblende] $T[Titan matt]", KEYSportlenkradDekorblendeTitanMatt ]
+  %LENKRAEDER [ "$T[Leder-Sportlenkrad mit Dekorblende] $T[Schwarz]", KEYSportlenkradDekorblendeSchwarz ]
+  %LENKRAEDER [ "$T[Leder-Sportlenkrad mit Dekorblende] $T[Nussbaumwurzel]", KEYSportlenkradDekorblendeNussbaumwurzel ]
+  %LENKRAEDER [ "$T[Leder-Sportlenkrad mit Dekorblende] $T[Pappel Maser]", KEYSportlenkradDekorblendePappelMaser ]
+
+  %ILEISTE [ "$T[Interieurleisten] $T[Titan Matt]", KEYInterieurleistenTitanMatt ]
+  %ILEISTE [ "Interieurleisten Aluminium Längsschliff", KEYInterieurleistenAluminiumLaengsschliff ]
+  %ILEISTE [ "$T[Interieurleisten] $T[Nussbaumwurzel]", KEYInterieurleistenNussbaumwurzel ]
+  %ILEISTE [ "$T[Interieurleisten] $T[Pappel Maser]", KEYInterieurleistenPappelMaser ]
+
+  %WAEHLHEBEL  [ "$T[Leder-Wählhebelgriff mit Dekorspange] $T[Perlglanz Chrom]", KEYWaehlhebelDekorspangePerlglanzChrom ]
+  %WAEHLHEBEL  [ "$T[Leder-Wählhebelgriff mit Dekorspange] $T[Nussbaumwurzel]",  KEYWaehlhebelDekorspangeNussbaumwurzel ]
+  %WAEHLHEBEL  [ "$T[Leder-Wählhebelgriff mit Dekorspange] $T[Pappel Maser]",    KEYWaehlhebelDekorspangePappelMaser ]
+  %WAEHLHEBEL  [ "$T[Leder-Wählhebelgriff mit Dekorspange] $T[Titan Matt], $T[(Serie)]",      KEYWaehlhebelDekorspangeTitanMatt ]
+
+  %SCHALTKNAUF [ "$T[Leder-Schaltknauf mit Dekorspange] $T[Titan Matt]",         KEYSchaltknaufDekorspangeTitanMatt ]
+  %SCHALTKNAUF [ "$T[Leder-Schaltknauf mit Dekorspange] $T[Nussbaumwurzel]",     KEYSchaltknaufDekorspangeNussbaumwurzel ]
+  %SCHALTKNAUF [ "$T[Leder-Schaltknauf mit Dekorspange] $T[Pappel Maser]",       KEYSchaltknaufDekorspangePappelMaser ]
+  %SCHALTKNAUF [ "$T[Leder-Schaltknauf mit Dekorspange] $T[Perlglanz Chrom]",    KEYSchaltknaufDekorspangePerlglanzChrom ]
+
+  %HANDBREMSGRIFFE [ "Handbremsgriff Leder", KEYHandbremsgriffLeder ]
+  %HANDBREMSGRIFFE [ "$T[Handbremsgriff Edelholz], $T[Nussbaumwurzel]", KEYHandbremsgriffNussbaumwurzel ]
+  %HANDBREMSGRIFFE [ "$T[Handbremsgriff Edelholz], $T[Pappel Maser]", KEYHandbremsgriffPappelMaser ]
+
+; ===============================================================================================
+; Komponenten E65 LCI
+; ===============================================================================================
+
+  %ILEISTE_WERK [ "$T[Interieurleisten] $T[Edelholz Amerikanisch Nussbaum]", KEYEdelholzAmerikanischNussbaum ]
+  %ILEISTE_WERK [ "$T[Interieurleisten] $T[Edelholz Vavona Grau matt]", KEYEdelholzVavonaGrauMatt ]
+  %ILEISTE [ "$T[Interieurleisten] $T[Edelholz Esche Maser hell]", KEYEdelholzEscheHell ]
+  %ILEISTE [ "$T[Interieurleisten] $T[Edelholz Esche Maser dunkel]", KEYEdelholzEscheDunkel ]
+  %ILEISTE [ "$T[Interieurleisten] $T[Nussbaum-Wurzelholz, mit Intarsien]", KEYEdelholzNussbaumwurzelIntarsien ]
+
+  %LENKRAEDER [ "Leder-Sportlenkrad", KEYSportlenkrad ]
+
+
+; ===============================================================================================
+
+ <:OPTION>
+   <group>INTERIEUR</group>
+   <category>CATSportsitze</category>
+   <name>Sportsitze</name>
+   <iconfile>KEYSportsitz</iconfile>
+   <:KEYS>
+     <CATSportsitze>
+   </>
+   <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+ </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Sportsitze</name>
+    <file>KEYSportsitz</file>
+    <:KEYS>
+      <KEYSportsitz>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Sitzheizung vorne</name>
+    <file>KEYSitzheizung</file>
+    <:KEYS>
+      <KEYSitzheizung>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+  <:OPTION>
+    <group>INTERIEUR</group>
+    <name>Ablagenpaket</name>
+    <name2>(nur ab Werk erhältlich, nicht nachrüstbar)</name2>
+    <file>KEYAblagenpaket</file>
+    <:KEYS>
+      <KEYAblagenpaket>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>

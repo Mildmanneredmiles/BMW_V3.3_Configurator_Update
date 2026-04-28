@@ -1,0 +1,199 @@
+  <body>320i,320d</body>
+  <:KEYFelge154>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>205/55 R 16</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>225/50 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge155>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>205/55 R 16</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>225/50 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge156>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>205/55 R 16</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7J x 16</rim>
+      <tire>225/50 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge158>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge159>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge160>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge161>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 17</rim>
+      <tire>225/45 R 17</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8½J x 17</rim>
+      <tire>255/40 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge162>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8½J x 18</rim>
+      <tire>255/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge195>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8½J x 18</rim>
+      <tire>255/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge196>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8½J x 18</rim>
+      <tire>255/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge197>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>225/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>8½J x 18</rim>
+      <tire>255/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge179>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 19</rim>
+      <tire>225/35 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/30 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge199>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 19</rim>
+      <tire>225/35 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/30 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge198>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 19</rim>
+      <tire>225/35 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 19</rim>
+      <tire>255/30 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>

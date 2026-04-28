@@ -1,0 +1,83 @@
+
+    <class type="E36 compact">
+
+      <name>Compact_alt</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=236 y=63 w=508 h=393</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=38 y=152 w=905 h=308</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=241 y=56 w=494 h=401</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0263>
+	<P0276>
+	<P0297>
+	<P0300>
+	<P0303>
+	<P0314>
+	<P0317>
+	<P0354>
+	<P0357>
+	<P0362>
+        <P0364>
+	<P0365>
+	<P0372>
+	<P0376>
+	<P0386>
+	<P0390>
+	<P0393>
+	<P0397>
+	<P0400>
+	<P0405>
+        <P0416>
+	<P0419>
+	<P0421>
+	<P0425>
+	<P0430>
+	<P0443>
+	<P0668>
+
+        <KEYFelgeStahlE36-5>
+        <KEYFelge41>
+        <KEYFelge18>
+        <KEYFelge54>
+        <KEYFelge30>
+        <KEYFelge35>
+        <KEYFelge43>
+        <KEYFelge45>
+        <KEYFelge55>
+        <KEYFelge64>
+        <KEYFelge42>
+        <KEYFelge05>
+        <KEYFelgeVerbund42>
+        <KEYFelge44>
+        <KEYFelge47>
+        <KEYFelge50>
+        <KEYFelge51>
+        <KEYFelge78>
+        <KEYFelge71>
+
+        <KEYWeisseBlinker>
+        <KEYNebelscheinwerfer>
+        <KEYMSpiegel>
+        <KEYMLeiste>
+        <KEYAerodynamikpaket>
+       	<KEYMHeckspoiler>
+
+      </COMPONENTS>
+
+    </>

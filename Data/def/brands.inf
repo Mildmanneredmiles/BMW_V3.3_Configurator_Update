@@ -1,0 +1,12 @@
+
+$include "colors.inf"
+$include "trims.inf"
+$include "wheels.inf"
+$include "components.inf"
+$include "models.inf"
+
+<:BRANDS>
+  <:WBBM>
+$include "SERIES.INF"
+  </WBBM>
+</BRANDS>

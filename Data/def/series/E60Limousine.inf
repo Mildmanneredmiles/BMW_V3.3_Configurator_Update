@@ -1,0 +1,198 @@
+      <class type="Limousine">
+
+        <ecode>E60</ecode>
+        <body>LIMOUSINE</body>
+        <path>E60Limousine</path>
+        <interiorpath>E60Interior</interiorpath>
+        <shortid>li</shortid>
+        <defaultpaint>P0A08</defaultpaint>
+
+        <:AUTOSCRIPT>
+          <DEFAULT "KEYSchaltknaufSerie">
+	  <SA100 "KEYBordmonitor">
+        </>
+
+        <class type="MOTORS">
+
+          <class type="523i" name="limousine">
+            <tireinfo>E60-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge134">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NE31>
+              <NE32>
+            </>
+          </>
+
+
+          <class type="525i" name="limousine">
+            <tireinfo>E60-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge134">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NA51>
+              <NA52>
+              <NE51>
+              <NE52>
+            </>
+          </>
+
+          <class type="525xi" name="limousine">
+            <tireinfo>E60-3</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge138">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NF31>
+              <NF32>
+            </>
+          </>
+
+          <class type="530i" name="limousine">
+            <tireinfo>E60-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge134">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NA71>
+              <NA72>
+              <NE71>
+              <NE72>
+            </>
+          </>
+
+          <class type="530xi" name="limousine">
+            <tireinfo>E60-3</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge138">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NF71>
+              <NF72>
+            </>
+          </>
+
+          <class type="540i" name="limousine">
+            <tireinfo>E60-2</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+	      <$L 'options\Chromnierenstaebe' +U>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge138">
+              <HIDE    "KEYInterieurleistenRiegelahornAnthrazit">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NB11>
+              <NB12>
+            </>
+          </>
+
+
+          <class type="545i" name="limousine">
+            <tireinfo>E60-2</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+	      <$L 'options\Chromnierenstaebe' +U>
+	      <$L 'options\KEYInterieurleistenRiegelahornAnthrazit' +U>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge138">
+              <HIDE    "KEYInterieurleistenRiegelahornAnthrazit">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NB31>
+              <NB32>
+            </>
+          </>
+
+          <class type="550i" name="limousine">
+            <tireinfo>E60-2</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+	      <$L 'options\Chromnierenstaebe' +U>
+	      <$L 'options\KEYInterieurleistenRiegelahornAnthrazit' +U>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge116">
+              <HIDE    "KEYInterieurleistenRiegelahornAnthrazit">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NB51>
+              <NB52>
+            </>
+          </>
+
+          <class type="520d" name="limousine">
+            <tireinfo>E60-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge134">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NC31>
+              <NC32>
+            </>
+          </>
+
+          <class type="525d" name="limousine">
+            <tireinfo>E60-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge134">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NC51>
+              <NC52>
+            </>
+          </>
+
+          <class type="530d" name="limousine">
+            <tireinfo>E60-1</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge134">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NC71>
+              <NC72>
+            </>
+          </>
+
+          <class type="530xd" name="limousine">
+            <tireinfo>E60-2</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge138">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NM31>
+              <NM32>
+            </>
+          </>
+
+
+          <class type="535d" name="limousine">
+            <tireinfo>E60-2</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge138">
+            </>
+            <*class type="DEF" ref="E60limousine">
+            <:KEYS>
+              <NC91>
+              <NC92>
+            </>
+          </>
+
+        </>
+      </>

@@ -1,0 +1,270 @@
+
+      <class type="E90Limousine">
+
+        <path>E90Limousine</path>
+        <interiorpath>E90Dashboard</interiorpath>
+	<ecode>E90</ecode>
+	<body>LIMOUSINE</body>
+        <date>from="19000101"</date>
+        <defaultpaint>P0A22</defaultpaint>
+        <panoscript>E90A</panoscript>
+
+        <:AUTOSCRIPT>
+          ON  "KEYInterieurleistenTitanMatt"
+          ON  "KEYSchaltknaufSerie"
+        </>
+
+        <:MOTORS>
+
+          <class type="316i">
+            <tireinfo>E90-1</tireinfo>
+            <:AUTOSCRIPT>
+              ON   "KEYRadvollblende_E90"
+              ON   "KEYSerienlenkrad"
+              HIDE "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VA11>
+              <VA12>
+            </>
+          </>
+
+          <class type="318i">
+            <tireinfo>E90-1</tireinfo>
+            <:AUTOSCRIPT>
+              ON   "KEYRadvollblende_E90"
+              ON   "KEYSerienlenkrad"
+              HIDE "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VA51>
+              <VA52>
+            </>
+          </>
+
+
+          <class type="320i">
+            <tireinfo>E90-1</tireinfo>
+            <:AUTOSCRIPT>
+              ON   "KEYRadvollblende_E90"
+              ON   "KEYSerienlenkrad"
+              HIDE "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VA71>
+              <VA72>
+            </>
+          </>
+
+          <class type="323i">
+            <tireinfo>E90-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDDoppelendrohr' +U>
+	    </>
+            <:AUTOSCRIPT>
+              SA100   "KEYTeileWagenfarbe"
+              ON      "KEYFelge154"
+              ON      "KEYSerienlenkrad"
+              SA100   "KEYNebelscheinwerfer"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VB51>
+              <VB52>
+            </>
+          </>
+
+          <class type="325i">
+            <tireinfo>E90-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDChromniere' +U>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDDoppelendrohr' +U>
+	    </>
+            <:AUTOSCRIPT>
+              SA100   "KEYTeileWagenfarbe"
+              SA100   "KEYNebelscheinwerfer"
+              ON      "KEYFelge154"
+              ON      "KEYSerienlenkrad"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VB11>
+              <VB12>
+            </>
+          </>
+
+          <class type="325xi">
+            <tireinfo>E90-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDChromniere' +U>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDDoppelendrohr' +U>
+	    </>
+            <:AUTOSCRIPT>
+              SA100   "KEYTeileWagenfarbe"
+              SA100   "KEYNebelscheinwerfer"
+              ON      "KEYFelge154"
+              ON      "KEYSerienlenkrad"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VD11>
+              <VD12>
+            </>
+          </>
+
+          <class type="330i">
+            <tireinfo>E90-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDChromniere' +U>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDTitanstab' +U>
+              <$L 'options\MDDoppelendrohrEdelstahl' +U>
+	    </>
+            <:AUTOSCRIPT>
+              ON      "KEYMDHigh"
+              ON      "KEYFelge158"
+              ON      "KEYLederlenkrad"
+              SA100   "KEYTeileWagenfarbe"
+              SA100   "KEYNebelscheinwerfer"
+              HIDE    "KEYSerienlenkrad"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge154", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+              HIDE    "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VB31>
+              <VB32>
+            </>
+          </>
+
+          <class type="330xi">
+            <tireinfo>E90-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDChromniere' +U>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDTitanstab' +U>
+              <$L 'options\MDDoppelendrohrEdelstahl' +U>
+	    </>
+            <:AUTOSCRIPT>
+              ON      "KEYMDHigh"
+              ON      "KEYFelge158"
+              ON      "KEYLederlenkrad"
+              SA100   "KEYTeileWagenfarbe"
+              SA100   "KEYNebelscheinwerfer"
+              HIDE    "KEYSerienlenkrad"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge154", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+              HIDE    "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VD31>
+              <VD32>
+            </>
+          </>
+
+          <class type="318d">
+            <tireinfo>E90-1</tireinfo>
+            <:AUTOSCRIPT>
+              ON   "KEYRadvollblende_E90"
+              ON   "KEYSerienlenkrad"
+              HIDE "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <:COSYSCRIPT>
+              <$L 'overlays\VC31' +U>
+              <$L 'options\MDDieselEinzelrohr' +U>
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VC11>
+              <VC12>
+            </>
+          </>
+
+          <class type="320d">
+            <tireinfo>E90-1</tireinfo>
+            <:AUTOSCRIPT>
+              ON   "KEYRadvollblende_E90"
+              ON   "KEYSerienlenkrad"
+              HIDE "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <:COSYSCRIPT>
+              <$L 'overlays\VC31' +U>
+              <$L 'options\MDDieselEinzelrohr' +U>
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VC31>
+              <VC32>
+            </>
+          </>
+
+          <class type="330d">
+            <tireinfo>E90-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDChromniere' +U>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDTitanstab' +U>
+              <$L 'options\MDDoppelendrohrEdelstahl' +U>
+	    </>
+            <:AUTOSCRIPT>
+              ON      "KEYMDHigh"
+              ON      "KEYFelge158"
+              ON      "KEYLederlenkrad"
+              SA100   "KEYTeileWagenfarbe"
+              SA100   "KEYNebelscheinwerfer"
+              HIDE    "KEYSerienlenkrad"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge154", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+              HIDE    "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VC91>
+              <VC92>
+            </>
+          </>
+
+          <class type="330xd">
+            <tireinfo>E90-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDChromniere' +U>
+              <$L 'options\MDScheibenrahmenChrom' +U>
+              <$L 'options\MDTitanstab' +U>
+              <$L 'options\MDDoppelendrohrEdelstahl' +U>
+	    </>
+            <:AUTOSCRIPT>
+              ON      "KEYMDHigh"
+              ON      "KEYFelge158"
+              ON      "KEYLederlenkrad"
+              SA100   "KEYTeileWagenfarbe"
+              SA100   "KEYNebelscheinwerfer"
+              HIDE    "KEYSerienlenkrad"
+              HIDE    "KEYRadvollblende_E90", "KEYFelge154", "KEYFelge155", "KEYFelge156"
+              HIDE    "KEYAuspuffrohrblendeChrom"
+              HIDE    "KEYDoppelAuspuffrohrblendeChrom"
+            </>
+            <*class type="DEF" ref="E90Limousine">
+            <:KEYS>
+              <VD91>
+              <VD92>
+            </>
+          </>
+
+
+        </>
+      </>
+

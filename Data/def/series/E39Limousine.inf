@@ -1,0 +1,178 @@
+
+      <class type="E39 limousine">
+
+        <ecode>E39</ecode>
+        <body>LIMOUSINE</body>
+
+        <path>E39Limousine</path>
+        <interiorpath>E39Interior</interiorpath>
+
+        <:MOTORS>
+
+          <:520i name="limousine">
+            <tireinfo>E39_Lim-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+
+            <:KEYS>
+              <DD11>
+              <DT11>
+              <DT12>
+            </>
+          </>
+
+          <:523i name="limousine">
+            <tireinfo>E39_Lim-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DD31>
+              <DM31>
+              <DM32>
+            </>
+          </>
+
+          <:525i name="limousine">
+            <tireinfo>E39_Lim-2</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DT31>
+              <DT32>
+            </>
+          </>
+
+          <:528i name="limousine">
+            <tireinfo>E39_Lim-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DM51>
+              <DM52>
+            </>
+          </>
+
+          <:530i name="limousine">
+            <tireinfo>E39_Lim-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge48", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DT51>
+              <DT52>
+            </>
+          </>
+
+          <:535i name="limousine">
+            <tireinfo>E39_Lim-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\nierechrom.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge82", "KEYSerienlenkradE39MF", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39">
+            </class>
+            <:KEYS>
+              <DN11>
+              <DN12>
+            </>
+          </>
+
+          <:540i name="limousine">
+            <tireinfo>E39_Lim-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\nierechrom.jpg' +I>
+              <$L 'options\chromleiste.jpg' +I -M>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge82", "KEYSerienlenkradE39MF", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39">
+            </class>
+            <:KEYS>
+              <DN51>
+              <DN52>
+            </>
+          </>
+
+          <:520d name="limousine">
+            <tireinfo>E39_Lim-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+              <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DM71>
+              <DM72>
+            </>
+          </>
+
+          <:525d name="limousine">
+            <tireinfo>E39_Lim-1</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge83", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DL91>
+              <DL92>
+              <DF51>
+              <DF71>
+            </>
+          </>
+
+          <:530d name="limousine">
+            <tireinfo>E39_Lim-3</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\niereschwarz.jpg' +I>
+            </>
+            <*class type="DEF" ref="E39 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge48", "KEYSerienlenkradE39", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+	      <HIDE "KEYSerienlenkradE39MF">
+            </class>
+            <:KEYS>
+              <DL71>
+              <DL72>
+            </>
+          </>
+        </MOTORS>
+      </>

@@ -1,0 +1,116 @@
+
+$macro PAINTMACRO [ TYP, NAME, KEY ]
+
+      <class type="OPTION" name="RADIOLackierungen">
+        <group>LACKE</group>
+        <btn>type=radio</btn>
+        <name>&NAME</name>
+        <painttype>&TYP</painttype>
+        <:color>
+          <paint["lack"]>&KEY</paint["lack"]>
+        </color>
+        <class type="KEYS">
+          <&KEY>
+        </class>
+        <*class type="VIEWS" ref="DEFAULT_PAINT_VIEWS">
+      </>
+
+$endmacro
+
+<:PAINTS>
+
+      %PAINTMACRO [ "UNI", "Alpinweiß", "P0300" ]
+      %PAINTMACRO [ "MET", "Kaschmirbeige", "P0301" ]
+      %PAINTMACRO [ "MET", "Cosmosschwarz", "P0303" ]
+      %PAINTMACRO [ "MET", "Atlantablau", "P0306" ]
+      %PAINTMACRO [ "UNI", "Hellrot", "P0314" ]
+      %PAINTMACRO [ "MET", "Orientblau", "P0317" ]
+      %PAINTMACRO [ "MET", "Glaciergrün", "P0334" ]
+      %PAINTMACRO [ "MET", "Estorilblau", "P0335" ]
+      %PAINTMACRO [ "UNI", "Dakargelb", "P0337" ]
+      %PAINTMACRO [ "MET", "Titansilber", "P0354" ]
+      %PAINTMACRO [ "MET", "Vermontgrün", "P0356" ]
+      %PAINTMACRO [ "MET", "Sierrarot", "P0357" ]
+      %PAINTMACRO [ "MET", "Sorrentblau", "P0360" ]
+      %PAINTMACRO [ "MET", "Sienarot", "P0362" ]
+      %PAINTMACRO [ "MET", "Topasblau", "P0364" ]
+      %PAINTMACRO [ "MET", "Stahlblau", "P0372" ]
+      %PAINTMACRO [ "MET", "Lightgelb", "P0376" ]
+      %PAINTMACRO [ "MET", "Velvetblau", "P0379" ]
+      %PAINTMACRO [ "MET", "Le Mans Blau", "P0381" ]
+      %PAINTMACRO [ "MET", "Farngrün", "P0386" ]
+      %PAINTMACRO [ "UNI", "Hellelfenbein", "P0389" ]
+      %PAINTMACRO [ "MET", "Royalrot", "P0390" ]
+      %PAINTMACRO [ "MET", "Meergrün", "P0393" ]
+      %PAINTMACRO [ "MET", "LackAnthrazit", "P0397" ]
+      %PAINTMACRO [ "MET", "Kirunaviolett", "P0398" ]
+      %PAINTMACRO [ "MET", "Stahlgrau", "P0400" ]
+      %PAINTMACRO [ "UNI", "Imolarot", "P0405" ]
+?A    %PAINTMACRO [ "MET", "Orinocco", "P0406" ]
+      %PAINTMACRO [ "MET", "Pearlbeige", "P0411" ]
+      %PAINTMACRO [ "UNI", "Hellrot", "P0415" ]
+      %PAINTMACRO [ "MET", "Carbonschwarz", "P0416" ]
+      %PAINTMACRO [ "MET", "Impalabraun", "P0418" ]
+      %PAINTMACRO [ "UNI", "Türkis", "P0419" ]
+      %PAINTMACRO [ "MET", "Bronzit", "P0421" ]
+      %PAINTMACRO [ "MET", "Silverstone", "P0425" ]
+      %PAINTMACRO [ "MET", "Oxfordgrün", "P0430" ]
+      %PAINTMACRO [ "MET", "Apricot", "P0433" ]
+      %PAINTMACRO [ "MET", "Mahagoni", "P0436" ]
+      %PAINTMACRO [ "UNI", "Japanrot", "P0438" ]
+      %PAINTMACRO [ "MET", "Eisblau", "P0439" ]
+      %PAINTMACRO [ "MET", "Stratusgrau", "P0440" ]
+      %PAINTMACRO [ "MET", "Graugrün", "P0442" ]
+      %PAINTMACRO [ "MET", "Saharabeige", "P0443" ]
+      %PAINTMACRO [ "MET", "Phönixgelb", "P0445" ]
+      %PAINTMACRO [ "MET", "Criollorot", "P0446" ]
+      %PAINTMACRO [ "UNI", "Laguna Seca Blau", "P0448" ]
+      %PAINTMACRO [ "MET", "Schiefergrün", "P0449" ]
+?A    %PAINTMACRO [ "MET", "Nachtblau", "P0453" ]
+      %PAINTMACRO [ "MET", "Pistaziengrün", "P0468" ]
+      %PAINTMACRO [ "MET", "Flamencorot", "P0470" ]
+      %PAINTMACRO [ "MET", "Sterlinggrau", "P0472" ]
+      %PAINTMACRO [ "MET", "Saphirschwarz", "P0475" ]
+      %PAINTMACRO [ "MET", "Ambra", "P0476" ]
+      %PAINTMACRO [ "MET", "Satinbeige", "P0478" ]
+      %PAINTMACRO [ "MET", "Kalaharibeige", "P0481" ]
+      %PAINTMACRO [ "MET", "Toledoblau", "P0482" ]
+      %PAINTMACRO [ "UNI", "LackSchwarz", "P0668" ]
+      %PAINTMACRO [ "MET", "Moccabraun", "P0891" ]
+      %PAINTMACRO [ "MET", "Titangrau", "P0892" ]
+      %PAINTMACRO [ "MET", "Chiarettorot", "P0894" ]
+      %PAINTMACRO [ "MET", "Bluewater", "P0896" ]
+      %PAINTMACRO [ "MET", "Turmalinviolett", "P0897" ]
+      %PAINTMACRO [ "MET", "Mysticblau", "P0A07" ]
+      %PAINTMACRO [ "MET", "Silbergrau", "P0A08" ]
+      %PAINTMACRO [ "MET", "Merlotrot", "P0A02" ]
+      %PAINTMACRO [ "UNI", "Urbangreen", "P0A04" ]
+      %PAINTMACRO [ "MET", "Silbergrau", "P0A08" ]
+      %PAINTMACRO [ "MET", "Amethystgrau", "P0A09" ]
+      %PAINTMACRO [ "MET", "Olivin", "P0349" ]
+      %PAINTMACRO [ "MET", "Highlandgrün", "P0A11" ]
+      %PAINTMACRO [ "MET", "Mineralsilber", "P0A14" ]
+      %PAINTMACRO [ "MET", "Atlanticblau", "P0A13" ]
+      %PAINTMACRO [ "MET", "Maledivenblau", "P0A15" ]
+      %PAINTMACRO [ "MET", "Havanna", "P0A17" ]
+      %PAINTMACRO [ "MET", "Quarzblau", "P0A18" ]
+      %PAINTMACRO [ "MET", "Sydneyblau", "P0A19" ]
+      %PAINTMACRO [ "UNI", "Nautikblau", "P0A21" ]
+      %PAINTMACRO [ "MET", "Sonora", "P0A23" ]
+      %PAINTMACRO [ "MET", "Sparkling graphite", "P0A22" ]
+      %PAINTMACRO [ "MET", "Silverstone II", "P0A29" ]
+      %PAINTMACRO [ "MET", "Interlagosblau", "P0A30" ]
+      %PAINTMACRO [ "MET", "Indianapolisrot", "P0A31" ]
+      %PAINTMACRO [ "MET", "Sepang Silber", "P0A32" ]
+      %PAINTMACRO [ "MET", "Arktis", "P0A34" ]
+      %PAINTMACRO [ "MET", "Monacoblau", "P0A35" ]
+      %PAINTMACRO [ "MET", "Titangrau", "P0A36" ]
+      %PAINTMACRO [ "MET", "Michiganblau", "P0A38" ]
+      %PAINTMACRO [ "MET", "Barberarot", "P0A39" ]
+      %PAINTMACRO [ "MET", "Barriquerot", "P0A41" ]
+      %PAINTMACRO [ "MET", "Tiefgrün", "P0A43" ]
+
+
+</>
+
+

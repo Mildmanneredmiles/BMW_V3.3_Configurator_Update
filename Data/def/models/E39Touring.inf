@@ -1,0 +1,170 @@
+
+    <class type="E39 touring">
+      <name>touring</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=239 y=76 w=505 h=380</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=27 y=171 w=926 h=289</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=238 y=51 w=504 h=401</bodyframe>
+        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+          <path>E39Interior</path>
+        </>
+      </>
+      <:COMPONENTS>
+
+        <P0354>
+        <P0300>
+        <P0317>
+        <P0334>
+        <P0356>
+        <P0364>
+        <P0372>
+        <P0405>
+        <P0430>
+        <P0449>
+        <P0472>
+        <P0475>
+        <P0481>
+        <P0482>
+        <P0668>
+        <P0892>
+        <P0894>
+        <P0896>
+
+        <CATInterieurfarben>
+
+        <KEYE39FxxAT>
+        <KEYE39FxxTT>
+        <KEYE39FxxSW>
+        <KEYE39FxxEG>
+        <KEYE39FxxDL>
+        <KEYE39FxxSN>
+        <KEYE39FxxGN>
+        <KEYE39FxxLG>
+        <KEYE39FxxFA>
+        <KEYE39FxxGC>
+        <KEYE39FxxBG>
+
+        <KEYWeisseBlinker>
+        <KEYAerodynamikpaket>
+        <KEYDachreling>
+        <KEYNebelscheinwerfer>
+
+        <CATInterieurleisten>
+        <KEYInterieurleistenMattchrom>
+        <KEYInterieurleistenVavona>
+        <KEYInterieurleistenNussbaumwurzel>
+        <KEYInterieurleistenGittergalvanik>
+        <KEYInterieurleistenMuschelahorn>
+        <KEYInterieurleistenAluMatt>
+        <KEYInterieurleistenCosmosschwarz>
+        <KEYInterieurleistenSandbeige>
+        <KEYInterieurleistenArktisgrau>
+
+        <CATLenkraeder>
+	<KEYLenkradLederSportDekorblendeM>
+        <KEYLenkradLederSportDekorblendeNussbaum>
+        <KEYLenkradLederSportDekorblendeSchwarz>
+	<KEYLenkradLederSportDekorblendeVavona>
+        <KEYLenkradHolzLederNussbaum>
+	<KEYLenkradHolzLederMuschelahorn>
+	<KEYLenkradHolzLederVavona>
+        <KEYSerienlenkradE39>
+
+        <CATLenkraederMultifunktion>
+        <KEYLenkradLederSportDekorblendeMMF>
+        <KEYLenkradLederSportDekorblendeNussbaumMF>
+        <KEYLenkradLederSportDekorblendeSchwarzMF>
+        <KEYLenkradLederSportDekorblendeVavonaMF>
+        <KEYLenkradLederSportDekorblendeMuschelahornMF>
+        <KEYLenkradHolzLederNussbaumMF>
+	<KEYLenkradHolzLederMuschelahornMF>
+	<KEYLenkradHolzLederVavonaMF>
+        <KEYSerienlenkradE39MF>
+
+        <CATSchaltknauf>
+        <KEYSchaltknaufAluMattchromRingSchwarz>
+        <KEYSchaltknaufAluPoliertRingSchwarz>
+        <KEYSchaltknaufHolzAhornChromring>
+        <KEYSchaltknaufHolzAhornHellChromring>
+        <KEYSchaltknaufLederSchwarzChromring>
+        <KEYSchaltknaufLederSchwarzM>
+        <KEYSchaltknaufLederSpangeNussbaum>
+        <KEYSchaltknaufHolzNussbaumHell>
+        <KEYSchaltknaufGittergalvanik>
+
+        <CATWaehlhebel>
+        <KEYWaehlhebelHolzNussbaum>
+        <KEYWaehlhebelLederNussbaum>
+        <KEYWaehlhebelLederNussbaumChromline>
+	<KEYWaehlhebelLeder>
+        <KEYWaehlhebelMattchrom>
+
+        <CATHandbremsgriffe>
+        <KEYHandbremsgriffChromMatt>
+        <KEYHandbremsgriffNussbaum>
+
+	<CATFussstuetzen>
+        <KEYMFussstuetzeSchwarz>
+	<KEYMFussstuetzeGrau>
+	<KEYMFussstuetzeSandbeige>
+	<KEYMFussstuetzeMarineblau>
+	<KEYMFussstuetzeEnglischgruen>
+
+        <CATFussmatten>
+        <KEYFussmattenVelours>
+        <KEYFussmattenCity>
+        <KEYFussmattenCountry>
+        <KEYGummiFussmattenE46>
+
+        <KEYKlimaautomatik>
+        <KEYLeseleuchte>
+        <KEYMTuerEinstiegsleisten>
+
+  	<:KEYAutotelefonCordless>
+  	  <parent></parent>
+  	</>
+  	<CATFreisprechSeitenkonsole>
+  	<KEYTelefonkonsole>
+  	<KEYTelefonkonsoleSchwarz>
+	<KEYTelefonkonsoleGrau>
+	<KEYTelefonkonsoleSandbeige>
+	<KEYTelefonkonsoleMarineblau>
+	<KEYTelefonkonsoleEnglischgruen>
+
+  	<KEYBordmonitor>
+  	<KEYNavigationssystem>
+  	<KEYFrontkamera>
+  	<KEYRueckfahrkamera>
+	<KEYRadioBusinessCDDetailOnly>
+	<KEYRadioBusinessMDDetailOnly>
+	<KEYRadioBusinessKassetteDetailOnly>
+	<KEYSoundsystemDetailOnly>
+	<KEYSubwoofer>
+	<KEYDVDSystem>
+
+	<KEYPedaleSchaltgetriebe>
+	<KEYPedaleAutomatik>
+
+	<KEYFelge83>
+	<KEYFelge48>
+	<KEYFelge82>
+
+      </COMPONENTS>
+
+    </>

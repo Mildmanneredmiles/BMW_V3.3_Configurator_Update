@@ -1,0 +1,272 @@
+
+$macro KOMM_STANDARD[ NAME, KEY ]
+
+  <:OPTION>
+    <group>KOMMUNIKATION</group>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro KOMM_STATIC[ NAME, KEY ]
+  <:OPTION>
+    <group>KOMMUNIKATION</group>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+$macro KOMM_RADIO_STATIC[ NAME, KEY, FILE ]
+  <:OPTION name="RADIORadio">
+    <group>KOMMUNIKATION</group>
+    <btn>type=radio deselect=true</btn>
+    <visibility>detail</visibility>
+    <name>&NAME</name>
+    <file>&FILE</file>
+    <:KEYS>
+      <&KEY>
+    </>
+  </>
+
+$endmacro
+
+$macro RADIO[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIORadio">
+    <group>KOMMUNIKATION</group>
+    <btn>type=radio deselect=true</btn>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro BORDMONITORSYSTEM[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOBordmonitorsysteme">
+    <group>KOMMUNIKATION</group>
+    <btn>type=radio deselect=true</btn>
+    <name>&NAME</name>
+    <file>&KEY</file>
+    <:KEYS>
+      <&KEY>
+    </>
+    <:SCRIPTS>
+      <:AFTERSELECT>
+      	<ON "KEYBordmonitor">
+      </>
+$ifndef BORDMONITOR_VISIBLE
+      <:AFTERDESELECT>
+        <case selected KEYBordmonitor OFF "KEYBordmonitor">
+      </>
+$endif
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+$endmacro
+
+$macro AUTOTELEFONE[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOAutoTelefon">
+        <parent>CATAutotelefone</parent>
+        <btn>type=radio deselect=true</btn>
+        <visibility>detail</visibility>
+        <name>&NAME</name>
+        <file>&KEY</file>
+        <:KEYS>
+          <&KEY>
+        </>
+      </>
+
+$endmacro
+
+$macro FREISPRECHUNIVERSELL[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOAutoTelefon">
+        <parent>CATFreisprechuniversell</parent>
+        <btn>type=radio deselect=true</btn>
+        <visibility>detail</visibility>
+        <name>&NAME</name>
+        <file>&KEY</file>
+        <:KEYS>
+          <&KEY>
+        </>
+      </>
+
+$endmacro
+
+$macro TELEFONKONSOLE[ NAME, KEY ]
+
+  <class type="OPTION" name="RADIOTelefonkonsole">
+        <parent>CATFreisprechSeitenkonsole</parent>
+        <btn>type=radio deselect=true</btn>
+        <name>&NAME</name>
+        <file>&KEY</file>
+        <:SCRIPTS>
+	  <:SELECT>
+	    <ON "KEYTelefonkonsole">
+          </>
+	  <:OFF>
+	    <OFF "KEYTelefonkonsole">
+	  </>
+        </>
+        <:KEYS>
+          <&KEY>
+        </>
+      </>
+
+$endmacro
+
+; ===============================================================================================
+; Autotelefone
+; ===============================================================================================
+
+
+  <class type="OPTION">
+    <group>KOMMUNIKATION</group>
+    <category>CATAutotelefone</category>
+    <btn>type=radio</btn>
+    <name>BMW Autotelefone</name>
+    <file>CATAutotelefone</file>
+    <:KEYS>
+      <CATAutotelefone>
+    </>
+  </>
+
+ %AUTOTELEFONE [ "BMW Autotelefon Cordless", KEYAutotelefonCordless ]
+ %AUTOTELEFONE [ "BMW Autotelefon Professional", KEYAutotelefonProfessional ]
+ %AUTOTELEFONE [ "Universelle Freisprecheinrichtung", KEYFreisprecheinrichtungBluetooth ]
+
+; ===============================================================================================
+; Freisprecheinrichtungen
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>KOMMUNIKATION</group>
+    <category>CATFreisprechuniversell</category>
+    <btn>type=radio</btn>
+    <name>Universelle Freisprecheinrichtungen</name>
+    <file>CATFreisprechuniversell</file>
+    <:KEYS>
+      <CATFreisprechuniversell>
+    </>
+  </>
+
+;  %FREISPRECHUNIVERSELL [ "Universelle Freisprecheinrichtung Nokia", KEYAutotelefonNokia ]
+;  %FREISPRECHUNIVERSELL [ "Universelle Freisprecheinrichtung Ericsson", KEYAutotelefonEricsson ]
+;  %FREISPRECHUNIVERSELL [ "Universelle Freisprecheinrichtung Siemens", KEYAutotelefonSiemens ]
+;  %FREISPRECHUNIVERSELL [ "Universelle Freisprecheinrichtung Motorola", KEYAutotelefonMotorola ]
+
+; ===============================================================================================
+; Telefonkonsolen
+; ===============================================================================================
+
+  <class type="OPTION">
+    <group>KOMMUNIKATION</group>
+    <category>CATFreisprechSeitenkonsole</category>
+    <btn>type=radio</btn>
+    <name>Freisprecheinrichtungen Seitenkonsole</name>
+    <file>CATFreisprechSeitenkonsole</file>
+    <:KEYS>
+      <CATFreisprechSeitenkonsole>
+    </>
+  </>
+
+  %TELEFONKONSOLE[ "Telefonkonsole schwarz", KEYTelefonkonsoleSchwarz ]
+  %TELEFONKONSOLE[ "Telefonkonsole grau", KEYTelefonkonsoleGrau ]
+  %TELEFONKONSOLE[ "Telefonkonsole hellbeige", KEYTelefonkonsoleHellbeige ]
+  %TELEFONKONSOLE[ "Telefonkonsole marineblau", KEYTelefonkonsoleMarineblau ]
+  %TELEFONKONSOLE[ "Telefonkonsole sandbeige", KEYTelefonkonsoleSandbeige ]
+  %TELEFONKONSOLE[ "Telefonkonsole englischgrün", KEYTelefonkonsoleEnglischgruen ]
+  %TELEFONKONSOLE[ "Telefonkonsole beige", KEYTelefonkonsoleBeige ]
+
+  <:OPTION>
+    <:KEYS>
+      <KEYTelefonkonsole>
+    </>
+  </>
+
+; ===============================================================================================
+; Autoradio / Navigation / Bordmonitor
+; ===============================================================================================
+
+  %RADIO[ "BMW Radio Business CD", 		KEYRadioBusinessCD ]
+  %RADIO[ "BMW Radio Professional", 		KEYRadioProfessional ]
+  %RADIO[ "BMW Radio Professional CD", 		KEYRadioProfessionalCD ]
+  %RADIO[ "BMW Radio Business Kassette", 	KEYRadioBusinessKassette ]
+  %RADIO[ "BMW Radio Reverse", 			KEYRadioReverse ]
+  %RADIO[ "$T[BMW Radionavigation] Indianapolis",   KEYRadionavigationIndianapolis ]
+  %RADIO[ "BMW Radio Professional MD", 		KEYMDLaufwerk ]
+  %RADIO[ "BMW Radionavigation", 		KEYRadioNavigation ]
+
+  %KOMM_RADIO_STATIC[ "BMW Business Kassette", 	KEYRadioBusinessKassetteDetailOnly, KEYRadioBusinessKassette  ]
+  %KOMM_RADIO_STATIC[ "BMW Business CD", 	KEYRadioBusinessCDDetailOnly, 	    KEYRadioBusinessCD  ]
+  %KOMM_RADIO_STATIC[ "BMW Business MD", 	KEYRadioBusinessMDDetailOnly,       KEYRadioBusinessMD  ]
+
+  %BORDMONITORSYSTEM[ "Navigationssystem mit MD-Laufwerk", KEYNavigationssystemMD ]
+  %BORDMONITORSYSTEM[ "Navigationssystem mit CD-Laufwerk", KEYNavigationssystemCD ]
+  %BORDMONITORSYSTEM[ "Navigationssystem Professional",    KEYNavigationssystem ]
+  %BORDMONITORSYSTEM[ "TV-Funktion", 			   KEYTVFunktion ]
+
+
+  <:OPTION name="RADIORadio">
+    <visibility>0</visibility>
+    <btn>type=radio deselect=true</btn>
+    <group>KOMMUNIKATION</group>
+    <file>KEYBordmonitor</file>
+    <name>Bordmonitor</name>
+    <:KEYS>
+      <KEYBordmonitor>
+    </>
+    <:SCRIPTS>
+      <:SELECT>
+        <case selected KEYFrontkameraNoNavi OFF "KEYFrontkameraNoNavi">
+	<case selected KEYRueckfahrkameraNoNavi OFF "KEYRueckfahrkameraNoNavi">
+      </>
+      <:AFTERDESELECT>
+        <case selected KEYTVFunktion OFF "KEYTVFunktion">
+        <case selected KEYFrontkamera OFF "KEYFrontkamera">
+        <case selected KEYRueckfahrkamera OFF "KEYRueckfahrkamera">
+        <case selected KEYNavigationssystem OFF "KEYNavigationssystem">
+        <case selected KEYNavigationssystemCD OFF "KEYNavigationssystemCD">
+        <case selected KEYNavigationssystemMD OFF "KEYNavigationssystemMD">
+      </>
+    </>
+    <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+  </>
+
+
+
+; ===============================================================================================
+; Audio/Video/Sound etc.
+; ===============================================================================================
+
+  %KOMM_STANDARD[ "Soundsystem", KEYSoundsystem ]
+  %KOMM_STANDARD[ "BMW Soundmodul", KEYSoundmodul ]
+  %KOMM_STANDARD[ "CD-Wechsler 6-fach", KEYCDWechsler ]
+
+
+
+  %KOMM_STATIC [ "DVD-Wechsler 6-fach", KEYDVDWechsler ]
+  %KOMM_STATIC [ "Soundsystem", KEYSoundsystemDetailOnly ]
+  %KOMM_STATIC [ "BMW DVD-System", KEYDVDSystem ]
+  %KOMM_STATIC [ "BMW Subwoofer", KEYSubwoofer ]
+  %KOMM_STATIC [ "BMW DVD System Advanced", KEYBMWDVDSystemAdvanced ]
+; %KOMM_STATIC [ "Elektronisches Fahrtenbuch", KEYFahrtenbuch ]
+  %KOMM_STATIC [ "BMW DVD-System Portable", KEYBMWDVDSystemPortable ]
+  %KOMM_STATIC [ "CD-/DVD Aufbewahrungstasche",  KEYCDAufbewahrungstasche ]

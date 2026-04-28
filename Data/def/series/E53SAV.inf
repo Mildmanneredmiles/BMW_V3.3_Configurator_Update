@@ -1,0 +1,63 @@
+      <:X5>
+
+        <ecode>E53</ecode>
+        <body>SAV</body>
+        <date>from="00000000" to="99999999"</date>
+
+        <path>E53</path>
+        <interiorpath>E53Interior</interiorpath>
+
+        <:MOTORS>
+
+          <class type="3.0i">
+            <tireinfo>E53-1</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-2.jpg' +I>
+            </>
+            <*class type="DEF" ref="X5">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge56", "KEYSerienlenkradE53", "KEYSchaltknaufLederSchwarz">
+              <HIDE    "KEYSerienlenkradE53MF">
+            </class>
+            <:KEYS>
+              <FA51>
+              <FA52>
+            </>
+          </>
+
+          <class type="4.4i">
+            <tireinfo>E53-3</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-4.jpg' +I>
+	      <$L 'options\chromniere.jpg' +I>
+            </>
+            <*class type="DEF" ref="X5">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge57", "KEYSerienlenkradE53MF", "KEYSchaltknaufLederSchwarz", "KEYInterieurleistenPappelHell">
+              <HIDE "KEYInterieurleistenSchwarz", "KEYInterieurleistenBeige", "KEYSerienlenkradE53", "KEYLenkradLederMF">
+            </class>
+            <:KEYS>
+              <FB31>
+              <FB32>
+            </>
+          </>
+
+          <class type="3.0d">
+            <tireinfo>E53-1</tireinfo>
+            <:COSYSCRIPT>
+	      <$L 'options\auspuff-0.jpg' +I>
+            </>
+            <*class type="DEF" ref="X5">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge56", "KEYSerienlenkradE53", "KEYSchaltknaufLederSchwarz">
+              <HIDE    "KEYSerienlenkradE53MF">
+            </class>
+            <:KEYS>
+              <FA71>
+              <FA72>
+            </>
+          </>
+
+
+        </MOTORS>
+      </>

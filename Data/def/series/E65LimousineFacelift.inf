@@ -1,0 +1,210 @@
+      <class type="Limousine">
+
+	<ecode>E65</ecode>
+	<body>LIMOUSINE</body>
+        <defaultpaint>P0472</defaultpaint>
+        <interiorpath>E65Dashboard</interiorpath>
+        <panoscript>E65A</panoscript>
+
+        <:AUTOSCRIPT>
+          <ON "KEYSerienlenkrad">
+          <SA100 "KEYBordmonitor">
+        </>
+
+        <:MOTORS>
+
+          <class type="730i">
+            <tireinfo>E65-4</tireinfo>
+            <defaultpaint>P0481</defaultpaint>
+            <path>E65Facelift</path>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E65 limousine facelift">
+            <:KEYS>
+              <HL21>
+              <HL22>
+            </>
+          </>
+
+          <class type="730Li">
+            <tireinfo>E65-4</tireinfo>
+            <defaultpaint>P0481</defaultpaint>
+            <path>E66Facelift</path>
+  	    <ecode>E66</ecode>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E66 limousine facelift">
+            <:KEYS>
+              <HN21>
+	      <HN22>
+            </>
+          </>
+
+
+          <class type="740i">
+            <defaultpaint>P0481</defaultpaint>
+            <tireinfo>E65-4</tireinfo>
+            <path>E65Facelift</path>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E65 limousine facelift">
+            <:KEYS>
+              <HL61>
+              <HL62>
+            </>
+          </>
+
+          <class type="740Li">
+            <tireinfo>E65-5</tireinfo>
+            <defaultpaint>P0481</defaultpaint>
+            <path>E66Facelift</path>
+  	    <ecode>E66</ecode>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E66 limousine facelift">
+            <:KEYS>
+              <HN61>
+              <HN62>
+            </>
+          </>
+
+          <class type="750i">
+            <tireinfo>E65-5</tireinfo>
+            <path>E65Facelift</path>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E65 limousine facelift">
+            <:KEYS>
+              <HL81>
+              <HL82>
+              <HL83>
+            </>
+          </>
+
+          <class type="750Li">
+            <tireinfo>E65-5</tireinfo>
+            <defaultpaint>P0481</defaultpaint>
+            <path>E66Facelift</path>
+  	    <ecode>E66</ecode>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E66 limousine facelift">
+            <:KEYS>
+              <HN81>
+              <HN82>
+              <HN83>
+            </>
+          </>
+
+
+          <class type="760i">
+            <tireinfo>E65-3</tireinfo>
+            <defaultpaint>P0481</defaultpaint>
+            <path>E65Facelift</path>
+            <:COSYSCRIPT>
+              <$L "options\v12-overlay.jpg" +I -M>
+            </>
+            <:AUTOSCRIPT>
+              ON    "KEYFelge91"
+              SA100 "KEYGruenkeilfrontscheibe"
+              SA100 "KEYGetraenkehalter"
+              SA100 "KEYNavigationssystem"
+              SA100 "KEYKlimaautomatik"
+              ON    "KEYEdelholzNussbaumwurzelIntarsien"
+              HIDE  "KEYE65LCIFH5AT", "KEYE65LCIFH5FA"
+              HIDE  "KEYE65LCIFU6NB", "KEYE65LCIFU6MC", "KEYE65LCIFU6GE"
+              SHOW  "KEYE65LCIFU6NB_AUTOKOMFORTSITZ", "KEYE65LCIFU6MC_AUTOKOMFORTSITZ", "KEYE65LCIFU6GE_AUTOKOMFORTSITZ"
+	      ON    "KEYE65LCIFU6SW"
+            </>
+            <*class type="DEF" ref="E65 limousine facelift">
+            <:KEYS>
+              <HL01>
+              <HL02>
+              <HL03>
+            </>
+          </>
+
+          <class type="760Li">
+            <tireinfo>E65-3</tireinfo>
+            <defaultpaint>P0481</defaultpaint>
+            <path>E66Facelift</path>
+  	    <ecode>E66</ecode>
+            <:COSYSCRIPT>
+              <$L "options\v12-overlay.jpg" +I -M>
+            </>
+            <:AUTOSCRIPT>
+              <ON    "KEYFelge91">
+              SA100 "KEYGruenkeilfrontscheibe"
+              SA100 "KEYGetraenkehalter"
+              SA100 "KEYNavigationssystem"
+              SA100 "KEYKlimaautomatik"
+              <ON    "KEYEdelholzNussbaumwurzelIntarsien">
+              <HIDE  "KEYE65LCIFH5AT", "KEYE65LCIFH5FA">
+              <HIDE  "KEYE65LCIFU6NB", "KEYE65LCIFU6MC", "KEYE65LCIFU6GE">
+              <SHOW  "KEYE65LCIFU6NB_AUTOKOMFORTSITZ", "KEYE65LCIFU6MC_AUTOKOMFORTSITZ", "KEYE65LCIFU6GE_AUTOKOMFORTSITZ">
+	      <ON    "KEYE65LCIFU6SW">
+            </>
+            <*class type="DEF" ref="E66 limousine facelift">
+            <:KEYS>
+              <HN01>
+              <HN02>
+              <HN03>
+            </>
+          </>
+
+          <class type="730d">
+            <tireinfo>E65-4</tireinfo>
+            <path>E65Facelift</path>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E65 limousine facelift">
+            <:KEYS>
+              <HM21>
+              <HM22>
+            </>
+          </>
+
+          <class type="730Ld">
+            <tireinfo>E65-4</tireinfo>
+            <path>E66Facelift</path>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E66 limousine facelift">
+            <:KEYS>
+              <HM41>
+              <HM42>
+            </>
+          </>
+
+          <class type="745d">
+            <tireinfo>E65-3</tireinfo>
+            <path>E65Facelift</path>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge175">
+              <ON "KEYEdelholzAmerikanischNussbaum">
+            </>
+            <*class type="DEF" ref="E65 limousine facelift">
+            <:KEYS>
+              <HM61>
+              <HM62>
+            </>
+          </>
+
+        </>
+      </>

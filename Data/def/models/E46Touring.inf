@@ -1,0 +1,62 @@
+
+    <class type="E46 touring alt">
+      <name>Touring_alt</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=238 y=65 w=518 h=394</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=34 y=162 w=913 h=298</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=252 y=63 w=481 h=392</bodyframe>
+        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0263>
+	<P0300>
+	<P0303>
+	<P0314>
+	<P0317>
+	<P0354>
+	<P0362>
+	<P0364>
+        <P0365>
+	<P0372>
+	<P0376>
+	<P0386>
+	<P0393>
+	<P0400>
+	<P0430>
+	<P0438>
+        <P0442>
+	<P0443>
+	<P0475>
+	<P0668>
+	<P0897>
+
+        <KEYWeisseBlinker>
+        <KEYNebelscheinwerfer>
+        <KEYAerodynamikpaket>
+        <KEYDachreling>
+
+        <KEYFelge46>
+        <KEYFelge44>
+
+      </COMPONENTS>
+
+    </>

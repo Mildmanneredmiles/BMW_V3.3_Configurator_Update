@@ -1,0 +1,169 @@
+  <body>735i,740i,740d,750i</body>
+  <:KEYFelge61>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>71/2 x 16</rim>
+      <tire>235/60 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge18>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>71/2 x 16</rim>
+      <tire>235/60 R 16</tire>
+    </>
+    <maxsize>16</maxsize>
+  </>
+  <:KEYFelge70>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>235/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge80>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>235/55 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge05>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 16</rim>
+      <tire>235/60 R 16</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 16</rim>
+      <tire>245/55 R 16</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 18</rim>
+      <tire>255/45 ZR 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge42>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>91/2 x 18</rim>
+      <tire>255/45 ZR 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge37>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>91/2 x 18</rim>
+      <tire>255/45 ZR 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge32>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 18</rim>
+      <tire>255/45 ZR 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge69>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>91/2 x 18</rim>
+      <tire>255/45 ZR 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge76>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>235/50 ZR 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>91/2 x 18</rim>
+      <tire>255/45 ZR 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>

@@ -1,0 +1,86 @@
+
+      <class type="X3">
+
+        <path>E83</path>
+
+        <ecode>E83</ecode>
+        <body>SAV</body>
+        <defaultpaint>P0A07</defaultpaint>
+
+        <:AUTOSCRIPT>
+          <DEFAULT "GASchaltknauf">
+          <HIDE    "KEYAuspuffrohrblendeChrom">
+        </class>
+
+        <class type="MOTORS">
+
+          <class type="2.0i">
+            <tireinfo>E83</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge109", "KEYInterieurleistenTitanMatt">
+              <HIDE "KEYSportnachschalldaempfer", "KEYAuspuffrohrblendeChrom">
+            </>
+            <*class type="DEF" ref="X3">
+            <:KEYS>
+              <PA31>
+              <PA32>
+            </>
+          </>
+
+          <class type="2.5i">
+            <tireinfo>E83</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge109", "KEYInterieurleistenTitanMatt">
+            </>
+            <*class type="DEF" ref="X3">
+            <:KEYS>
+              <PA71>
+              <PA72>
+            </>
+          </>
+
+          <class type="3.0i">
+            <tireinfo>E83</tireinfo>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge148", "KEYInterieurleistenTitanMatt">
+            </>
+            <*class type="DEF" ref="X3">
+            <:KEYS>
+              <PA91>
+              <PA92>
+            </>
+          </>
+
+          <class type="2.0d">
+            <tireinfo>E83</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDAuspuffDiesel' +U>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge109", "KEYInterieurleistenTitanMatt">
+              <HIDE "KEYSportnachschalldaempfer", "KEYAuspuffrohrblendeChrom">
+            </>
+            <*class type="DEF" ref="X3">
+            <:KEYS>
+              <PB51>
+            </>
+          </>
+
+          <class type="3.0d">
+            <tireinfo>E83</tireinfo>
+            <:COSYSCRIPT>
+              <$L 'options\MDAuspuffDiesel' +U>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge148", "KEYInterieurleistenTitanMatt">
+              <HIDE "KEYSportnachschalldaempfer", "KEYAuspuffrohrblendeChrom">
+            </>
+            <*class type="DEF" ref="X3">
+            <:KEYS>
+              <PD51>
+              <PD52>
+            </>
+          </>
+
+        </>
+      </>

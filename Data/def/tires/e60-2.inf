@@ -1,0 +1,196 @@
+  <body>535d,545i,540i,550i,530xd</body>
+  <:KEYFelge116>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7½J x 17</rim>
+      <tire>225/50 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge138>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>7½J x 17</rim>
+      <tire>225/50 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge122>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>245/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge144>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 17</rim>
+      <tire>245/45 R 17</tire>
+    </>
+    <maxsize>17</maxsize>
+  </>
+  <:KEYFelge32>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 18</rim>
+      <tire>275/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge71>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge89>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 18</rim>
+      <tire>275/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge123>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge124>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9J x 18</rim>
+      <tire>275/35 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge129>
+    <:WHEEL>
+      <type></type>
+      <axle></axle>
+      <rim>8J x 18</rim>
+      <tire>245/40 R 18</tire>
+    </>
+    <maxsize>18</maxsize>
+  </>
+  <:KEYFelge101>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 19</rim>
+      <tire>245/35 ZR 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9½J x 19</rim>
+      <tire>275/30 ZR 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge125>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 19</rim>
+      <tire>245/35 ZR 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9½J x 19</rim>
+      <tire>275/30 ZR 19</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>245/35 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9½J x 19</rim>
+      <tire>275/30 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>
+  <:KEYFelge128>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8J x 19</rim>
+      <tire>245/35 ZR 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9½J x 19</rim>
+      <tire>275/30 ZR 19</tire>
+    </>
+    <:WHEEL>
+      <type>Mischbereifung</type>
+      <axle>VA</axle>
+      <rim>8½J x 19</rim>
+      <tire>245/35 R 19</tire>
+    </>
+    <:WHEEL>
+      <type></type>
+      <axle>HA</axle>
+      <rim>9½J x 19</rim>
+      <tire>275/30 R 19</tire>
+    </>
+    <maxsize>19</maxsize>
+  </>

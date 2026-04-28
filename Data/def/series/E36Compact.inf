@@ -1,0 +1,79 @@
+
+      <class type="E36 compact">
+
+        <ecode>E36</ecode>
+        <body>COMPACT</body>
+
+        <path>E36Compact</path>
+
+        <tireinfo>E36compact</tireinfo>
+
+        <:MOTORS>
+
+          <:316i>
+            <*class type="DEF" ref="E36 compact">
+            <:KEYS>
+              <CS11>
+              <CS12>
+              <CS21>
+              <CS22>
+              <CH11>
+              <CG11>
+              <CG21>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE36-5">
+            </>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-1.jpg' +I>
+            </>
+          </>
+
+          <:318ti>
+            <*class type="DEF" ref="E36 compact">
+            <:KEYS>
+              <CG51>
+              <CG71>
+              <CG72>
+              <CG81>
+              <CG82>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE36-5">
+            </>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-1.jpg' +I>
+            </>
+          </>
+
+          <:323i>
+            <*class type="DEF" ref="E36 compact">
+            <:KEYS>
+              <CG31>
+              <CT31>
+              <CT41>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE36-5">
+            </>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-2.jpg' +I>
+            </>
+          </>
+
+          <:318tds>
+            <*class type="DEF" ref="E36 compact">
+            <:KEYS>
+              <CJ51>
+              <CJ52>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelgeStahlE36-5">
+            </>
+            <:COSYSCRIPT>
+              <$L 'options\auspuff-d-1.jpg' +I>
+            </>
+          </>
+
+        </MOTORS>
+      </>

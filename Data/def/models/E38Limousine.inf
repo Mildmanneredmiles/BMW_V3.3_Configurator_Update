@@ -1,0 +1,56 @@
+
+    <class type="E38 limousine">
+
+      <name>E38</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=231 y=75 w=524 h=385</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=32 y=187 w=916 h=272</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=242 y=80 w=496 h=380</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0263>
+	<P0300>
+	<P0303>
+	<P0317>
+	<P0334>
+	<P0339>
+	<P0354>
+	<P0356>
+        <P0363>
+	<P0372>
+	<P0390>
+	<P0397>
+	<P0405>
+	<P0411>
+	<P0418>
+	<P0430>
+        <P0440>
+	<P0443>
+	<P0449>
+	<P0668>
+
+        <KEYFelge61>
+
+        <KEYWeisseBlinker>
+        <KEYGriffleisteChrom>
+        <KEYSchmutzfaengerVorne>
+        <KEYSchmutzfaengerHinten>
+
+      </COMPONENTS>
+
+    </>

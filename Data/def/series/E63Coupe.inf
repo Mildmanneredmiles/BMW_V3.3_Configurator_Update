@@ -1,0 +1,61 @@
+      <class type="E63Coupe">
+
+        <path>E63Coupe</path>
+        <shortid>Coupé</shortid>
+        <ecode>E63</ecode>
+        <body>COUPE</body>
+        <defaultpaint>P0475</defaultpaint>
+
+	<:AUTOSCRIPT>
+	  <SA100 "KEYBordmonitor">
+	</>
+
+        <class type="MOTORS">
+
+          <class type="630i">
+            <tireinfo>E63_E64</tireinfo>
+            <*class type="DEF" ref="E63Coupe">
+            <:AUTOSCRIPT>
+              <ON      "GASchaltknauf">
+              <DEFAULT "KEYFelge117", "KEYInterieurleistenRutheniumPerlglanz">
+            </>
+            <:COSYSCRIPT>
+              <$L 'options\MDNiereSchwarz' +I>
+            </>
+            <:KEYS>
+              <EH31>
+              <EH32>
+            </>
+          </>
+
+          <class type="645i">
+            <tireinfo>E63_E64</tireinfo>
+            <*class type="DEF" ref="E63Coupe">
+            <:AUTOSCRIPT>
+              <ON      "GASchaltknauf">
+              <DEFAULT "KEYFelge118", "KEYInterieurleistenRutheniumPerlglanz">
+              <HIDE    "KEYFelge117">
+            </>
+            <:KEYS>
+              <EH71>
+              <EH72>
+            </>
+          </>
+
+          <class type="650i">
+            <tireinfo>E63_E64</tireinfo>
+            <*class type="DEF" ref="E63Coupe">
+            <:AUTOSCRIPT>
+              <ON      "GASchaltknauf">
+              <DEFAULT "KEYFelge118", "KEYInterieurleistenRutheniumPerlglanz">
+              <HIDE    "KEYFelge117">
+            </>
+            <:KEYS>
+              <EH11>
+              <EH12>
+            </>
+          </>
+
+
+        </>
+      </>

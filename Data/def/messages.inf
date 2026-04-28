@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// MESSAGES
+// -----------------------------------------------------------------------------
+
+   <class type="MESSAGES">
+
+     <class type="STRINGS" name="AUTOINSERT">
+        <#KONFLIKT_ON_1>
+        < >
+        <§LIST>
+        <Soll diese Ausstattung hinzugefügt werden?>
+     </class>
+
+     <class type="STRINGS" name="AUTODELETE">
+        <#KONFLIKT_OFF_1>
+        < >
+        <§LIST>
+        <Soll diese Ausstattung ebenfalls entfernt werden?>
+     </class>
+
+     <class type="STRINGS" name="DEMAND_OFF">
+        <#DEMAND_OFF>
+        < >
+        <§LIST>
+        < >
+     </class>
+
+     <class type="STRINGS" name="NICHTINVERBINDUNGMIT">
+        <#NICHTINVERBINDUNGMIT>
+        < >
+        <§LIST>
+     </class>
+
+     <class type="STRINGS" name="COL_NICHTINVERBINDUNGMIT">
+        <Farbe #ITEM nicht in Verbindung mit:>
+        < >
+        <§LIST>
+     </class>
+     
+     <class type="STRINGS" name="NURINVERBINDUNGMIT">
+        <#NURINVERBINDUNGMIT>
+        < >
+        <§LIST>
+     </class>
+     
+     
+   </class>

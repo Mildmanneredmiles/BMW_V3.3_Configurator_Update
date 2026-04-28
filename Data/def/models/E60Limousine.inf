@@ -1,0 +1,166 @@
+
+    <class type="E60limousine">
+
+      <name>Limousine</name>
+
+      <:VIEWS>
+?A        <:front>
+?A          <angle>0</angle>
+?A          <pov>FRONT</pov>
+?A          <bodyframe>x=283 y=119 w=423 h=323</bodyframe>
+?A        </>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=78 y=137 w=826 h=310</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=30 y=137 w=926 h=291</bodyframe>
+        </>
+        <:heckseite>
+          <angle>135</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=83 y=137 w=824 h=306</bodyframe>
+        </>
+?A        <:heck>
+?A          <angle>180</angle>
+?A          <pov>REAR</pov>
+?A          <bodyframe>x=284 y=120 w=410 h=328</bodyframe>
+?A        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+          <path>E60Interior</path>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0317>
+        <P0349>
+        <P0354>
+        <P0430>
+        <P0475>
+        <P0892>
+        <P0894>
+        <P0A07>
+        <P0A08>
+        <P0A09>
+        <P0A35>
+        <P0A39>
+        <P0A43>
+        <P0416>
+        <P0300>
+        <P0668>
+
+        <CATInterieurfarben>
+
+        <KEYE60FxxSW>
+        <KEYE60FxxAD>
+        <KEYE60FxxBA>
+        <KEYE60FxxRH>
+        <KEYE60FxxTE>
+        <KEYE60FxxRK>
+        <KEYE60FxxAT>
+
+
+        <KEYMAerodynamikpaket>
+        <KEYHeckspoiler>
+        <KEYWeisseHeckleuchten>
+        <KEYXenonscheinwerfer>
+        <:KEYScheinwerferreinigungsanlage>
+          <visibility>detail</visibility>
+        </>
+        <KEYSchmutzfaengerVorne>
+        <KEYSchmutzfaengerHinten>
+        <KEYParkDistanceControl>
+        <KEYParkDistanceControlLow>
+        <KEYCarCoverOutdoor>
+        <KEYCarCoverOutdoorFrontscheibe>
+
+        <CATDachsysteme>
+        <KEYGrundtraeger>
+        <KEYUniversalhalterung>
+	<KEYGepaeckkorb>
+;	  <KEYSkitraeger>
+	<KEYSnowboardhalterung>
+	<KEYSurfboardhalterung>
+        <KEYRennradhalterung>
+;	 <KEYDachbox>
+	<KEYDachboxLackiert>
+	<KEYDachboxLackiertLang>
+        KEYFahrradlift
+
+        <:CATInterieurleisten>
+          <iconfile>KEYInterieurleistenAluminiumWellenschliff</iconfile>
+        </>
+        <KEYInterieurleistenPappelMaser>
+        <KEYInterieurleistenRiegelAhornAnthrazit>
+        <KEYInterieurleistenAluminiumWellenschliff>
+        <KEYLenkradLederSportDekorblendeRutheniumE63MF>
+
+        <:CATSchaltknauf>
+          <iconfile>KEYSchaltknaufSerie</iconfile>
+        </>
+        <KEYSchaltknaufSerie>
+        <KEYSchaltknaufLederSpangeRuthenium>
+        <KEYSchaltknaufLederSpangePappelMaser>
+
+        <:CATWaehlhebel>
+          <iconfile>KEYWaehlhebelLederSpangeRuthenium</iconfile>
+        </>
+        <KEYWaehlhebelLederSpangeRuthenium>
+        <KEYWaehlhebelLederSpangePappelMaser>
+
+        <KEYGeteilteArmauflage>
+        <CATFussmatten>
+        <KEYFussmattenCity>
+        <KEYFussmattenVelours>
+        <KEYFussmattenGummi>
+        <KEYBeleuchteteEinstiegsleiste>
+        <:KEYHandbremsgriffPappelMaser>
+          <parent></parent>
+        </>
+        <KEYLeseleuchte>
+        <KEYHandlampe>
+        <KEYKleiderbuegel>
+
+        <KEYBordmonitor>
+	<KEYNavigationssystem>
+	<KEYTVFunktion>
+	<KEYFrontkamera>
+	<KEYRueckfahrkamera>
+	<KEYDVDSystem>
+	<KEYCDAufbewahrungstasche>
+
+        <CATAutotelefone>
+        <KEYAutotelefonProfessional>
+        <KEYFreisprecheinrichtungBluetooth>
+
+        <KEYKuehltasche>
+        <CATGepaeckraum>
+        <KEYAntirutschmatte>
+        <KEYGepaeckraumBodennetz>
+        <KEYGepaeckraumFaltbox>
+        <KEYGepaeckraumFormmatte>
+        <KEYGepaeckraumSpanngurte>
+        <KEYGepaeckraumWanne>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+        <KEYFeuerloescher>
+
+        <KEYFelge134>
+        <KEYFelge138>
+
+      </>
+
+    </>
+

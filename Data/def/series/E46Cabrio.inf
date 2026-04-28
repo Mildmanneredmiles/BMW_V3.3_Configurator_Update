@@ -1,0 +1,90 @@
+
+      <class type="E46 cabrio">
+
+        <ecode>E46</ecode>
+        <body>CABRIO</body>
+        <date>to="20030228"</date>
+
+        <path>E46Cabrio</path>
+
+        <:COSYSCRIPTLINE>
+    	  <"front"      "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"frontseite" "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"seite"      "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"heckseite"  "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"heck"       "open"  [ "$S-150 'KEYHardtop'" ]>
+    	  <"front"      "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"frontseite" "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"seite"      "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"heckseite"  "close" [ "$S25 'KEYHardtop'" ]>
+    	  <"heck"       "close" [ "$S25 'KEYHardtop'" ]>
+        </>
+
+        <:COSYSCRIPT>
+          <$L 'options\tachokursiv.bmp' +I>
+        </>
+
+        <:MOTORS>
+
+          <:318Ci>
+            <tireinfo>E46_Cab-1</tireinfo>
+            <*class type="DEF" ref="E46 cabrio">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge46", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BP71>
+              <BP72>
+            </>
+          </>
+
+          <:320Ci>
+            <tireinfo>E46_Cab-1</tireinfo>
+            <tireminsize>16</tireminsize>
+            <*class type="DEF" ref="E46 cabrio">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge54", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BS11>
+              <BS12>
+              <BR31>
+              <BR32>
+            </>
+          </>
+
+          <:325Ci>
+            <tireinfo>E46_Cab-1</tireinfo>
+            <tireminsize>16</tireminsize>
+            <*class type="DEF" ref="E46 cabrio">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge54", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BS31>
+              <BS32>
+           </>
+          </>
+
+          <:330Ci>
+            <tireinfo>E46_Cab-2</tireinfo>
+            <tireminsize>17</tireminsize>
+            <:COSYSCRIPT>
+              <$L 'options\modif-330ci.bmp' +I>
+            </>
+            <*class type="DEF" ref="E46 cabrio">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge89", "KEYSerienlenkradE46CouCa", "KEYSchaltknaufLederSchwarzChromring", "KEYInterieurleistenMattchrom">
+            </class>
+
+            <:KEYS>
+              <BS51>
+              <BS52>
+            </>
+          </>
+
+        </MOTORS>
+      </>

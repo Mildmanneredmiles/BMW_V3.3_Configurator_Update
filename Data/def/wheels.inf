@@ -1,0 +1,213 @@
+
+//------------------------------------------------------
+// Makro für Felgen
+//------------------------------------------------------
+
+$macro WHEEL [ NAME, FILE, SIZE, KEYS ]
+
+  <class type="OPTION" name="RADIOFelgen">
+    <btn>type=radio</btn>
+    <group>FELGEN</group>
+    <name>&NAME</name>
+    <file>&FILE</file>
+    <size>&SIZE</size>
+    <:KEYS>
+      &KEYS
+    </>
+    <*class type="VIEWS" ref="DEFAULT_WHEEL_VIEWS">
+  </>
+
+$endmacro
+
+$macro WHEELSTYLE [ NAME, STYLE, SIZE ]
+
+  <class type="OPTION" name="RADIOFelgen">
+    <btn>type=radio</btn>
+    <group>FELGEN</group>
+    <name>&NAME &STYLE</name>
+    <file>KEYFelge&STYLE</file>
+    <size>&SIZE</size>
+    <:KEYS>
+      KEYFelge&STYLE
+    </>
+    <*class type="VIEWS" ref="DEFAULT_WHEEL_VIEWS">
+  </>
+
+$endmacro
+
+//===============================================================================================
+// Liste aller Felgen
+//===============================================================================================
+
+<:WHEELS>
+
+  %WHEEL  [ "Radabdeckung",               		"Radabdeckung",			15, "<KEYRadabdeckung>" ]
+  %WHEEL  [ "Radabdeckung",               		"KEYFelgeStahlE46",     	15, "<KEYFelgeStahlE46>" ]
+  %WHEEL  [ "Radabdeckung",               		"KEYFelgeStahlE36-5",           15, "<KEYFelgeStahlE36-5>" ]
+  %WHEEL  [ "Radabdeckung",               		"KEYFelgeStahlZ3",              16, "<KEYFelgeStahlZ3>" ]
+  %WHEEL  [ "Radabdeckung",                             "KEYRadvollblendeE87",          16, "<KEYRadvollblendeE87>"  ]
+  %WHEEL  [ "Radabdeckung",                             "KEYRadvollblendeE90",          16, "<KEYRadvollblendeE90>"  ]
+  %WHEEL  [ "Styling 90 mit Kunststoffsichtblende", 	"KEYFelge90", 			17, "<KEYFelge90>" ]
+  %WHEEL  [ "BMW Styling II, Styling 31",		"KEYFelge31",     		15, "<KEYFelge31>" ]
+  %WHEEL  [ "Streamline 41",              		"KEYFelge41",     		15, "<KEYFelge41>" ]
+  %WHEEL  [ "Rundspeichen-Styling 18 Chrom",    	"KEYFelgeChrom18", 		16, "<KEYFelgeChrom18>" ]
+  %WHEEL  [ "Rundspeichen-Styling 18",    		"KEYFelge18",     		16, "<KEYFelge18>" ]
+
+  %WHEEL  [ "$T[ES] 46",     "KEYFelge46",     		16, "<KEYFelge46>" ]
+  %WHEEL  [ "$T[DS] 53",     "KEYFelge53",    		15, "<KEYFelge53>" ]
+  %WHEEL  [ "$T[SS] 83",     "KEYFelge83",     		15, "<KEYFelge83>" ]
+  %WHEEL  [ "$T[DS] 30",     "KEYFelge30",     		16, "<KEYFelge30>" ]
+  %WHEEL  [ "Speichen-Styling 33",        		"KEYFelge33",     		16, "<KEYFelge33>" ]
+  %WHEEL  [ "Z star, Styling 35",         		"KEYFelge35",     		16, "<KEYFelge35>" ]
+  %WHEEL  [ "$T[KS] 42",     "KEYFelge42",     		16, "<KEYFelge42>" ]
+  %WHEEL  [ "$T[SS] 43",     "KEYFelge43",     		16, "<KEYFelge43>" ]
+  %WHEEL  [ "$T[SS] 45",     "KEYFelge45",     		16, "<KEYFelge45>" ]
+  %WHEEL  [ "$T[RS] 48",     "KEYFelge48",     		16, "<KEYFelge48>" ]
+  %WHEEL  [ "$T[VS] 54",     "KEYFelge54",     		16, "<KEYFelge54>" ]
+  %WHEEL  [ "$T[SS] 55",     "KEYFelge55",     		16, "<KEYFelge55>" ]
+  %WHEEL  [ "$T[RS] 61",     "KEYFelge61",     		16, "<KEYFelge61>" ]
+  %WHEEL  [ "$T[SS] 64",     "KEYFelge64",     		16, "<KEYFelge64>" ]
+  %WHEEL  [ "$T[PS] 82",     "KEYFelge82",     		16, "<KEYFelge82>" ]
+  %WHEEL  [ "$T[PS] 85",     "KEYFelge85",     		16, "<KEYFelge85>" ]
+  %WHEEL  [ "$T[RSV] 86",    "KEYFelge86",   		16, "<KEYFelge86>" ]
+  %WHEEL  [ "$T[DS] 88",     "KEYFelge88",     		16, "<KEYFelge88>" ]
+  %WHEEL  [ "$T[DS] 98",     "KEYFelge98",    		16, "<KEYFelge98>" ]
+  %WHEEL  [ "$T[KSV] 5",     "KEYFelge05", 		17, "<KEYFelge05>" ]
+  %WHEEL  [ "$T[MDS] 24",    "KEYFelge24",     		17, "<KEYFelge24>" ]
+  %WHEEL  [ "Radial-Styling 32",     "KEYFelge32",     		17, "<KEYFelge32>" ]
+  %WHEEL  [ "3-Speichen-Styling, Styling 38", "KEYFelge38", 17, "<KEYFelge38>" ]
+  %WHEEL  [ "$T[KSV] II 42",    "KEYFelgeVerbund42",	17, "<KEYFelgeVerbund42>" ]
+  %WHEEL  [ "$T[SS] 44",     "KEYFelge44",     		17, "<KEYFelge44>" ]
+  %WHEEL  [ "$T[DS] 47",     "KEYFelge47",     		17, "<KEYFelge47>" ]
+  %WHEEL  [ "$T[SS] 49",     "KEYFelge49",     		17, "<KEYFelge49>" ]
+  %WHEEL  [ "$T[RS] 50",     "KEYFelge50",     		17, "<KEYFelge50>" ]
+  %WHEEL  [ "$T[DS] 51",     "KEYFelge51",     		17, "<KEYFelge51>" ]
+  %WHEEL  [ "$T[ES] 56",     "KEYFelge56",     		17, "<KEYFelge56>" ]
+  %WHEEL  [ "$T[SS] 57",     "KEYFelge57",     		17, "<KEYFelge57>" ]
+  %WHEEL  [ "$T[MPS] 66",    "KEYFelge66",     		17, "<KEYFelge66>" ]
+  %WHEEL  [ "$T[MDS] 68",    "KEYFelge68",     		17, "<KEYFelge68>" ]
+  %WHEEL  [ "$T[SS] 70",     "KEYFelge70",     		17, "<KEYFelge70>" ]
+  %WHEEL  [ "$T[RS] 73",     "KEYFelge73",     		17, "<KEYFelge73>" ]
+  %WHEEL  [ "$T[KS] 78",     "KEYFelge78",     		17, "<KEYFelge78>" ]
+  %WHEEL  [ "$T[DS] 79",     "KEYFelge79",     		17, "<KEYFelge79>" ]
+  %WHEEL  [ "$T[YS] 80",     "KEYFelge80",     		17, "<KEYFelge80>" ]
+  %WHEEL  [ "$T[SS] 81",    "KEYFelge81",    		17, "<KEYFelge81>" ]
+  %WHEEL  [ "$T[SS] 89",     "KEYFelge89",  		17, "<KEYFelge89>" ]
+  %WHEEL  [ "Radialspeiche Brilliantline 32", "KEYFelgeBLine32", 18, "<KEYFelgeBLine32>" ]
+  %WHEEL  [ "$T[SS] 58",     "KEYFelge58",     		18, "<KEYFelge58>" ]
+  %WHEEL  [ "$T[SS] 69",     "KEYFelge69",     		18, "<KEYFelge69>" ]
+  %WHEEL  [ "$T[MPS] 37",    "KEYFelge37",     		18, "<KEYFelge37>" ]
+  %WHEEL  [ "$T[DSV] 71",    "KEYFelge71",   		18, "<KEYFelge71>" ]
+  %WHEEL  [ "$T[MVS] 72",    "KEYFelge72",     		18, "<KEYFelge72>" ]
+  %WHEEL  [ "$T[SS] 74",     "KEYFelge74",     		18, "<KEYFelge74>" ]
+  %WHEEL  [ "$T[SSV] 76",    "KEYFelge76",     		18, "<KEYFelge76>" ]
+  %WHEEL  [ "$T[SSV] 77",    "KEYFelge77",    		18, "<KEYFelge77>" ]
+  %WHEEL  [ "$T[KSV] 78",    "KEYFelgeVerbund78", 	18, "<KEYFelgeVerbund78>" ]
+  %WHEEL  [ "$T[DS] 93",     "KEYFelge93",     		18, "<KEYFelge93>" ]
+  %WHEEL  [ "$T[VIS] 94",    "KEYFelge94",     		18, "<KEYFelge94>" ]
+  %WHEEL  [ "$T[VS] 63",     "KEYFelge63",     		19, "<KEYFelge63>" ]
+  %WHEEL  [ "$T[DSV] 75",    "KEYFelge75",   		19, "<KEYFelge75>" ]
+  %WHEEL  [ "$T[SS] 92",     "KEYFelge92",     		19, "<KEYFelge92>" ]
+  %WHEEL  [ "$T[ES] 56",     "KEYFelge56",  16, "<KEYFelge56>" ]
+  %WHEEL  [ "$T[SS] 87",     "KEYFelge87",  20, "<KEYFelge87>" ]
+  %WHEEL  [ "$T[DS] 88",     "KEYFelge88",  17, "<KEYFelge88>" ]
+  %WHEEL  [ "$T[SS] 91",     "KEYFelge91",  18, "<KEYFelge91>" ]
+  %WHEEL  [ "$T[SS] 95",     "KEYFelge95",  19, "<KEYFelge95>" ]
+  %WHEEL  [ "$T[SS] 96",     "KEYFelge96",  17, "<KEYFelge96>" ]
+  %WHEEL  [ "$T[MDS] 97",    "KEYFelge97",  17, "<KEYFelge97>" ]
+  %WHEEL  [ "$T[DS] 98",     "KEYFelge98",  17, "<KEYFelge98>" ]
+  %WHEEL  [ "$T[SS] 102",    "KEYFelge102", 16, "<KEYFelge102>" ]
+  %WHEEL  [ "M Kreuzspeichen-Verbundrad 101", "KEYFelge101", 18, "<KEYFelge101>" ]
+  %WHEEL  [ "$T[DS] 103",    "KEYFelge103", 17, "<KEYFelge103>" ]
+  %WHEEL  [ "$T[SS] 104",    "KEYFelge104", 16, "<KEYFelge104>" ]
+  %WHEEL  [ "$T[SS] 105",    "KEYFelge105", 16, "<KEYFelge105>" ]
+  %WHEEL  [ "$T[TS] 106",    "KEYFelge106", 17, "<KEYFelge106>" ]
+  %WHEEL  [ "$T[ES] 107",    "KEYFelge107", 18, "<KEYFelge107>" ]
+  %WHEEL  [ "$T[SSV] 108",    "KEYFelge108", 18, "<KEYFelge108>" ]
+  %WHEEL  [ "$T[ES] 109",    "KEYFelge109", 17, "<KEYFelge109>" ]
+  %WHEEL  [ "$T[VS] 110",    "KEYFelge110", 17, "<KEYFelge110>" ]
+  %WHEEL  [ "$T[DS] 111",    "KEYFelge111", 17, "<KEYFelge111>" ]
+  %WHEEL  [ "$T[DS] 112",    "KEYFelge112", 17, "<KEYFelge112>" ]
+  %WHEEL  [ "$T[SS] 113",    "KEYFelge113", 18, "<KEYFelge113>" ]
+  %WHEEL  [ "$T[YS] 114",    "KEYFelge114", 18, "<KEYFelge114>" ]
+  %WHEEL  [ "$T[SS] 115",    "KEYFelge115", 16, "<KEYFelge115>" ]
+  %WHEEL  [ "$T[DS] 116",    "KEYFelge116", 16, "<KEYFelge116>" ]
+  %WHEEL  [ "$T[SS] 117",    "KEYFelge117", 17, "<KEYFelge117>" ]
+  %WHEEL  [ "$T[RS] 118",    "KEYFelge118", 18, "<KEYFelge118>" ]
+  %WHEEL  [ "$T[SS] 119",    "KEYFelge119", 17, "<KEYFelge119>" ]
+  %WHEEL  [ "$T[DS] 120",    "KEYFelge120", 18, "<KEYFelge120>" ]
+  %WHEEL  [ "$T[ES] 121",    "KEYFelge121", 19, "<KEYFelge121>" ]
+  %WHEEL  [ "$T[SS] 122",    "KEYFelge122", 17, "<KEYFelge122>" ]
+  %WHEEL  [ "$T[SS] 123",    "KEYFelge123", 18, "<KEYFelge123>" ]
+  %WHEEL  [ "$T[SS] 124",    "KEYFelge124", 18, "<KEYFelge124>" ]
+  %WHEEL  [ "$T[DS] 125",    "KEYFelge125", 17, "<KEYFelge125>" ]
+  %WHEEL  [ "$T[VS] 126",    "KEYFelge126", 17, "<KEYFelge126>" ]
+  %WHEEL  [ "$T[SS] 128",    "KEYFelge128", 19, "<KEYFelge128>" ]
+  %WHEEL  [ "$T[DS] 129",    "KEYFelge129", 18, "<KEYFelge129>" ]
+  %WHEEL  [ "$T[VS] 130",    "KEYFelge130", 17, "<KEYFelge130>" ]
+  %WHEEL  [ "$T[YS] 131",    "KEYFelge131", 18, "<KEYFelge131>" ]
+  %WHEEL  [ "$T[SS] 132",    "KEYFelge132", 18, "<KEYFelge132>" ]
+  %WHEEL  [ "$T[KS] 133",    "KEYFelge133", 16, "<KEYFelge133>" ]
+  %WHEEL  [ "$T[TZS] 134",   "KEYFelge134", 16, "<KEYFelge134>" ]
+  %WHEEL  [ "$T[MDS] 135",   "KEYFelge135", 18, "<KEYFelge135>" ]
+  %WHEEL  [ "$T[SS] 136",    "KEYFelge136", 16, "<KEYFelge136>" ]
+  %WHEEL  [ "$T[SS] 137",    "KEYFelge137", 17, "<KEYFelge137>" ]
+  %WHEEL  [ "$T[SS] 138",    "KEYFelge138", 17, "<KEYFelge138>" ]
+  %WHEEL  [ "$T[RS] 139",    "KEYFelge139", 16, "<KEYFelge139>" ]
+  %WHEEL  [ "$T[SS] 140",    "KEYFelge140", 16, "<KEYFelge140>" ]
+  %WHEEL  [ "$T[VS] 141",    "KEYFelge141", 17, "<KEYFelge141>" ]
+  %WHEEL  [ "$T[SS] 142",    "KEYFelge142", 17, "<KEYFelge142>" ]
+  %WHEEL  [ "$T[SS] 143",    "KEYFelge143", 18, "<KEYFelge143>" ]
+  %WHEEL  [ "$T[KS] 144",    "KEYFelge144", 17, "<KEYFelge144>" ]
+  %WHEEL  [ "$T[KS] 145",    "KEYFelge145", 19, "<KEYFelge145>" ]
+  %WHEEL  [ "$T[KS] 145",    "KEYFelge145", 19, "<KEYFelge145>" ]
+  %WHEEL  [ "$T[SS] 146",    "KEYFelge146", 19, "<KEYFelge146>" ]
+  %WHEEL  [ "$T[SS] 147",    "KEYFelge147", 17, "<KEYFelge147>" ]
+  %WHEEL  [ "$T[DS] 148",    "KEYFelge148", 17, "<KEYFelge148>" ]
+  %WHEEL  [ "$T[YS] 149",    "KEYFelge149", 20, "<KEYFelge149>" ]
+  %WHEEL  [ "$T[DS] 150",    "KEYFelge150", 19, "<KEYFelge150>" ]
+  %WHEEL  [ "$T[SS] 151",    "KEYFelge151", 16, "<KEYFelge151>" ]
+  %WHEEL  [ "$T[VS] 152",    "KEYFelge152", 18, "<KEYFelge152>" ]
+  %WHEEL  [ "$T[SS] 153",    "KEYFelge153", 18, "<KEYFelge153>" ]
+  %WHEEL  [ "$T[DS] 154",    "KEYFelge154", 16, "<KEYFelge154>" ]
+  %WHEEL  [ "$T[SS] 155",    "KEYFelge155", 16, "<KEYFelge155>" ]
+  %WHEEL  [ "$T[DS] 156",    "KEYFelge156", 16, "<KEYFelge156>" ]
+  %WHEEL  [ "$T[SS] 158",    "KEYFelge158", 17, "<KEYFelge158>" ]
+  %WHEEL  [ "$T[SS] 159",    "KEYFelge159", 17, "<KEYFelge159>" ]
+  %WHEEL  [ "$T[RS] 160",    "KEYFelge160", 17, "<KEYFelge160>" ]
+  %WHEEL  [ "$T[DS] 161",    "KEYFelge161", 17, "<KEYFelge161>" ]
+  %WHEEL  [ "$T[ES] 162",    "KEYFelge162", 18, "<KEYFelge162>" ]
+  %WHEEL  [ "$T[SS] 165",    "KEYFelge165", 17, "<KEYFelge165>" ]
+  %WHEELSTYLE [ "$T[RS]",  166, 19 ]
+  %WHEELSTYLE [ "$T[DS]",  167, 19 ]
+  %WHEELSTYLE [ "$T[VS]",  168, 20 ]
+  %WHEELSTYLE [ "$T[SS]",  169, 16 ]
+  %WHEELSTYLE [ "$T[SS]",  170, 17 ]
+  %WHEELSTYLE [ "$T[SS]",  171, 17 ]
+  %WHEELSTYLE [ "$T[DS]",  172, 19 ]
+  %WHEELSTYLE [ "$T[DS]",  174, 17 ]
+  %WHEELSTYLE [ "$T[SS]",  175, 17 ]
+  %WHEELSTYLE [ "$T[SPS]", 176, 17 ]
+  %WHEELSTYLE [ "$T[DS]",  178, 17 ]
+  %WHEELSTYLE [ "$T[SSV]", 179, 19 ]
+  %WHEELSTYLE [ "$T[SS]",  180, 18 ]
+  %WHEELSTYLE [ "$T[SS]",  181, 18 ]
+  %WHEELSTYLE [ "$T[DS]",  182, 18 ]
+  %WHEELSTYLE [ "$T[YS]",  183, 18 ]
+  %WHEELSTYLE [ "$T[DS]",  184, 20 ]
+  %WHEELSTYLE [ "$T[DS]",  192, 18 ]
+  %WHEELSTYLE [ "$T[DS]",  195, 18 ]
+  %WHEELSTYLE [ "$T[RS]",  196, 18 ]
+  %WHEELSTYLE [ "$T[KS]",  197, 18 ]
+  %WHEELSTYLE [ "$T[RSV]", 198, 19 ]
+  %WHEELSTYLE [ "$T[SS]",  199, 19 ]
+  %WHEELSTYLE [ "$T[DS]",  207, 18 ]
+  %WHEELSTYLE [ "$T[DS]",  208, 17 ]
+  %WHEELSTYLE [ "$T[VS]",  217, 18 ]
+  %WHEELSTYLE [ "$T[SS]",  218, 19 ]
+
+
+
+</>
+
+

@@ -1,0 +1,192 @@
+
+// -----------------------------------------------------------------------------
+// Makro für Srachauswahlbuttons
+// -----------------------------------------------------------------------------
+
+$macro MACROLANGUAGE [ "ACTION", "RECT", "IMAGE" ]
+
+     <class type="TEASER">
+       <active>from="MODELS"</active>
+       <area>&RECT</area>
+       <action>&ACTION</action>
+       <image>&IMAGE</image>
+     </class>
+
+$endmacro
+
+// -----------------------------------------------------------------------------
+// Makro für alle vier Headlines in den verschiedenen Sprachen
+// -----------------------------------------------------------------------------
+
+$macro HEADLINES [ LANG ]
+
+     <class type="TEASER" name="MODELS-&LANG">
+       <active>from='MODELS' to='MODELS'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_models.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="PAINTS-&LANG">
+       <active>from='LACKE' to='LACKE'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_lacke.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="WHEELS-&LANG">
+       <active>from='FELGEN' to='FELGEN'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_felgen.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="OPTIONS-&LANG">
+       <active>from='EXTERIEUR' to='EXTERIEUR'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_ext.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="MODELS-&LANG">
+       <active>from='EXTRAS' to='EXTRAS'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_models.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="MODELS-&LANG">
+       <active>from='INTERIEUR' to='INTERIEUR'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_int.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="MODELS-&LANG">
+       <active>from='KOMMUNIKATION' to='KOMMUNIKATION'</active>
+       <area>x=0 y=20 w=980 h=79</area>
+       <image>&LANG~\head_komm.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+     <class type="TEASER" name="Logo">
+       <area>x=680 y=0</area>
+       <image>&LANG~\logo.bmp</image>
+       <*filter type="FILTER" name="&LANG">
+     </class>
+
+$endmacro
+
+// -----------------------------------------------------------------------------
+// TEASER
+// -----------------------------------------------------------------------------
+
+   <class type="TEASERS">
+
+     <class type="TEASER" name="MAINMENU">
+       <area>x=0 y=0 w=980 h=20</area>
+       <color>R=128 G=128 B=128</color>
+     </class>
+
+     %HEADLINES [ 'DE' ]
+     %HEADLINES [ 'UK' ]
+     %HEADLINES [ 'FR' ]
+     %HEADLINES [ 'IT' ]
+     %HEADLINES [ 'ES' ]
+     %HEADLINES [ 'NL' ]
+     %HEADLINES [ 'SE' ]
+     %HEADLINES [ 'PT' ]
+
+     <class type="TEASER" name="ControlMenu">
+       <area>x=0 y=559 w=980 h=210</area>
+       <color>R=0 G=0 B=64</color>
+     </class>
+
+     <class type="TEASER">
+       <area>x=20 y=2 w=80 h=20</area>
+       <action>EXIT</action>
+       <text>Beenden</text>
+       <textparam>text=$FFFFFF text.hot=$40A0FF text.selected=$40A0FF</textparam>
+     </class>
+
+     <class type="TEASER">
+       <active>from='LACKE'</active>
+       <area>x=120 y=2 w=80 h=20</area>
+       <action>menu="EXTRAS"</action>
+       <text>Optionen</text>
+       <textparam>text=$FFFFFF text.hot=$40A0FF text.selected=$40A0FF</textparam>
+     </class>
+
+     <class type="TEASER">
+       <active>from='LACKE'</active>
+       <area>x=220 y=2 w=80 h=20</area>
+       <action>INFO</action>
+       <text>Information</text>
+       <textparam>text=$FFFFFF text.hot=$40A0FF text.selected=$40A0FF</textparam>
+     </class>
+
+   </TEASERS>
+
+// -----------------------------------------------------------------------------
+// MENUE DEFINITIONEN
+// -----------------------------------------------------------------------------
+
+   <class type="MENUES">
+
+     <class type="MAIN">
+       <name>MAIN</name>
+       <visible>1</visible>
+       <class type="ITEMS">
+         <MODELS>index=1 level=1 available=0 x=10 y=570 w=100 h=20 mode=clickandrelease text=$FFFFFF text.hot=$FFFFFF text.selected=$FFFFFF text.inactive=$888888</MODELS>
+         <LACKE>index=2 level=2 available=2 x=10 y=588 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</LACKE>
+         <FELGEN>index=3 level=2 available=2 x=10 y=606 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</FELGEN>
+         <INTERIEUR>index=4 level=2 available=2 x=10 y=624 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</INTERIEUR>
+         <KOMMUNIKATION>index=5 level=2 available=2 x=10 y=642 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</KOMMUNIKATION>
+         <EXTERIEUR>index=6 level=2 available=2 x=10 y=660 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</EXTERIEUR>
+         <TRANSPORT>index=7 level=2 available=2 x=10 y=678 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</TRANSPORT>
+         <SICHERHEIT>index=7 level=2 available=2 x=10 y=696 w=100 h=20 text=$FFFFFF text.hot=$FFFFFF text.selected=$40A0FF text.inactive=$888888</SICHERHEIT>
+         <EXTRAS>index=8 available=2 x=9999 y=9999</EXTRAS>
+       </class>
+     </class>
+
+   </class>
+
+// -----------------------------------------------------------------------------
+// KOMPONENTEN UND AUSWAHL GRUPPEN
+// -----------------------------------------------------------------------------
+
+    <:GROUPS>
+      <MODELS>
+      <LACKE>
+      <FELGEN>
+      <EXTERIEUR>
+      <INTERIEUR>
+      <KOMMUNIKATION>
+      <TRANSPORT>
+      <SICHERHEIT>
+      <EXTRAS>type="system"</EXTRAS>
+      <OTHER>type="system"</OTHER>
+    </>
+
+    <:GROUPDEFINITIONS>
+      <:MODELS>
+      </>
+      <:LACKE>
+        <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+      </>
+      <:FELGEN>
+        <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+      </>
+      <:EXTERIEUR>
+        <*class type="VIEWS" ref="DEFAULT_EXTERIOR_VIEWS">
+      </>
+      <:INTERIEUR>
+        <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+      </>
+     <:KOMMUNIKATION>
+       <*class type="VIEWS" ref="DEFAULT_INTERIOR_VIEWS">
+     </>
+     <:TRANSPORT>
+     </>
+    </>
+

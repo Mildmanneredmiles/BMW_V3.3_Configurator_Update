@@ -1,0 +1,104 @@
+$T [ "00000000", "99999999" ]
+$P [ "7er\E65Facelift\" ]
+
+$S [ #001 "*" [ "$D #300" ] ]
+$S [ #201 "*" [ "$C" ] ]
+
+$C [ "interieur" $F [ "FH5AT" "FH5FA" "FU6SW" "FU6FA" "FU6BA" "FU6NB" "FU6MC" "FU6GE" "FU7SW" "FU7GE" "FU7FA" "FU7NB" "FV7SW" "FV7FA" "FV7GE" "FV7MC" "FV7NB" ] $V [ "*7er\TrimFacelift" ]  ]
+
+$S [ #101 "*" "S0255" [ "$S 'KEYSportlenkrad'" ] ]
+$S [ #101 "*" "S0437" [ "$S 'KEYEdelholzEscheHell'" ] ]
+$S [ #101 "*" "S0438" [ "$S 'KEYEdelholzEscheDunkel'" ] ]
+$S [ #101 "*" "S04AH" [ "$S 'KEYEdelholzAmerikanischNussbaum'" ] ]
+$S [ #101 "*" "S0775" [ "$S 'KEYIndividualDachhimmelAnthrazit'" ] ]
+$S [ #101 "*" "S0776" [ "$S 'KEYIndividualDachhimmelAlcantaraAnthrazit'" ] ]
+$S [ #101 "*" "S0453" [ "$S 'KEYKlimasitz'" ] ]
+$S [ #101 "*" "S0456" [ "$S 'KEYKomfortsitz'" ] ]
+
+
+$S [ #114 "*" [ "$S25 'KEYEdelholzAmerikanischNussbaum'" ] ]
+
+$S [ #117 "*" [ "$S25 'KEYSerienlenkrad'" ] ]
+$S [ #118 "*" "S0354" [ "$L 'options\KEYGruenkeilfrontscheibe' +I" ] ]
+
+$S [ #210 "*7er\TrimFacelift" "FH5AT" [ "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-schwarz'"     "$L 'bsaeulen' #M" "$C 'bs-schwarz'"     "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-schwarz'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-schwarz'"     ] ]
+$S [ #211 "*7er\TrimFacelift" "FH5FA" [ "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-flanellgrau'" "$L 'bsaeulen' #M" "$C 'bs-flanellgrau'" "$L 'mittelkonsole' #M" "$C 'mi-flanellgrau'" "$L 'teppich' #M" "$C 'te-flanellgrau'" "$L 'itafeloben' #M" "$C 'it-basaltgrau'"  "$L 'tuer' #M" "$C 'tu-flanellgrau'"  "$L 'itafelunten' #M" "$C 'iu-flanellgrau'" "$L 'tuerunten' #M" "$C 'tv-flanellgrau'" ] ]
+$S [ #212 "*7er\TrimFacelift" "FU6SW" [ "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-steingrau'"   "$L 'bsaeulen' #M" "$C 'bs-schwarz'"     "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-schwarz'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-schwarz'"     ] ]
+$S [ #213 "*7er\TrimFacelift" "FU6FA" [ "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-steingrau'"   "$L 'bsaeulen' #M" "$C 'bs-flanellgrau'" "$L 'mittelkonsole' #M" "$C 'mi-flanellgrau'" "$L 'teppich' #M" "$C 'te-flanellgrau'" "$L 'itafeloben' #M" "$C 'it-basaltgrau'"  "$L 'tuer' #M" "$C 'tu-flanellgrau'"  "$L 'itafelunten' #M" "$C 'iu-flanellgrau'" "$L 'tuerunten' #M" "$C 'tv-flanellgrau'" ] ]
+$S [ #214 "*7er\TrimFacelift" "FU6BA" [ "$L 'dachhimmel' #M" "$C 'da-beige'"     "$L 'asaeulen' #M" "$C 'as-beige'"       "$L 'bsaeulen' #M" "$C 'bs-beige'"       "$L 'mittelkonsole' #M" "$C 'mi-beige'"       "$L 'teppich' #M" "$C 'te-beige'"       "$L 'itafeloben' #M" "$C 'it-dunkelbeige'" "$L 'tuer' #M" "$C 'tu-beige'"        "$L 'itafelunten' #M" "$C 'iu-dunkelbeige'" "$L 'tuerunten' #M" "$C 'tv-beige'"       ] ]
+$S [ #215 "*7er\TrimFacelift" "FU6NB" [ "$L 'dachhimmel' #M" "$C 'da-beige'"     "$L 'asaeulen' #M" "$C 'as-beige'"       "$L 'bsaeulen' #M" "$C 'bs-naturbraun'"  "$L 'mittelkonsole' #M" "$C 'mi-naturbraun'"  "$L 'teppich' #M" "$C 'te-naturbraun'"  "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-naturbraun'"   "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-naturbraun'"  ] ]
+$S [ #216 "*7er\TrimFacelift" "FU6MC" [ "$L 'dachhimmel' #M" "$C 'da-anthrazit'" "$L 'asaeulen' #M" "$C 'as-anthrazit'"   "$L 'bsaeulen' #M" "$C 'bs-lavablau'"    "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-lavablau'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-lavablau'"    ] ]
+$S [ #217 "*7er\TrimFacelift" "FU6GE" [ "$L 'dachhimmel' #M" "$C 'da-anthrazit'" "$L 'asaeulen' #M" "$C 'as-anthrazit'"   "$L 'bsaeulen' #M" "$C 'bs-creambeige'"  "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-creambeige'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-creambeige'"  ] ]
+$S [ #218 "*7er\TrimFacelift" "FU7SW" [ "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-steingrau'"   "$L 'bsaeulen' #M" "$C 'bs-schwarz'"     "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-schwarz'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-schwarz'"     ] ]
+$S [ #219 "*7er\TrimFacelift" "FU7GE" [ "$L 'dachhimmel' #M" "$C 'da-anthrazit'" "$L 'asaeulen' #M" "$C 'as-anthrazit'"   "$L 'bsaeulen' #M" "$C 'bs-creambeige'"  "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-creambeige'"   "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-creambeige'"  ] ]
+$S [ #220 "*7er\TrimFacelift" "FU7FA" [ "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-steingrau'"   "$L 'bsaeulen' #M" "$C 'bs-flanellgrau'" "$L 'mittelkonsole' #M" "$C 'mi-flanellgrau'" "$L 'teppich' #M" "$C 'te-flanellgrau'" "$L 'itafeloben' #M" "$C 'it-basaltgrau'"  "$L 'tuer' #M" "$C 'tu-flanellgrau'"  "$L 'itafelunten' #M" "$C 'iu-flanellgrau'" "$L 'tuerunten' #M" "$C 'tv-flanellgrau'" ] ]
+$S [ #221 "*7er\TrimFacelift" "FU7NB" [ "$L 'dachhimmel' #M" "$C 'da-beige'"     "$L 'asaeulen' #M" "$C 'as-beige'"       "$L 'bsaeulen' #M" "$C 'bs-naturbraun'"  "$L 'mittelkonsole' #M" "$C 'mi-naturbraun'"  "$L 'teppich' #M" "$C 'te-naturbraun'"  "$L 'itafeloben' #M" "$C 'it-schwarz'"     "$L 'tuer' #M" "$C 'tu-naturbraun'"   "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-naturbraun'"  ] ]
+$S [ #222 "*7er\TrimFacelift" "FV7SW" [ "$S50 'KEYSportlenkrad'" "$S50 'KEYEdelholzVavonaGrauMatt'"  "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-schwarz'"     "$L 'bsaeulen' #M" "$C 'bs-schwarz'"     "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"    "$L 'tuer' #M" "$C 'tu-schwarz'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-schwarz'" ] ]
+$S [ #223 "*7er\TrimFacelift" "FV7FA" [ "$S50 'KEYSportlenkrad'" "$S50 'KEYEdelholzVavonaGrauMatt'"  "$L 'dachhimmel' #M" "$C 'da-steingrau'" "$L 'asaeulen' #M" "$C 'as-flanellgrau'" "$L 'bsaeulen' #M" "$C 'bs-flanellgrau'" "$L 'mittelkonsole' #M" "$C 'mi-flanellgrau'" "$L 'teppich' #M" "$C 'te-flanellgrau'" "$L 'itafeloben' #M" "$C 'it-basaltgrau'" "$L 'tuer' #M" "$C 'tu-flanellgrau'"  "$L 'itafelunten' #M" "$C 'iu-flanellgrau'" "$L 'tuerunten' #M" "$C 'tv-flanellgrau'" ] ]
+$S [ #224 "*7er\TrimFacelift" "FV7GE" [ "$S50 'KEYSportlenkrad'" "$S50 'KEYEdelholzVavonaGrauMatt'"  "$L 'dachhimmel' #M" "$C 'da-anthrazit'" "$L 'asaeulen' #M" "$C 'as-creambeige'"  "$L 'bsaeulen' #M" "$C 'bs-creambeige'"  "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"    "$L 'tuer' #M" "$C 'tu-creambeige'"   "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-schwarz'" ] ]
+$S [ #225 "*7er\TrimFacelift" "FV7MC" [ "$S50 'KEYSportlenkrad'" "$S50 'KEYEdelholzVavonaGrauMatt'"  "$L 'dachhimmel' #M" "$C 'da-anthrazit'" "$L 'asaeulen' #M" "$C 'as-anthrazit'"   "$L 'bsaeulen' #M" "$C 'bs-lavablau'"    "$L 'mittelkonsole' #M" "$C 'mi-schwarz'"     "$L 'teppich' #M" "$C 'te-schwarz'"     "$L 'itafeloben' #M" "$C 'it-schwarz'"    "$L 'tuer' #M" "$C 'tu-schwarz'"      "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-schwarz'" ] ]
+$S [ #226 "*7er\TrimFacelift" "FV7NB" [ "$S50 'KEYSportlenkrad'" "$S50 'KEYEdelholzVavonaGrauMatt'"  "$L 'dachhimmel' #M" "$C 'da-beige'"     "$L 'asaeulen' #M" "$C 'as-beige'"       "$L 'bsaeulen' #M" "$C 'bs-naturbraun'"  "$L 'mittelkonsole' #M" "$C 'mi-naturbraun'"  "$L 'teppich' #M" "$C 'te-naturbraun'"  "$L 'itafeloben' #M" "$C 'it-schwarz'"    "$L 'tuer' #M" "$C 'tu-naturbraun'"   "$L 'itafelunten' #M" "$C 'iu-schwarz'"     "$L 'tuerunten' #M" "$C 'tv-naturbraun'" ] ]
+
+$S [ #228 "*" "KEYIndividualDachhimmelAlcantaraAnthrazit" [ "$L 'options\KEYIndividualDachhimmelAlcantaraAnthrazit' +U" ] ]
+$S [ #228 "*" "KEYIndividualDachhimmelAnthrazit" [ "$L 'options\KEYIndividualDachhimmelAnthrazit' +U" ] ]
+
+
+$S [ #230 "*" "KEYEdelholzAmerikanischNussbaum"  [ "$L 'options\S04AH' +u " ] ]
+$S [ #231 "*" "KEYEdelholzEscheHell"  [ "$L 'options\S0437' +u " ] ]
+$S [ #232 "*" "KEYEdelholzEscheDunkel"  [ "$L 'options\S0438' +u " ] ]
+$S [ #233 "*" "KEYEdelholzVavonaGrauMatt" [ "$L 'options\KEYEdelholzVavonaGrauMatt' +U"  ] ]
+$S [ #234 "*" "KEYEdelholzNussbaumwurzelIntarsien" [ "$L 'options\KEYEdelholzNussbaumwurzelIntarsien' +U"  ] ]
+
+$S [ #240 "*7er\TrimFacelift" "FH5AT" [ "$L 'options\mask-fh5' #M" "$C" "$G #260" ] ]
+$S [ #241 "*7er\TrimFacelift" "FH5FA" [ "$L 'options\mask-fh5' #M" "$C" "$G #260" ] ]
+$S [ #242 "*7er\TrimFacelift" "FU7NB" [ "$L 'options\mask-fu7' #M" "$C" "$G #260" ] ]
+$S [ #243 "*7er\TrimFacelift" "FU7FA" [ "$L 'options\mask-fu7' #M" "$C" "$G #260" ] ]
+$S [ #244 "*7er\TrimFacelift" "FU7SW" [ "$L 'options\mask-fu7' #M" "$C" "$G #260" ] ]
+$S [ #245 "*7er\TrimFacelift" "FU7GE" [ "$L 'options\mask-fu7' #M" "$C" "$G #260" ] ]
+$S [ #246 "*7er\TrimFacelift" "FV7FA" [ "$L 'options\mask-fv7' #M" "$C" "$G #260" ] ]
+$S [ #247 "*7er\TrimFacelift" "FV7GE" [ "$L 'options\mask-fv7' #M" "$C" "$G #260" ] ]
+$S [ #248 "*7er\TrimFacelift" "FV7NB" [ "$L 'options\mask-fv7' #M" "$C" "$G #260" ] ]
+$S [ #249 "*7er\TrimFacelift" "FV7MC" [ "$L 'options\mask-fv7' #M" "$C" "$G #260" ] ]
+$S [ #250 "*7er\TrimFacelift" "FV7SW" [ "$L 'options\mask-fv7' #M" "$C" "$G #260" ] ]
+
+
+$S [ #252 "*7er\TrimFacelift"     [ "$L 'options\mask-fu6' #M"  ] ]
+$S [ #253 "*7er\TrimFacelift" "KEYKomfortsitz" [ "$L 'options\KEYKomfortsitz' +U" "$L 'options\mask-fu6--KEYKomfortsitz' #M"  ] ]
+$S [ #254 "*7er\TrimFacelift" "KEYKlimasitz"   [ "$L 'options\mask-fu6--KEYKlimasitz' #M"  ] ]
+$S [ #255 "*7er\TrimFacelift" [ "$C" ] ]
+
+$S [ #280 "*7er\TrimFacelift" "KEYSerienlenkrad" [ "$L 'options\KEYSerienlenkrad-NoPaint' +u" "$L 'options\KEYSerienlenkrad' #m" ] ]
+$S [ #281 "*7er\TrimFacelift" "KEYSportlenkrad"  [ "$L 'options\KEYSportlenkrad-NoPaint'  +u" "$L 'options\KEYSportlenkrad' #m" ] ]
+$S [ #282 "*7er\TrimFacelift" "KEYHolzLederLenkradEscheHell"   [ "$L 'options\KEYSerienlenkrad' #m" ] ]
+$S [ #282 "*7er\TrimFacelift" "KEYHolzLederLenkradEscheDunkel" [ "$L 'options\KEYSerienlenkrad' #m" ] ]
+
+$S [ #285 "*7er\TrimFacelift" "FV7FA" [ "$C 'le-basaltgrau'" ] ]
+$S [ #286 "*7er\TrimFacelift" "FV7GE" [ "$C 'le-schwarz'" ] ]
+$S [ #287 "*7er\TrimFacelift" "FU7NB" [ "$C 'le-schwarz'" ] ]
+$S [ #288 "*7er\TrimFacelift" "FU6BA" [ "$C 'le-dunkelbeige'" ] ]
+$S [ #289 "*7er\TrimFacelift" "FU6FA" [ "$C 'le-basaltgrau'" ] ]
+$S [ #290 "*7er\TrimFacelift" "FU6GE" [ "$C 'le-schwarz'" ] ]
+$S [ #291 "*7er\TrimFacelift" "FU7FA" [ "$C 'le-basaltgrau'" ] ]
+$S [ #292 "*7er\TrimFacelift" "FV7NB" [ "$C 'le-schwarz'" ] ]
+$S [ #293 "*7er\TrimFacelift" "FV7MC" [ "$C 'le-schwarz'" ] ]
+$S [ #294 "*7er\TrimFacelift" "FV7SW" [ "$C 'le-schwarz'" ] ]
+$S [ #295 "*7er\TrimFacelift" "FU6MC" [ "$C 'le-schwarz'" ] ]
+$S [ #296 "*7er\TrimFacelift" "FU7SW" [ "$C 'le-schwarz'" ] ]
+$S [ #297 "*7er\TrimFacelift" "FU6NB" [ "$C 'le-schwarz'" ] ]
+$S [ #298 "*7er\TrimFacelift" "FU7GE" [ "$C 'le-schwarz'" ] ]
+$S [ #299 "*7er\TrimFacelift" "FH5AT" [ "$C 'le-schwarz'" ] ]
+$S [ #300 "*7er\TrimFacelift" "FU6SW" [ "$C 'le-schwarz'" ] ]
+$S [ #301 "*7er\TrimFacelift" "FH5FA" [ "$C 'le-basaltgrau'" ] ]
+
+$S [ #305 "*7er\TrimFacelift" "KEYHolzLederLenkradEscheHell"   [ "$L 'options\KEYHolzLederLenkradEscheHell'   +u" ] ]
+$S [ #306 "*7er\TrimFacelift" "KEYHolzLederLenkradEscheDunkel" [ "$L 'options\KEYHolzLederLenkradEscheDunkel' +u" ] ]
+
+
+$O [ "S04AH" [513]  "S0437" [513] "S0438" [513]
+     "KEYEdelholzVavonaGrauMatt" [513]  "KEYEdelholzNussbaumwurzelIntarsien" [513] "KEYEdelholzEscheHell" [513] "KEYEdelholzEscheDunkel" [513]
+     "KEYIndividualDachhimmelAnthrazit" [1025] "KEYIndividualDachhimmelAlcantaraAnthrazit" [1025]
+     "S0354" "S0255" "S0453" "S0456"
+     "KEYSerienlenkrad" [257] "KEYSportlenkrad" [257]
+     "S0760" [1] "KEYGetraenkehalter" [1] "KEYKlimaautomatik" "KEYTVFunktion" "KEYNavigationssystem" "KEYMDLaufwerk" "KEYKlimasitz" "KEYKomfortsitz" "KEYCDWechsler" "KEYFrontkamera" "KEYRueckfahrkamera" "KEYHolzLederLenkradEscheHell" [257] "KEYHolzLederLenkradEscheDunkel" [257] ]
+
+

@@ -1,0 +1,100 @@
+
+      <class type="E65 limousine">
+
+        <ecode>E65</ecode>
+        <body>LIMOUSINE</body>
+        <defaultpaint>P0472</defaultpaint>
+
+        <tireinfo>E65</tireinfo>
+        <path>E65Limousine</path>
+
+        <:AUTOSCRIPT>
+          <SA100 "KEYBordmonitor">
+        </>
+
+
+        <:MOTORS>
+
+          <:730i>
+            <tireinfo>E65-1</tireinfo>
+            <*class type="DEF" ref="E65 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165", "KEYSerienlenkrad", "KEYInterieurleistenEscheHell">
+              <HIDE "KEYFelge91">
+            </>
+            <:KEYS>
+              <GL21>
+              <GL22>
+            </>
+          </730i>
+
+          <:735i>
+            <tireinfo>E65-2</tireinfo>
+            <*class type="DEF" ref="E65 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165", "KEYSerienlenkrad", "KEYInterieurleistenEscheHell">
+              <HIDE "KEYFelge91">
+            </>
+            <:KEYS>
+              <GL41>
+              <GL42>
+            </>
+          </735i>
+
+          <:745i>
+            <tireinfo>E65-2</tireinfo>
+            <*class type="DEF" ref="E65 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165", "KEYSerienlenkrad", "KEYInterieurleistenEscheHell">
+              <HIDE "KEYFelge91">
+            </>
+            <:KEYS>
+              <GL61>
+              <GL62>
+            </>
+          </745i>
+
+          <:760i>
+            <tireinfo>E65-3</tireinfo>
+            <*class type="DEF" ref="E65 limousine">
+            <:COSYSCRIPT>
+              <$L "options\v12-overlay" +I>
+            </>
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYE65V12Modifications", "KEYFelge91", "KEYSerienlenkrad", "KEYInterieurleistenNussbaumwurzelE65", "KEYParkDistanceControl">
+              <HIDE "KEYFelge165">
+            </>
+            <:KEYS>
+              <GL81>
+              <GL82>
+            </>
+          </760i>
+
+          <:730d>
+            <tireinfo>E65-1</tireinfo>
+            <*class type="DEF" ref="E65 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165", "KEYSerienlenkrad", "KEYInterieurleistenEscheHell">
+              <HIDE "KEYFelge91">
+            </>
+            <:KEYS>
+              <GM21>
+              <GM22>
+            </>
+          </730d>
+
+          <:740d>
+            <tireinfo>E65-2</tireinfo>
+            <*class type="DEF" ref="E65 limousine">
+            <:AUTOSCRIPT>
+              <DEFAULT "KEYFelge165", "KEYSerienlenkrad", "KEYInterieurleistenEscheHell">
+              <HIDE "KEYFelge91">
+            </class>
+            <:KEYS>
+              <GM41>
+              <GM42>
+            </>
+          </740d>
+
+        </MOTORS>
+      </>

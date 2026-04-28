@@ -1,0 +1,175 @@
+
+    <class type="X3">
+
+      <name>X3</name>
+
+      <:VIEWS>
+?A        <:front>
+?A          <angle>0</angle>
+?A          <pov>FRONT</pov>
+?A          <bodyframe>x=279 y=91 w=423 h=350</bodyframe>
+?A        </>
+        <:frontseite>
+          <angle>45</angle>
+          <pov>FRONTSIDE</pov>
+          <bodyframe>x=126 y=88 w=729 h=362</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=28 y=87 w=924 h=358</bodyframe>
+        </>
+        <:heckseite>
+          <angle>135</angle>
+          <pov>REARSIDE</pov>
+          <bodyframe>x=154 y=75 w=671 h=371</bodyframe>
+        </>
+?A        <:heck>
+?A          <angle>180</angle>
+?A          <pov>REAR</pov>
+?A          <bodyframe>x=293 y=73 w=397 h=370</bodyframe>
+?A        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <class type="COMPONENTS">
+
+        <P0A07>
+        <P0A08>
+        <P0A11>
+        <P0354>
+        <P0896>
+        <P0470>
+        <P0891>
+        <P0475>
+        <P0668>
+        <P0300>
+
+        CATDachsysteme
+        KEYGrundtraeger
+	KEYGepaeckkorb
+;	KEYSkitraeger
+	KEYSnowboardhalterung
+	KEYSurfboardhalterung
+        KEYRennradhalterung
+;	KEYDachbox
+	KEYDachboxLackiert
+	KEYDachboxLackiertLang
+        <:KEYFahrradlift>
+          <parent>CATDachsysteme</parent>
+        </>
+
+        <CATInterieurfarben>
+
+        <KEYE83FxxAD>
+        <KEYE83FxxSW>
+        <KEYE83FxxAZ>
+        <KEYE83FxxGC>
+        <KEYE83FxxBZ>
+        <KEYE83FxxSZ>
+        <KEYE83FxxAT>
+
+        <:KEYAerodynamikpaket>
+          <name>$T[Aerodynamikpaket] I</name>
+        </>
+        <KEYAerodynamikpaketII>
+        <KEYMAerodynamikpaket>
+        <KEYWeisseBlinker>
+        <KEYXenonscheinwerfer>
+        <KEYScheinwerferreinigungsanlage>
+        <KEYParkDistanceControl>
+        <KEYDachreling>
+        <KEYTrittbrett>
+        <KEYSchmutzfaenger>
+        <KEYUnterfahrschutz>
+        <:KEYSportnachschalldaempfer>
+          <btn>type=standard</btn>
+        </>
+        <:KEYAuspuffrohrblendeChrom>
+          <btn>type=standard</btn>   // kein Radio-Button, da diese Ausstattung vom Aeropaket geschaltet wird!
+        </>
+        <KEYCarCoverOutdoor>
+
+        <:CATSchaltknauf>
+          <iconfile>GASchaltknauf</iconfile>
+        </>
+        <GASchaltknauf>
+        <KEYSchaltknaufLederSpangeBirkeMaserHell>
+        <KEYSchaltknaufLederSpangeSchiefergrauDunkel>
+
+        <:CATWaehlhebel>
+          <iconfile>GAWaehlhebel</iconfile>
+        </>
+	<GAWaehlhebel>
+        <KEYWaehlhebelLederSpangeBirkeMaserHell>
+
+        <KEYHandbremsgriffBirkeMaserHell>
+
+        <:CATInterieurleisten>
+          <iconfile>KEYInterieurleistenAluminiumWolkenschliff</iconfile>
+        </>
+        <KEYInterieurleistenTitanMatt>
+        <KEYInterieurleistenAluminiumWolkenschliff>
+        <KEYInterieurleistenRiegelahornDunkel>
+        <KEYInterieurleistenBirkeMaserHell>
+;        <KEYInterieurleistenSchiefergrauDunkel>
+
+        ;<KEYAlupedale>
+        <KEYSitzheizung>
+        <KEYLeseleuchte>
+        <KEYHandlampe>
+        <KEYGetraenkehalterModul>
+        <KEYSolarius>
+        <KEYFeuerloescher>
+        <KEYFondschutzdecke>
+
+        ;<CATAutotelefone>
+        <:KEYFreisprecheinrichtungBluetooth>
+          <parent></parent>
+        </>
+
+        <KEYBordmonitor>
+        <KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYTVFunktion>
+        <KEYRadionavigationIndianapolis>
+        <:KEYCDWechsler>
+          <visibility>detail</visibility>
+        </>
+        <KEYCDAufbewahrungstasche>
+        <KEYDVDSystem>
+	<KEYBMWDVDSystemAdvanced>
+        <KEYFahrtenbuch>
+
+        <KEYKleiderbuegel>
+        <KEYKuehltasche>
+
+        <CATGepaeckraum>
+        <KEYAntirutschmatte>
+        <KEYGepaeckraumBodennetz>
+        <KEYGepaeckraumFaltbox>
+        <KEYGepaeckraumFormmatte>
+        <KEYGepaeckraumSpanngurte>
+        <KEYGepaeckraumTrennnetz>
+        <KEYGepaeckraumVerzurrschienen>
+        <KEYGepaeckraumWanne>
+        <KEYWendeboden>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+        <KEYFelge109>
+        <KEYFelge148>
+
+      </>
+
+    </>
+

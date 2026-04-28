@@ -1,0 +1,134 @@
+
+    <class type="E65 limousine">
+
+      <name>Limousine</name>
+
+      <:VIEWS>
+        <:front>
+          <angle>0</angle>
+          <pov>FRONT</pov>
+          <bodyframe>x=233 y=79 w=519 h=375</bodyframe>
+        </>
+        <:seite>
+          <angle>90</angle>
+          <pov>SIDE</pov>
+          <bodyframe>x=28 y=151 w=924 h=289</bodyframe>
+        </>
+        <:heck>
+          <angle>180</angle>
+          <pov>REAR</pov>
+          <bodyframe>x=246 y=79 w=487 h=374</bodyframe>
+        </>
+        <:interior>
+          <angle>180</angle>
+          <pov>DASHBOARD</pov>
+          <bodyframe>x=0 y=0 w=980 h=460</bodyframe>
+        </>
+      </>
+
+      <:COMPONENTS>
+
+        <P0354>
+        <P0300>
+        <P0317>
+        <P0430>
+        <P0449>
+        <P0472>
+        <P0475>
+        <P0481>
+        <P0482>
+        <P0668>
+        <P0891>
+        <P0892>
+        <P0894>
+        <P0897>
+
+        <CATInterieurfarben>
+
+        <KEYE65FxxAT>
+        <KEYE65FxxSW>
+        <KEYE65FxxFA>
+        <KEYE65FxxFA1>
+        <KEYE65FxxBA>
+        <KEYE65FxxBA1>
+        <KEYE65FxxBT>
+        <KEYE65FxxGN>
+        <KEYE65FxxNG>
+        <KEYE65FxxNG1>
+        <KEYE65FxxNB>
+        <KEYE65FxxKB>
+        <KEYE65FxxGE>
+
+	<KEYE65V12Modifications>
+
+        <KEYWeisseBlinker>
+        <KEYParkDistanceControl>
+
+        <CATLenkraederMultifunktion>
+        <:KEYSerienlenkrad>
+          <parent>CATLenkraederMultifunktion</parent>
+        </>
+        <KEYHolzLederLenkradKirscheDunkel>
+        <KEYHolzLederLenkradEscheHell>
+        <KEYHolzLederLenkradEscheDunkel>
+        <:KEYSportlenkrad>
+          <parent>CATLenkraederMultifunktion</parent>
+        </>
+
+        <CATInterieurleisten>
+        <KEYInterieurleistenEscheHell>
+        <KEYInterieurleistenEscheDunkel>
+        <KEYInterieurleistenKirscheHell>
+        <KEYInterieurleistenKirscheDunkel>
+        <KEYInterieurleistenNussbaumwurzelE65>
+
+	<CATFussmatten>
+        <KEYFussmattenVeloursE65>
+        <KEYFussmattenCountryE65>
+        <KEYFussmattenCityE65>
+        <KEYGummiFussmattenE65>
+
+	<KEYLeseleuchte>
+        <KEYAblagesystem>
+        <:KEYGetraenkehalter>
+          <visibility>detail</visibility>
+        </>
+        <KEYKleiderbuegel>
+
+        <KEYAutotelefonCordless>
+        <KEYAutotelefonProfessional>
+        <KEYFreisprecheinrichtungBluetooth>
+
+        <KEYBordmonitor>
+        <KEYNavigationssystem>
+        <KEYFrontkamera>
+        <KEYRueckfahrkamera>
+        <KEYTVFunktion>
+        <KEYCDWechsler>
+        <KEYDVDWechsler>
+        ;<KEYCDAufbewahrungstasche>
+
+	<KEYKuehltasche>
+
+	<CATGepaeckraum>
+	<KEYAntirutschmatte>
+	<KEYGepaeckraumBodennetz>
+	<KEYGepaeckraumFaltbox>
+	<KEYGepaeckraumFormmatte>
+	<KEYGepaeckraumSpanngurte>
+	<KEYGepaeckraumWanne>
+
+        <CATKindersitze>
+        <KEYBabyseat>
+        <KEYJuniorseat>
+        <KEYJuniorseatII>
+        <KEYJuniorseatIII>
+
+	<KEYFeuerloescher>
+
+        <KEYFelge165>
+        <KEYFelge91>
+
+      </COMPONENTS>
+
+    </>
