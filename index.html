@@ -43,12 +43,10 @@ body{background:var(--dark);color:var(--white);font-family:'Rajdhani',sans-serif
 .slabel{font-size:11px;font-weight:500;color:var(--silver);line-height:1.3;}
 .sitem.sel .slabel{color:var(--white);}
 #content{display:flex;flex-direction:column;overflow:hidden;}
-#viewer{background:#0c0c0c;flex:1;min-height:310px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+#viewer{background:#0d0d0d;flex:1;min-height:310px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 #viewer::before{content:'';position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(28,105,211,.04),transparent);pointer-events:none;z-index:1;}
-#img-stack{position:relative;width:100%;max-width:980px;line-height:0;}
-#img-bkgnd{width:100%;display:block;visibility:hidden;transition:opacity .3s;}
-#img-color{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:multiply;}
-.opt-layer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+#canvas-wrap{position:relative;width:100%;max-width:980px;}
+#main-canvas{width:100%;display:block;}
 .mbadge{position:absolute;top:14px;left:18px;z-index:10;}
 .mb-s{font-size:8px;letter-spacing:4px;color:var(--dim);text-transform:uppercase;font-weight:700;}
 .mb-n{font-size:20px;font-weight:300;color:var(--white);letter-spacing:.5px;line-height:1.1;}
@@ -58,7 +56,7 @@ body{background:var(--dark);color:var(--white);font-family:'Rajdhani',sans-serif
 #loader{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none;}
 .spin{width:28px;height:28px;border:2px solid #222;border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 8px;}
 @keyframes spin{to{transform:rotate(360deg)}}
-.load-txt{font-size:9px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;}
+.ltxt{font-size:9px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;}
 #cfgbar{background:var(--panel);border-top:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;min-height:44px;}
 .ctag{display:flex;align-items:center;gap:5px;}
 .ctk{font-size:7px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--dim);}
@@ -142,11 +140,10 @@ body{background:var(--dark);color:var(--white);font-family:'Rajdhani',sans-serif
     <div id="viewer">
       <div class="mbadge"><div class="mb-s" id="ds">BMW Series</div><div class="mb-n" id="dm">Select a model</div></div>
       <div class="vbtns" id="vbtns"></div>
-      <div id="img-stack">
-        <img id="img-bkgnd" src="" alt="">
-        <img id="img-color" src="" alt="" style="display:none">
+      <div id="canvas-wrap">
+        <canvas id="main-canvas"></canvas>
       </div>
-      <div id="loader"><div class="spin"></div><div class="load-txt">Loading</div></div>
+      <div id="loader"><div class="spin"></div><div class="ltxt">Loading</div></div>
     </div>
     <div id="cfgbar">
       <div class="ctag"><span class="ctk">Model</span><span class="ctv" id="cm">—</span></div>
@@ -163,6 +160,7 @@ body{background:var(--dark);color:var(--white);font-family:'Rajdhani',sans-serif
 <script>
 const BASE='https://mildmanneredmiles.github.io/BMW_V3.3_Configurator_Update/Data';
 const MF={"1er/E87":{"FrontSeite":{"o":["KEYAerodynamikpaket-Nopaint","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGlasschiebedach","KEYGrundtraeger","KEYMAerodynamikpaket-Nopaint","KEYNebelscheinwerfer","KEYParkDistanceControl","KEYParkDistanceControlLow--KEYMAerodynamikpaket","KEYParkDistanceControlLow","KEYRennradhalterung","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYXenonscheinwerfer","MDChromniere"],"c":["P0300","P0354","P0438","P0475","P0668","P0A17","P0A18","P0A19","P0A21","P0A22","P0A23","P0A35"]},"HeckSeite":{"o":["KEYAerodynamikpaket-Nopaint","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYMAerodynamikpaket-Nopaint","KEYParkDistanceControl","KEYParkDistanceControlLow","KEYRennradhalterung","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","MDChromAuspuffZweirohr","auspuff-d-1"],"c":["P0300","P0354","P0438","P0475","P0668","P0A17","P0A18","P0A19","P0A21","P0A22","P0A23","P0A35"]},"Seite":{"o":["KEYAerodynamikpaket-Nopaint","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYMAerodynamikpaket-Nopaint","KEYNebelscheinwerfer","KEYRennradhalterung","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung"],"c":["P0300","P0354","P0438","P0475","P0668","P0A17","P0A18","P0A19","P0A21","P0A22","P0A23","P0A35"]}},"3er/E46CabrioFacelift":{"frontseite":{"o":["KEYMAerodynamikpaket-NoPaint","KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0364","P0372","P0376","P0430","P0438","P0442","P0475","P0668","P0897","P0A18","P0A23","P0A35","P0A43","p0405","p0416","p0a07","p0a08"]},"heckseite":{"o":["KEYMAerodynamikpaket-NoPaint","KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0364","P0372","P0376","P0430","P0438","P0442","P0475","P0668","P0897","P0A18","P0A23","P0A35","P0A43","p0405","p0416","p0a07","p0a08"]},"seite":{"o":["KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0364","P0372","P0376","P0430","P0438","P0442","P0475","P0668","P0897","P0A18","P0A23","P0A35","P0A43","p0405","p0416","p0a07","p0a08"]}},"3er/E46CompactFacelift":{"front":{"o":["KEYHeckleuchtenChrom","KEYHeckwischer","KEYMAerodynamikpaket-NoPaint","KEYNebelscheinwerfer","KEYTitanLineExterieur","KEYWeisseBlinker","chromniere"],"c":["P0300","P0317","P0335","P0354","P0364","P0379","P0405","P0430","P0438","P0442","P0468","P0470","P0475","P0476","P0478","P0668","P0894","P0A07","P0A08"]},"heck":{"o":["KEYHeckleuchtenChrom","KEYHeckwischer","KEYMAerodynamikpaket-NoPaint","KEYTitanLineExterieur","KEYWeisseBlinker","auspuff-1","auspuff-2","auspuff-d-1","griff-schwarz","ohne-wischer"],"c":["P0300","P0317","P0335","P0354","P0364","P0379","P0405","P0430","P0438","P0442","P0468","P0470","P0475","P0476","P0478","P0668","P0894","P0A07","P0A08"]},"seite":{"o":["Griffe-Schwarz","KEYHeckleuchtenChrom","KEYHeckwischer","KEYTitanLineExterieur","KEYWeisseBlinker","Ohne-Wischer","auspuff-1","auspuff-2","auspuff-d-1"],"c":["P0300","P0317","P0335","P0354","P0364","P0379","P0405","P0430","P0438","P0442","P0468","P0470","P0475","P0476","P0478","P0668","P0894","P0A07","P0A08"]}},"3er/E46CoupeFacelift":{"frontseite":{"o":["KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYMAerodynamikpaket-NoPaint","KEYRennradhalterung","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0364","P0372","P0376","P0430","P0438","P0442","P0475","P0668","P0897","P0A18","P0A23","P0A35","P0A43","p0335","p0379","p0405","p0416","p0a07","p0a08"]},"heckseite":{"o":["KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYMAerodynamikpaket-NoPaint","KEYRennradhalterung","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0364","P0372","P0376","P0430","P0438","P0442","P0475","P0668","P0897","P0A18","P0A23","P0A35","P0A43","p0335","p0379","p0405","p0416","p0a07","p0a08"]},"seite":{"o":["KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYRennradhalterung","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0364","P0372","P0376","P0430","P0438","P0442","P0475","P0668","P0897","P0A18","P0A23","P0A35","P0A43","p0335","p0379","p0405","p0416","p0a07","p0a08"]}},"3er/E46LimousineFacelift":{"Front":{"o":["KEYAerodynamikpaket-NoPaint","KEYWeisseBlinker","basemodels","chromniere","titanblende"],"c":["P0300","P0317","P0354","P0364","P0372","P0400","P0405","P0430","P0438","P0442","P0475","P0668","P0894","P0897","P0A07","P0A08"]},"Heck":{"o":["KEYAerodynamikpaket-NoPaint","KEYWeisseBlinker","auspuff-1-d","auspuff-1","auspuff-2-d","auspuff-2","auspuff-330","basemodels"],"c":["P0300","P0317","P0354","P0364","P0372","P0400","P0405","P0430","P0438","P0442","P0475","P0668","P0894","P0897","P0A07","P0A08"]},"Seite":{"o":["KEYWeisseBlinker","basemodels","chromleiste","titanblende"],"c":["P0300","P0317","P0354","P0364","P0372","P0400","P0405","P0430","P0438","P0442","P0475","P0668","P0894","P0897","P0A07","P0A08"]}},"3er/E46TouringFacelift":{"Front":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachreling","KEYWeisseBlinker","chromniere","titanblende"],"c":["P0300","P0317","P0354","P0364","P0372","P0400","P0405","P0430","P0438","P0442","P0475","P0668","P0894","P0897","P0A07","P0A08"]},"Heck":{"o":["KEYAerodynamikpaket-NoPaint","KEYWeisseBlinker","KEYdachreling"],"c":["P0300","P0317","P0354","P0364","P0372","P0400","P0405","P0430","P0438","P0442","P0475","P0668","P0894","P0897","P0A07","P0A08"]},"Seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachreling","KEYWeisseBlinker","basemodels","titanblende"],"c":["P0300","P0317","P0354","P0364","P0372","P0400","P0405","P0430","P0438","P0442","P0475","P0668","P0894","P0897","P0A07","P0A08"]}},"3er/E90Dashboard":{},"3er/E90Limousine":{"FrontSeite":{"o":["KEYAerodynamikKomponenten","KEYAufsatzteileMAerodynamikpaket","KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGlasschiebedach","KEYGrundtraeger","KEYHeckleuchtenBlackline","KEYMAerodynamikpaket-NoPaint","KEYNebelscheinwerfer","KEYParkDistanceControlLow--KEYMAerodynamikpaket","KEYParkDistanceControlLow","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger","KEYSnowboardhalterung","KEYStossleisten","KEYStossleistenSeitlich","KEYSurfboardhalterung","KEYUSVersion","KEYUniversalhalterung","KEYXenonscheinwerfer","MDChromniere","MDScheibenrahmenChrom","MDTitanstab"],"c":["P0300","P0354","P0438","P0475","P0668","P0A07","P0A22","P0A23","P0A34","P0A35","P0A41","P0A43"]},"HeckSeite":{"o":["KEYAerodynamikKomponenten","KEYAuspuffrohrblendeChrom","KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDiffusor","KEYDoppelAuspuffrohrblendeChrom","KEYGepaeckkorb","KEYGlasschiebedach","KEYGrundtraeger","KEYHeckleuchtenBlackline","KEYMAerodynamikpaket-NoPaint","KEYParkDistanceControlLow","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger","KEYSnowboardhalterung","KEYSportnachschalldaempfer","KEYStossleisten","KEYStossleistenSeitlich","KEYSurfboardhalterung","KEYUSVersion","KEYUniversalhalterung","MDDieselEinzelrohr","MDDoppelendrohr","MDDoppelendrohrEdelstahl","MDScheibenrahmenChrom"],"c":["P0300","P0354","P0438","P0475","P0668","P0A07","P0A22","P0A23","P0A34","P0A35","P0A41","P0A43"]},"Seite":{"o":["KEYAerodynamikKomponenten","KEYAufsatzteileMAerodynamikpaket","KEYAuspuffrohrblendeChrom","KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDoppelAuspuffrohrblendeChrom","KEYGepaeckkorb","KEYGlasschiebedach","KEYGrundtraeger","KEYHeckleuchtenBlackline","KEYMAerodynamikpaket-NoPaint","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger","KEYSnowboardhalterung","KEYSportnachschalldaempfer","KEYStossleisten","KEYStossleistenSeitlich","KEYSurfboardhalterung","KEYUSVersion","KEYUniversalhalterung","KEYXenonscheinwerfer","MDDoppelendrohr","MDScheibenrahmenChrom"],"c":["P0300","P0354","P0438","P0475","P0668","P0A07","P0A22","P0A23","P0A34","P0A35","P0A41","P0A43"]}},"3er/E91Touring":{"frontseite":{"o":["KEYAerodynamikKomponenten","KEYAktiveGeschwindigkeitsregelung","KEYAufsatzteileMAerodynamikpaket","KEYDachbox--KEYDachreling","KEYDachbox","KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGruenkeilfrontscheibe","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYHeckleuchtenBlackline","KEYMAerodynamikpaket-NoPaint","KEYNebelscheinwerfer","KEYPanoramaglasdach","KEYParkDistanceControlLow--KEYMAerodynamikpaket","KEYParkDistanceControlLow","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSonnenrolloSeitenscheibe","KEYStossleisten","KEYStossleistenSeitlich","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYUniversalhalterung--KEYDachreling","KEYUniversalhalterung","KEYXenonscheinwerfer","MDChromniere","MDScheibenrahmenChrom","MDTitanstab","falad","falat","falb4","fffat","fffb5","fffb6","fkab4","fkasw","flcad","flcb4","flcb7","flcb8","flcsw"],"c":["P0300","P0354","P0381","P0438","P0475","P0668","P0A07","P0A22","P0A23","P0A34","P0A35","P0A41","P0A43"]},"heckseite":{"o":["FALAD","FALAT","FALB4","FFFAT","FFFB5","FFFB6","FKAB4","FKASW","FLCAD","FLCB4","FLCB7","FLCB8","FLCSW","KEYAerodynamikKomponenten","KEYAnhaengerkupplung","KEYAuspuffrohrblendeChrom","KEYDachbox--KEYDachreling","KEYDachbox","KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYDiffusor","KEYDoppelAuspuffrohrblendeChrom","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYHeckleuchtenBlackline","KEYMAerodynamikpaket-NoPaint","KEYPanoramaglasdach","KEYParkDistanceControlLow","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYRusspartikelfilter","KEYSchmutzfaenger","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSonnenrolloSeitenscheibe","KEYSportnachschalldaempfer","KEYStossleisten","KEYStossleistenSeitlich","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYUniversalhalterung--KEYDachreling","KEYUniversalhalterung","MDAuspuff-1-Rohr-D","MDAuspuff-1-Rohr","MDAuspuff-2-Rohr-Chrom","MDAuspuff-2-Rohr","MDScheibenrahmenChrom"],"c":["P0300","P0354","P0381","P0438","P0475","P0668","P0A07","P0A22","P0A23","P0A34","P0A35","P0A41","P0A43"]},"seite":{"o":["KEYAerodynamikKomponenten","KEYAnhaengerkupplung","KEYAufsatzteileMAerodynamikpaket","KEYAuspuffrohrblendeChrom","KEYDachbox--KEYDachreling","KEYDachbox","KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYDoppelAuspuffrohrblendeChrom","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGruenkeilfrontscheibe","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYHeckleuchtenBlackline","KEYMAerodynamikpaket-NoPaint","KEYPanoramaglasdach","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYRusspartikelfilter","KEYSchmutzfaenger","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSportnachschalldaempfer","KEYStossleisten","KEYStossleistenSeitlich","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYUniversalhalterung--KEYDachreling","KEYUniversalhalterung","KEYXenonscheinwerfer","MDAuspuff-1-Rohr-D","MDAuspuff-1-Rohr","MDAuspuff-2-Rohr-Chrom","MDAuspuff-2-Rohr","MDScheibenrahmenChrom","falad","falat","falb4","fffat","fffb5","fffb6","fkab4","fkasw","flcad","flcb4","flcb7","flcb8","flcsw"],"c":["P0300","P0354","P0381","P0438","P0475","P0668","P0A07","P0A22","P0A23","P0A34","P0A35","P0A41","P0A43"]}},"3er/detail":{},"3er/interior":{},"5er/E39Interior":{},"5er/E39Limousine":{"Front":{"o":["KEYAerodynamikpaket-NoPaint","KEYNebelscheinwerfer","KEYWeisseBlinker","nierechrom","niereschwarz"],"c":["P0300","P0317","P0334","P0354","P0364","P0372","P0405","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0892","P0894","P0896","p0356"]},"Heck":{"o":["KEYAerodynamikpaket-NoPaint","KEYHeckspoiler-NoPaint","KEYWeisseBlinker","chromgriff"],"c":["P0300","P0317","P0334","P0354","P0364","P0372","P0405","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0892","P0894","P0896","p0356"]},"Seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYWeisseBlinker","chromleiste"],"c":["P0300","P0317","P0334","P0354","P0364","P0372","P0405","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0892","P0894","P0896","p0356"]}},"5er/E39Touring":{"Front":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachreling","KEYNebelscheinwerfer","KEYWeisseBlinker","nierechrom","niereschwarz"],"c":["P0300","P0317","P0334","P0354","P0364","P0372","P0405","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0892","P0894","P0896","p0356"]},"Heck":{"o":["KEYAerodynamikpaket-NoPaint","KEYWeisseBlinker","KEYdachreling","auspuff-1-d","auspuff-1","auspuff-2"],"c":["P0300","P0317","P0334","P0354","P0364","P0372","P0405","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0892","P0894","P0896","p0356"]},"Seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachreling","KEYWeisseBlinker"],"c":["P0300","P0317","P0334","P0354","P0364","P0372","P0405","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0892","P0894","P0896","p0356"]}},"5er/E60Interior":{},"5er/E60Limousine":{"FrontSeite":{"o":["Chromnierenstaebe","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYGrundtraeger5er--KEYSurfboardhalterung","KEYGrundtraeger5er","KEYMAerodynamikpaket-NoPaint","KEYParkDistanceControlLow","KEYRennradhalterung","KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYWeisseHeckleuchten","KEYXenonscheinwerfer"],"c":["P0300","P0317","P0349","P0354","P0416","P0430","P0475","P0668","P0892","P0894","P0A06","P0A07","P0A08","P0A09","P0A35","P0A39","P0A43"]},"HeckSeite":{"o":["Auspuff-Diesel-2","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYGrundtraeger5er","KEYMAerodynamikpaket-NoPaint","KEYParkDistanceControlLow","KEYRennradhalterung","KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYWeisseHeckleuchten"],"c":["P0300","P0317","P0349","P0354","P0416","P0430","P0475","P0668","P0892","P0894","P0A06","P0A07","P0A08","P0A09","P0A35","P0A39","P0A43"]},"Seite":{"o":["FensterrahmenChrom","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGrundtraeger","KEYGrundtraeger5er","KEYMAerodynamikpaket-NoPaint","KEYRennradhalterung","KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYWeisseHeckleuchten"],"c":["P0300","P0317","P0349","P0354","P0416","P0430","P0475","P0668","P0892","P0894","P0A06","P0A07","P0A08","P0A09","P0A35","P0A39","P0A43"]}},"5er/E61Touring":{"frontseite":{"o":["KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYGrundtraeger5er--KEYSurfboardhalterung","KEYGrundtraeger5er","KEYMAerodynamikpaket-NoPaint","KEYParkDistanceControlLow","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYWeisseHeckleuchten","KEYXenonscheinwerfer","MDChromnierenstaebe"],"c":["P0300","P0317","P0349","P0354","P0416","P0430","P0475","P0668","P0892","P0894","P0A07","P0A08","P0A09","P0A35","P0A39","P0A43"]},"heckseite":{"o":["KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYGrundtraeger5er","KEYParkDistanceControlLow","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYWeisseHeckleuchten","MDAuspuffDiesel"],"c":["P0300","P0317","P0349","P0354","P0416","P0430","P0475","P0668","P0892","P0894","P0A07","P0A08","P0A09","P0A35","P0A39","P0A43"]},"seite":{"o":["KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYGrundtraeger5er","KEYMAerodynamikpaket-NoPaint","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYWeisseHeckleuchten","MDAuspuffDiesel"],"c":["P0300","P0317","P0349","P0354","P0416","P0430","P0475","P0668","P0892","P0894","P0A07","P0A08","P0A09","P0A35","P0A39","P0A43"]}},"6er/E63Coupe":{"FrontSeite":{"o":[],"c":["P0300","P0354","P0440","P0475","P0668","P0894","P0A07","P0A08","P0A13","P0A14","P0A35","P0A39"]},"HeckSeite":{"o":[],"c":["P0300","P0354","P0440","P0475","P0668","P0894","P0A07","P0A08","P0A13","P0A14","P0A35","P0A39"]},"Seite":{"o":[],"c":["P0300","P0354","P0440","P0475","P0668","P0894","P0A07","P0A08","P0A13","P0A14","P0A35","P0A39"]}},"6er/E64Cabrio":{"FrontSeite":{"o":["KEYWindschutz"],"c":["P0300","P0354","P0440","P0475","P0668","P0894","P0A07","P0A08","P0A13","P0A14","P0A35","P0A39"]},"HeckSeite":{"o":["KEYWindschutz"],"c":["P0300","P0354","P0440","P0475","P0668","P0894","P0A07","P0A08","P0A13","P0A14","P0A35","P0A39"]},"Seite":{"o":["KEYWindschutz"],"c":["P0300","P0354","P0440","P0475","P0668","P0894","P0A07","P0A08","P0A13","P0A14","P0A35","P0A39"]}},"6er/Interior":{},"6er/detail":{},"7er/Detail":{},"7er/E38Limousine":{"Front":{"o":["KEYWeisseBlinker"],"c":["P0263","P0300","P0303","P0317","P0334","P0339","P0354","P0356","P0363","P0372","P0390","P0397","P0405","P0411","P0418","P0430","P0440","P0443","P0449","P0668"]},"Heck":{"o":["KEYGriffleisteChrom","KEYSchmutzfaengerHinten","KEYWeisseBlinker"],"c":["P0263","P0300","P0303","P0317","P0334","P0339","P0354","P0356","P0363","P0372","P0390","P0397","P0405","P0411","P0418","P0430","P0440","P0443","P0449","P0668"]},"Seite":{"o":["KEYSchmutzfaengerHinten","KEYSchmutzfaengerVorne","KEYWeisseBlinker"],"c":["P0263","P0300","P0303","P0317","P0334","P0339","P0354","P0356","P0363","P0372","P0390","P0397","P0405","P0411","P0418","P0430","P0440","P0443","P0449","P0668"]}},"7er/E65Dashboard":{},"7er/E65Facelift":{"FrontSeite":{"o":["KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachleistenChrom","KEYGepaeckkorb","KEYGlasschiebedach","KEYGruenkeilfrontscheibe","KEYGrundtraeger","KEYIndividualHochglanzShadowline-NoPaint","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYUniversalhalterung","V12-Overlay"],"c":["p0300","p0354","p0472","p0475","p0481","p0482","p0668","p0A35","p0A36","p0A38","p0A39","p0A43"]},"HeckSeite":{"o":["KEYAnhaengerkupplung","KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachleistenChrom","KEYGepaeckkorb","KEYGrundtraeger","KEYIndividualHochglanzShadowline-NoPaint","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYUniversalhalterung","V12-Overlay"],"c":["p0300","p0354","p0472","p0475","p0481","p0482","p0668","p0A35","p0A36","p0A38","p0A39","p0A43"]},"Seite":{"o":["KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGlasschiebedach","KEYGruenkeilfrontscheibe","KEYGrundtraeger","KEYIndividualHochglanzShadowline-NoPaint","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYUniversalhalterung"],"c":["p0300","p0354","p0472","p0475","p0481","p0482","p0668","p0A35","p0A36","p0A38","p0A39","p0A43"]}},"7er/E65Limousine":{"Front":{"o":["KEYWeisseBlinker","V12-Overlay"],"c":["P0300","P0317","P0354","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0891","P0892","P0894","P0896","P0897"]},"Heck":{"o":["KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0891","P0892","P0894","P0896","P0897"]},"Seite":{"o":["KEYE65V12Modifications","KEYWeisseBlinker"],"c":["P0300","P0317","P0354","P0430","P0449","P0472","P0475","P0481","P0482","P0668","P0891","P0892","P0894","P0896","P0897"]}},"7er/E66Facelift":{"frontseite":{"o":["KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachleistenChrom","KEYGepaeckkorb","KEYGlasschiebedach","KEYGruenkeilfrontscheibe","KEYGrundtraeger","KEYIndividualHochglanzShadowline-NoPaint","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYUniversalhalterung","V12-Overlay"],"c":["p0300","p0354","p0472","p0475","p0481","p0482","p0668","p0A35","p0A36","p0A38","p0A39","p0A43"]},"heckseite":{"o":["KEYAnhaengerkupplung","KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachleistenChrom","KEYGepaeckkorb","KEYGrundtraeger","KEYIndividualHochglanzShadowline-NoPaint","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYUniversalhalterung","V12-Overlay"],"c":["p0300","p0354","p0472","p0475","p0481","p0482","p0668","p0A35","p0A36","p0A38","p0A39","p0A43"]},"seite":{"o":["KEYAnhaengerkupplung","KEYDachbox","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYGepaeckkorb","KEYGlasschiebedach","KEYGruenkeilfrontscheibe","KEYGrundtraeger","KEYIndividualHochglanzShadowline-NoPaint","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYUSVersion","KEYUniversalhalterung","V12-Overlay"],"c":["p0300","p0354","p0472","p0475","p0481","p0482","p0668","p0A35","p0A36","p0A38","p0A39","p0A43"]}},"X/E53":{"Front":{"o":["KEYAerodynamikpaket-NoPaint","KEYFrontbuegelChrom","KEYUnterfahrschutz","KEYWeisseBlinker","KEYZusatzscheinwerfer","chromniere"],"c":["P0300","P0354","P0362","P0364","P0372","P0400","P0411","P0418","P0430","P0436","P0442","P0443","P0475","P0668"]},"Heck":{"o":["KEYAerodynamikpaket-NoPaint","KEYWeisseBlinker","KEYZusatzscheinwerfer","auspuff-0","auspuff-2","auspuff-4"],"c":["P0300","P0354","P0362","P0364","P0372","P0400","P0411","P0418","P0430","P0436","P0442","P0475","P0668"]},"Seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYFrontbuegelChrom","KEYUnterfahrschutz","KEYWeisseBlinker","KEYZusatzscheinwerfer","TitanLineExterieur-GriffLeisteHinten"],"c":["P0300","P0354","P0362","P0364","P0372","P0400","P0411","P0418","P0430","P0436","P0442","P0443","P0475","P0668"]}},"X/E53Facelift":{"frontseite":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYTrittbrett","KEYUnterfahrschutz","KEYWeisseBlinker","KEYZusatzscheinwerfer","KEYZusatzscheinwerferII","chromniere"],"c":["P0349","P0381","P0472","P0482","p0300","p0354","p0430","p0475","p0481","p0668","p0a11"]},"heckseite":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSportnachschalldaempfer","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYTrittbrett","KEYWeisseBlinker","KEYZusatzscheinwerfer"],"c":["P0349","P0381","P0472","P0482","p0300","p0354","p0430","p0475","p0481","p0668","p0a11"]},"seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYDachboxLackiert-NoPaint--KEYDachreling","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint--KEYDachreling","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb--KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger--KEYDachreling","KEYGrundtraeger","KEYRennradhalterung--KEYDachreling","KEYRennradhalterung","KEYSkitraeger--KEYDachreling","KEYSkitraeger","KEYSnowboardhalterung--KEYDachreling","KEYSnowboardhalterung","KEYSurfboardhalterung--KEYDachreling","KEYSurfboardhalterung","KEYTrittbrett","KEYUnterfahrschutz","KEYWeisseBlinker","KEYZusatzscheinwerfer"],"c":["P0349","P0381","P0472","P0482","p0300","p0354","p0430","p0475","p0481","p0668","p0a11"]}},"X/E53Interior":{},"X/E83":{"frontseite":{"o":["KEYAerodynamikpaket-NoPaint","KEYAerodynamikpaketII-NoPaint","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger","KEYMAerodynamikpaket-NoPaint","KEYParkDistanceControl","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYTrittbrett","KEYUnterfahrschutz","KEYWeisseBlinker","KEYXenonscheinwerfer"],"c":["p0300","p0354","p0470","p0475","p0668","p0891","p0896","p0a07","p0a08","p0a11"]},"heckseite":{"o":["KEYAerodynamikpaket-NoPaint","KEYAuspuffrohrblendeChrom","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger","KEYMAerodynamikpaket-NoPaint","KEYParkDistanceControl","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger","KEYSnowboardhalterung","KEYSportnachschalldaempfer","KEYSurfboardhalterung","KEYTrittbrett","KEYWeisseBlinker","MDAuspuffDiesel"],"c":["p0300","p0354","p0470","p0475","p0668","p0891","p0896","p0a07","p0a08","p0a11"]},"seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYAerodynamikpaketII-NoPaint","KEYAuspuffrohrblendeChrom","KEYDachboxLackiert-NoPaint","KEYDachboxLackiertLang-NoPaint","KEYDachreling","KEYGepaeckkorb","KEYGrundtraeger","KEYParkDistanceControl","KEYRennradhalterung","KEYSchmutzfaenger","KEYSkitraeger","KEYSnowboardhalterung","KEYSurfboardhalterung","KEYTrittbrett","KEYUnterfahrschutz","KEYWeisseBlinker","MDAuspuffDiesel"],"c":["p0300","p0354","p0470","p0475","p0668","p0891","p0896","p0a07","p0a08","p0a11"]}},"Z/Z3-coupe":{"Front":{"o":[],"c":["P0300","P0303","P0306","P0337","P0354","P0362","P0364","P0415","P0430","P0468","P0472","P0475","P0668"]},"Heck":{"o":["KEYAuspuffrohrblendeChrom","KEYHeckklappengriffChrom","auspuff-2-c","auspuff-2","griff28"],"c":["P0300","P0303","P0306","P0337","P0354","P0362","P0364","P0415","P0430","P0468","P0472","P0475","P0668"]},"Seite":{"o":["KEYAuspuffrohrblendeChrom","KEYDesignZiergitter","KEYMSpiegel-NoPaint","auspuff-c","auspuff-n"],"c":["P0300","P0303","P0306","P0337","P0354","P0362","P0364","P0415","P0430","P0468","P0472","P0475","P0668"]}},"Z/Z3-roadster":{"Front":{"o":["KEYAerodynamikpaket-NoPaint","KEYChromLineExterieur","KEYHartschalenkoffer","KEYHeckklappentraeger","KEYHeckklappentraegerChrom","KEYNebelscheinwerfer","KEYSkitraeger","KEYWeisseBlinker"],"c":["P0300","P0306","P0337","P0354","P0362","P0364","P0372","P0400","P0415","P0418","P0430","P0468","P0472","P0475","P0668"]},"Heck":{"o":["KEYAerodynamikpaket-NoPaint","KEYChromLineExterieur-nopaint","KEYHartschalenkoffer","KEYHeckklappentraeger","KEYHeckklappentraegerChrom","KEYSkitraeger","KEYWeisseBlinker","auspuff-1","auspuff-2-c","auspuff-2"],"c":["P0300","P0306","P0337","P0354","P0362","P0364","P0372","P0400","P0415","P0418","P0430","P0468","P0472","P0475","P0668"]},"Seite":{"o":["KEYAerodynamikpaket-NoPaint","KEYChromLineExterieur","KEYChromLineZiergitter-NoPaint","KEYHartschalenkoffer","KEYHeckklappentraeger","KEYHeckklappentraegerChrom","KEYSkitraeger","KEYSpeedsterabdeckung-NoPaint","KEYWeisseBlinker"],"c":["P0300","P0306","P0337","P0354","P0362","P0364","P0372","P0400","P0415","P0418","P0430","P0468","P0472","P0475","P0668"]}},"Z/Z4-roadster":{"frontseite":{"o":["KEYAerodynamikpaket-NoPaint","KEYGepaeckkorb","KEYHardtopNoPaint","KEYHartschalenkofferE85","KEYHeckklappentraeger","KEYHeckspoiler-NoPaint","KEYSkitraeger","KEYWeisseBlinker"],"c":["P0290","P0300","P0314","P0349","P0354","P0472","P0475","P0482","P0668","P0A02","P0A04","P0A07","P0A08","P0A15","P0A35"]},"heckseite":{"o":["KEYAuspuffrohrblendeChrom","KEYGepaeckkorb","KEYHardtopNoPaint","KEYHartschalenkofferE85","KEYHeckklappentraeger","KEYSkitraeger","KEYWeisseBlinker","KEYWeisseHeckleuchten"],"c":["P0290","P0300","P0314","P0349","P0354","P0472","P0475","P0482","P0668","P0A02","P0A04","P0A07","P0A08","P0A15","P0A35"]},"seite":{"o":["KEYAuspuffrohrblendeChrom","KEYGepaeckkorb","KEYHardtopNoPaint","KEYHartschalenkofferE85","KEYHeckklappentraeger","KEYSkitraeger","KEYWeisseBlinker","KEYWeisseHeckleuchten"],"c":["P0290","P0300","P0314","P0349","P0354","P0472","P0475","P0482","P0668","P0A02","P0A04","P0A07","P0A08","P0A15","P0A35"]}},"detail/KEYFussmattenAluLine":{},"detail/KEYFussmattenCity":{},"detail/KEYFussmattenCityE65":{},"detail/KEYFussmattenCountry":{},"detail/KEYFussmattenCountryE65":{},"detail/KEYFussmattenVelours":{},"detail/KEYFussmattenVeloursE65":{},"detail/KEYGummiFussmattenE46":{},"detail/KEYGummiFussmattenE53":{},"detail/KEYGummiFussmattenE65":{}};
+const WP={"1er/E87/FrontSeite":[469,362,86,781,310,62],"1er/E87/HeckSeite":[494,358,86,186,308,62],"1er/E87/Seite":[215,355,130,759,354,130],"3er/E46CabrioFacelift/frontseite":[441,383,71,802,357,57],"3er/E46CabrioFacelift/heckseite":[123,360,56,477,386,68],"3er/E46CabrioFacelift/seite":[176,374,102,757,375,102],"3er/E46CompactFacelift/seite":[194,396,95,775,394,95],"3er/E46CoupeFacelift/frontseite":[443,383,71,803,357,58],"3er/E46CoupeFacelift/heckseite":[123,360,56,477,386,68],"3er/E46CoupeFacelift/seite":[176,374,102,757,375,102],"3er/E46LimousineFacelift/Seite":[177,393,108,748,393,108],"3er/E46TouringFacelift/Seite":[173,394,96,749,394,96],"3er/E90Limousine/FrontSeite":[459,361,84,802,309,66],"3er/E90Limousine/HeckSeite":[534,360,93,153,315,70],"3er/E90Limousine/Seite":[178,358,94,752,360,94],"3er/E91Touring/frontseite":[804,316,49,446,360,70],"3er/E91Touring/heckseite":[517,354,72,147,314,49],"3er/E91Touring/seite":[742,362,96,180,365,97],"5er/E39Limousine/Seite":[199,397,88,736,397,88],"5er/E39Touring/Seite":[176,394,92,744,396,92],"5er/E60Limousine/FrontSeite":[416,368,84,821,348,63],"5er/E60Limousine/HeckSeite":[141,355,56,529,378,73],"5er/E60Limousine/Seite":[179,365,88,755,364,88],"5er/E61Touring/frontseite":[416,368,82,821,348,64],"5er/E61Touring/heckseite":[128,345,54,476,373,72],"5er/E61Touring/seite":[177,348,102,751,350,102],"6er/E63Coupe/FrontSeite":[472,346,66,820,306,56],"6er/E63Coupe/HeckSeite":[138,309,48,482,347,60],"6er/E63Coupe/Seite":[202,352,97,749,352,97],"6er/E64Cabrio/FrontSeite":[505,338,60,803,302,54],"6er/E64Cabrio/HeckSeite":[190,299,40,472,340,52],"6er/E64Cabrio/Seite":[208,328,96,741,328,96],"7er/E38Limousine/Seite":[181,396,85,740,396,85],"7er/E65Facelift/FrontSeite":[448,420,69,833,346,61],"7er/E65Facelift/HeckSeite":[133,388,55,513,421,75],"7er/E65Facelift/Seite":[187,351,104,732,351,104],"7er/E65Limousine/Seite":[180,372,104,753,373,104],"7er/E66Facelift/frontseite":[448,420,69,846,344,60],"7er/E66Facelift/heckseite":[133,388,53,535,424,75],"7er/E66Facelift/seite":[187,349,104,758,350,104],"X/E53/Seite":[198,391,95,743,393,95],"X/E53Facelift/frontseite":[498,370,68,804,348,44],"X/E53Facelift/heckseite":[184,357,38,418,370,56],"X/E53Facelift/seite":[184,370,89,764,372,89],"X/E83/frontseite":[512,372,58,802,352,38],"X/E83/heckseite":[188,354,38,423,371,53],"X/E83/seite":[176,372,89,761,373,89],"Z/Z3-coupe/Seite":[213,388,104,770,388,104],"Z/Z3-roadster/Seite":[213,390,106,770,390,106],"Z/Z4-roadster/frontseite":[445,382,84,840,350,67],"Z/Z4-roadster/heckseite":[145,368,66,525,385,82],"Z/Z4-roadster/seite":[196,370,110,770,368,110]};
 
 const LANGS={
   EN:{MODELS:'Models',LACKE:'Paint',FELGEN:'Wheels',EXTERIEUR:'Exterior',INTERIEUR:'Interior',KOMMUNIKATION:'Communication',TRANSPORT:'Transportation',SICHERHEIT:'Safety',UNI:'Solid',MET:'Metallic'},
@@ -173,11 +171,8 @@ const LANGS={
   NL:{MODELS:'Modellen',LACKE:'Kleuren',FELGEN:'Wielen',EXTERIEUR:'Exterieur',INTERIEUR:'Interieur',KOMMUNIKATION:'Communicatie',TRANSPORT:'Transport',SICHERHEIT:'Veiligheid',UNI:'Uni',MET:'Metallic'},
 };
 
-// Models mapped to exact imgPath and manifest key
 const SERIES=[
-  {id:'1er',name:'1 Series',models:[
-    {id:'E87',name:'1 Series',body:'Sports Hatch',year:'2004–',mk:'1er/E87'}
-  ]},
+  {id:'1er',name:'1 Series',models:[{id:'E87',name:'1 Series',body:'Sports Hatch',year:'2004–',mk:'1er/E87'}]},
   {id:'3er',name:'3 Series',models:[
     {id:'E90',name:'3 Series',body:'Sedan',year:'2005–',mk:'3er/E90Limousine'},
     {id:'E91',name:'3 Series',body:'Touring',year:'2005–',mk:'3er/E91Touring'},
@@ -215,82 +210,44 @@ const SERIES=[
 ];
 
 const PAINTS=[
-  {k:'P0300',n:'Alpine White',t:'UNI',h:'#f4f4f0'},
-  {k:'P0668',n:'Black',t:'UNI',h:'#080808'},
-  {k:'P0A41',n:'Jet Black',t:'UNI',h:'#050505'},
-  {k:'P0416',n:'Carbon Black',t:'MET',h:'#18181a'},
-  {k:'P0475',n:'Black Sapphire',t:'MET',h:'#0c1828'},
-  {k:'P0354',n:'Titanium Silver',t:'MET',h:'#a8a8a0'},
-  {k:'P0440',n:'Stratus Grey',t:'MET',h:'#787878'},
-  {k:'P0400',n:'Steel Grey',t:'MET',h:'#60686e'},
-  {k:'P0892',n:'Titanium Grey',t:'MET',h:'#8a8888'},
-  {k:'P0894',n:'Spacegrau',t:'MET',h:'#707070'},
-  {k:'P0A07',n:'Space Grey',t:'MET',h:'#6a6a72'},
-  {k:'P0A08',n:'Mineral Grey',t:'MET',h:'#828080'},
-  {k:'P0A09',n:'Sparkling Graphite',t:'MET',h:'#585858'},
-  {k:'P0317',n:'Orient Blue',t:'MET',h:'#0a2848'},
-  {k:'P0335',n:'Estoril Blue',t:'MET',h:'#0050a0'},
-  {k:'P0364',n:'Topaz Blue',t:'MET',h:'#1a4a8c'},
-  {k:'P0372',n:'Steel Blue',t:'MET',h:'#3a5a7a'},
-  {k:'P0381',n:'Le Mans Blue',t:'UNI',h:'#0030c8'},
-  {k:'P0A22',n:'Montreal Blue',t:'MET',h:'#1a3050'},
-  {k:'P0A23',n:'Interlagos Blue',t:'MET',h:'#0a2040'},
-  {k:'P0A35',n:'Le Mans Blue II',t:'MET',h:'#1030b0'},
-  {k:'P0314',n:'Bright Red',t:'UNI',h:'#cc0000'},
-  {k:'P0405',n:'Imola Red',t:'UNI',h:'#bb1122'},
-  {k:'P0438',n:'Electric Red',t:'UNI',h:'#dd0000'},
-  {k:'P0390',n:'Royal Red',t:'MET',h:'#7a1818'},
-  {k:'P0362',n:'Siena Red',t:'MET',h:'#8a2020'},
-  {k:'P0430',n:'Oxford Green',t:'MET',h:'#2a4830'},
-  {k:'P0356',n:'Vermont Green',t:'MET',h:'#3a5a30'},
-  {k:'P0442',n:'Grey Green',t:'MET',h:'#5a6858'},
-  {k:'P0337',n:'Dakar Yellow',t:'UNI',h:'#f0c000'},
-  {k:'P0891',n:'Mocca Brown',t:'MET',h:'#5a3a20'},
-  {k:'P0301',n:'Cashmere Beige',t:'MET',h:'#c8b898'},
-  {k:'P0A43',n:'Platinum Bronze',t:'MET',h:'#887060'},
-  {k:'P0A17',n:'Chestnut Brown',t:'MET',h:'#5a3020'},
-  {k:'P0A18',n:'Barbera Red',t:'MET',h:'#8a2030'},
-  {k:'P0A19',n:'Merlot Red',t:'MET',h:'#701828'},
-  {k:'P0A21',n:'Midnight Blue',t:'MET',h:'#101830'},
-  {k:'P0897',n:'Mineral Silver',t:'MET',h:'#909898'},
-  {k:'P0349',n:'Chestnut',t:'MET',h:'#6a3a1e'},
-  {k:'P0376',n:'Light Yellow',t:'MET',h:'#d4c840'},
-  {k:'p0405',n:'Imola Red',t:'UNI',h:'#bb1122'},
-  {k:'p0416',n:'Carbon Black',t:'MET',h:'#18181a'},
-  {k:'p0a07',n:'Space Grey',t:'MET',h:'#6a6a72'},
-  {k:'p0a08',n:'Mineral Grey',t:'MET',h:'#828080'},
-  {k:'P0A06',n:'Cashmere Silver',t:'MET',h:'#c0b8a8'},
-  {k:'P0A34',n:'Deep Sea Blue',t:'MET',h:'#0a1838'},
-  {k:'P0A39',n:'Vermilion Red',t:'UNI',h:'#cc2010'},
+  {k:'P0300',n:'Alpine White',t:'UNI',h:'#f4f4f0'},{k:'P0668',n:'Black',t:'UNI',h:'#080808'},
+  {k:'P0A41',n:'Jet Black',t:'UNI',h:'#050505'},{k:'P0416',n:'Carbon Black',t:'MET',h:'#18181a'},
+  {k:'P0475',n:'Black Sapphire',t:'MET',h:'#0c1828'},{k:'P0354',n:'Titanium Silver',t:'MET',h:'#a8a8a0'},
+  {k:'P0440',n:'Stratus Grey',t:'MET',h:'#787878'},{k:'P0400',n:'Steel Grey',t:'MET',h:'#60686e'},
+  {k:'P0892',n:'Titanium Grey',t:'MET',h:'#8a8888'},{k:'P0894',n:'Spacegrau',t:'MET',h:'#707070'},
+  {k:'P0A07',n:'Space Grey',t:'MET',h:'#6a6a72'},{k:'P0A08',n:'Mineral Grey',t:'MET',h:'#828080'},
+  {k:'P0A09',n:'Sparkling Graphite',t:'MET',h:'#585858'},{k:'P0317',n:'Orient Blue',t:'MET',h:'#0a2848'},
+  {k:'P0335',n:'Estoril Blue',t:'MET',h:'#0050a0'},{k:'P0364',n:'Topaz Blue',t:'MET',h:'#1a4a8c'},
+  {k:'P0372',n:'Steel Blue',t:'MET',h:'#3a5a7a'},{k:'P0381',n:'Le Mans Blue',t:'UNI',h:'#0030c8'},
+  {k:'P0A22',n:'Montreal Blue',t:'MET',h:'#1a3050'},{k:'P0A23',n:'Interlagos Blue',t:'MET',h:'#0a2040'},
+  {k:'P0A34',n:'Deep Sea Blue',t:'MET',h:'#0a1838'},{k:'P0A35',n:'Le Mans Blue II',t:'MET',h:'#1030b0'},
+  {k:'P0314',n:'Bright Red',t:'UNI',h:'#cc0000'},{k:'P0405',n:'Imola Red',t:'UNI',h:'#bb1122'},
+  {k:'P0438',n:'Electric Red',t:'UNI',h:'#dd0000'},{k:'P0390',n:'Royal Red',t:'MET',h:'#7a1818'},
+  {k:'P0362',n:'Siena Red',t:'MET',h:'#8a2020'},{k:'P0430',n:'Oxford Green',t:'MET',h:'#2a4830'},
+  {k:'P0356',n:'Vermont Green',t:'MET',h:'#3a5a30'},{k:'P0442',n:'Grey Green',t:'MET',h:'#5a6858'},
+  {k:'P0337',n:'Dakar Yellow',t:'UNI',h:'#f0c000'},{k:'P0891',n:'Mocca Brown',t:'MET',h:'#5a3a20'},
+  {k:'P0301',n:'Cashmere Beige',t:'MET',h:'#c8b898'},{k:'P0A43',n:'Platinum Bronze',t:'MET',h:'#887060'},
+  {k:'P0A17',n:'Chestnut Brown',t:'MET',h:'#5a3020'},{k:'P0A18',n:'Barbera Red',t:'MET',h:'#8a2030'},
+  {k:'P0A19',n:'Merlot Red',t:'MET',h:'#701828'},{k:'P0A21',n:'Midnight Blue',t:'MET',h:'#101830'},
+  {k:'P0897',n:'Mineral Silver',t:'MET',h:'#909898'},{k:'p0405',n:'Imola Red',t:'UNI',h:'#bb1122'},
+  {k:'p0416',n:'Carbon Black',t:'MET',h:'#18181a'},{k:'p0a07',n:'Space Grey',t:'MET',h:'#6a6a72'},
+  {k:'p0a08',n:'Mineral Grey',t:'MET',h:'#828080'},{k:'P0A06',n:'Cashmere Silver',t:'MET',h:'#c0b8a8'},
 ];
 
 const WHEELS=[
-  {f:'KEYFelge18',n:'Round Spoke',s:'18',z:'16"'},
-  {f:'KEYFelgeChrom18',n:'Round Spoke Chrome',s:'18C',z:'16"'},
-  {f:'KEYFelge30',n:'Double Spoke',s:'30',z:'16"'},
-  {f:'KEYFelge31',n:'BMW Styling II',s:'31',z:'15"'},
-  {f:'KEYFelge32',n:'Radial',s:'32',z:'17"'},
-  {f:'KEYFelge33',n:'Spoke',s:'33',z:'16"'},
-  {f:'KEYFelge35',n:'Z Star',s:'35',z:'16"'},
-  {f:'KEYFelge37',n:'M Parallel Spoke',s:'37',z:'18"'},
-  {f:'KEYFelge38',n:'3-Spoke',s:'38',z:'17"'},
-  {f:'KEYFelge41',n:'Streamline',s:'41',z:'15"'},
-  {f:'KEYFelge42',n:'Cross Spoke',s:'42',z:'16"'},
-  {f:'KEYFelge44',n:'Star Spoke',s:'44',z:'17"'},
-  {f:'KEYFelge47',n:'Double Spoke',s:'47',z:'17"'},
-  {f:'KEYFelge54',n:'V Spoke',s:'54',z:'16"'},
-  {f:'KEYFelge58',n:'Star Spoke',s:'58',z:'18"'},
-  {f:'KEYFelge63',n:'V Spoke',s:'63',z:'19"'},
-  {f:'KEYFelge66',n:'M Parallel Spoke',s:'66',z:'17"'},
-  {f:'KEYFelge68',n:'M Double Spoke',s:'68',z:'17"'},
-  {f:'KEYFelge72',n:'M V Spoke',s:'72',z:'18"'},
-  {f:'KEYFelge74',n:'Star Spoke',s:'74',z:'18"'},
-  {f:'KEYFelge86',n:'Radial Composite',s:'86',z:'16"'},
-  {f:'KEYFelge90',n:'Styling 90',s:'90',z:'17"'},
-  {f:'KEYFelge92',n:'Star Spoke',s:'92',z:'19"'},
-  {f:'KEYFelge94',n:'Multi Spoke',s:'94',z:'18"'},
-  {f:'KEYFelge101',n:'M Cross Spoke',s:'101',z:'19"'},
-  {f:'KEYFelge106',n:'Turbine',s:'106',z:'19"'},
+  {f:'KEYFelge18',n:'Round Spoke',s:'18',z:'16"'},{f:'KEYFelgeChrom18',n:'Round Spoke Chrome',s:'18C',z:'16"'},
+  {f:'KEYFelge30',n:'Double Spoke',s:'30',z:'16"'},{f:'KEYFelge31',n:'BMW Styling II',s:'31',z:'15"'},
+  {f:'KEYFelge32',n:'Radial',s:'32',z:'17"'},{f:'KEYFelge33',n:'Spoke',s:'33',z:'16"'},
+  {f:'KEYFelge35',n:'Z Star',s:'35',z:'16"'},{f:'KEYFelge37',n:'M Parallel Spoke',s:'37',z:'18"'},
+  {f:'KEYFelge38',n:'3-Spoke',s:'38',z:'17"'},{f:'KEYFelge41',n:'Streamline',s:'41',z:'15"'},
+  {f:'KEYFelge42',n:'Cross Spoke',s:'42',z:'16"'},{f:'KEYFelge44',n:'Star Spoke',s:'44',z:'17"'},
+  {f:'KEYFelge47',n:'Double Spoke',s:'47',z:'17"'},{f:'KEYFelge54',n:'V Spoke',s:'54',z:'16"'},
+  {f:'KEYFelge58',n:'Star Spoke',s:'58',z:'18"'},{f:'KEYFelge63',n:'V Spoke',s:'63',z:'19"'},
+  {f:'KEYFelge66',n:'M Parallel Spoke',s:'66',z:'17"'},{f:'KEYFelge68',n:'M Double Spoke',s:'68',z:'17"'},
+  {f:'KEYFelge72',n:'M V Spoke',s:'72',z:'18"'},{f:'KEYFelge74',n:'Star Spoke',s:'74',z:'18"'},
+  {f:'KEYFelge86',n:'Radial Composite',s:'86',z:'16"'},{f:'KEYFelge90',n:'Styling 90',s:'90',z:'17"'},
+  {f:'KEYFelge92',n:'Star Spoke',s:'92',z:'19"'},{f:'KEYFelge94',n:'Multi Spoke',s:'94',z:'18"'},
+  {f:'KEYFelge101',n:'M Cross Spoke',s:'101',z:'19"'},{f:'KEYFelge106',n:'Turbine',s:'106',z:'19"'},
   {f:'KEYFelgeBLine32',n:'Radial Brilliantline',s:'32B',z:'18"'},
   {f:'KEYFelgeVerbund42',n:'Cross Spoke Composite',s:'42K',z:'17"'},
   {f:'KEYFelgeVerbund78',n:'Cross Spoke Composite',s:'78K',z:'18"'},
@@ -298,88 +255,187 @@ const WHEELS=[
   {f:'KEYRadvollblendeE90',n:'Full Hub Cap',s:'E90',z:'16"'},
 ];
 
-// Only accessories that have actual overlay images in the data
 const ACC={
   exterior:[
-    {k:'KEYMAerodynamikpaket',n:'M Aerodynamics Package'},
-    {k:'KEYAerodynamikpaket',n:'Aerodynamics Package'},
-    {k:'KEYAerodynamikKomponenten',n:'Aerodynamic Components'},
-    {k:'KEYHeckspoiler',n:'Rear Spoiler'},
-    {k:'KEYXenonscheinwerfer',n:'Xenon Headlights'},
-    {k:'KEYScheinwerferreinigungsanlage',n:'Headlight Cleaning System'},
-    {k:'KEYHeckleuchtenBlackline',n:'Blackline Tail Lights'},
-    {k:'KEYAuspuffrohrblendeChrom',n:'Chrome Tailpipe Trims'},
-    {k:'KEYDoppelAuspuffrohrblendeChrom',n:'Twin Chrome Tailpipe Trims'},
-    {k:'KEYSportnachschalldaempfer',n:'Sports Rear Silencer'},
-    {k:'KEYSchmutzfaenger',n:'Mudflaps'},
-    {k:'KEYStossleisten',n:'Rubbing Strips'},
-    {k:'KEYStossleistenSeitlich',n:'Side Rubbing Strips'},
-    {k:'KEYWeisseBlinker',n:'White Direction Indicators'},
-    {k:'KEYNebelscheinwerfer',n:'Fog Lights'},
-    {k:'KEYGlasschiebedach',n:'Glass Sunroof'},
-    {k:'KEYParkDistanceControl',n:'Park Distance Control'},
-    {k:'KEYTeileWagenfarbe',n:'Exterior in Body Colour'},
+    {k:'KEYMAerodynamikpaket',n:'M Aerodynamics Package'},{k:'KEYAerodynamikpaket',n:'Aerodynamics Package'},
+    {k:'KEYAerodynamikKomponenten',n:'Aerodynamic Components'},{k:'KEYHeckspoiler',n:'Rear Spoiler'},
+    {k:'KEYXenonscheinwerfer',n:'Xenon Headlights'},{k:'KEYScheinwerferreinigungsanlage',n:'Headlight Cleaning System'},
+    {k:'KEYHeckleuchtenBlackline',n:'Blackline Tail Lights'},{k:'KEYAuspuffrohrblendeChrom',n:'Chrome Tailpipe Trims'},
+    {k:'KEYDoppelAuspuffrohrblendeChrom',n:'Twin Chrome Tailpipe Trims'},{k:'KEYSportnachschalldaempfer',n:'Sports Rear Silencer'},
+    {k:'KEYSchmutzfaenger',n:'Mudflaps'},{k:'KEYStossleisten',n:'Rubbing Strips'},
+    {k:'KEYStossleistenSeitlich',n:'Side Rubbing Strips'},{k:'KEYWeisseBlinker',n:'White Direction Indicators'},
+    {k:'KEYNebelscheinwerfer',n:'Fog Lights'},{k:'KEYGlasschiebedach',n:'Glass Sunroof'},
+    {k:'KEYParkDistanceControl',n:'Park Distance Control'},{k:'KEYTeileWagenfarbe',n:'Exterior in Body Colour'},
     {k:'KEYDachreling',n:'Roof Railing'},
   ],
   interior:[
-    {k:'KEYFussmattenVelours',n:'Floor Mats Velour'},
-    {k:'KEYFussmattenGummi',n:'Rubber Floor Mats'},
-    {k:'KEYFussmattenCity',n:'Floor Mats City'},
-    {k:'KEYAluPedale',n:'Aluminum Pedals'},
-    {k:'KEYAluFussstuetze',n:'Aluminum Footrest'},
-    {k:'KEYBeleuchteteEinstiegsleiste',n:'Illuminated Entry Strip'},
-    {k:'KEYSitzheizungVorne',n:'Front Seat Heating'},
-    {k:'KEYSportsitz',n:'Sport Seat'},
-    {k:'KEYGetränkehalterung',n:'Drinks Holder'},
-    {k:'KEYZentraleArmauflageVorne',n:'Central Armrest Front'},
+    {k:'KEYFussmattenVelours',n:'Floor Mats Velour'},{k:'KEYFussmattenGummi',n:'Rubber Floor Mats'},
+    {k:'KEYFussmattenCity',n:'Floor Mats City'},{k:'KEYAluPedale',n:'Aluminum Pedals'},
+    {k:'KEYAluFussstuetze',n:'Aluminum Footrest'},{k:'KEYBeleuchteteEinstiegsleiste',n:'Illuminated Entry Strip'},
+    {k:'KEYSitzheizungVorne',n:'Front Seat Heating'},{k:'KEYSportsitz',n:'Sport Seat'},
+    {k:'KEYGetränkehalterung',n:'Drinks Holder'},{k:'KEYZentraleArmauflageVorne',n:'Central Armrest Front'},
   ],
   communication:[
-    {k:'KEYBMWRadioBusinessCD',n:'BMW Radio Business CD'},
-    {k:'KEYBMWRadioProfessionalCD',n:'BMW Radio Professional CD'},
-    {k:'KEYNavigationssystem',n:'Navigation System'},
-    {k:'KEYBordmonitor',n:'On-Board Monitor'},
-    {k:'KEYBMWDVDSystem',n:'BMW DVD System'},
-    {k:'KEYSoundsystem',n:'Sound System'},
-    {k:'KEYFrontkamera',n:'Front Camera'},
-    {k:'KEYRueckfahrkamera',n:'Rear-View Camera'},
+    {k:'KEYBMWRadioBusinessCD',n:'BMW Radio Business CD'},{k:'KEYBMWRadioProfessionalCD',n:'BMW Radio Professional CD'},
+    {k:'KEYNavigationssystem',n:'Navigation System'},{k:'KEYBordmonitor',n:'On-Board Monitor'},
+    {k:'KEYBMWDVDSystem',n:'BMW DVD System'},{k:'KEYSoundsystem',n:'Sound System'},
+    {k:'KEYFrontkamera',n:'Front Camera'},{k:'KEYRueckfahrkamera',n:'Rear-View Camera'},
   ],
   transport:[
-    {k:'KEYGrundtraeger',n:'Roof Rack'},
-    {k:'KEYSkitraeger',n:'Ski Holder'},
-    {k:'KEYDachbox',n:'Roof Box'},
-    {k:'KEYDachboxLackiert',n:'Roof Box in Body Colour'},
-    {k:'KEYGepaeckkorb',n:'Luggage Basket'},
-    {k:'KEYRennradhalterung',n:'Racing Cycle Carrier'},
-    {k:'KEYSurfboardhalterung',n:'Surfboard Carrier'},
-    {k:'KEYSnowboardhalterung',n:'Snowboard Holder'},
+    {k:'KEYGrundtraeger',n:'Roof Rack'},{k:'KEYSkitraeger',n:'Ski Holder'},
+    {k:'KEYDachbox',n:'Roof Box'},{k:'KEYDachboxLackiert',n:'Roof Box in Body Colour'},
+    {k:'KEYGepaeckkorb',n:'Luggage Basket'},{k:'KEYRennradhalterung',n:'Racing Cycle Carrier'},
+    {k:'KEYSurfboardhalterung',n:'Surfboard Carrier'},{k:'KEYSnowboardhalterung',n:'Snowboard Holder'},
     {k:'KEYUniversalhalterung',n:'Universal Holder'},
   ],
   safety:[
-    {k:'KEYBMWBabySeat',n:'BMW Baby Seat 0+'},
-    {k:'KEYBMWJuniorSeatIII',n:'BMW Junior Seat I–II'},
+    {k:'KEYBMWBabySeat',n:'BMW Baby Seat 0+'},{k:'KEYBMWJuniorSeatIII',n:'BMW Junior Seat I–II'},
     {k:'KEYParkDistanceControlLow',n:'Park Distance Control Low'},
-    {k:'KEYElektronischesFahrtenbuch',n:'Electronic Log Book'},
   ]
 };
 
 const VL={Seite:'Side',seite:'Side',FrontSeite:'Front',frontseite:'Front',HeckSeite:'Rear',heckseite:'Rear',Front:'Front',Heck:'Rear',Interior:'Int.',interior:'Int.'};
-
 let S={lang:'EN',step:0,series:null,model:null,paint:null,wheel:null,accs:new Set(),view:null,atab:'exterior'};
 function T(k){return(LANGS[S.lang]||LANGS.EN)[k]||LANGS.EN[k]||k;}
 
-// Get manifest data for current model+view
-function mf(){
-  if(!S.model||!S.view) return null;
-  const mk=S.model.mk;
-  return MF[mk]&&MF[mk][S.view]?MF[mk][S.view]:null;
+// ===== IMAGE CACHE =====
+const imgCache = {};
+function loadImg(url){
+  if(imgCache[url]) return imgCache[url];
+  const p = new Promise((res,rej)=>{
+    const img = new Image();
+    img.crossOrigin='anonymous';
+    img.onload=()=>res(img);
+    img.onerror=()=>rej();
+    img.src=url;
+  });
+  imgCache[url]=p;
+  return p;
 }
 
+// ===== CANVAS RENDERER =====
+let renderPending = false;
+let renderTimer = null;
+
+function scheduleRender(){
+  if(renderTimer) clearTimeout(renderTimer);
+  renderTimer = setTimeout(doRender, 50);
+}
+
+async function doRender(){
+  const m=S.model, v=S.view;
+  if(!m||!v) return;
+
+  const canvas = document.getElementById('main-canvas');
+  const ld = document.getElementById('loader');
+  const mk = m.mk;
+  const mfData = MF[mk]&&MF[mk][v] ? MF[mk][v] : null;
+
+  ld.style.display='block';
+
+  try {
+    // 1. Load base background
+    const bkgUrl = BASE+'/images/'+mk+'/'+v+'/image-bkgnd.jpg';
+    const bkgImg = await loadImg(bkgUrl);
+
+    // Set canvas to image native size
+    canvas.width = bkgImg.naturalWidth;
+    canvas.height = bkgImg.naturalHeight;
+    canvas.style.width='100%';
+    const ctx = canvas.getContext('2d');
+
+    // Draw base
+    ctx.drawImage(bkgImg, 0, 0);
+
+    // 2. Apply paint color overlay using multiply blend
+    if(S.paint && mfData){
+      const colorKey = mfData.c ? mfData.c.find(c=>c.toLowerCase()===S.paint.k.toLowerCase()) : null;
+      if(colorKey){
+        try {
+          const colUrl = BASE+'/images/'+mk+'/'+v+'/colors/'+colorKey+'.col';
+          const colImg = await loadImg(colUrl);
+          ctx.globalCompositeOperation='multiply';
+          ctx.drawImage(colImg,0,0,canvas.width,canvas.height);
+          ctx.globalCompositeOperation='source-over';
+        } catch(e){
+          // .col failed - apply CSS color tint via canvas
+          applyPaintTint(ctx, canvas.width, canvas.height, S.paint.h);
+        }
+      } else {
+        // No exact color match - apply tint
+        applyPaintTint(ctx, canvas.width, canvas.height, S.paint.h);
+      }
+    }
+
+    // 3. Draw wheels at correct position
+    if(S.wheel){
+      const wpKey = mk+'/'+v;
+      const wp = WP[wpKey];
+      if(wp){
+        try {
+          const wUrl = BASE+'/wheels/seite/'+S.wheel.f.toLowerCase()+'.jpg';
+          const wImg = await loadImg(wUrl);
+          const [fx,fy,fr,rx,ry,rr] = wp;
+          // Scale factor: canvas is 980px native
+          const scale = canvas.width / 980;
+          // fw_ref is the reference radius of the wheel image (at 980px scale)
+          const fSize = fr * 2 * scale;
+          const rSize = rr * 2 * scale;
+          ctx.drawImage(wImg, (fx-fr)*scale, (fy-fr)*scale, fSize, fSize);
+          ctx.drawImage(wImg, (rx-rr)*scale, (ry-rr)*scale, rSize, rSize);
+        } catch(e){}
+      }
+    }
+
+    // 4. Draw active option overlays
+    if(mfData && mfData.o){
+      const activeAccs = [...S.accs];
+      for(const accName of activeAccs){
+        const acc = Object.values(ACC).flat().find(a=>a.n===accName);
+        if(!acc) continue;
+        // Find matching option file in manifest (case-insensitive)
+        const match = mfData.o.find(o=>o.toLowerCase()===acc.k.toLowerCase());
+        if(!match) continue;
+        try {
+          const optUrl = BASE+'/images/'+mk+'/'+v+'/options/'+match+'.jpg';
+          const optImg = await loadImg(optUrl);
+          ctx.drawImage(optImg,0,0,canvas.width,canvas.height);
+        } catch(e){}
+      }
+    }
+
+    ld.style.display='none';
+  } catch(e){
+    ld.querySelector('.ltxt').textContent='Image unavailable';
+  }
+}
+
+function applyPaintTint(ctx, w, h, hexColor){
+  // Parse hex to RGB
+  const r=parseInt(hexColor.slice(1,3),16);
+  const g=parseInt(hexColor.slice(3,5),16);
+  const b=parseInt(hexColor.slice(5,7),16);
+  // Get image data and apply color transformation
+  const imgData=ctx.getImageData(0,0,w,h);
+  const d=imgData.data;
+  // Convert to grayscale then tint with target color
+  for(let i=0;i<d.length;i+=4){
+    const gray=(d[i]*0.299+d[i+1]*0.587+d[i+2]*0.114)/255;
+    // Only affect mid-range pixels (car body, not black shadows or white highlights)
+    const mask=Math.sin(gray*Math.PI)*0.6; // peak effect at gray=0.5
+    d[i]=Math.round(d[i]*(1-mask)+r*gray*mask);
+    d[i+1]=Math.round(d[i+1]*(1-mask)+g*gray*mask);
+    d[i+2]=Math.round(d[i+2]*(1-mask)+b*gray*mask);
+  }
+  ctx.putImageData(imgData,0,0);
+}
+
+// ===== UI RENDERING =====
 function init(){renderLangs();renderSteps();renderAll();}
 
 function renderLangs(){
   document.getElementById('langs').innerHTML=Object.keys(LANGS).map(l=>
-    `<button class="lbtn${S.lang===l?' active':''}" onclick="setLang('${l}')">${l}</button>`
-  ).join('');
+    `<button class="lbtn${S.lang===l?' active':''}" onclick="setLang('${l}')">${l}</button>`).join('');
 }
 
 function renderSteps(){
@@ -392,90 +448,37 @@ function renderSteps(){
   document.getElementById('stepbar').innerHTML=steps.map((s,i)=>
     `<button class="sbtn${S.step===i?' active':''}${i>0&&i<=S.step?' done':''}" onclick="goStep(${i})">
       <span class="snum">${i<S.step?'✓':i+1}</span><span>${T(s.k)||s.l}</span>
-    </button>`
-  ).join('');
+    </button>`).join('');
 }
 
-function renderAll(){renderSteps();renderViewer();renderCfg();renderPanel();renderSB();}
+function renderAll(){
+  renderSteps();
+  renderViewer();
+  renderCfg();
+  renderPanel();
+  renderSB();
+}
 
 function renderViewer(){
   const m=S.model;
   document.getElementById('ds').textContent=m?'BMW '+(SERIES.find(s=>s.models.some(x=>x.id===m.id))||{name:''}).name:'BMW Series';
   document.getElementById('dm').textContent=m?m.name+' '+m.body:'Select a model';
 
-  // Build available views from manifest
   const mk=m?m.mk:null;
   const views=mk&&MF[mk]?Object.keys(MF[mk]):[];
   if(!S.view||!views.includes(S.view)) S.view=views[0]||null;
 
   document.getElementById('vbtns').innerHTML=views.map(v=>
-    `<button class="vbtn${S.view===v?' active':''}" onclick="setView('${v}')">${VL[v]||v}</button>`
-  ).join('');
+    `<button class="vbtn${S.view===v?' active':''}" onclick="setView('${v}')">${VL[v]||v}</button>`).join('');
 
   if(!m||!S.view){
-    document.getElementById('img-bkgnd').style.visibility='hidden';
-    document.getElementById('loader').style.display='none';
+    const canvas=document.getElementById('main-canvas');
+    const ctx=canvas.getContext('2d');
+    canvas.width=980;canvas.height=460;
+    ctx.fillStyle='#0d0d0d';ctx.fillRect(0,0,980,460);
     return;
   }
-  loadBkgnd();
-}
-
-function loadBkgnd(){
-  const m=S.model, v=S.view;
-  const bk=document.getElementById('img-bkgnd');
-  const ld=document.getElementById('loader');
-  ld.style.display='block';
-  bk.style.visibility='hidden';
-  // Clear old option layers
-  document.querySelectorAll('.opt-layer').forEach(e=>e.remove());
-  document.getElementById('img-color').style.display='none';
-
-  const url=BASE+'/images/'+m.mk+'/'+v+'/image-bkgnd.jpg';
-  bk.onload=()=>{
-    ld.style.display='none';
-    bk.style.visibility='visible';
-    applyColor();
-    applyOptions();
-  };
-  bk.onerror=()=>{ld.querySelector('.load-txt').textContent='Image unavailable';};
-  bk.src=url;
-}
-
-function applyColor(){
-  const m=S.model, v=S.view;
-  const ci=document.getElementById('img-color');
-  if(!S.paint||!m||!v){ci.style.display='none';return;}
-  const d=mf();
-  // Check if this exact color key exists (case-sensitive check)
-  const colorKey=d&&d.c?d.c.find(c=>c.toLowerCase()===S.paint.k.toLowerCase()):null;
-  if(!colorKey){ci.style.display='none';return;}
-  const url=BASE+'/images/'+m.mk+'/'+v+'/colors/'+colorKey+'.col';
-  ci.onload=()=>{ci.style.display='block';};
-  ci.onerror=()=>{ci.style.display='none';};
-  ci.src=url;
-}
-
-function applyOptions(){
-  const m=S.model, v=S.view;
-  if(!m||!v) return;
-  const d=mf();
-  if(!d||!d.o||!d.o.length) return;
-  const stack=document.getElementById('img-stack');
-
-  // Only load option images that actually exist in manifest for this model/view
-  [...S.accs].forEach(accName=>{
-    const acc=Object.values(ACC).flat().find(a=>a.n===accName);
-    if(!acc) return;
-    // Find matching option file (case-insensitive)
-    const match=d.o.find(o=>o.toLowerCase()===acc.k.toLowerCase());
-    if(!match) return;
-    const url=BASE+'/images/'+m.mk+'/'+v+'/options/'+match+'.jpg';
-    const img=document.createElement('img');
-    img.className='opt-layer';
-    img.src=url;
-    img.onerror=()=>img.remove();
-    stack.appendChild(img);
-  });
+  scheduleRender();
 }
 
 function renderCfg(){
@@ -491,10 +494,7 @@ function renderPanel(){
   if(S.step===0) renderModels(p);
   else if(S.step===1) renderPaints(p);
   else if(S.step===2) renderWheels(p);
-  else if(S.step>=3&&S.step<=7){
-    const cats=['exterior','interior','communication','transport','safety'];
-    renderAccs(p,cats[S.step-3]);
-  }
+  else if(S.step>=3&&S.step<=7){const cats=['exterior','interior','communication','transport','safety'];renderAccs(p,cats[S.step-3]);}
   else if(S.step===8) renderSummary(p);
   else p.innerHTML='';
 }
@@ -506,11 +506,8 @@ function renderModels(p){
     s.models.forEach(m=>{
       const sel=S.model&&S.model.id===m.id;
       h+=`<div class="mcard${sel?' sel':''}" onclick="pickModel('${s.id}','${m.id}')">
-        <div class="mc-s">${s.name}</div>
-        <div class="mc-n">${m.name}</div>
-        <div class="mc-b">${m.body}</div>
-        <div class="mc-y">${m.year}</div>
-      </div>`;
+        <div class="mc-s">${s.name}</div><div class="mc-n">${m.name}</div>
+        <div class="mc-b">${m.body}</div><div class="mc-y">${m.year}</div></div>`;
     });
     h+='</div>';
   });
@@ -518,38 +515,31 @@ function renderModels(p){
 }
 
 function renderPaints(p){
-  const avail=S.model&&MF[S.model.mk]&&S.view&&MF[S.model.mk][S.view]?
+  const avail=S.model&&S.view&&MF[S.model.mk]&&MF[S.model.mk][S.view]?
     MF[S.model.mk][S.view].c.map(c=>c.toLowerCase()):[];
-  
+  const seen=new Set();
+  const uni=PAINTS.filter(x=>{if(x.t==='UNI'&&!seen.has(x.n.toLowerCase())){seen.add(x.n.toLowerCase());return true;}return false;});
+  const met=PAINTS.filter(x=>{if(x.t==='MET'&&!seen.has(x.n.toLowerCase())){seen.add(x.n.toLowerCase());return true;}return false;});
   function sw(list){
     return list.map(x=>{
       const sel=S.paint&&S.paint.k===x.k;
       const dim=avail.length>0&&!avail.includes(x.k.toLowerCase());
-      const onclick=dim?'':`pickPaint('${x.k}')`;
-      return `<div class="sw${sel?' sel':''}${dim?' dim':''}" style="background:${x.h}" title="${x.n}" onclick="${onclick}"></div>`;
+      const oc=dim?'':`pickPaint('${x.k}')`;
+      return `<div class="sw${sel?' sel':''}${dim?' dim':''}" style="background:${x.h}" title="${x.n}" onclick="${oc}"></div>`;
     }).join('');
   }
-  // Deduplicate paints
-  const seen=new Set();
-  const uni=PAINTS.filter(x=>{if(x.t==='UNI'&&!seen.has(x.n)){seen.add(x.n);return true;}return false;});
-  const met=PAINTS.filter(x=>{if(x.t==='MET'&&!seen.has(x.n)){seen.add(x.n);return true;}return false;});
-  
   p.innerHTML=`<div class="psec">
-    <div class="ptlbl">${T('UNI')} Finishes</div>
-    <div class="sgrid">${sw(uni)}</div>
-    <div class="ptlbl">${T('MET')} Finishes</div>
-    <div class="sgrid">${sw(met)}</div>
+    <div class="ptlbl">${T('UNI')} Finishes</div><div class="sgrid">${sw(uni)}</div>
+    <div class="ptlbl">${T('MET')} Finishes</div><div class="sgrid">${sw(met)}</div>
   </div>`;
 }
 
 function renderWheels(p){
-  p.innerHTML=`<div class="wgrid">`+WHEELS.map(w=>{
+  p.innerHTML='<div class="wgrid">'+WHEELS.map(w=>{
     const sel=S.wheel&&S.wheel.f===w.f;
     return `<div class="wcard${sel?' sel':''}" onclick="pickWheel('${w.f}')">
-      <img src="${BASE}/wheels/seite/${w.f.toLowerCase()}.jpg" alt="${w.n}" loading="lazy" onerror="this.style.opacity='.15'">
-      <div class="wn">${w.n}</div>
-      <div class="ws">Styling ${w.s} · ${w.z}</div>
-    </div>`;
+      <img src="${BASE}/wheels/seite/${w.f.toLowerCase()}.jpg" alt="${w.n}" loading="lazy" onerror="this.style.opacity='.1'">
+      <div class="wn">${w.n}</div><div class="ws">Styling ${w.s} · ${w.z}</div></div>`;
   }).join('')+'</div>';
 }
 
@@ -561,8 +551,7 @@ function renderAccs(p,cat){
   const items=(ACC[S.atab]||[]).map(a=>{
     const sel=S.accs.has(a.n);
     return `<div class="aitem${sel?' sel':''}" onclick="toggleAcc(${JSON.stringify(a.n)})">
-      <div class="achk"></div><div class="an">${a.n}</div>
-    </div>`;
+      <div class="achk"></div><div class="an">${a.n}</div></div>`;
   }).join('');
   p.innerHTML=`<div class="atabs">${tabs}</div><div class="alist">${items}</div>`;
 }
@@ -576,8 +565,7 @@ function renderSummary(p){
     if(sel.length) grp[cat]=sel;
   });
   const accHtml=Object.entries(grp).map(([cat,items])=>
-    `<div class="sumag"><div class="sumagn">${cat.toUpperCase()}</div>${items.map(i=>`<div class="sumai">· ${i}</div>`).join('')}</div>`
-  ).join('');
+    `<div class="sumag"><div class="sumagn">${cat.toUpperCase()}</div>${items.map(i=>`<div class="sumai">· ${i}</div>`).join('')}</div>`).join('');
   p.innerHTML=`<div class="sumwrap">
     <div style="font-size:16px;font-weight:300;color:#fff;letter-spacing:.5px;margin-bottom:14px">Your Configuration</div>
     <div class="sumgrid">
@@ -606,36 +594,30 @@ function renderSB(){
     sb.innerHTML='<div class="stitle">Series</div>'+SERIES.map(s=>
       `<div class="sitem${S.series===s.id?' sel':''}" onclick="filterSeries('${s.id}')">
         <div class="scheck"></div><div class="slabel">BMW ${s.name}</div></div>`).join('');
-  } else if(S.step===1&&S.paint){
-    sb.innerHTML=`<div class="stitle">Selected Paint</div>
-      <div style="padding:12px 14px">
-        <div style="width:100%;height:50px;border-radius:2px;background:${S.paint.h};border:1px solid rgba(255,255,255,.1);margin-bottom:9px"></div>
-        <div style="font-size:13px;font-weight:600;color:#fff">${S.paint.n}</div>
-        <div style="font-size:9px;color:var(--dim);margin-top:2px">${S.paint.t==='MET'?'Metallic':'Solid'} · ${S.paint.k}</div>
-      </div>`;
-  } else if(S.step===2&&S.wheel){
-    sb.innerHTML=`<div class="stitle">Selected Wheels</div>
-      <div style="padding:12px 14px;text-align:center">
-        <img src="${BASE}/wheels/seite/${S.wheel.f.toLowerCase()}.jpg" style="width:90px;margin:0 auto 8px;display:block;object-fit:contain" alt="">
-        <div style="font-size:12px;font-weight:600;color:#fff">${S.wheel.n}</div>
-        <div style="font-size:10px;color:var(--blue);margin-top:3px;font-weight:700">Styling ${S.wheel.s} · ${S.wheel.z}</div>
-      </div>`;
-  } else if(cat){
+  }else if(S.step===1&&S.paint){
+    sb.innerHTML=`<div class="stitle">Selected Paint</div><div style="padding:12px 14px">
+      <div style="width:100%;height:50px;border-radius:2px;background:${S.paint.h};border:1px solid rgba(255,255,255,.1);margin-bottom:9px"></div>
+      <div style="font-size:13px;font-weight:600;color:#fff">${S.paint.n}</div>
+      <div style="font-size:9px;color:var(--dim);margin-top:2px">${S.paint.t==='MET'?'Metallic':'Solid'} · ${S.paint.k}</div></div>`;
+  }else if(S.step===2&&S.wheel){
+    sb.innerHTML=`<div class="stitle">Selected Wheels</div><div style="padding:12px 14px;text-align:center">
+      <img src="${BASE}/wheels/seite/${S.wheel.f.toLowerCase()}.jpg" style="width:90px;margin:0 auto 8px;display:block;object-fit:contain" alt="">
+      <div style="font-size:12px;font-weight:600;color:#fff">${S.wheel.n}</div>
+      <div style="font-size:10px;color:var(--blue);margin-top:3px;font-weight:700">Styling ${S.wheel.s} · ${S.wheel.z}</div></div>`;
+  }else if(cat){
     const sel=[...S.accs].filter(n=>ACC[cat]&&ACC[cat].some(a=>a.n===n));
     sb.innerHTML='<div class="stitle">Selected ('+sel.length+')</div>'+
       (sel.length?sel.map(n=>`<div class="sitem sel" onclick="toggleAcc(${JSON.stringify(n)})">
         <div class="scheck"></div><div class="slabel">${n}</div></div>`).join('')
       :'<div style="padding:10px 14px;font-size:10px;color:var(--dim)">None selected</div>');
-  } else if(S.step===8){
+  }else if(S.step===8){
     sb.innerHTML='<div class="stitle">Summary</div>'+
-      [['Model',S.model?S.model.name+' '+S.model.body:'—'],
-       ['Paint',S.paint?S.paint.n:'—'],
-       ['Wheels',S.wheel?'Styling '+S.wheel.s:'—'],
-       ['Options',S.accs.size+' items']
+      [['Model',S.model?S.model.name+' '+S.model.body:'—'],['Paint',S.paint?S.paint.n:'—'],
+       ['Wheels',S.wheel?'Styling '+S.wheel.s:'—'],['Options',S.accs.size+' items']
       ].map(([k,v])=>`<div style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
         <div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--dim)">${k}</div>
         <div style="font-size:12px;font-weight:600;color:#fff;margin-top:2px">${v}</div></div>`).join('');
-  } else sb.innerHTML='';
+  }else sb.innerHTML='';
 }
 
 function setLang(l){S.lang=l;renderLangs();renderAll();}
@@ -653,7 +635,7 @@ function pickPaint(k){S.paint=PAINTS.find(p=>p.k===k);renderAll();}
 function pickWheel(f){S.wheel=WHEELS.find(w=>w.f===f);renderAll();}
 function switchTab(cat){S.atab=cat;renderAccs(document.getElementById('panel'),cat);renderSB();}
 function toggleAcc(n){S.accs.has(n)?S.accs.delete(n):S.accs.add(n);renderAll();}
-function setView(v){S.view=v;renderViewer();renderSB();}
+function setView(v){S.view=v;renderAll();}
 function resetAll(){S.model=null;S.series=null;S.paint=null;S.wheel=null;S.accs=new Set();S.view=null;goStep(0);}
 function saveConfig(){
   const b=new Blob([JSON.stringify({model:S.model,paint:S.paint,wheel:S.wheel,accessories:[...S.accs]},null,2)],{type:'application/json'});
