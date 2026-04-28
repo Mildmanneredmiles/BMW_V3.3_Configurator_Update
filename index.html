@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMW Accessories Configurator v3.3</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bmw-blue: #1c69d3;
+  --bmw-dark: #0a0a0a;
+  --bmw-mid: #111;
+  --bmw-panel: #161616;
+  --bmw-border: #242424;
+  --bmw-border-light: #333;
+  --bmw-silver: #c8c8c8;
+  --bmw-silver-dim: #707070;
+  --bmw-white: #f0f0f0;
+  --nav-h: 44px;
+  --step-h: 46px;
+  --sidebar-w: 240px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bmw-dark); color:var(--bmw-white); font-family:'Rajdhani',sans-serif; min-height:100vh; overflow-x:hidden; }
+
+/* TOP BAR */
+#topbar {
+  height:var(--nav-h); background:#050505; border-bottom:1px solid var(--bmw-border);
+  display:flex; align-items:center; justify-content:space-between; padding:0 18px;
+  position:sticky; top:0; z-index:200;
+}
+.logo { display:flex; align-items:center; gap:10px; }
+.roundel { width:30px; height:30px; border-radius:50%; border:1.5px solid #777; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; overflow:hidden; flex-shrink:0; }
+.roundel div:nth-child(1),.roundel div:nth-child(4){background:#fff;}
+.roundel div:nth-child(2),.roundel div:nth-child(3){background:var(--bmw-blue);}
+.logo-text { font-size:10px; font-weight:700; letter-spacing:2.5px; color:var(--bmw-silver); text-transform:uppercase; line-height:1.3; }
+.logo-text span { color:var(--bmw-blue); }
+#langs { display:flex; gap:3px; }
+.lbtn { background:none; border:1px solid var(--bmw-border-light); color:var(--bmw-silver-dim); font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:700; letter-spacing:1px; padding:2px 6px; cursor:pointer; transition:all .15s; }
+.lbtn:hover { color:#fff; border-color:var(--bmw-blue); }
+.lbtn.active { background:var(--bmw-blue); border-color:var(--bmw-blue); color:#fff; }
+
+/* STEPS */
+#stepbar {
+  height:var(--step-h); background:var(--bmw-mid); border-bottom:1px solid var(--bmw-border);
+  display:flex; overflow-x:auto; scrollbar-width:none;
+}
+#stepbar::-webkit-scrollbar{display:none;}
+.sbtn {
+  flex:0 0 auto; background:none; border:none; border-right:1px solid var(--bmw-border);
+  color:var(--bmw-silver-dim); font-family:'Rajdhani',sans-serif; font-size:10px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; padding:0 18px; cursor:pointer;
+  display:flex; align-items:center; gap:7px; white-space:nowrap; transition:all .15s;
+  position:relative;
+}
+.sbtn::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:transparent; transition:background .15s; }
+.sbtn:hover { color:var(--bmw-white); background:rgba(255,255,255,.04); }
+.sbtn.active { color:var(--bmw-white); }
+.sbtn.active::after { background:var(--bmw-blue); }
+.sbtn.done { color:var(--bmw-blue); }
+.snum { width:17px; height:17px; border-radius:50%; border:1.5px solid currentColor; font-size:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.sbtn.active .snum, .sbtn.done .snum { background:var(--bmw-blue); border-color:var(--bmw-blue); color:#fff; }
+
+/* LAYOUT */
+#app { display:grid; grid-template-columns:var(--sidebar-w) 1fr; min-height:calc(100vh - var(--nav-h) - var(--step-h)); }
+
+/* SIDEBAR */
+#sidebar { background:var(--bmw-panel); border-right:1px solid var(--bmw-border); overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--bmw-border-light) transparent; }
+.stitle { font-size:8px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--bmw-silver-dim); padding:14px 16px 8px; border-bottom:1px solid var(--bmw-border); }
+.sitem { padding:9px 16px; border-bottom:1px solid rgba(255,255,255,.04); cursor:pointer; display:flex; align-items:center; gap:9px; transition:background .1s; }
+.sitem:hover { background:rgba(255,255,255,.05); }
+.sitem.sel { background:rgba(28,105,211,.12); border-left:2px solid var(--bmw-blue); padding-left:14px; }
+.scheck { width:14px; height:14px; border-radius:50%; border:1.5px solid var(--bmw-border-light); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .1s; }
+.sitem.sel .scheck { background:var(--bmw-blue); border-color:var(--bmw-blue); }
+.scheck::after { content:''; width:5px; height:5px; border-radius:50%; background:#fff; opacity:0; transition:opacity .1s; }
+.sitem.sel .scheck::after { opacity:1; }
+.slabel { font-size:12px; font-weight:500; color:var(--bmw-silver); line-height:1.3; }
+.sitem.sel .slabel { color:var(--bmw-white); }
+.ssub { font-size:9px; color:var(--bmw-silver-dim); margin-top:1px; }
+
+/* MAIN CONTENT */
+#content { display:flex; flex-direction:column; overflow:hidden; }
+
+/* VIEWER */
+#viewer {
+  background:#0c0c0c; flex:1; min-height:300px; position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+#viewer::before { content:''; position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(to top,rgba(28,105,211,.05),transparent); pointer-events:none; z-index:1; }
+
+/* Canvas layer system */
+#canvas-stack { position:relative; width:100%; max-width:980px; }
+#canvas-stack canvas, #canvas-stack img { position:absolute; top:0; left:0; width:100%; height:100%; }
+#canvas-bkgnd { position:relative; width:100%; display:block; }
+#canvas-overlay { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+
+.model-badge { position:absolute; top:16px; left:20px; z-index:10; }
+.mb-series { font-size:8px; letter-spacing:4px; color:var(--bmw-silver-dim); text-transform:uppercase; font-weight:700; }
+.mb-name { font-size:20px; font-weight:300; color:var(--bmw-white); letter-spacing:.5px; line-height:1.1; }
+
+.view-btns { position:absolute; top:16px; right:16px; z-index:10; display:flex; gap:3px; }
+.vbtn { background:rgba(0,0,0,.6); border:1px solid var(--bmw-border-light); color:var(--bmw-silver-dim); font-size:9px; letter-spacing:1px; padding:4px 9px; cursor:pointer; font-family:'Rajdhani',sans-serif; font-weight:700; backdrop-filter:blur(4px); transition:all .15s; }
+.vbtn:hover,.vbtn.active { background:var(--bmw-blue); border-color:var(--bmw-blue); color:#fff; }
+
+/* CONFIG BAR */
+#cfgbar {
+  background:var(--bmw-panel); border-top:1px solid var(--bmw-border);
+  padding:9px 18px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; min-height:46px;
+}
+.ctag { display:flex; align-items:center; gap:6px; }
+.ctag-key { font-size:7px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--bmw-silver-dim); }
+.ctag-val { font-size:11px; font-weight:600; color:var(--bmw-silver); }
+.ctag-dot { width:14px; height:14px; border-radius:50%; border:1px solid rgba(255,255,255,.2); flex-shrink:0; }
+.spacer { flex:1; }
+.btn-p { background:var(--bmw-blue); color:#fff; border:none; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:10px; letter-spacing:2px; text-transform:uppercase; padding:8px 18px; cursor:pointer; transition:background .15s; }
+.btn-p:hover { background:#2479e3; }
+.btn-s { background:transparent; color:var(--bmw-silver-dim); border:1px solid var(--bmw-border-light); font-family:'Rajdhani',sans-serif; font-weight:600; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:7px 14px; cursor:pointer; transition:all .15s; }
+.btn-s:hover { color:#fff; border-color:var(--bmw-silver-dim); }
+
+/* STEP PANELS */
+#panel { background:var(--bmw-panel); border-top:1px solid var(--bmw-border); }
+
+/* Model grid */
+.series-hdr { background:var(--bmw-mid); border-bottom:1px solid var(--bmw-border); padding:10px 16px; font-size:8px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--bmw-blue); }
+.model-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:2px; padding:2px; }
+.mcard { background:rgba(255,255,255,.03); border:1px solid var(--bmw-border); padding:13px 10px; cursor:pointer; text-align:center; transition:all .15s; }
+.mcard:hover { background:rgba(255,255,255,.07); border-color:var(--bmw-border-light); }
+.mcard.sel { border-color:var(--bmw-blue); background:rgba(28,105,211,.1); }
+.mc-series { font-size:7px; letter-spacing:3px; text-transform:uppercase; color:var(--bmw-silver-dim); margin-bottom:3px; font-weight:700; }
+.mc-name { font-size:12px; font-weight:700; color:var(--bmw-silver); }
+.mcard.sel .mc-name { color:#fff; }
+.mc-body { font-size:9px; color:var(--bmw-silver-dim); margin-top:2px; }
+.mc-year { font-size:9px; color:var(--bmw-blue); margin-top:1px; font-weight:600; }
+
+/* Color swatches */
+.paint-section { padding:14px 16px; }
+.paint-type-label { font-size:8px; letter-spacing:3px; text-transform:uppercase; font-weight:700; color:var(--bmw-silver-dim); margin-bottom:8px; }
+.swatch-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:5px; margin-bottom:14px; }
+.swatch { aspect-ratio:1; border-radius:3px; cursor:pointer; border:2px solid transparent; transition:all .15s; position:relative; }
+.swatch:hover { transform:scale(1.12); z-index:5; }
+.swatch.sel { border-color:#fff; box-shadow:0 0 0 1px var(--bmw-blue); }
+.swatch[title]:hover::after { content:attr(title); position:absolute; bottom:calc(100% + 5px); left:50%; transform:translateX(-50%); background:#000; color:#fff; font-size:9px; padding:3px 7px; white-space:nowrap; pointer-events:none; z-index:20; border:1px solid var(--bmw-border-light); font-family:'Rajdhani',sans-serif; }
+
+/* Wheel grid */
+.wheel-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:6px; padding:10px; }
+.wcard { background:rgba(255,255,255,.03); border:1px solid var(--bmw-border); padding:10px 8px; cursor:pointer; text-align:center; transition:all .15s; border-radius:2px; }
+.wcard:hover { border-color:var(--bmw-border-light); background:rgba(255,255,255,.07); }
+.wcard.sel { border-color:var(--bmw-blue); background:rgba(28,105,211,.1); }
+.wcard img { width:80px; height:80px; object-fit:contain; margin:0 auto 5px; display:block; filter:brightness(.9); }
+.wcard.sel img { filter:brightness(1.1); }
+.wname { font-size:9px; color:var(--bmw-silver-dim); line-height:1.3; }
+.wsize { font-size:10px; font-weight:700; color:var(--bmw-blue); margin-top:2px; }
+.wcard.sel .wname { color:var(--bmw-silver); }
+
+/* Accessory list */
+.acc-tabs { display:flex; border-bottom:1px solid var(--bmw-border); overflow-x:auto; scrollbar-width:none; }
+.acc-tabs::-webkit-scrollbar{display:none;}
+.atab { background:none; border:none; border-bottom:2px solid transparent; color:var(--bmw-silver-dim); font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:11px 16px; cursor:pointer; white-space:nowrap; transition:all .15s; margin-bottom:-1px; }
+.atab:hover { color:#fff; }
+.atab.active { color:var(--bmw-blue); border-bottom-color:var(--bmw-blue); }
+.acc-list { max-height:220px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--bmw-border-light) transparent; }
+.aitem { padding:9px 16px; border-bottom:1px solid rgba(255,255,255,.04); cursor:pointer; display:flex; align-items:center; gap:9px; transition:background .1s; }
+.aitem:hover { background:rgba(255,255,255,.05); }
+.aitem.sel { background:rgba(28,105,211,.1); }
+.achk { width:13px; height:13px; border:1.5px solid var(--bmw-border-light); border-radius:2px; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .1s; }
+.aitem.sel .achk { background:var(--bmw-blue); border-color:var(--bmw-blue); }
+.achk::after { content:'✓'; font-size:8px; color:#fff; opacity:0; transition:opacity .1s; }
+.aitem.sel .achk::after { opacity:1; }
+.aname { font-size:11px; font-weight:500; color:var(--bmw-silver); }
+.aitem.sel .aname { color:#fff; }
+
+/* Summary */
+.sum-wrap { padding:18px; max-height:300px; overflow-y:auto; }
+.sum-title { font-size:16px; font-weight:300; color:#fff; letter-spacing:.5px; margin-bottom:16px; }
+.sum-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+.sum-card { background:rgba(255,255,255,.04); padding:12px; border:1px solid var(--bmw-border); }
+.sum-key { font-size:7px; letter-spacing:3px; text-transform:uppercase; color:var(--bmw-silver-dim); margin-bottom:5px; font-weight:700; }
+.sum-val { font-size:13px; font-weight:600; color:#fff; }
+.sum-sub { font-size:9px; color:var(--bmw-silver-dim); margin-top:2px; }
+.sum-acc-group { margin-bottom:10px; }
+.sag-name { font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--bmw-blue); font-weight:700; margin-bottom:4px; }
+.sag-item { font-size:10px; color:var(--bmw-silver); padding:2px 0; }
+.sum-disclaimer { font-size:8px; color:var(--bmw-silver-dim); line-height:1.6; border-top:1px solid var(--bmw-border); padding-top:10px; margin-top:14px; }
+.sum-actions { display:flex; gap:8px; margin-top:14px; }
+
+/* Scrollbars */
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--bmw-border-light);border-radius:2px;}
+
+/* Loading state */
+.img-loading { opacity:.3; transition:opacity .3s; }
+.img-loaded { opacity:1; }
+
+@media(max-width:680px){
+  #app{grid-template-columns:1fr;}
+  #sidebar{display:none;}
+  .swatch-grid{grid-template-columns:repeat(5,1fr);}
+}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div class="logo">
+    <div class="roundel"><div></div><div></div><div></div><div></div></div>
+    <div class="logo-text">Genuine BMW<br><span>Accessories Configurator</span> <span style="color:var(--bmw-silver-dim);font-weight:300">v3.3</span></div>
+  </div>
+  <div id="langs"></div>
+</div>
+
+<div id="stepbar"></div>
+
+<div id="app">
+  <div id="sidebar"><div id="sb-content"></div></div>
+  <div id="content">
+    <div id="viewer">
+      <div class="model-badge">
+        <div class="mb-series" id="disp-series">BMW Series</div>
+        <div class="mb-name" id="disp-model">Select a model</div>
+      </div>
+      <div class="view-btns" id="view-btns"></div>
+      <div id="canvas-stack">
+        <img id="canvas-bkgnd" src="" alt="" style="display:block;width:100%;visibility:hidden;">
+        <canvas id="canvas-overlay"></canvas>
+      </div>
+    </div>
+    <div id="cfgbar">
+      <div class="ctag"><span class="ctag-key">Model</span><span class="ctag-val" id="cfg-model">—</span></div>
+      <div class="ctag"><div class="ctag-dot" id="cfg-dot" style="background:#222"></div><span class="ctag-key">Paint</span><span class="ctag-val" id="cfg-paint">—</span></div>
+      <div class="ctag"><span class="ctag-key">Wheels</span><span class="ctag-val" id="cfg-wheel">—</span></div>
+      <div class="ctag"><span class="ctag-key">Options</span><span class="ctag-val" id="cfg-opts">0</span></div>
+      <div class="spacer"></div>
+      <button class="btn-s" onclick="resetAll()">Reset</button>
+      <button class="btn-p" onclick="goStep(8)">Summary →</button>
+    </div>
+    <div id="panel"></div>
+  </div>
+</div>
+
+<script>
+// ==================== CONFIG ====================
+const BASE = 'https://mildmanneredmiles.github.io/BMW_V3.3_Configurator_Update/Data';
+
+const LANGS = {
+  EN:{MODELS:'Models',LACKE:'Paint',FELGEN:'Wheels',EXTERIEUR:'Exterior',INTERIEUR:'Interior',KOMMUNIKATION:'Communication',TRANSPORT:'Transportation',SICHERHEIT:'Safety',UNI:'Solid',MET:'Metallic'},
+  DE:{MODELS:'Modelle',LACKE:'Lacke',FELGEN:'Felgen',EXTERIEUR:'Exterieur',INTERIEUR:'Interieur',KOMMUNIKATION:'Kommunikation',TRANSPORT:'Transport',SICHERHEIT:'Sicherheit',UNI:'Unifarben',MET:'Metallic'},
+  FR:{MODELS:'Modèles',LACKE:'Peintures',FELGEN:'Jantes',EXTERIEUR:'Extérieur',INTERIEUR:'Intérieur',KOMMUNIKATION:'Communication',TRANSPORT:'Transport',SICHERHEIT:'Sécurité',UNI:'Uni',MET:'Métallisé'},
+  ES:{MODELS:'Modelos',LACKE:'Color',FELGEN:'Llantas',EXTERIEUR:'Exterior',INTERIEUR:'Interior',KOMMUNIKATION:'Comunicación',TRANSPORT:'Transporte',SICHERHEIT:'Seguridad',UNI:'Sólido',MET:'Metálico'},
+  IT:{MODELS:'Modelli',LACKE:'Vernici',FELGEN:'Cerchi',EXTERIEUR:'Esterno',INTERIEUR:'Interno',KOMMUNIKATION:'Comunicazione',TRANSPORT:'Trasporto',SICHERHEIT:'Sicurezza',UNI:'Tinta unita',MET:'Metallizzato'},
+  NL:{MODELS:'Modellen',LACKE:'Kleuren',FELGEN:'Wielen',EXTERIEUR:'Exterieur',INTERIEUR:'Interieur',KOMMUNIKATION:'Communicatie',TRANSPORT:'Transport',SICHERHEIT:'Veiligheid',UNI:'Uni',MET:'Metallic'},
+};
+
+// Model definitions with their image folder paths and available views
+const SERIES = [
+  { id:'1er', name:'1 Series', models:[
+    { id:'E87', name:'1 Series', body:'Sports Hatch', year:'2004–', imgPath:'1er/E87', views:['Seite','FrontSeite','HeckSeite','Interior'], colors:['P0300','P0354','P0416','P0438','P0475','P0668','P0A07','P0A22','P0A35','P0A41'] }
+  ]},
+  { id:'3er', name:'3 Series', models:[
+    { id:'E90', name:'3 Series', body:'Sedan', year:'2005–', imgPath:'3er/E90Limousine', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0438','P0475','P0668','P0A07','P0A22','P0A23','P0A34','P0A35','P0A41','P0A43'] },
+    { id:'E91', name:'3 Series', body:'Touring', year:'2005–', imgPath:'3er/E91Touring', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0438','P0475','P0668','P0A07','P0A22','P0A34','P0A35','P0A41','P0A43'] },
+    { id:'E46FL', name:'3 Series', body:'Sedan', year:'MY 2002–04', imgPath:'3er/E46LimousineFacelift', views:['Seite','Front','Heck'], colors:['P0300','P0317','P0354','P0364','P0372','P0400','P0405','P0430','P0438','P0442','P0475','P0668','P0A07','P0A08'] },
+    { id:'E46TFL', name:'3 Series', body:'Touring', year:'MY 2002–04', imgPath:'3er/E46TouringFacelift', views:['Seite','Front','Heck'], colors:['P0300','P0317','P0354','P0364','P0372','P0400','P0405','P0430','P0438','P0442','P0475','P0668'] },
+    { id:'E46CFL', name:'3 Series', body:'Coupé', year:'MY 2003–', imgPath:'3er/E46CoupeFacelift', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0364','P0405','P0438','P0475','P0668'] },
+    { id:'E46CabFL', name:'3 Series', body:'Convertible', year:'MY 2003–', imgPath:'3er/E46CabrioFacelift', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0405','P0438','P0475','P0668'] },
+    { id:'E46Comp', name:'3 Series', body:'Compact', year:'2001–05', imgPath:'3er/E46CompactFacelift', views:['Seite','Front','Heck'], colors:['P0300','P0354','P0405','P0438','P0475','P0668'] },
+  ]},
+  { id:'5er', name:'5 Series', models:[
+    { id:'E60', name:'5 Series', body:'Sedan', year:'2003–', imgPath:'5er/E60Limousine', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0317','P0349','P0354','P0416','P0430','P0475','P0668','P0892','P0894','P0A06','P0A07','P0A08','P0A09','P0A35','P0A39','P0A43'] },
+    { id:'E61', name:'5 Series', body:'Touring', year:'2004–', imgPath:'5er/E61Touring', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0416','P0430','P0475','P0668','P0A07','P0A35'] },
+    { id:'E39', name:'5 Series', body:'Sedan', year:'MY 97–03', imgPath:'5er/E39Limousine', views:['Seite'], colors:['P0300','P0354','P0430','P0475','P0668'] },
+    { id:'E39T', name:'5 Series', body:'Touring', year:'MY 97–03', imgPath:'5er/E39Touring', views:['Seite'], colors:['P0300','P0354','P0430','P0475','P0668'] },
+  ]},
+  { id:'6er', name:'6 Series', models:[
+    { id:'E63', name:'6 Series', body:'Coupé', year:'2003–', imgPath:'6er/E63Coupe', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0416','P0475','P0668'] },
+    { id:'E64', name:'6 Series', body:'Convertible', year:'2004–', imgPath:'6er/E64Cabrio', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0416','P0475','P0668'] },
+  ]},
+  { id:'7er', name:'7 Series', models:[
+    { id:'E65FL', name:'7 Series', body:'Sedan', year:'MY 2005–', imgPath:'7er/E65Facelift', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0416','P0475','P0668'] },
+    { id:'E65', name:'7 Series', body:'Sedan', year:'MY 02–04', imgPath:'7er/E65Limousine', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0475','P0668'] },
+    { id:'E38', name:'7 Series', body:'Sedan', year:'MY 93–01', imgPath:'7er/E38Limousine', views:['Seite'], colors:['P0300','P0354','P0430','P0668'] },
+  ]},
+  { id:'X', name:'X Series', models:[
+    { id:'E83', name:'X3', body:'SAV', year:'2003–', imgPath:'X/E83', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0416','P0430','P0475','P0668'] },
+    { id:'E53FL', name:'X5', body:'SAV', year:'MY 03–', imgPath:'X/E53Facelift', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0416','P0430','P0475','P0668'] },
+    { id:'E53', name:'X5', body:'SAV', year:'MY 99–02', imgPath:'X/E53', views:['Seite'], colors:['P0300','P0354','P0430','P0668'] },
+  ]},
+  { id:'Z', name:'Z Series', models:[
+    { id:'Z4R', name:'Z4', body:'Roadster', year:'2003–', imgPath:'Z/Z4-roadster', views:['Seite','FrontSeite','HeckSeite'], colors:['P0300','P0354','P0405','P0438','P0475','P0668'] },
+    { id:'Z3R', name:'Z3', body:'Roadster', year:'1996–02', imgPath:'Z/Z3-roadster', views:['Seite'], colors:['P0300','P0354','P0668'] },
+    { id:'Z3C', name:'Z3', body:'Coupé', year:'1997–02', imgPath:'Z/Z3-coupe', views:['Seite'], colors:['P0300','P0354','P0668'] },
+  ]},
+];
+
+// Paint colors with hex approximations
+const PAINTS = [
+  {key:'P0300',name:'Alpine White',type:'UNI',hex:'#f4f4f0'},
+  {key:'P0668',name:'Black',type:'UNI',hex:'#080808'},
+  {key:'P0416',name:'Carbon Black',type:'MET',hex:'#18181a'},
+  {key:'P0475',name:'Black Sapphire',type:'MET',hex:'#0c1828'},
+  {key:'P0354',name:'Titanium Silver',type:'MET',hex:'#a8a8a0'},
+  {key:'P0440',name:'Stratus Grey',type:'MET',hex:'#787878'},
+  {key:'P0400',name:'Steel Grey',type:'MET',hex:'#60686e'},
+  {key:'P0892',name:'Titanium Grey',type:'MET',hex:'#8a8888'},
+  {key:'P0894',name:'Spacegrau',type:'MET',hex:'#707070'},
+  {key:'P0A07',name:'Space Grey',type:'MET',hex:'#6a6a72'},
+  {key:'P0A08',name:'Mineral Grey',type:'MET',hex:'#828080'},
+  {key:'P0A09',name:'Sparkling Graphite',type:'MET',hex:'#585858'},
+  {key:'P0306',name:'Atlanta Blue',type:'MET',hex:'#1a3a6e'},
+  {key:'P0317',name:'Orient Blue',type:'MET',hex:'#0a2848'},
+  {key:'P0335',name:'Estoril Blue',type:'MET',hex:'#0050a0'},
+  {key:'P0364',name:'Topaz Blue',type:'MET',hex:'#1a4a8c'},
+  {key:'P0372',name:'Steel Blue',type:'MET',hex:'#3a5a7a'},
+  {key:'P0381',name:'Le Mans Blue',type:'UNI',hex:'#0030c8'},
+  {key:'P0448',name:'Laguna Seca Blue',type:'UNI',hex:'#0080c0'},
+  {key:'P0A22',name:'Montreal Blue',type:'MET',hex:'#1a3050'},
+  {key:'P0A23',name:'Interlagos Blue',type:'MET',hex:'#0a2040'},
+  {key:'P0A34',name:'Deep Sea Blue',type:'MET',hex:'#0a1838'},
+  {key:'P0A35',name:'Le Mans Blue II',type:'MET',hex:'#1030b0'},
+  {key:'P0A41',name:'Jet Black',type:'UNI',hex:'#050505'},
+  {key:'P0A43',name:'Platinum Bronze',type:'MET',hex:'#887060'},
+  {key:'P0A06',name:'Cashmere Silver',type:'MET',hex:'#c0b8a8'},
+  {key:'P0A39',name:'Vermilion Red',type:'UNI',hex:'#cc2010'},
+  {key:'P0314',name:'Bright Red',type:'UNI',hex:'#cc0000'},
+  {key:'P0362',name:'Siena Red',type:'MET',hex:'#8a2020'},
+  {key:'P0405',name:'Imola Red',type:'UNI',hex:'#bb1122'},
+  {key:'P0390',name:'Royal Red',type:'MET',hex:'#7a1818'},
+  {key:'P0438',name:'Electric Red',type:'UNI',hex:'#dd0000'},
+  {key:'P0446',name:'Criollo Red',type:'MET',hex:'#b83a30'},
+  {key:'P0470',name:'Flamenco Red',type:'MET',hex:'#c04820'},
+  {key:'P0349',name:'Chestnut Brown',type:'MET',hex:'#6a3a1e'},
+  {key:'P0301',name:'Cashmere Beige',type:'MET',hex:'#c8b898'},
+  {key:'P0411',name:'Pearl Beige',type:'MET',hex:'#d4c4a0'},
+  {key:'P0443',name:'Sahara Beige',type:'MET',hex:'#c8b47a'},
+  {key:'P0356',name:'Vermont Green',type:'MET',hex:'#3a5a30'},
+  {key:'P0430',name:'Oxford Green',type:'MET',hex:'#2a4830'},
+  {key:'P0442',name:'Grey Green',type:'MET',hex:'#5a6858'},
+  {key:'P0337',name:'Dakar Yellow',type:'UNI',hex:'#f0c000'},
+  {key:'P0476',name:'Amber',type:'MET',hex:'#c89030'},
+  {key:'P0891',name:'Mocca Brown',type:'MET',hex:'#5a3a20'},
+];
+
+// Wheel data — file key maps directly to image filename
+const WHEELS = [
+  {file:'KEYFelge18', name:'Round Spoke', style:'18', size:'16"'},
+  {file:'KEYFelgeChrom18', name:'Round Spoke Chrome', style:'18 Chrome', size:'16"'},
+  {file:'KEYFelge30', name:'Double Spoke', style:'30', size:'16"'},
+  {file:'KEYFelge31', name:'BMW Styling II', style:'31', size:'15"'},
+  {file:'KEYFelge32', name:'Radial', style:'32', size:'17"'},
+  {file:'KEYFelge33', name:'Spoke', style:'33', size:'16"'},
+  {file:'KEYFelge35', name:'Z Star', style:'35', size:'16"'},
+  {file:'KEYFelge37', name:'M Parallel Spoke', style:'37', size:'18"'},
+  {file:'KEYFelge38', name:'3-Spoke', style:'38', size:'17"'},
+  {file:'KEYFelge41', name:'Streamline', style:'41', size:'15"'},
+  {file:'KEYFelge42', name:'Cross Spoke', style:'42', size:'16"'},
+  {file:'KEYFelge44', name:'Star Spoke', style:'44', size:'17"'},
+  {file:'KEYFelge47', name:'Double Spoke', style:'47', size:'17"'},
+  {file:'KEYFelge54', name:'V Spoke', style:'54', size:'16"'},
+  {file:'KEYFelge56', name:'Ellipsoid', style:'56', size:'17"'},
+  {file:'KEYFelge58', name:'Star Spoke', style:'58', size:'18"'},
+  {file:'KEYFelge63', name:'V Spoke', style:'63', size:'19"'},
+  {file:'KEYFelge66', name:'M Parallel Spoke', style:'66', size:'17"'},
+  {file:'KEYFelge68', name:'M Double Spoke', style:'68', size:'17"'},
+  {file:'KEYFelge72', name:'M V Spoke', style:'72', size:'18"'},
+  {file:'KEYFelge74', name:'Star Spoke', style:'74', size:'18"'},
+  {file:'KEYFelge86', name:'Radial Composite', style:'86', size:'16"'},
+  {file:'KEYFelge90', name:'Styling 90', style:'90', size:'17"'},
+  {file:'KEYFelge92', name:'Star Spoke', style:'92', size:'19"'},
+  {file:'KEYFelge94', name:'Multi Spoke', style:'94', size:'18"'},
+  {file:'KEYFelge101', name:'M Cross Spoke', style:'101', size:'19"'},
+  {file:'KEYFelge106', name:'Turbine', style:'106', size:'19"'},
+  {file:'KEYFelgeBLine32', name:'Radial Brilliantline', style:'32B', size:'18"'},
+  {file:'KEYFelgeVerbund42', name:'Cross Spoke Composite', style:'42 KSV', size:'17"'},
+  {file:'KEYFelgeVerbund78', name:'Cross Spoke Composite', style:'78 KSV', size:'18"'},
+  {file:'KEYRadvollblendeE87', name:'Full Hub Cap', style:'E87', size:'16"'},
+  {file:'KEYRadvollblendeE90', name:'Full Hub Cap', style:'E90', size:'16"'},
+];
+
+const ACC = {
+  exterior:[
+    {key:'KEYMAerodynamikpaket', name:'M Aerodynamics Package'},
+    {key:'KEYAerodynamikpaket', name:'Aerodynamics Package'},
+    {key:'KEYAerodynamikKomponenten', name:'Aerodynamic Components'},
+    {key:'KEYHeckspoiler', name:'Rear Spoiler'},
+    {key:'KEYMAerodynamikpaket', name:'M Rear Spoiler'},
+    {key:'KEYXenonscheinwerfer', name:'Xenon Headlights'},
+    {key:'KEYScheinwerferreinigungsanlage', name:'Headlight Cleaning System'},
+    {key:'KEYHeckleuchtenBlackline', name:'Blackline Tail Lights'},
+    {key:'KEYAuspuffrohrblendeChrom', name:'Chrome Tailpipe Trims'},
+    {key:'KEYDoppelAuspuffrohrblendeChrom', name:'Chrome Twin Tailpipe Trims'},
+    {key:'KEYSportnachschalldaempfer', name:'Sports Rear Silencer'},
+    {key:'KEYSchmutzfaenger', name:'Mudflaps'},
+    {key:'KEYStossleisten', name:'Rubbing Strips'},
+    {key:'KEYStossleistenSeitlich', name:'Side Rubbing Strips'},
+    {key:'KEYTeileWagenfarbe', name:'Exterior Items in Body Colour'},
+    {key:'KEYGlasschiebedach', name:'Glass Sunroof'},
+    {key:'KEYParkDistanceControl', name:'Park Distance Control'},
+  ],
+  interior:[
+    {key:'KEYFussmattenVelours', name:'Floor Mats Velour'},
+    {key:'KEYFussmattenGummi', name:'Rubber Floor Mats'},
+    {key:'KEYFussmattenCity', name:'Floor Mats City'},
+    {key:'KEYAluPedale', name:'Aluminum Pedals'},
+    {key:'KEYAluFussstuetze', name:'Aluminum Footrest'},
+    {key:'KEYBeleuchteteEinstiegsleiste', name:'Illuminated Entry Strip'},
+    {key:'KEYHalogenleseleuchte', name:'Halogen Reading Light'},
+    {key:'KEYSitzheizungVorne', name:'Front Seat Heating'},
+    {key:'KEYSportsitz', name:'Sport Seat'},
+    {key:'KEYGetränkehalterung', name:'Drinks Holder'},
+    {key:'KEYMultifunktionsAblagesystem', name:'Multifunction Storage System'},
+    {key:'KEYZentraleArmauflageVorne', name:'Central Armrest Front'},
+  ],
+  communication:[
+    {key:'KEYBMWRadioBusinessCD', name:'BMW Radio Business CD'},
+    {key:'KEYBMWRadioProfessionalCD', name:'BMW Radio Professional CD'},
+    {key:'KEYCDWechsler', name:'CD Changer 6-disc'},
+    {key:'KEYNavigationssystem', name:'Navigation System'},
+    {key:'KEYNavigationssystemProfessional', name:'Navigation System Professional'},
+    {key:'KEYBMWTrafficPro', name:'BMW Traffic Pro'},
+    {key:'KEYBordmonitor', name:'On-Board Monitor'},
+    {key:'KEYBMWDVDSystem', name:'BMW DVD System'},
+    {key:'KEYBMWDVDSystemAdvanced', name:'BMW DVD System Advanced'},
+    {key:'KEYSoundsystem', name:'Sound System'},
+    {key:'KEYBMWSubwoofer', name:'BMW Subwoofer'},
+    {key:'KEYAutotelefon', name:'BMW Car Phone'},
+    {key:'KEYFreisprecheinrichtungCordless', name:'Hands-Free Kit Cordless'},
+    {key:'KEYFreisprecheinrichtungBluetooth', name:'Hands-Free Kit Bluetooth'},
+    {key:'KEYFrontkamera', name:'Front Camera'},
+    {key:'KEYRueckfahrkamera', name:'Rear-View Camera'},
+  ],
+  transport:[
+    {key:'KEYGrundtraeger', name:'Roof Rack Basic'},
+    {key:'KEYSkitraeger', name:'Ski Holder'},
+    {key:'KEYDachbox', name:'Roof Box'},
+    {key:'KEYDachboxLackiert', name:'Roof Box in Body Colour'},
+    {key:'KEYGepaeckkorb', name:'Luggage Basket'},
+    {key:'KEYRennradhalterung', name:'Racing Cycle Carrier'},
+    {key:'KEYSurfboardhalterung', name:'Surfboard Carrier'},
+    {key:'KEYSnowboardhalterung', name:'Snowboard Holder'},
+    {key:'KEYUniversalhalterung', name:'Universal Holder'},
+    {key:'KEYGepaeckraumWanne', name:'Boot Tray'},
+    {key:'KEYAntirutschmatte', name:'Anti-Slip Mat'},
+    {key:'KEYKuehltasche', name:'Coolbag'},
+  ],
+  safety:[
+    {key:'KEYBMWBabySeat', name:'BMW Baby Seat 0+'},
+    {key:'KEYBMWJuniorSeatIII', name:'BMW Junior Seat I–II'},
+    {key:'KEYBMWJuniorSeatIII', name:'BMW Junior Seat III'},
+    {key:'KEYParkDistanceControl', name:'Park Distance Control'},
+    {key:'KEYElektronischesFahrtenbuch', name:'Electronic Log Book'},
+    {key:'KEYFeuerlöscher', name:'Powder Fire Extinguisher'},
+  ]
+};
+
+// ==================== STATE ====================
+let S = {
+  lang:'EN', step:0,
+  series:null, model:null, paint:null, wheel:null,
+  accs: new Set(),
+  view: null, accTab: 'exterior',
+};
+
+function T(k){ return (LANGS[S.lang]||LANGS.EN)[k] || LANGS.EN[k] || k; }
+
+// ==================== RENDER ====================
+function init(){
+  renderLangs();
+  renderSteps();
+  renderAll();
+}
+
+function renderLangs(){
+  document.getElementById('langs').innerHTML = Object.keys(LANGS).map(l=>
+    `<button class="lbtn${S.lang===l?' active':''}" onclick="setLang('${l}')">${l}</button>`
+  ).join('');
+}
+
+function renderSteps(){
+  const steps = [
+    {k:'MODELS',label:'Models'}, {k:'LACKE',label:'Paint'}, {k:'FELGEN',label:'Wheels'},
+    {k:'EXTERIEUR',label:'Exterior'}, {k:'INTERIEUR',label:'Interior'},
+    {k:'KOMMUNIKATION',label:'Communication'}, {k:'TRANSPORT',label:'Transport'},
+    {k:'SICHERHEIT',label:'Safety'}, {k:'SUM',label:'Summary'},
+  ];
+  document.getElementById('stepbar').innerHTML = steps.map((s,i)=>
+    `<button class="sbtn${S.step===i?' active':''}${i<S.step?' done':''}" onclick="goStep(${i})">
+      <span class="snum">${i<S.step?'✓':i+1}</span>
+      <span>${T(s.k)||s.label}</span>
+    </button>`
+  ).join('');
+}
+
+function renderAll(){
+  renderSteps();
+  renderViewer();
+  renderCfgBar();
+  renderPanel();
+  renderSidebar();
+}
+
+function renderViewer(){
+  const m = S.model;
+  document.getElementById('disp-series').textContent = m ? 'BMW '+S.series : 'BMW Series';
+  document.getElementById('disp-model').textContent = m ? `${m.name} ${m.body}` : 'Select a model';
+
+  // View buttons
+  const views = m ? m.views : [];
+  const VIEW_LABELS = {Seite:'Side', FrontSeite:'Front', HeckSeite:'Rear', Front:'Front', Heck:'Rear', Interior:'Int.'};
+  if(!S.view || !views.includes(S.view)) S.view = views[0] || null;
+  document.getElementById('view-btns').innerHTML = views.map(v=>
+    `<button class="vbtn${S.view===v?' active':''}" onclick="setView('${v}')">${VIEW_LABELS[v]||v}</button>`
+  ).join('');
+
+  if(!m || !S.view){ 
+    const bkgnd = document.getElementById('canvas-bkgnd');
+    bkgnd.style.visibility='hidden';
+    bkgnd.src='';
+    return;
+  }
+
+  loadCarView();
+}
+
+function loadCarView(){
+  const m = S.model;
+  const v = S.view;
+  const bkgnd = document.getElementById('canvas-bkgnd');
+  const viewer = document.getElementById('viewer');
+
+  // Loading spinner
+  let loader = document.getElementById('img-loader');
+  if(!loader){
+    loader = document.createElement('div');
+    loader.id = 'img-loader';
+    loader.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none';
+    viewer.appendChild(loader);
+    if(!document.getElementById('spin-style')){
+      const st = document.createElement('style');
+      st.id = 'spin-style';
+      st.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+      document.head.appendChild(st);
+    }
+  }
+  loader.innerHTML = '<div style="width:28px;height:28px;border:2px solid #2a2a2a;border-top-color:#1c69d3;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 8px"></div><div style="font-size:9px;letter-spacing:2px;color:#606060;text-transform:uppercase">Loading</div>';
+  loader.style.display = 'block';
+  bkgnd.style.visibility = 'hidden';
+
+  const tryLoad = (viewName, triedLower) => {
+    bkgnd.onload = () => {
+      loader.style.display = 'none';
+      bkgnd.style.visibility = 'visible';
+      drawOverlay();
+    };
+    bkgnd.onerror = () => {
+      const lv = viewName.toLowerCase();
+      if(!triedLower && lv !== viewName){
+        tryLoad(lv, true);
+      } else {
+        loader.innerHTML = '<div style="font-size:11px;color:#555;letter-spacing:1px">Image loading...</div>';
+      }
+    };
+    bkgnd.src = BASE + '/images/' + m.imgPath + '/' + viewName + '/image-bkgnd.jpg';
+  };
+  tryLoad(v, false);
+}
+
+function drawOverlay(){
+  // The overlay canvas composites the paint color and option images
+  const canvas = document.getElementById('canvas-overlay');
+  const bkgnd = document.getElementById('canvas-bkgnd');
+  canvas.width = bkgnd.naturalWidth || bkgnd.offsetWidth;
+  canvas.height = bkgnd.naturalHeight || bkgnd.offsetHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // Load paint color overlay if selected
+  if(S.paint && S.model && S.view){
+    const m = S.model;
+    const v = S.view;
+    const colUrl = `${BASE}/images/${m.imgPath}/${v}/colors/${S.paint.key}.col`;
+    // .col files are BMP overlays — load them as images
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      ctx.globalCompositeOperation = 'multiply';
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = 'source-over';
+      drawOptions(ctx, canvas.width, canvas.height);
+    };
+    img.onerror = () => {
+      // Apply tint using hex color as fallback
+      applyColorTint(ctx, canvas.width, canvas.height);
+      drawOptions(ctx, canvas.width, canvas.height);
+    };
+    img.src = colUrl;
+  } else {
+    drawOptions(ctx, canvas.width, canvas.height);
+  }
+}
+
+function applyColorTint(ctx, w, h){
+  // Fallback: overlay a semi-transparent tint in the paint color
+  if(!S.paint) return;
+  ctx.globalCompositeOperation = 'color';
+  ctx.globalAlpha = 0.4;
+  ctx.fillStyle = S.paint.hex;
+  ctx.fillRect(0, 0, w, h);
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+}
+
+function drawOptions(ctx, w, h){
+  if(!S.model || !S.view) return;
+  const m = S.model;
+  const v = S.view;
+  const optBase = `${BASE}/images/${m.imgPath}/${v}/options/`;
+
+  // Collect active option images
+  const activeOpts = [...S.accs].map(k => {
+    const acc = Object.values(ACC).flat().find(a => a.name === k);
+    return acc ? acc.key : null;
+  }).filter(Boolean);
+
+  // Also add wheel overlay if we're in side view
+  if(S.wheel && (v === 'Seite' || v === 'seite')){
+    loadWheelOverlay(ctx, w, h, optBase, activeOpts);
+  } else {
+    loadOptionOverlays(ctx, w, h, optBase, activeOpts, 0);
+  }
+}
+
+function loadWheelOverlay(ctx, w, h, optBase, opts){
+  const wheelUrl = `${BASE}/wheels/seite/${S.wheel.file.toLowerCase()}.jpg`;
+  const wImg = new Image();
+  wImg.crossOrigin='anonymous';
+  wImg.onload = () => {
+    // Wheels go on the Felgenbasis area - use the wheels.ini positioning
+    // For simplicity, draw at fixed positions matching the original layout
+    ctx.globalCompositeOperation = 'source-over';
+    // Draw wheel at front and rear wheel well positions
+    // These are approximate - original uses wheels.ini coordinates
+    const scale = w / 980;
+    const fw = { x: 178*scale, y: 358*scale - wImg.height*scale*0.8, r: 80*scale };
+    const rw = { x: 752*scale, y: 360*scale - wImg.height*scale*0.8, r: 80*scale };
+    const ws = 158*scale;
+    ctx.drawImage(wImg, fw.x - ws/2, fw.y, ws, ws);
+    ctx.drawImage(wImg, rw.x - ws/2, fw.y, ws, ws);
+    loadOptionOverlays(ctx, w, h, optBase, opts, 0);
+  };
+  wImg.onerror = () => loadOptionOverlays(ctx, w, h, optBase, opts, 0);
+  wImg.src = wheelUrl;
+}
+
+function loadOptionOverlays(ctx, w, h, optBase, opts, idx){
+  if(idx >= opts.length) return;
+  const key = opts[idx];
+  const img = new Image();
+  img.crossOrigin='anonymous';
+  const tryJpg = () => {
+    img.src = optBase + key + '.jpg';
+  };
+  img.onload = () => {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.drawImage(img, 0, 0, w, h);
+    loadOptionOverlays(ctx, w, h, optBase, opts, idx+1);
+  };
+  img.onerror = () => {
+    // Try .bmp
+    if(!img.src.endsWith('.bmp')){
+      img.src = optBase + key + '.bmp';
+    } else {
+      loadOptionOverlays(ctx, w, h, optBase, opts, idx+1);
+    }
+  };
+  tryJpg();
+}
+
+function renderCfgBar(){
+  const m = S.model;
+  document.getElementById('cfg-model').textContent = m ? `${m.name} ${m.body}` : '—';
+  document.getElementById('cfg-paint').textContent = S.paint ? S.paint.name : '—';
+  document.getElementById('cfg-dot').style.background = S.paint ? S.paint.hex : '#222';
+  document.getElementById('cfg-wheel').textContent = S.wheel ? `Styling ${S.wheel.style}` : '—';
+  document.getElementById('cfg-opts').textContent = S.accs.size;
+}
+
+function renderPanel(){
+  const p = document.getElementById('panel');
+  switch(S.step){
+    case 0: renderModels(p); break;
+    case 1: renderPaints(p); break;
+    case 2: renderWheels(p); break;
+    case 3: renderAccs(p,'exterior'); break;
+    case 4: renderAccs(p,'interior'); break;
+    case 5: renderAccs(p,'communication'); break;
+    case 6: renderAccs(p,'transport'); break;
+    case 7: renderAccs(p,'safety'); break;
+    case 8: renderSummary(p); break;
+    default: p.innerHTML='';
+  }
+}
+
+function renderModels(p){
+  let h = `<div style="max-height:calc(100vh - 310px);overflow-y:auto">`;
+  for(const s of SERIES){
+    h += `<div class="series-hdr">BMW ${s.name}</div><div class="model-grid">`;
+    for(const m of s.models){
+      const sel = S.model && S.model.id===m.id;
+      h += `<div class="mcard${sel?' sel':''}" onclick="pickModel('${s.id}','${m.id}')">
+        <div class="mc-series">${s.name}</div>
+        <div class="mc-name">${m.name}</div>
+        <div class="mc-body">${m.body}</div>
+        <div class="mc-year">${m.year}</div>
+      </div>`;
+    }
+    h += '</div>';
+  }
+  h += '</div>';
+  p.innerHTML = h;
+}
+
+function renderPaints(p){
+  const avail = S.model ? S.model.colors : PAINTS.map(p=>p.key);
+  const uni = PAINTS.filter(x=>x.type==='UNI' && avail.includes(x.key));
+  const met = PAINTS.filter(x=>x.type==='MET' && avail.includes(x.key));
+  // Show all paints but dim unavailable ones
+  const uniAll = PAINTS.filter(x=>x.type==='UNI');
+  const metAll = PAINTS.filter(x=>x.type==='MET');
+
+  function swatches(list){
+    return list.map(x=>{
+      const sel = S.paint && S.paint.key===x.key;
+      const dim = S.model && !avail.includes(x.key);
+      const clickHandler = dim ? '' : `pickPaint('${x.key}')`;
+      return `<div class="swatch${sel?' sel':''}" style="background:${x.hex};${dim?'opacity:.25 !important;cursor:default':''}" title="${x.name}" onclick="${clickHandler}"></div>`;
+    }).join('');
+  }
+
+  p.innerHTML = `<div class="paint-section">
+    <div class="paint-type-label">${T('UNI')} Finishes</div>
+    <div class="swatch-grid">${swatches(uniAll)}</div>
+    <div class="paint-type-label">${T('MET')} Finishes</div>
+    <div class="swatch-grid">${swatches(metAll)}</div>
+  </div>`;
+}
+
+function renderWheels(p){
+  const cards = WHEELS.map(w=>{
+    const sel = S.wheel && S.wheel.file===w.file;
+    const imgUrl = `${BASE}/wheels/seite/${w.file.toLowerCase()}.jpg`;
+    return `<div class="wcard${sel?' sel':''}" onclick="pickWheel('${w.file}')">
+      <img src="${imgUrl}" alt="${w.name}" loading="lazy" onerror="this.style.opacity='.2'">
+      <div class="wname">${w.name}</div>
+      <div class="wsize">Styling ${w.style} · ${w.size}</div>
+    </div>`;
+  }).join('');
+  p.innerHTML = `<div class="wheel-grid" style="max-height:calc(100vh - 300px);overflow-y:auto">${cards}</div>`;
+}
+
+function renderAccs(p, cat){
+  const cats = ['exterior','interior','communication','transport','safety'];
+  const labels = {exterior:T('EXTERIEUR'),interior:T('INTERIEUR'),communication:T('KOMMUNIKATION'),transport:T('TRANSPORT'),safety:T('SICHERHEIT')};
+  if(S.accTab !== cat && cats.includes(cat)) S.accTab = cat;
+
+  const tabs = cats.map(c=>
+    `<button class="atab${S.accTab===c?' active':''}" onclick="switchAccTab('${c}')">${labels[c]}</button>`
+  ).join('');
+
+  const items = (ACC[S.accTab]||[]).map(a=>{
+    const sel = S.accs.has(a.name);
+    return `<div class="aitem${sel?' sel':''}" onclick="toggleAcc('${a.name.replace(/'/g,"\\'").replace(/–/g,'–')}')">
+      <div class="achk"></div>
+      <div class="aname">${a.name}</div>
+    </div>`;
+  }).join('');
+
+  p.innerHTML = `<div class="acc-tabs">${tabs}</div><div class="acc-list">${items}</div>`;
+}
+
+function renderSummary(p){
+  const m = S.model;
+  const accList = [...S.accs];
+  const grouped = {};
+  for(const [cat, items] of Object.entries(ACC)){
+    const sel = accList.filter(n => items.some(a=>a.name===n));
+    if(sel.length) grouped[cat] = sel;
+  }
+  const accHtml = Object.entries(grouped).map(([cat,items])=>
+    `<div class="sum-acc-group">
+      <div class="sag-name">${cat.toUpperCase()}</div>
+      ${items.map(i=>`<div class="sag-item">· ${i}</div>`).join('')}
+    </div>`
+  ).join('');
+
+  p.innerHTML = `<div class="sum-wrap">
+    <div class="sum-title">Your Configuration</div>
+    <div class="sum-grid">
+      <div class="sum-card">
+        <div class="sum-key">Model</div>
+        <div class="sum-val">${m ? m.name+' '+m.body : '—'}</div>
+        <div class="sum-sub">${m ? m.year : ''}</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-key">Paint</div>
+        <div class="sum-val" style="display:flex;align-items:center;gap:7px">
+          <div style="width:18px;height:18px;border-radius:2px;background:${S.paint?S.paint.hex:'#222'};border:1px solid rgba(255,255,255,.15);flex-shrink:0"></div>
+          <span>${S.paint ? S.paint.name : '—'}</span>
+        </div>
+        <div class="sum-sub">${S.paint ? S.paint.type : ''}</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-key">Wheels</div>
+        <div class="sum-val">${S.wheel ? 'Styling '+S.wheel.style : '—'}</div>
+        <div class="sum-sub">${S.wheel ? S.wheel.name+' · '+S.wheel.size : ''}</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-key">Accessories</div>
+        <div class="sum-val" style="font-size:24px;font-weight:300;color:var(--bmw-blue)">${S.accs.size}</div>
+        <div class="sum-sub">items selected</div>
+      </div>
+    </div>
+    ${accHtml || '<div style="font-size:11px;color:var(--bmw-silver-dim)">No accessories selected.</div>'}
+    <div class="sum-actions">
+      <button class="btn-p" onclick="window.print()">Print Layout</button>
+      <button class="btn-s" onclick="saveConfig()">Save Config</button>
+      <button class="btn-s" onclick="resetAll()">Reset All</button>
+    </div>
+    <div class="sum-disclaimer">The models illustrated here show the specifications for the German market. In part, they include optional equipment and accessories not fitted as standard. Subject to change in design, colours and equipment. Subject to error.</div>
+  </div>`;
+}
+
+function renderSidebar(){
+  const sb = document.getElementById('sb-content');
+  const catMap = {3:'exterior',4:'interior',5:'communication',6:'transport',7:'safety'};
+  const cat = catMap[S.step];
+
+  if(S.step === 0){
+    sb.innerHTML = `<div class="stitle">Series</div>` + SERIES.map(s=>
+      `<div class="sitem${S.series===s.id?' sel':''}" onclick="filterSeries('${s.id}')">
+        <div class="scheck"></div>
+        <div class="slabel">BMW ${s.name}</div>
+      </div>`
+    ).join('');
+  } else if(S.step === 1 && S.paint){
+    sb.innerHTML = `<div class="stitle">Selected Paint</div>
+      <div style="padding:14px 16px">
+        <div style="width:100%;height:55px;border-radius:2px;background:${S.paint.hex};border:1px solid rgba(255,255,255,.1);margin-bottom:10px"></div>
+        <div style="font-size:13px;font-weight:600;color:#fff">${S.paint.name}</div>
+        <div style="font-size:9px;color:var(--bmw-silver-dim);margin-top:2px">${S.paint.type==='MET'?'Metallic':'Solid'} · ${S.paint.key}</div>
+      </div>`;
+  } else if(S.step === 2 && S.wheel){
+    sb.innerHTML = `<div class="stitle">Selected Wheels</div>
+      <div style="padding:14px 16px;text-align:center">
+        <img src="${BASE}/wheels/seite/${S.wheel.file.toLowerCase()}.jpg" style="width:100px;margin:0 auto 8px;display:block;object-fit:contain" alt="">
+        <div style="font-size:13px;font-weight:600;color:#fff">${S.wheel.name}</div>
+        <div style="font-size:10px;color:var(--bmw-blue);margin-top:3px;font-weight:700">Styling ${S.wheel.style} · ${S.wheel.size}</div>
+      </div>`;
+  } else if(cat){
+    const sel = [...S.accs].filter(n => ACC[cat] && ACC[cat].some(a=>a.name===n));
+    sb.innerHTML = `<div class="stitle">Selected (${sel.length})</div>` +
+      (sel.length ? sel.map(n=>`
+        <div class="sitem sel" onclick="toggleAcc('${n.replace(/'/g,"\\'").replace(/–/g,'–')}')">
+          <div class="scheck"></div>
+          <div><div class="slabel">${n}</div></div>
+        </div>`).join('') : `<div style="padding:12px 16px;font-size:11px;color:var(--bmw-silver-dim)">None selected</div>`);
+  } else if(S.step === 8){
+    sb.innerHTML = `<div class="stitle">Summary</div>` +
+      [['Model',S.model?`${S.model.name} ${S.model.body}`:'—'],
+       ['Paint',S.paint?S.paint.name:'—'],
+       ['Wheels',S.wheel?`Styling ${S.wheel.style}`:'—'],
+       ['Options',S.accs.size+' items']
+      ].map(([k,v])=>`<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.04)">
+        <div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--bmw-silver-dim)">${k}</div>
+        <div style="font-size:12px;font-weight:600;color:#fff;margin-top:2px">${v}</div>
+      </div>`).join('');
+  } else {
+    sb.innerHTML = '';
+  }
+}
+
+// ==================== ACTIONS ====================
+function setLang(l){ S.lang=l; renderLangs(); renderAll(); }
+function goStep(i){ S.step=i; renderAll(); }
+
+function filterSeries(id){ S.series=id; renderSidebar(); }
+
+function pickModel(seriesId, modelId){
+  S.series = seriesId;
+  const s = SERIES.find(x=>x.id===seriesId);
+  S.model = s ? s.models.find(m=>m.id===modelId) : null;
+  S.paint = null; S.wheel = null; S.view = null;
+  renderAll();
+  setTimeout(()=>goStep(1), 250);
+}
+
+function pickPaint(key){
+  S.paint = PAINTS.find(p=>p.key===key);
+  renderAll();
+}
+
+function pickWheel(file){
+  S.wheel = WHEELS.find(w=>w.file===file);
+  renderAll();
+}
+
+function switchAccTab(cat){
+  S.accTab = cat;
+  renderPanel();
+  renderSidebar();
+}
+
+function toggleAcc(name){
+  S.accs.has(name) ? S.accs.delete(name) : S.accs.add(name);
+  renderAll();
+}
+
+function setView(v){
+  S.view = v;
+  renderViewer();
+  document.querySelectorAll('.vbtn').forEach(b=>{
+    const VIEW_LABELS = {Seite:'Side', FrontSeite:'Front', HeckSeite:'Rear', Front:'Front', Heck:'Rear', Interior:'Int.'};
+    b.classList.toggle('active', b.textContent.trim() === (VIEW_LABELS[v]||v));
+  });
+}
+
+function resetAll(){
+  S.model=null; S.series=null; S.paint=null; S.wheel=null; S.accs=new Set(); S.view=null;
+  goStep(0);
+}
+
+function saveConfig(){
+  const cfg = {model:S.model, paint:S.paint, wheel:S.wheel, accessories:[...S.accs]};
+  const b = new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href=URL.createObjectURL(b);
+  a.download='bmw-config.json'; a.click();
+}
+
+// ==================== START ====================
+init();
+</script>
+</body>
+</html>
